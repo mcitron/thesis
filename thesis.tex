@@ -1,0 +1,138 @@
+% Nicholas Wardle - Imperial College 
+% nw709
+\documentclass{mythesis}
+\usepackage{mythesis}
+
+\usepackage{rotating} % For making a sideways table
+\usepackage{multirow} % For putting a header over more than 1 column
+\usepackage{comment} % Allows you to comment out whole chunks of text
+\usepackage{setspace}
+\usepackage[numbers]{natbib}
+
+\newcolumntype{A}{>{\centering\arraybackslash}p{1cm}} % allows you to centre columns
+\newcolumntype{B}{>{\centering\arraybackslash}p{2cm}} % allows you to centre columns
+\newcolumntype{C}{>{\centering\arraybackslash}p{3cm}} % allows you to centre columns
+\newcolumntype{D}{>{\centering\arraybackslash}p{4cm}} % allows you to centre columns
+\newcolumntype{E}{>{\centering\arraybackslash}p{5cm}} % allows you to centre columns
+\newcolumntype{F}{>{\centering\arraybackslash}p{6cm}} % allows you to centre columns
+
+% Custom commands -----------------------
+%Theory
+\makeatletter
+\newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+\newcommand{\lagr}{\hat{\mathscr{L}}}
+\newcommand{\sutwol}{SU(2)_{L}}
+\newcommand{\uone}{U(1)_{Y}}
+%General/Detector
+\newcommand{\abs}[1]{|#1|}
+\newcommand{\cmssw}{CMSSW\_4\_2\_X}
+\newcommand{\clumi}{$5.1 fb^{-1}$}
+\newcommand{\clumiichep}{$5.3 fb^{-1}$}
+\newcommand{\clumicomb}{$10.4 fb^{-1}$}
+\newcommand{\rnine}{r_{9}}
+\newcommand{\pt}{p_{T}}
+\newcommand{\met}{{E_{T}}^{miss}}
+\newcommand{\metvec}{{\mathbf{E}^{miss}_{T}}}
+\newcommand{\sigieie}{\sigma_{i\eta i\eta}}
+\newcommand{\hoe}{H/E}
+\newcommand{\Lonept}{E_{T}^{L1}}
+\newcommand{\Genpt}{E_{T}^{Gen}}
+\newcommand{\Geneta}{\eta^{Gen}}
+\newcommand{\Loneta}{\eta^{L1}}
+% Processes
+\newcommand{\ttbar}{t\bar{t}}
+\newcommand{\Hgg}{H\rightarrow\gamma\gamma}
+\newcommand{\Htt}{H\rightarrow\tau\tau}
+\newcommand{\Ztt}{Z\rightarrow\tau\tau}
+\newcommand{\Hww}{H\rightarrow WW}
+\newcommand{\Hbb}{H\rightarrow bb}
+\newcommand{\Hzz}{H\rightarrow ZZ}
+\newcommand{\Hzzl}{H\rightarrow ZZ \rightarrow 4l}
+% HGG style commands
+\newcommand{\mgg}{m_{\gamma\gamma}}
+\newcommand{\mh}{m_{H}}
+\newcommand{\mhsb}{m_{H,i}}
+\newcommand{\mhl}{m_{H,i}^{l}}
+\newcommand{\mhu}{m_{H,i}^{u}}
+\newcommand{\dmom}{\Delta m/m_{H}}
+\newcommand{\dmomsb}{(\mgg-\mhsb)/\mhsb}
+\newcommand{\Zee}{Z\rightarrow e^{+}e^{-}}
+\newcommand{\Zmumu}{Z\rightarrow \mu^{+}\mu^{-}}
+\newcommand{\ptgg}{p_{T}^{\gamma\gamma}}
+\newcommand{\pth}{p_{T}^{H}}
+\newcommand{\ptggvec}{\mathbf{p}_{T}^{\gamma\gamma}}
+\newcommand{\ptvec}{\mathbf{p}_{T}}
+%Stats/Properties
+\newcommand{\qmu}{q_{\mu}}
+\newcommand{\call}{\mathcal{L}}
+\newcommand{\muhat}{\hat{\mu}}
+\newcommand{\boldth}{{\boldsymbol{\theta}}}
+\newcommand{\boldthmeas}{\tilde{\boldth}}
+\newcommand{\thmeas}{\tilde{\theta}}
+%\newcommand{\boldmu}{{\boldsymbol{\mu}}}
+\newcommand{\boldmu}{{\mathbf{x}}}
+\newcommand{\xsbr}{\sigma(\Hgg)/\sigma(\Hgg)_{SM}}
+\newcommand{\xs}{\sigma/\sigma_{SM}}
+\newcommand{\muqqh}{\mu_{VH+qqH}}
+\newcommand{\muggh}{\mu_{ggH+ttH}}
+\newcommand{\kv}{\kappa_{V}}
+\newcommand{\kf}{\kappa_{f}}
+\newcommand{\kh}{\kappa_{H}}
+\newcommand{\khf}{\kappa_{H}(\kf,\kv)}
+\newcommand{\hwidth}{\Gamma_{H}}
+% ---------------------------------------
+%% PDF metadata
+\makeatletter
+\@ifpackageloaded{hyperref}{%
+\hypersetup{%
+pdftitle = {},
+pdfsubject = {},
+pdfkeywords = {LHC, CMS, Higgs boson, Higgs to two photons, Combinations },
+pdfauthor = {\textcopyright\ Nicholas Wardle}
+}
+}{}
+\makeatother
+
+% Define the thesis title and author
+\title{Observation of a New Particle in the Search for the 
+       Standard Model Higgs Boson at the CMS Detector}
+\author{Nicholas Wardle}
+
+% Start the document
+%\bibliographystyle{unsrt}
+
+\begin{document}
+\pagenumbering{arabic}
+
+% Define the un-numbered front matter (cover pages, rubrik and table of contents)
+\begin{frontmatter}
+\pagenumbering{arabic}
+  \input{frontmatter}
+\end{frontmatter}
+
+%\doublespacing
+%$ Start the content body of the thesis
+\begin{mainmatter}
+\input{Chapters/introduction}
+\input{Chapters/theory}
+\end{mainmatter}
+
+% \bibliographystyle{unsrt}
+% \bibliography{thesis}
+% %\printbibliography
+
+% Produce the appendices
+\begin{appendices}
+  \input{Appendices/aptest}
+\end{appendices}
+
+% Produce the un-numbered back matter (e.g. colophon,
+% bibliography, tables of figures etc., index...)
+\begin{backmatter}
+ \input{backmatter}
+
+\end{backmatter}
+
+% Close
+\end{document}
