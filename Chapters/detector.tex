@@ -6,7 +6,7 @@
 The LHC is a 27km circular circumference storage ring, accelerator and collider for 
 both protons and Pb ions. It is situated in a stable environment in a tunnel 
 100 metres underneath the Franco-Swiss boder near Geneva, Switzerland.
-A double-ring synchotron, it is designed to collide proton-proton (pp)
+A double-ring synchotron, it is designed to collide proton-proton (p-p)
 pairs with a centre of mass energy of up to $\sqrt(s)=14\TeV$ and a 
 luminosity of up to $10^{34}cm^{-2}s^{-1}$. This makes the LHC the only collider
 in operation able to directly probe the $\TeV$ scale physics. 
@@ -17,25 +17,31 @@ are merged at four sections around the ring to enable collisions at interaction 
 At each of these four interaction points lies one of the four main 
 experiments at the LHC; A Large Ion Collidor Experiment (ALICE) \cite{ALICE},
 A Toroidal LHC Apparatus (ATLAS) \cite{ATLAS}, the Compact Muon solinoid (CMS) \cite{CMS}
-and LHCb which record the collisions. Figure~\ref{} shows the layout of the LHC ring including
+and LHCb which record the collisions. Figure~\ref{LHC-diagram} shows the layout of the LHC ring including
 the positions of the four main detectors. The proton beams are made up of many 'bunches' of approximately $1.1\times10^{11}$
 protons localised into less than 1 ns in the direction of motion.
 The beams are formed inside the Proton Synchrotron (PS) from bunches of protons 25 or 50 ns apart with an energy of 26 GeV. 
 The protons are then accelerated in the Super Proton Synchrotron (SPS) to 450 GeV before being injected into the LHC at
-the points shown in Figure~\ref{}. Once injected into the LHC, Radio Frequency (RF) cavities 
+the points shown in Figure~\ref{LHC-diagram}. Once injected into the LHC, Radio Frequency (RF) cavities 
 provide around 275kW of RF power independently to each beam to accelerate the protons to allow collisions
 at the operating centre of mass energy. For the work contained in the thesis $\sqrt(s) = 13\TeV$ with bunch spacings of both
 25ns and 50 ns \cite{LHC}. The LHC operates as a storage ring for the accelerated beams using 1232 
 superconducting dipole magnets in the eight arc segments which provide magnetic fields of up to $8T$ to steer the beams. 
 High precision quadropole and higher order magnets at the interacton points are used to position and focus the beams to 
-maximise the occurance of high momentum pp collisions. The average number of simultaneous collisions
+maximise the occurance of high momentum p-p collisions. The average number of simultaneous collisions
 per bunch crossing, in time pile-up (PU), for the work in this thesis was $\approx25$.
 The luminosity in the LHC is not constant over a physics run, but decays due to the degradation 
 of intensities and emittances of the circulating beams (mainly due to loss from collisions). Eventually,
 the beam is dumped and the acceleration process is started again. The turn around time between dumping
 the beam and the start of a new physics run is typically around 6 hours.
 
-%%%FIGURE - LHC diagram!
+\begin{figure}
+\centering
+    \includegraphics[width=0.8\textwidth]{./Figures/detector/lhcDiagram}
+  \caption{Schematic layout of the LHC showing the position of the four main detectors as
+  well as the RF systems}
+  \label{fig:LHC-diagram}
+\end{figure}
 
 \subsection{LHC run condictions}
 
@@ -48,20 +54,37 @@ and the dipole magnets underwent a quench training programme.
 
 After LS1, from 2015-2016 (Run 2, which will continue up to 2018) the LHC has been running with record beam energies 
 of $6.5\TeV$ per beam with bunch spacings of 25 and 50 ns. 
-As shown in Figure **, as of XX, the CMS and ATLAS detectors have been able to collect XX $fb^{-1}$ of integrated luminosity. 
-This has enabled large areas of parameter space to be probed and limits to be set on new physics models. It is this 
-XX/fb dataset, at a centre of mass energy of $\sqrt(s) = 13\TeV$, which is used in Chapters XX to search for Supersymmetry at the highest energy reached at a collider.
+As shown in Figure~\ref{fig:LHC-integrated-lumi}, in 2016, $40.7\fb$ of integrated luminosity has been 
+delivered to the CMS and ATLAS detectors, with $37.5\fb$ recorded by CMS. The dataset is validated by detector
+subsytem experts to ensure runs in which the data quality may be affected by any problem in one of the CMS detectors 
+subsystems are excluded. The luminosity of this certified dataset is XX and it is this dataset, 
+at a centre of mass energy of $\sqrt(s) = 13\TeV$, 
+which is used in Chapters XX to search for Supersymmetry at the highest energy reached at a collider.
 
 %%%FIGURE - LHC lumi plot!
+\begin{figure}
+\centering
+    \includegraphics[width=0.9\textwidth]{./Figures/detector/int_lumi_per_day_cumulative_pp_2016OnlineLumi}
+  \caption{Integrated luminosity measured online versus day delivered to (blue), 
+  and recorded by CMS (orange) during stable beams and for p-p collisions at 13 TeV centre-of-mass energy in 2016.}
+  \label{fig:LHC-integrated-lumi}
+\end{figure}
 
 %----------------------------------------------------------------------------------------
 \section{The CMS detector}
-The Compact Muon Solenoid (CMS \cite{CMSTDR}) is one of two general purpose detectors at the LHC 
-which have performed exceptionally well during run 1. It is described in detail in \cite{CMS}. 
+The Compact Muon Solenoid (CMS \cite{CMS}) is one of two general purpose detectors at the LHC 
+which have performed exceptionally well during the physics runs of the LHC. It was designed
+with the aim of discovering the Higgs boson as well as searching for generic models 
+of new physics. To achieve this, CMS provides efficient identification and measurement
+of physics objects including muons, electrons, photons, taus and hadronic showers over a
+wide range of momenta and energies and covering almost $4\pi$ in solid angle. 
+Its traditional barrel design allows global momentum imbalance to be effectively 
+reconstructed allowing the $\met$ predicted in many new models of physics to be
+precisely measured. A more detailed description may be found in \cite{CMS}. 
 
 \begin{figure}
 \centering
-    \includegraphics[width=0.9\textwidth]{./Figures/CMS_Slice.jpg}
+    \includegraphics[width=0.9\textwidth]{./Figures/detector/CMS_Slice.jpg}
   \caption{Cross Section of CMS showing the paths of various particle types 
   through different segments of the detector \cite{cmsslice}}
   \label{CMS_SLICE}
