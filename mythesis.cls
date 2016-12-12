@@ -1,7 +1,7 @@
 \ProvidesClass{mythesis}
 %% For normal draft builds
 
-\LoadClass[noroman,nobind,twoside]{hepthesis}
+\LoadClass[noroman,nobind,twoside,draft]{hepthesis}
 
 %\LoadClass[noroman,hyperpdf,nobind,sftitles,oneside]{hepthesis}
 %\LoadClass[noroman,hyperpdf,nobind,draft,sftitles,oneside]{../../../style/hepthesis}
