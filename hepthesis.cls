@@ -177,7 +177,7 @@
 }
 %% Handle the A4 default paper size
 \ifx\@useAFour\@empty\else%
-  \PassOptionsToClass{a4paper}{scrbook}%
+  \PassOptionsToClass{a4paper,numbers=noenddot}{scrbook}%
 \fi
 
 
@@ -468,7 +468,7 @@
 %% ========================================================================
 
 \AtEndPreamble{%
-  \RequirePackage[babel]{csquotes}[2007/03/25]
+  % \RequirePackage[autostyle]{csquotes}[2007/03/25]
   %% Provide dumb quoting commands in case the csquotes package hasn't been used.
   \providecommand{\enquote}[1]{``#1''}%
   \providecommand{\foreignquote}[1]{``#1''}%
