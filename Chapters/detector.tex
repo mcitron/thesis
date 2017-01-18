@@ -93,9 +93,9 @@ The polar angle, $\theta$, is measured from the z-axis and defines the psuedorap
 This is used in preference to $\theta$ as the difference between the pseudorapidity of two 
 particles is invarient under boosts along the z-axis \cite{cms_iop}. 
 The eta coverage of CMS is $|\eta|<5$. The azimuthal angle, $\phi$, is defined from the x-axis in the x-y plane.
-This allows the definition of $\Delta R = \sqrt(\Delta\phi^2+\Delta\eta^2)$, commonly used to measure the 
+This allows the definition of $\Delta R = \sqrt{(\Delta\phi^2+\Delta\eta^2)}$, commonly used to measure the 
 angular difference between objects. Transverse energies and momenta, $E_T $ and $p_T$ respectively, are defined 
-as $E_T = E\sin(\theta)$ and $p_T = \sqrt(p_{x}^2+p_{y}^2)$. Momentum imbalances are measured as the negative 
+as $E_T = E\sin(\theta)$ and $p_T = \sqrt{(p_{x}^2+p_{y}^2)}$. Momentum imbalances are measured as the negative 
 vector sums of the momenta of the relevant objects in the x-y plane. 
 
 \begin{figure}
@@ -300,8 +300,8 @@ as well as improving the \met resolution. It is composed of iron absorbers and s
 
 Finally, coverage for $3. < |\eta| < 5.$ is provided by the Hadronic Forward (HF) installed $11.2 m$ from the interaction point. This provides
 excellent measurement of forward hadronic activity as well as hermitacy for \met measurements \cite{hcal_tdr}. The HF is composed of a 1.65m thick steel absorber 
-embedded with a grid of $0.6 mm$ quartz fibres, each seperated by $5mm$, running parallel to the beam. The energy is measured using the Cherenkov
-light producted by particles, formed in the hadronic shower, travelling within the fibres. The HF is segmented into 13 towers in $\eta$ with a
+embedded with a grid of $0.6 mm$ quartz fibres, each separated by $5mm$, running parallel to the beam. The energy is measured using the Cherenkov
+light produced by particles, formed in the hadronic shower, travelling within the fibres. The HF is segmented into 13 towers in $\eta$ with a
 size of $\Delta\eta \approx 0.175$, except for the lowest $\eta$ tower with $\Delta\eta \approx 0.1$. The azimuthal segmentation of all towers is 
 $\Delta\phi = 0.175$, except for the highest $\eta$ tower with $\Delta\phi = 0.349$.
 
@@ -309,9 +309,47 @@ Similarly to the ECAL, the HCAL resolution was measured using a test beam of sin
 \cite{hcal_performance},
 
 \begin{equation}
-\frac{\sigma_H}{E} = \frac{94.3\%}{\sqrt(E)} \oplus 8.4\%.
+\frac{\sigma_H}{E} = \frac{94.3\%}{\sqrt{(E)}} \oplus 8.4\%.
 \label{equ:energy-resolution-hcal}
 \end{equation}
+
+\subsection{Solenoid Magnet}
+
+The design specifications of the solenoid magnet are driven by the desire to unambiguously determine
+the sign of muons with momentum $\sim 1\TeV$. This requires a resolution of $~10\%$ at $p=1\TeV$.
+To achieve this, the CMS experiment uses a Niobium-Titanium superconducting magnet with length 
+12.5m and a diameter of 6m which can operate up to fields of 4T. A field of 3.8T provides
+sufficient bending power achieve the design goal and so, to maximise its lifetime, the magnet is
+typically run at this field strength \cite{CMS}.
+
+\subsection{Muon System}
+
+Effective identification and measurement of muons is critical to the design goals of the LHC and
+for the analysis described in this thesis. Centrally produced muons are measured three times:
+in the inner tracker, after the coil and in the return flux. Three types of detectors which rely of gas ionisation are 
+used to identify and measure muons -- drift tubes (DTs), Cathode Strip Chambers (CSCs) and Resistive
+Plate Chambers (RPCs) \cite{CMS}. DTs are used in the central barrel region of $|\eta| < 1.2$ where 
+the neutron induced background is small, the muon rate is relatively low, 
+and the magnetic field is low (~0.4T) and uniform. In the endcap region of $ 1.2 < |\eta| < 2.4$ these conditions are 
+reversed and CSCs are used. RPCs are used in both the barrel and endcap region (covering the range $|\eta| < 1.6$) as they provide a fast response with a good time 
+resolution, allowing the bunch crossing to be unambiguously resolved, but much coarser position resolution than the DTs or CSCs \cite{muon_tdr}. 
+The configuration of the muon systems is shown in Fig~\ref{MUON_SLICE}.
+
+\begin{figure}
+\centering
+    \includegraphics[width=0.9\textwidth]{./Figures/detector/muon_sys}
+  \caption{A quarter cross section of the CMS muon system showing the DTs in the barrel region ($|\eta| < 1.2$) and the CSCs in the endcap
+  region $ 1.2 < |\eta| < 2.4$. RPCs are layered with the DTs and CSCs in the range $|\eta| < 1.6$ to provide an independent but complementary measurement \cite{CMS}.}
+  \label{MUON_SLICE}
+\end{figure}
+
+The performance of the muon system has been measured using early 7 \TeV beam and cosmic muon data \cite{muon_performance}. 
+The efficiency of muon reconstruction is typically 96-99\%. The muon system relies on the effective
+absorption of charged particles other than muons in the layers of the detectors.
+`Punch through' of such particles is reduced to $\sim 5\%$ for the first muon station and to
+$\sim 0.2\%$ for further stations. The resolution for muon momentum measurement
+was measured as $\sim 1.8\%$ ($10\%$) for muons of $\pt=20\GeV$ ($\pt=1000\GeV$) using 7 \TeV~beam and cosmic muon data. 
+
 
 
 % \begin{description}
