@@ -333,14 +333,14 @@ the neutron induced background is small, the muon rate is relatively low,
 and the magnetic field is low (~0.4T) and uniform. In the endcap region of $ 1.2 < |\eta| < 2.4$ these conditions are 
 reversed and CSCs are used. RPCs are used in both the barrel and endcap region (covering the range $|\eta| < 1.6$) as they provide a fast response with a good time 
 resolution, allowing the bunch crossing to be unambiguously resolved, but much coarser position resolution than the DTs or CSCs \cite{muon_tdr}. 
-The configuration of the muon systems is shown in Fig~\ref{MUON_SLICE}.
+The configuration of the muon systems is shown in Fig~\ref{fig:MUON_SLICE}.
 
 \begin{figure}
 \centering
     \includegraphics[width=0.9\textwidth]{./Figures/detector/muon_sys}
   \caption{A quarter cross section of the CMS muon system showing the DTs in the barrel region ($|\eta| < 1.2$) and the CSCs in the endcap
   region $ 1.2 < |\eta| < 2.4$. RPCs are layered with the DTs and CSCs in the range $|\eta| < 1.6$ to provide an independent but complementary measurement \cite{CMS}.}
-  \label{MUON_SLICE}
+  \label{fig:MUON_SLICE}
 \end{figure}
 
 The performance of the muon system has been measured using early 7 \TeV beam and cosmic muon data \cite{muon_performance}. 
@@ -349,6 +349,54 @@ absorption of charged particles other than muons in the layers of the detectors.
 `Punch through' of such particles is reduced to $\sim 5\%$ for the first muon station and to
 $\sim 0.2\%$ for further stations. The resolution for muon momentum measurement
 was measured as $\sim 1.8\%$ ($10\%$) for muons of $\pt=20\GeV$ ($\pt=1000\GeV$) using 7 \TeV~beam and cosmic muon data. 
+
+\subsection{Data Aquisition System}
+
+Data Aquisition (DAQ) is a major challenge for the CMS experiement as the collision rate far exceeds reasonable processing 
+and storage capabilities if all data were to be fully reconstructed. The efficient and swift selection of
+possible signal events while keeping to constraints placed on data bandwidth, storage and latency is critical
+for the CMS physics programme. The LHC produces bunch crossings at a rate of up to 40MHz but can only
+store $\sim1$kHz for offline analysis \cite{daq_tdr}. The required rejection power of $10^4$ is too large to be achieved
+in a single processing step while maintaining a high efficiency and so the task is split into two stages.
+The first step, Level-1 Trigger (L1 Trigger), uses a system in hardware to reduce the rate of events which must be completely 
+read from the detector buffers to a maximum of 100kHz. Even with this reduction 100 GBytes/s must be moved to the surface
+to be processed by the second step, the High Level Trigger (HLT), which reduces the rate to a peak of $\sim 1kHz$ which is 
+read to tape to be fully reconstructed. A schematic diagram of the DAQ process is show in Fig~\ref{fig:DAQ_SLICE}. 
+The selections at both the L1 Trigger and HLT steps are optimised for efficiency given rate and latency constraints.
+
+\begin{figure}
+\centering
+    \includegraphics[width=0.5\textwidth]{./Figures/detector/daq_sys}
+  \caption{Diagram of the CMS DAQ system showing the data flow through from the detector through the Level 1 Trigger
+and the HLT. The approximate rate into each system as well as the maximum time for a decision are identicated \cite{daq_tdr}.}
+  \label{fig:DAQ_SLICE}
+\end{figure}
+
+\subsubsection{Level-1 Trigger}
+
+The first step in selection for all CMS data is the L1 system. The start of the event selection is timed using a local clock
+synchonised to the LHC bunch collision which initiates the partial readout and processing of subdetector systems and storage 
+of data in the L1 pipelines. The limited pipeline depth restricts the latency for L1 decision to a budget of $3.2\mu s$
+of which $\sim2\mu s$ must be used for transmission of data \cite{daq_performance}. This necessitates the use of fast, high performance electronics
+and optical links to rapidly reconstruct the event and make the trigger decision. The timing restriction allows only 
+a partial reconstruction using a reduced information set from the calorimetry and muon subsystems only. Dedicated electronics
+reconstruct physcis objects in local regions of the detector which are passed to the global trigger which constructs global
+quantities and makes the final trigger decision. The various requirements are known as trigger seeds. 
+If accepeted the event is fully read and transmitted to the final triggering
+stage. The L1 Trigger has undergone two stages of upgrade for the start of run two, described in detail in Sec~\ref{blah}.
+
+\subsubsection{The High Level Trigger}
+
+The HLT recieves the full detector information read from the CMS detector. It is able to use these to perform 
+a full reconstruction with all subdetectors, allowing a performance similar to the offline reconstruction. However, 
+though the maximum processing time per event is significantly greater than for the L1-Trigger, latency constraints 
+require the use of simplified reconstruction algorithms. The reconstruction is performed using modular trigger paths
+which each sequentially execute reconstruction and selection criteria \cite{daq_performance}. 
+
+Events which pass the HLT selection are transmitted to the CERN `Tier-0' for permanent storage and reconstruction. 
+The GRID infratructure allows the offline reconstruction and processing to be distributed to dedicated computing sites across the glob.
+Overall, despite the efforts to reduce data rate, several peta-bytes of data are recorded every year to be processed in addition to 
+a similar quantity of simulated events.
 
 
 
