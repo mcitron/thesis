@@ -1,19 +1,20 @@
 \chapter{Reconstruction} % 
 
 The precise measurement of particles produced in the high energy collisions at the LHC 
-is necessary to effectively execute the CMS physics programme. This requires effective
+is necessary to effectively execute the CMS physics programme. This requires high precision
 reconstruction and identification of physics objects in a challenging environment containing
 large numbers of different particles with a range of energies. The \alphat analysis 
 relies directly on reconstruction of jets and \met for the signal region and on the 
-reconstruction of leptons and photons to reject backgrounds and define control regions.
+reconstruction of leptons and photons to reject electroweak 
+backgrounds and to define control regions.
 This requires the use of information from all detector subsystems and state-of-the-art
-techniques for reconstruction, selection and calibration of physics objects to ensure 
-an optimal performance. 
+techniques to allow the reconstruction, selection and calibration of these physics objects.
+
 
 \section{Detector reconstruction}
 
 The first stage in reconstructing the physics objects is to produce the necessary
-input information from the detector subsytems. This takes the form of both the tracks, 
+input information from the detector subsystems. This takes the form of both the tracks, 
 trajectories, of charged particles as well as the energy measurements from
 calorimeter depositions. Specialist algorithms which suppress backgrounds, 
 mitigate the effects of pileup and provide high resolution energy,
@@ -31,7 +32,7 @@ into four logical steps outlined below.
 from the beamspot or a pixel vertex. This gives an initial estimate of the trajectory with uncertainty \cite{tracker_early}.
 \item Each seed is propagated outward through the tracker layers considering the current uncertainty in the trajectory.
 In propagating, a uniform magnetic field as well as no energy loss or multiple Coulomb scattering effects are assumed.
-The track parameters are then updated with the best matching hit on each layer (if any) according to the Kalman filter formalism \cite{tracker_vertex}.
+The track parameters are updated with the best matching hit on each layer (if any) according to the Kalman filter formalism \cite{tracker_vertex}.
 The search continues until either the boundary of the tracker is reached or no more compatible hits are found. If a minimum number
 of valid hits are observed an inwards search is initiated for additional hits\cite{tracker_early}.
 \item It is possible for a single charged particle track to be reconstructed more than once, starting either from different seeds or if
@@ -97,29 +98,28 @@ various subsystems. These deposits must be clustered and the measurement calibra
 details of the energy, position and timing of the incident particle. These can be used to complement 
 the information from the tracker and provides necessary redundancy in the case of track
 misreconstruction. For neutral particles the calorimeter subsystems provide the only measurement of
-the particle properties. In Section ??, details of how the complementary information from the calorimeter
-with the tracking and muon subsystems is used to identify particles and reconstruct the event.
+the particle properties.
 
-The ECAL crystals are calibrated with both absolute and relative calibrations. Nine of 36 EB superclusters
+The ECAL crystals are calibrated with both absolute and relative calibrations. Nine EB superclusters
 and 500 EE crystals are calibrated using high energy electron beams to achieve a resolution of 0.5\% (1\%) for the EB (EE) components. 
 The remainder undergo relative intercalibration to achieve a resolution of 1.4\%-1.8\% ($\sim5\%$) for the EB (EE) components. 
-During running the response of the crystals changes due to radation induced crystal-lattice defects which absorb the scintillation light. 
+During running the response of the crystals changes due to radiation induced crystal-lattice defects which absorb the scintillation light. 
 The crystal transparency is monitored to allow the impact on energy measurements to be assessed and corrected \cite{ecal_calib}. 
-The HCAL components undergo a similar calibrartion to the ECAL crystals. Firstly a subset of the components are calibrated with
-a 50GeV pion beam and this is then extended to the remainder of the subsystem using a Co source \cite{hcal_beam}. Additional corrections are derived during 
-LHC running \cite{hcal_calib}.
+The HCAL components undergo a similar calibration to the ECAL crystals. Firstly a subset of the components are calibrated with
+a 50 \GeV~pion beam and this is then extended to the remainder of the subsystem using a Co source \cite{hcal_beam}. Additional corrections
+for the HCAL component are derived during LHC running \cite{hcal_calib}.
 
 The reconstruction of the energy at the HCAL and ECAL relies on recording the amplified light pulses from the photodiodes over a 25ns time
 sample. When operating with 25ns bunch spacing particle energies from previous or following bunch crossings can be integrated
 into this sample, biasing the energy measurement. This effect is correcting by using a dedicated reconstruction that removes
 the contributions from such Out Of Time Pileup (OOTPU)~\cite{hcal_timing,ecal_timing}. The 25ns sample is fitted including three pulse shape templates with
 variable amplitude and arrival times with the central pulse corresponding to the triggered event. The timing distribution for
-the ECAL hits above 1GeV, which is derived indepedantly from the energy measurement, is shown in Figure~\ref{fig:timing_barrel_linear} showing that
+the ECAL hits above 1~\GeV, which is derived independently from the energy measurement, is shown in Figure~\ref{fig:timing_barrel_linear} showing that
 contributions from OOTPU are rejected.
 
 \begin{figure}
 \centering
     \includegraphics[width=0.8\textwidth]{./Figures/reconstruction/timing_barrel_linear.png}
-  \caption{Timing distribution of the hits in the ECAL barrel with a reconstructed energy above 1 GeV~\cite{ecal_timing}.}
+  \caption{Timing distribution of the hits in the ECAL barrel with a reconstructed energy above 1\GeV~\cite{ecal_timing}.}
   \label{fig:timing_barrel_linear}
 \end{figure}
