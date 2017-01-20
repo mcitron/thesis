@@ -90,4 +90,36 @@ thesis, make requirements that a good vertex is reconstructed from the tracks sa
 \item The collision to occur within a radial distance of $|d_{xy}| < 24cm$ from the beamline.
 \end{itemize}
 
-\subsection{Calorimeter Reconstruction}
+\subsection{Calorimeter reconstruction}
+
+The calorimeters must reconstruct the energies of incident particles from the energy deposits made in the 
+various subsystems. These deposits must be clustered and the measurement calibrated to provide 
+details of the energy, position and timing of the incident particle. These can be used to complement 
+the information from the tracker and provides necessary redundancy in the case of track
+misreconstruction. For neutral particles the calorimeter subsystems provide the only measurement of
+the particle properties. In Section ??, details of how the complementary information from the calorimeter
+with the tracking and muon subsystems is used to identify particles and reconstruct the event.
+
+The ECAL crystals are calibrated with both absolute and relative calibrations. Nine of 36 EB superclusters
+and 500 EE crystals are calibrated using high energy electron beams to achieve a resolution of 0.5\% (1\%) for the EB (EE) components. 
+The remainder undergo relative intercalibration to achieve a resolution of 1.4\%-1.8\% ($\sim5\%$) for the EB (EE) components. 
+During running the response of the crystals changes due to radation induced crystal-lattice defects which absorb the scintillation light. 
+The crystal transparency is monitored to allow the impact on energy measurements to be assessed and corrected \cite{ecal_calib}. 
+The HCAL components undergo a similar calibrartion to the ECAL crystals. Firstly a subset of the components are calibrated with
+a 50GeV pion beam and this is then extended to the remainder of the subsystem using a Co source \cite{hcal_beam}. Additional corrections are derived during 
+LHC running \cite{hcal_calib}.
+
+The reconstruction of the energy at the HCAL and ECAL relies on recording the amplified light pulses from the photodiodes over a 25ns time
+sample. When operating with 25ns bunch spacing particle energies from previous or following bunch crossings can be integrated
+into this sample, biasing the energy measurement. This effect is correcting by using a dedicated reconstruction that removes
+the contributions from such Out Of Time Pileup (OOTPU)~\cite{hcal_timing,ecal_timing}. The 25ns sample is fitted including three pulse shape templates with
+variable amplitude and arrival times with the central pulse corresponding to the triggered event. The timing distribution for
+the ECAL hits above 1GeV, which is derived indepedantly from the energy measurement, is shown in Figure~\ref{fig:timing_barrel_linear} showing that
+contributions from OOTPU are rejected.
+
+\begin{figure}
+\centering
+    \includegraphics[width=0.8\textwidth]{./Figures/reconstruction/timing_barrel_linear.png}
+  \caption{Timing distribution of the hits in the ECAL barrel with a reconstructed energy above 1 GeV~\cite{ecal_timing}.}
+  \label{fig:timing_barrel_linear}
+\end{figure}
