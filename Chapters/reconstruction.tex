@@ -123,3 +123,89 @@ contributions from OOTPU are rejected.
   \caption{Timing distribution of the hits in the ECAL barrel with a reconstructed energy above 1\GeV~\cite{ecal_timing}.}
   \label{fig:timing_barrel_linear}
 \end{figure}
+
+\section{Physics object reconstruction}
+
+The reconstructed tracks and calorimeters form the inputs to the reconstruction of the particles and 
+jets that form the basis of the final selection of many analyses, including the analysis described 
+in the thesis, referred to as physics objects. These are reconstructed using a combination of
+dedicated local reconstruction algorithms as well as the global event Particle Flow algorithm, described in ??.
+In addition, several WPs of selection criteria are defined for each physics object 
+which provide a range of efficiencies and corresponding proportion of false positives. 
+
+\subsection{Electron and photon reconstruction}
+
+Photons and electrons interact similarly within the ECAL and so these objects follow similar reconstruction techniques.
+Electrons are reconstructed by matching information in the tracker and ECAL
+using two complementary techniques, an ECAL driven reconstruction described in this section (identical aside from tracking requirements
+to the photon reconstruction) and a tracker-driven reconstruction performed with the PF algorithm described in section ??
+which is optimal for low $p_T$ electrons. 
+
+In the ECAL, both electron and photon candidates are formed by clustering energy deposits
+from electromagnetic showers. Around 50\% of the photons convert into an electron-positron pair in the material proceeding the calorimeter
+leaving an energy deposit that is widely spread in $\eta$ and $\phi$ \cite{electron_photon_reco}. 
+For unconverted photons the deposits are fairly localised in $\eta$ and $\phi$. Electrons radiate
+bremsstrahlung in the presence of the magnetic field and lose $33\%$ of their energy on average
+in the central region and up to $86\%$ at $|\eta| = 1.4$. Their energy deposits are widely spread
+in $\phi$ but narrow in $\eta$. The hybrid (multi) clustering algorithm exploits this characteristic to
+reconstruct high energy electrons and photons in the barrel (endcap). The hybrid algorithm
+uses a seed crystal and clusters up to ten strips (dominoes) of $1\times3$ or $1\times5$ ($\phi\times\eta$) within 
+$\Delta\phi < 0.3$ from the seed. Any domino with an energy under $100\MeV$ ~is discarded. The dominoes
+are themselves clustered in $\phi$ provided each disconnected subcluster has a seed domino of energy $>350\MeV$.
+The combination of these subclusters is referred to as a supercluster. The multi reconstruction in the endcap 
+follows a similar procedure using $5\times5$ grids of crystals. 
+
+Superclusters which can be associated to tracks originating from the primary vertex are reconstructed as electrons.
+As electrons lose energy through the non-Gaussian bremsstrahlung process the Kalman filter is innapropriate and
+so the specialist track reconstruction Gaussian Sum Filter algorithm is used. This allows the total energy of
+electrons to be reconstructed including the component lost through bremsstrahlung. The photons are identified 
+through inverting the track matching criteria of the supercluster. In the endcaps, additional information
+is used from the preshower when reconstructing the energy.
+
+Additional selections are applied on all reconstructed electrons and photons to suppress backgrounds.
+For electrons these are mainly composed of misreconstructed jets, secondary electrons from photon
+conversions and semi-leptonic decays of heavy quarks. As electrons are mainly contained within 
+the ECAL a requirement on the ratio of energies in the ECAL and HCAL provides a strong veto of hadronic
+backgrounds. In addition, requirements are made on the matching track such that the transverse distance from 
+the primary vertex is $d_{xy} < 0.0261$ ($d_{xy} < 0.118$) and the longitudinal distance is $d_z < 0.041$
+($d_z < 0.822$) for the barrel (endcap). Several variables that rely on the shower shape and cluster
+width are used to reject fakes including the $\sigma_{i\eta i\eta}$ which is the second moment of the log-weighted
+distribution of crystal energies calculated in the $5\times5$ matrix around the most energetic crystal. The value of
+ $\sigma_{i\eta i\eta}$ is larger on average for neutral meson decay to two collimated photons.
+
+\subsection{Muon reconstruction}
+
+Muons are MIPs, leaving minimal energy deposits in the calorimetry subsystems, and travelling through
+the entire detector. The muons are therefore reconstructed using a combination of the inner tracker
+and muon systems. Two algorithms are used to give complementary efficiency across the momentum spectrum,
+the 'the outside-in' global muon algorithm described in and 'the inside-out' tracker 
+muon algorithm described below.
+
+The outside-in algorithm begins with identifying a tracker match for each muon track. Hits in muon
+chambers are used to define standalone-muon tracks. These are then matched with tracker tracks
+by comparing parameters of the two tracks propagated onto a common surface. The hits from
+both systems are then combined and a global muon fit is performed using a Kalman filter. The momentum 
+resolution is significantly improved by the global fit over a tracker only fit for muons of $p_T < 200\GeV$ 
+
+The inside-out algorithm selects all tracks satisfying $p_T > 0.5\GeV$ and $p > 2.5\GeV$. These are then 
+extrapolated to the muon system taking into account effects from the magnetic field, multiple Coulomb scatting
+in the detector material and the average expected energy loses. If at least one muon segment matches 
+the extrapolated track the track qualifies as a Tracker Muon. Tracker Muon reconstruction is more efficient
+than global muon reconstruction for low momenta of $\sim p< 5\GeV$. This is due to only requiring one segment
+of the muon system while global muon reconstruction is more efficient for higher energy muons which are likely
+to pass through several muon stations.
+
+In order to ensure the muons are prompt (produced in by the hard process such as vector boson decay) rather
+than non-prompt (produced from the in-flight decays of hadrons, taus or heavy quarks) and to reject fakes
+caused by the punch through of hadronic particles, additional selections are made. These include quality
+selection on the $\chi^2$ of the muon track, a minimum number of valid hits as well as requirements
+on distances from the primary vertex $d_{xy} < 0.05 cm$ and $d_{z} < 0.1 cm$ aimed at ensuring prompt muons.
+
+Muons must be reconstructed through either the Global or Tracker Muon algorithm. In combination, and
+including additional selections, these provide an efficiency of $>95\%$ for
+reconstructing a muon with $p_T$ larger than a few \GeV~over the full $\eta$ range covered by the
+muon system and a fake rate from hadrons of $<1\%$.
+
+
+
+
