@@ -168,7 +168,8 @@ conversions and semi-leptonic decays of heavy quarks. As electrons are mainly co
 the ECAL a requirement on the ratio of energies in the ECAL and HCAL provides a strong veto of hadronic
 backgrounds. In addition, requirements are made on the matching track such that the transverse distance from 
 the primary vertex is $d_{xy} < 0.0261$ ($d_{xy} < 0.118$) and the longitudinal distance is $d_z < 0.041$
-($d_z < 0.822$) for the barrel (endcap). Several variables that rely on the shower shape and cluster
+($d_z < 0.822$) for the barrel (endcap). These impact parameter requirements ensure the track originates from 
+the primary vertex. Several variables that rely on the shower shape and cluster
 width are used to reject fakes including the $\sigma_{i\eta i\eta}$ which is the second moment of the log-weighted
 distribution of crystal energies calculated in the $5\times5$ matrix around the most energetic crystal. The value of
  $\sigma_{i\eta i\eta}$ is larger on average for neutral meson decay to two collimated photons.
@@ -178,14 +179,15 @@ distribution of crystal energies calculated in the $5\times5$ matrix around the 
 Muons are MIPs, leaving minimal energy deposits in the calorimetry subsystems, and travelling through
 the entire detector. The muons are therefore reconstructed using a combination of the inner tracker
 and muon systems. Two algorithms are used to give complementary efficiency across the momentum spectrum,
-the 'the outside-in' global muon algorithm described in and 'the inside-out' tracker 
-muon algorithm described below.
+the 'the outside-in' Global Muon algorithm and 'the inside-out' Tracker 
+Muon algorithm \cite{muon_reco}.
 
 The outside-in algorithm begins with identifying a tracker match for each muon track. Hits in muon
 chambers are used to define standalone-muon tracks. These are then matched with tracker tracks
 by comparing parameters of the two tracks propagated onto a common surface. The hits from
 both systems are then combined and a global muon fit is performed using a Kalman filter. The momentum 
-resolution is significantly improved by the global fit over a tracker only fit for muons of $p_T < 200\GeV$ 
+resolution is significantly improved by the global fit over a tracker only fit for muons of $p_T < 200\GeV$
+ \cite{CMS,muon_reco_cosmic}. 
 
 The inside-out algorithm selects all tracks satisfying $p_T > 0.5\GeV$ and $p > 2.5\GeV$. These are then 
 extrapolated to the muon system taking into account effects from the magnetic field, multiple Coulomb scatting
@@ -193,18 +195,18 @@ in the detector material and the average expected energy loses. If at least one 
 the extrapolated track the track qualifies as a Tracker Muon. Tracker Muon reconstruction is more efficient
 than global muon reconstruction for low momenta of $\sim p< 5\GeV$. This is due to only requiring one segment
 of the muon system while global muon reconstruction is more efficient for higher energy muons which are likely
-to pass through several muon stations.
+to pass through several muon stations \cite{muon_reco}.
 
 In order to ensure the muons are prompt (produced in by the hard process such as vector boson decay) rather
 than non-prompt (produced from the in-flight decays of hadrons, taus or heavy quarks) and to reject fakes
 caused by the punch through of hadronic particles, additional selections are made. These include quality
 selection on the $\chi^2$ of the muon track, a minimum number of valid hits as well as requirements
-on distances from the primary vertex $d_{xy} < 0.05 cm$ and $d_{z} < 0.1 cm$ aimed at ensuring prompt muons.
+on the impact parameters $d_{xy} < 0.05 cm$ and $d_{z} < 0.1 cm$ aimed at ensuring prompt muons.
 
 Muons must be reconstructed through either the Global or Tracker Muon algorithm. In combination, and
-including additional selections, these provide an efficiency of $>95\%$ for
+including additional selections, these provide an of $>95\%$ for
 reconstructing a muon with $p_T$ larger than a few \GeV~over the full $\eta$ range covered by the
-muon system and a fake rate from hadrons of $<1\%$.
+muon system and a fake rate from hadrons of $<1\%$ \cite{muon_reco}.
 
 
 
