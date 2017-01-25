@@ -302,7 +302,44 @@ p_T^{Corr} = p_T^{Raw} - \rho \cdot A,
 where the values for $\rho$ are determined in Rub 2 by partitioning the detector into a square grid of spacing
 0.55 and calculating the median energy of the energy density of all PF-candidates within each cell \cite{fastjet}.
 
-% \subsection{Isolation}
+\subsection{Isolation}
 
+The level of hadronic activity around a lepton provides an effective method to distinguish between prompt and non-prompt leptons.
+This level of activity is measured by the isolation of the lepton which is defined by the fraction of energy
+in a cone around the lepton to the energy carried by the lepton itself.
 
+The standard method of measuring isolation used during Run 2 by CMS is the PF isolation, $I_{PF}^{rel}$,
+defined within a cone of radius $\Delta R$ as 
 
+\begin{equation}
+I_{PF}^{rel} = \frac{1}{p_T^{l}}\left[ \sum_{PF_{PV}}p_T^{CH} +  \sum_{PF}p_T^{NH} +  \sum_{PF}p_T^{\gamma} -  \sum_{PU}p_T^{\text{Neutral}}\right]
+\end{equation}
+
+where $p_T^{l}$,$p_T^{CH}$,$p_T^{NH}$,$p_T^{\gamma}$ are the momentum of the lepton, charged hadrons, neutral hadrons and photon respectively.
+A subtraction of the neutral pileup must be made as neutral particles cannot be associated with the PV. The $\Delta \beta$ correction
+and Effective Area correction are two methods used by CMS to estimate and correct for the neutral pileup contribution. The delta $\Delta \beta$
+correction estimates the energy from the neutral hadrons from the charged hadron component, based on simulation, as
+
+\begin{equation}
+\sum_{PU}p_T^{\text{Neutral}} = \frac{1}{2} \sum_{PF_{PU}}p_T^{CH}
+\end{equation}
+
+while the effective area corrects the expected neutral pileup energy based on the footprint of the particle, $A_{eff}$ and the grid pileup
+energy density computed from neutral particles, $\rho_{grid}^{\text{Neutral}}$
+
+\begin{equation}
+\sum_{PU}p_T^{\text{Neutral}} = \rho_{grid}^{\text{Neutral}}\cdot cA_{eff}.
+\end{equation}
+
+the cone size may be fixed (relative isolation) or dependant on the \pt~of the particle (mini-isolation). The use of mini-isolation
+accounts for the increasing collinearity of the hadronic decays of boosted particles. 
+
+\subsection{Isolated tracks}
+
+Unreconstructed (lost) leptons form a large background for hadronic searches. Lost leptons can be caused by both acceptance 
+effects and by misreconstruction of processes including $e^{-}$, $\mu^{-}$ decays and hadronic decays of $\tau$ leptons. 
+Typically, even if not associated to the lepton its track will still be reconstructed. Additionally, prompt leptons 
+tend to be isolated and so the lost lepton background from misreconstructed leptons can be mitigated by the veto of high
+energy isolated charged tracks. Isolated tracks are defined from PF candidates associated with the PV and 
+which pass track quality selection but are not identified as leptons.
+ 
