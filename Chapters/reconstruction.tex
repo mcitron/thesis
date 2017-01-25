@@ -424,3 +424,29 @@ overall uncertainty is shown in Fig~\ref{fig:jec_unc}.
   \caption{\label{fig:jec_unc} The overall uncertainty in the corrections applied to MC from Equation~\ref{equ:jec} shown in the orange solid curve. The pileup uncertainty dominates
 for $p_T < 50\GeV$ while for higher values of $p_T$ the absolute and relative scale dominate \cite{jec_fig}.}
 \end{figure}
+
+\subsection{B tagging}
+
+For Run 2 the Combined Secondary Vertex version 2 (CSVv2) algorithm is used to tag jets as originating
+from b quarks. The algorithm exploits the long lifetime of the b hadron, the secondary vertex of its decay
+and the possible presence of a muon or electron (produced in $\sim 20\%$ of the b hadron decays). The 
+input variables are combined with a neural and net and the secondary vertex information obtained using
+the Inclusive Vertex Finder (IVF) algorithm \cite{csv_pas}.
+
+The dominant backgrounds for tagging b quarks are jets originating from c quarks and to a lesser extent
+jets from lighter quarks and gluons. The distribution of the CSVv2 discriminator is shown for PF Jets
+using $13\TeV$ data and MC in Figure~\ref{fig:csv_fig}. The value of the discriminator (medium WP)
+used in the $\alphat$ analysis is 0.89 corresponding to an efficiency of $~67\%$ CHECK THIS and 
+a mistag rate of $~1\%$. The difference in efficiency and mistag rates in data and MC is measured 
+for a range of jet energies to provide scale factors to correct the MC. In the Run 2 dataset these scale 
+factors were around $0.94$ and $\sim1.1-1.3$ (depending on $p_T$) for the b-tag and mistag SFs 
+respectively \cite{csv_fig}.
+
+\begin{figure}
+\centering
+    \includegraphics[width=0.8\textwidth]{./Figures/reconstruction/csv_fig.png}
+  \caption{\label{fig:csv_fig} Distribution of the CSVv2 discriminator for ak4 jets 
+in a muon enriched jet sample (right). The markers correspond to the data. 
+The stacked, coloured histograms indicate the contributions of the different 
+jet flavours in the simulation \cite{csv_fig}}
+\end{figure}
