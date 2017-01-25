@@ -175,7 +175,7 @@ distribution of crystal energies calculated in the $5\times5$ matrix around the 
  $\sigma_{i\eta i\eta}$ is larger on average for neutral meson decay to two collimated photons.
 
 \subsection{Muon reconstruction}
-
+\label{muon_reco}
 Muons are MIPs, leaving minimal energy deposits in the calorimetry subsystems, and travelling through
 the entire detector. The muons are therefore reconstructed using a combination of the inner tracker
 and muon systems. Two algorithms are used to give complementary efficiency across the momentum spectrum,
@@ -208,6 +208,101 @@ including additional selections, these provide an of $>95\%$ for
 reconstructing a muon with $p_T$ larger than a few \GeV~over the full $\eta$ range covered by the
 muon system and a fake rate from hadrons of $<1\%$ \cite{muon_reco}.
 
+\section{Particle Flow}
+
+The particle flow algorithm combines the inputs from dedicated track reconstruction and calorimeter clustering
+algorithms using all detector subsystems to identify and reconstruct all stable particles in the event.
+Despite hundreds of different particle species being produced by collisions at the LHC only a small fraction
+have sufficient lifetimes and interactions with the detector to be directly measured. The predominant species
+measured by the CMS detector are: $\gamma$, $e^{\pm}$, $\mu^{\pm}$, $\pi^{\pm}$, $K^{\pm}$, $p^{\pm}$, $K^{0}$
+and $n$, classified by the PF algorithm into five categories of photons, electrons, muons, charged hadrons and neutral hadrons. 
+The identification and measurement of the properties of these particles is optimised by taking advantage of the complementarity of 
+different subsystems in various kinematic regimes and geometries over the performance achievable with 
+any one subsystem alone. The output list of the individual particles is similar to that provided
+when generating Monte Carlo events. This can then be used to as an input for further reconstruction processes
+such as building jets, determining  \met~, determining jets originating from bottom quarks (b tag) and quantifying
+charged lepton isolation. The algorithm is described fully in \cite{pf_proc,pf_pas}.
+
+Effective track reconstruction forms the core of the particle-flow algorithm. The CMS detector, with a strong magnetic field
+and large silicon tracker, is highly capable of the efficient track reconstruction required. In addition, the high 
+granularity ECAL allows effective separation of photons from charged particles, even inside jets of several hundred
+\GeV, and the entire calorimetry system is included within the solenoid, allowing an uninterrupted measurement 
+of the particle energy flow.
+
+The PF algorithm utilises a specific clustering algorithm for calorimeter deposits which is performed separately 
+in each calorimeter sub-detector. First, cluster seeds are identified as local cell maxima over a threshold energy.
+Second, these are grown into topological clusters by aggregating any cells with at least one side in common with
+a cell already in the cluster and with energy above a given sub-detector dependant threshold. Finally, the 
+total energy in each topological cluster is shared between all encompassed seed clusters according to the 
+cell-cluster distance to form a PF cluster for each seed. These PF clusters form the inputs along with 
+reconstructed tracks for PF candidates.
+
+The PF reconstruction uses a link algorithm to iteratively check compatibility of charged particle tracks, and/or
+calorimetry clusters and/or muon tracks. These elements must be connected while avoiding any double counting. 
+The link algorithm is performed on every pair of elements in the event and defines a distance between them
+that quantities the quality of the link. This is used to produce blocks of elements linked directly 
+or indirectly. The blocks are constructed depending on the subsystems being linked as described below:
+
+\begin{itemize}
+\item A link between a charged particle track and calorimeter deposit is made by extrapolating the last measured
+hit in the tracker through the calorimetry systems. The track is linked to a cluster if the calorimeter position
+is within the cluster boundaries. The link distance is defined as the distance in the ($\eta,\phi$) plane between
+the extrapolated track position and cluster position.
+\item Clusters caused by bremsstrahlung photons emitted by electrons are associated to the track by extrapolating
+the tangents to the track from the intersection points of the track and tracker layers to the ECAL. The distance measure
+is the same as defined above.
+\item Calorimeter clusters are linked between HCAL and ECAL or between ECAL and PS clusters by establishing whether
+the cluster in the more granular calorimeter is within that of the less granular. The link distance is defined
+as the distance in the ($\eta,\phi$) plane between the cluster positions
+\item Charged particles tracks are associated with muon tracks following the Global Muon algorithm defined in 
+Section~\ref{muon_reco}. In this case the $\chi^2$ of thew global fit defines the link distance.
+\end{itemize}
+
+With the blocks defined, the algorithm for reconstruction and identification of the set of particles from each
+block, which form a global description of the event, proceeds as follows:
+
+\begin{itemize}
+\item First, each global muon is defined as a PF muon if its combined momentum is compatible with the momentum 
+from the tracker only within three standard deviations. The track is removed from the block and expected energy depositions
+along the path of the muon in the calorimeters are subtracted (measured with cosmic ray muons to be 3 GeV and 0.5 GeV respectively for the 
+ECAL and HCAL).
+\item Electrons are then identified. Tracks are pre-identified as electron tracks based on their 
+characteristics within the tracker. Such tracks are refitted with a Gaussian-Sum Filter and extrapolated to the ECAL. 
+Several tracking and calorimetric variables are then used to perform a final identification of PF electrons. The track
+and ECAL clusters (including those from bremsstrahlung) are removed from the block.
+\item The remaining tracks undergo additional quality criteria and are connected to ECAL and HCAL clusters. 
+If calorimetric deposits are linked with a track a PF charged hadron is identified. 
+\item The detection of neutral particles in addition to the PF charged hadron 
+relies on a comparison of the momentum of the tracks and the calibrated energy in the calorimeters. 
+If the momentum of the track is compatible with the calorimeter deposits within measurement uncertainties 
+a PF charged hadron is identified. The momentum and energy are then taken from the track momentum under a 
+charged pion hypothesis. If the calibrated calorimetric energy is significantly in excess of this energy, considering
+the calorimetric resolution, a PF photon and possibly a neutral hadron are also identified. 
+If the energy excess is larger than the total ECAL energy, a PF photon is created with the ECAL energy and a 
+PF neutral hadron is created taking the remainder of the excess. Otherwise, only a PF photon is created with the energy of the excess.
+\item Any remaining ECAL and HCAL clusters give rise to PF photons and PF neutral hadrons respectively.
+\end{itemize}
+
+\subsection{Pileup estimation}
+
+In reconstructing the hard process it is important to remove contributions from additional
+vertices. The input from the particle flow reconstruction can be used to identify 
+charged hadrons which do not originate from the primary vertex. However, the vertex 
+for neutral particles cannot be determined. Instead, the ratio of neutral and 
+charged particles can be measured in simulation and a correction factor determined.
+This is necessary as neutral particles compose $\sim 50\%$ of the pileup in the barrel.
+An additional form of pileup subtraction relies on an estimate of the local energy density 
+of pileup, $\rho$, which can then be used to correct physics objects covering an area,
+A, as
+
+\begin{equation}
+p_T^{Corr} = p_T^{Raw} - \rho \cdot A,
+\end{equation}
+
+where the values for $\rho$ are determined in Rub 2 by partitioning the detector into a square grid of spacing
+0.55 and calculating the median energy of the energy density of all PF-candidates within each cell \cite{fastjet}.
+
+% \subsection{Isolation}
 
 
 
