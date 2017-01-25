@@ -328,7 +328,7 @@ while the effective area corrects the expected neutral pileup energy based on th
 energy density computed from neutral particles, $\rho_{grid}^{\text{Neutral}}$
 
 \begin{equation}
-\sum_{PU}p_T^{\text{Neutral}} = \rho_{grid}^{\text{Neutral}}\cdot cA_{eff}.
+\sum_{PU}p_T^{\text{Neutral}} = \rho_{grid}^{\text{Neutral}}\cdot A_{eff}.
 \end{equation}
 
 the cone size may be fixed (relative isolation) or dependant on the \pt~of the particle (mini-isolation). The use of mini-isolation
@@ -342,4 +342,85 @@ Typically, even if not associated to the lepton its track will still be reconstr
 tend to be isolated and so the lost lepton background from misreconstructed leptons can be mitigated by the veto of high
 energy isolated charged tracks. Isolated tracks are defined from PF candidates associated with the PV and 
 which pass track quality selection but are not identified as leptons.
- 
+
+\section{Jet reconstruction} 
+
+As the LHC is a hadron collider, most events will involve the production of quarks and gluons. As discussed in
+Section ?? these strongly interacting particles hadronise into collimated jets of particles. As described 
+in the following section, the properties  of the original parton which formed the jet can be reconstructed through the combination
+of all of the particles that form the jet. In order for the properties of the jet to be theoretically tractable the
+reconstruction algorithm has to satisfy the requirements of infrared safety, insensitive to the addition of 
+soft particles, and collinear safety, insensitive to collinear splitting of particles.
+
+\subsection{Jet clustering}
+
+To acheive infrared collinear safety, CMS uses a sequential recombination algorithm \cite{antikt}. The input clusters can represent
+the momenta of particles, calorimeter energy deposits or previously clustered 4-vectors. Interjet distances,
+
+\begin{equation}
+d_{ij} = min\left[p^r_{T_i},p^r_{T_j}\right]\left(\frac{\Delta R_{ij}}{R}\right)^2,
+\end{equation}
+
+between each pair of clusters i and j are defined, as well as beam-jet distances, 
+
+\begin{equation}
+d_{iB} = p^r_{T_i}
+\end{equation}
+where the $r$ parameter depends on the specific algorithm used, R determines the maximum distance
+for clustering pairs and $p_{T_i}$ is the transverse momentum of the cluster. The algorithm then proceeds
+as follows:
+\begin{itemize}
+\item Calculate and rank all the distances, $d_{ij}$ and $d_{iB}$ for all clusters in the event
+\item If the smallest distance is an interjet distance combine clusters i and j into a new cluster and recalculate distances
+\item If the smallest distance is a beam-jet cluster i is considered to be a final state jet and is removed from the event. Distances 
+are then recalculated.
+\end{itemize}
+
+These steps are repeated until no clusters remain. The algorithm used for the analysis in this thesis (and for most CMS analyses) is 
+the $anti-k_T$ algorithm for which $r=2$. The size of the jets is $R=0.4$ which is determined through optimising capture of all particles
+associated with the jet and resilience against pileup. CMS uses jets with inputs from PF candidates (PF jets) and calorimeter deposits (Calo jets).
+As shown in figure ** PF jets perform significantly better than calo jets. This is due to the significant position and energy resolution 
+improvements possible with the tracker. PF jets are therefore used in offline analysis while calo jets are used only in HLT reconstruction
+where latency restrictions forbid the construction of the PF candidates. 
+
+To reject jets which are badly reconstructed or originate from detector noise additional selections are made on the jet. These include at least
+two PF candidates, the fraction of energy from neutral hadrons and photons < 99\%,  charged hadron fraction > 0 and charged particle multiplicity > 0.
+The rate of fake jets is reduced by 84\% while maintaining $> 99\%$ efficiency for jets from quarks and gluons.
+
+\subsection{Jet energy corrections}
+
+The energy of the clustered jets will not conform to the true partonic energy but instead is approximately Gaussian distributed around this value.
+This is due to variation in response in different sections of the detector, at worst, losses in uninstrumented sections of the detector, as well as 
+random fluctuations in the particle composition during hadronisation. To recover the true value Jet Energy Corrections (JECs) are applied using the functional
+form \cite{jec}
+
+\begin{equation}
+\label{equ:jec}
+  p_{\mu}^{\rm{cor}}=C_{\rm{offset}}\left(\pt^{\rm{raw}}\right)\cdot C_{\rm{rel}}\left(\eta\right)\cdot C_{\rm{abs}}\left(\pt'\right)\cdot C_{\rm{res}}\left(\pt'',\eta\right)\cdot p_{\mu}^{\rm{raw}}.
+\end{equation}
+
+where each $C$ in the equation represents a correction corresponding to offset, relative, absolute and residual for $C_{offset}$, $C_{rel}$, $C_{abs}$ and $C_{res}$ respectively, 
+ ($p_{\mu}^{raw}$) $p_{\mu}^{corr}$ is the (un)corrected jet 4-momentum, $p'_T$ is the $p_T$ after the offset and relative corrections and  $p'_T$ is the $p''_T$ after
+all corrections except the residual. These are described in more detail below \cite{jec2}:
+
+\begin{itemize}
+\item The $C_{offset}$ is the first step in the chain. Its purpose is to remove energy contributions not associated with the hard scattering from sources
+such as noise and pileup. The pileup contributions are removed using Charged Hadron Subtraction (CHS) where PF candidates not associated to the PV
+are removed before clustering and the jet area method. The jet area method removes neutral component of pileup from the jets by subtracting $\rho \cdot A_j$
+from the $p^{raw}_T$, where $A_j$ is the active area of the jet and $\rho$ is the average pileup energy density, determined from the median energy of PF candidates
+across the detector. 
+\item The $C_{rel}$ is used to make the energy response uniform in $\eta$ for all jets using MC truth corrections derived from QCD dijet events.
+\item The $C_{abs}$ is used to correct the energy response as a function of jet $p_T$. This is done using \zj~and \gj~events as for
+these processes the boson $p_T$ is well known which can be used to balance the $p_T$ of the reconstructed jet.
+\item The $C_{res}$ is used to correct residual differences between the responses in both $p_T$ and $\eta$ for data and MC and applied in data only.
+\end{itemize}
+
+Each correction has associated systematic and statistical uncertainties. These are added in quadrature to define the overall jet energy uncertainty. The 
+overall uncertainty is shown in Fig~\ref{fig:jec_unc}.
+
+\begin{figure}
+\centering
+    \includegraphics[width=0.8\textwidth]{./Figures/reconstruction/jec_unc.png}
+  \caption{\label{fig:jec_unc} The overall uncertainty in the corrections applied to MC from Equation~\ref{equ:jec} shown in the orange solid curve. The pileup uncertainty dominates
+for $p_T < 50\GeV$ while for higher values of $p_T$ the absolute and relative scale dominate \cite{jec_fig}.}
+\end{figure}
