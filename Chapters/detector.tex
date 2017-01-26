@@ -319,7 +319,7 @@ stage. The L1 Trigger has undergone two stages of upgrade for the start of run t
 
 The HLT receives the full detector information read from the CMS detector. It is able to use these to perform 
 a full reconstruction with all detector subsystems, allowing a performance similar to the offline reconstruction. However, 
-though the maximum processing time per event is significantly greater than for the L1-Trigger, latency constraints 
+though the maximum processing time per event is significantly greater than for the L1 Trigger, latency constraints 
 require the use of simplified reconstruction algorithms. The reconstruction is performed using modular trigger paths
 which each sequentially execute reconstruction and selection criteria \cite{daq_performance}. 
 
@@ -329,19 +329,36 @@ computing sites across the globe \cite{grid_tdr}. Overall, despite these efforts
 several peta-bytes of data still must be recorded every year for offline analysis in addition to 
 a similar quantity of simulated events.
 
+\section{Simulation}
 
+To confront data from experimental observations with a theoretical hypothesis requires an accurate
+simulation of both background and signal processes as well as their interactions with the CMS detector.
+This is extremely challenging at the LHC due to the wide range of particle multiplicities and momenta 
+from the p-p collisions, often in non-perturbative regimes. The simulation of events at CMS 
+is factorised into five stages: the hard scattering, fragmentation, hadronisation, decay and 
+detector simulation. A generic review of simulation for particle physics can be found in \cite{sim_rev}.
 
-% \begin{description}
-% \item[Silicon Tracker]The job of the tracker is to measure the momentum of charged particles from their path through a magnetic field \cite{siliconTDR}. The CMS tracker achieves $10\mu m$ accuracy with coverage for $|\eta|<2.5$ and has a resolution of 1\%.
-% \item[Electromagnetic Calorimeter (ECAL)] The ECAL measures the energy of incident photons and electrons. The ECAL barrel is made of 61,200 $PbWO_4$ crystals and provides coverage for $|\eta|<1.48$ \cite{ecal}. This is extended to $|\eta|<3$ by the endcap which adds another $10764$ crystals. The endcap has a pre-shower to distinguish between $\gamma$ and $\pi^0$. The ECAL has a resolution of 0.5\%.
-%  \item[Hadronic Calorimeter (HCAL)] The HCAL is made from alternating brass and scintilator layers with a coverage of $|\eta|<3.0$ \cite{hcal}. The coverage is extended to  $|\eta|<5.0$ by an iron/quartz forward calorimeter \cite{hfhcal}. The average resolution is 11\%. 
-%  \item[Muon Chambers]The muons are not stopped by any of the calorimeters and therefore require a separate detector with coverage $|\eta| < 2.4$. The muon chambers are interspersed with the magnet return yoke. The high magnetic field allows for accurate momentum measurement \cite{muons}. The resolution is 1\%.
-% \end{description}
-% As the data rate ($40Mhz$) is far too high for every event to be stored and as new physics will only 
-% be seen in a minority of events a trigger system for interesting events is necessary. 
-% This happens in two stages: the L1 Calorimetric and Muon Trigger (Hardware) and the High Level Trigger (Software) \cite{HLT}. 
-% The L1 trigger must operate within $\mathcal{O}10ns$ and so  the calorimetric trigger only takes input
-% from the ECAL and HCAL. This is described in more detail in chapter \ref{Chapter3}. The input from the
-% L1 triggers is then combined in the Global Trigger (GT) which decides whether to keep the event. 
-% The $\mathcal{O}100kHz$ events which pass L1 selection are processed in the HLT which utilises the 
-% calorimeter information along with tracking and the muon system to further reduce the rate to $\mathcal{O}1kHz$.
+The hard scattering models the interaction between the two collision partons. The energy carried by each
+is sampled from the PDF, measured experimentally, depending on the hard-scatter energy scale. 
+The high energy nature of the scattering allows perturbation theory to be used for both electroweak and QCD processes
+and is modelled to different orders in theory. The majority of the simulation used by the \alphat~analysis is generated at LO, with some 
+samples generated at NLO. This process may be simulated using generators including such as \PYTHIA or \MADGRAPH \cite{PYTHIA,MADGRAPH}. Particles
+generated at this stage are referred to as parton level particles.
+
+The fragmentation and hadronisation is performed using dedicated MC showering and hadronisation algorithms using
+generators such as \PYTHIA or \HERWIG \cite{PYTHIA,HERWIG}. The fragmentation is an iterative process of repeated QCD 
+radiation of soft gluons and quarks until the calculation
+becomes non-perturbative. The particles are then clustered into colourless bound state with different techniques used
+to connect the colour flow from initial partons to the final state partons depending on the generator. Unstable particles
+formed at this stage then undergo further decay. The particles formed at this stage are referred to as generator level 
+particles.
+
+The interactions with the CMS detector of the generated particles must be simulated. This is performed using \GEANTfour~\cite{GEANT} which provides
+event information identical to the real data. This can then be used as the inputs for the reconstruction stages described 
+in Section~\ref{sec:reco}.
+
+Finally, effects due to additional simultaneous interactions must be simulated. This can be efficiently performed by using
+a large minimum bias QCD sample from which single pileup events are overlaid on the signal process to be reconstructed 
+together. This is done both for in-time pileup as well as additional events in a 12 bunch crossing window of the 
+signal event to allow OOTPU to be considered.
+
