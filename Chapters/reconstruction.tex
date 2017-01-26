@@ -453,8 +453,60 @@ jet flavours in the simulation \cite{csv_fig}}
 
 \subsection{Cross cleaning}
 
-The lepton and jet reconstruction algorithms are run independantly and so the same detector
+The lepton and jet reconstruction algorithms are run independently and so the same detector
 signals may be reconstructed as different physics objects. To avoid this double counting a cross cleaning
 is performed. Any reconstructed jets within $\Delta R < 0.4$ of an isolated lepton are removed.
 
 \subsection{Energy sums}
+
+Energy sums are vital for hadronic searches for new physics such as the $\alphat$~search. The typical high
+mass scale of BSM models causes large quantities of energy to be transferred to particles in the final
+state. This energy is shared between both visible and invisible particles leading to large total and missing energy
+which can be measured by CMS. These signatures provide a crucial separation from the QCD background, typically at
+a lower energy scale. The CMS detector is ideally suited to measuring these signatures due to its hermetic design
+allowing optimal acceptance for all observable particles in the final state.
+
+To measure the energy scale of the parent process in the event two variables are commonly used. 
+These are the total transverse energy, $E_T$, which is computed as the scalar sum of the transverse 
+energies of all reconstructed PF candidates in the event and the total hadronic transverse energy, $H_T$, which
+is computed as the scalar sum of the transverse energies of all calibrated reconstructed jets:
+
+\begin{equation}
+E_T = \sum |\vec{p}_T^{PF}| && H_T = \sum |\vec{p}_T^{j}|.
+\end{equation}
+
+Missing energy in the final state can be caused by BSM phenomena such as the LSP of R-parity conserving SUSY or 
+DM particles predicted by generic models of Dark Matter as well as neutrinos from vector boson decay. 
+This quantity is reconstructed indirectly from the observed particles in the final state by exploiting
+momentum conservation in the transverse plane. Two variables are used in the \alphat analysis: the missing transverse momentum, 
+\metvec, which is defined as the negative vector sum of the transverse momenta of all PF candidates and has magnitude \met
+as well as the hadronic missing transverse momentum, \mhtvec, which is defined as the negative vector sum of the
+transverse momenta of all calibrated reconstructed jets and has magnitude \mht:
+
+\begin{equation}
+\metvec = -\sum \vec{p}_T^{PF} && H_T = -\sum \vec{p}_T^{j}.
+\end{equation}
+
+In addition, calorimeter-\metvec, defined as the negative transverse vector sum of the calorimeter deposits, is used 
+for the HLT as the PF candidates cannot be reconstructed within latency constraints. The \metvec~is used offline
+as the performance is substantially improved by including tracker information~\cite{pf_pas}. However, \metvec can 
+be biased due to effects including minimum energy thresholds in the calorimeters, tracker inefficiencies and non=linearities
+in calorimeter response. This bias is reduced by correcting the $p_T$ of CHS corrected PF jets using the JECs and propagating the
+correction to the \metvec as
+
+\begin{equation}
+\vec{E}_\text{T}^{\rm misscorr} = \metvec - \sum_{j}(\vec{p}^{\text{corr},j}_T - \vec{p}_T^{j})
+\end{equation}
+
+This 'type-1' correction \cite{met_fig}~uses all corrected jets with $\pt > 15\GeV$ with less than 0.9 of their energy deposited in the ECAL.
+The 4-momenta of any muons found in jets are subtracted when performing the correction and added back to the corrected object.
+Figure~\ref{fig:met_fig} shows excellent agreement between simulation and data in reconstructing the \met with 13\TeV Run 2 data.
+
+\begin{figure}
+\centering
+    \includegraphics[width=0.8\textwidth]{./Figures/reconstruction/met_fig.pdf}
+  \caption{Distribution of \met~in \zmumu candidate events. The markers show the data while the filled coloured histograms
+  show the breakdown in difference processes for the simulation. The lower panel shows the data/MC ratio including
+  both statistical and systematic uncertainties~\cite{met_fig}. \label{fig:met_fig} 
+}
+\end{figure}
