@@ -450,3 +450,11 @@ in a muon enriched jet sample (right). The markers correspond to the data.
 The stacked, coloured histograms indicate the contributions of the different 
 jet flavours in the simulation \cite{csv_fig}}
 \end{figure}
+
+\subsection{Cross cleaning}
+
+The lepton and jet reconstruction algorithms are run independantly and so the same detector
+signals may be reconstructed as different physics objects. To avoid this double counting a cross cleaning
+is performed. Any reconstructed jets within $\Delta R < 0.4$ of an isolated lepton are removed.
+
+\subsection{Energy sums}
