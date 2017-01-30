@@ -1,86 +1,130 @@
 \chapter{The Level 1 trigger upgrade} % 
+\label{sec:triggerUpgrade}
 
-\section{Legacy System and Stage 1 Upgrade}
-The Level 1 trigger is designed to filter from $40MHz$ to $\mathcal{O}(100kHz)$ to allow processing
-by the high level trigger while keeping high acceptance for interesting events. This has 
-worked well at previous luminosities up to $0.7\times10^{34} cm^{-2}s^{-1}$. However, with the 
-upgrade the maximum luminosity will increase to $1.6\times10^{34} cm^{-2}s^{-1}$. 
-The L1 trigger system takes no tracking information and so must rely on only information 
-from the electromagnetic (ECAL) and hadronic (HCAL) calorimeters \cite{gct}. 
-The trigger system takes input from  trigger towers (TT) corresponding to $5\times5$ ECAL 
-crystals \footnote{Each TT corresponds to $0.087\times0.087$ in $\Delta\eta\times\Delta\phi$. 
-For simplicity $\eta$ and $\phi$ units of one trigger tower are used in the remainder of this report.} 
-and an identical area in the HCAL. The extent of the calorimeter is $56\times72$. The 
-legacy Global Calorimeter Trigger (GCT) is designed to find jets, electrons and photons and to 
-compute global energy sums. Trigger towers are grouped into $4\times4$ blocks and features are found 
-using algorithms described in \cite{gctalgo}. Due to hardware limitations the detector is split into 16 
-regions which are processed by the Regional Calorimetric Trigger (RCT) to form candidates and sum 
+During Run 2, the LHC has provided collisions at energy of 13\TeV~and at up 
+to a peak luminosity of $14\times10^{33}cm^{-2}s^{-1}$, marking a signifcant increase
+in peak energy and luminosity provided during Run 1 (8\TeV~and $7\times10^{33}cm^{-2}s^{-1}$).
+At 25ns bunch spacing an average of 25 simlutaneous interactions are produced.
+The instantaneous luminosity and pileup provide a challenging environment for the L1 trigger system
+during Run 2, exceeding design specifications. The rate into the HLT must 
+remain at 100kHz. Simply increasing thresholds on the L1 trigger seeds would imply
+unacceptable inefficiencies for electroweak physics and \TeV~ scale searches
+at CMS and so the L1 trigger system, and associated algorithms, must be upgraded. 
+
+In the following, the upgrades to the L1 calorimetric trigger system and the 
+associated L1 jet algorithm are discussed. The muon trigger system 
+and upgrades to the algorithms for identification of other physics objects for the L1 trigger are discussed 
+in~\cite{ele_algo,tau_algo,muon_algo}.
+
+
+\section{Legacy system and upgrade}
+
+The Global Calorimeter Trigger (GCT) was used during Run 1 to find jets, electrons and photons and to 
+compute global energy sums \cite{gct}. The trigger system takes input from trigger towers (TT) corresponding to $5\times5$ ECAL crystals 
+and an identical area in the HCAL. These are grouped into $4\times4$ \emph{regions} which form the input for physics object and
+reconstruction algorithms. These inputs are provided by Trigger Primitive Generators (TPGs). 
+Due to hardware limitations the detector is split into 16 
+regions which are processed by separate Regional Calorimetric Triggers (RCTs) to form candidates and sum 
 energies. The RCTs must share information to account for features which occur at boundaries between 
-them. The RCTs are then combined in the GCT which computes global quantities and sorts 
-the jets before deciding on whether to store the event. The firmware and algorithms used 
-by this system will be upgraded for the beginning of run 2. This will allow 
-pileup subtraction and better jet and particle identification at L1. This is the stage 1 
-upgrade. 
-\section{Stage 2 Calorimetric Trigger Upgrade}
-To process the data with global algorithms there is 
-a trade off between granularity and the sharing of data. An alternative to this is 
-the Time Multiplexed Trigger (TMT) \cite{rose}. This splits the data by time rather than detector 
-region. This works by a two layer system. In layer 1, data is received for 
-different regions of the detector on pre-processor boards. These are then combined in a single 
-main processing board in layer 2 (the Imperial MP7 FPGA). Each time slice is then 
-given to a different board until the first has finished processing the information to avoid 
-dead time. The time multiplexing means that each event may be wholly processed on one 
-board without loss of granularity. Jet and particle identification algorithms may thus use information on 
-the level of trigger tower granularity. There are numerous further technical improvements over the GCT 
-outlined in \cite{rose}. The results shown below concern studies for optimal jet algorithms using a 
-trigger based on such a system. This is the stage 2 trigger upgrade and will 
-run alongside the stage 1 upgrade in the commissioning stage (2015) and should become the 
-trigger in 2016. The comparison between legacy and TMT is shown in figure \ref{tmux}.
+them. The information from the RCTs is combined in the GCT which computes global quantities and sorts 
+the jets before sending to the Global Trigger which also receives the Muon trigger
+information and makes the final trigger decision. 
+
+The upgrade of the GCT was carried out in two stages. The first stage
+Upgrade Calorimetric Trigger (UCT) was used for data taking during 2015
+and used updated firmware and algorithms to allow improved pileup subtraction 
+and improved jet and object identification \cite{uct}. In the second stage the 
+architecture was entirely replaced to allow \emph{time multiplexing} (TMT) whereby each
+event is processed entirely within one card using the full trigger tower granularity. 
+
+\subsection{Stage 2 Calorimetric trigger upgrade}
+
+The Stage 2 calorimetric trigger uses two processing layers. The first, layer 1, performs
+pre-processing and data formatting using 18 CTP7 cards \cite{}. Each card requires
+only a regional view of the detector and performs local operations such as summing 
+ECAL and HCAL transverse energies. The data for each event is combined and transmitted to 
+a single node in the layer 2, an Imperial Master Processor Virtex-7 (MP7) card. 
+The MP7 is a high performance 0.92Tb/s + 0.92Tb/s (input + output rate) all-optical processor \cite{mp7}
+with sufficient data rate for the entire calorimeter to be processed in a single card. The data 
+from the 9 layer 2 nodes is sent to a demultiplexer board (also an MP7) to be formated before
+the data is sent to the Global Trigger.
+
+The difference between the GCT and TMT architectures is shown in Figure~\ref{tmux}. 
+In the TMT architecture, data is buffered and retransmitted to the first node (on layer 2)
+over 9 bunch crossings to allow the entire event to be processed on one card. This
+removes the need for a large number of links between cards and allows the full trigger
+tower granularity to be used. The increase in granularity compared to the GCT is
+illustrated in Figure~\ref{fig:inputres}. 
+
 \begin{figure}
 
 \centering
-    \includegraphics[width=0.9\textwidth]{././Figures/triggerUpgrade/tmux}
-  \caption{Comparison of the legacy and upgrade trigger systems where colour indicates the time 
-  slice \cite{JBrooke}. The TPG is the Trigger Primitive Generator from the ECAL and HCAL.}
-  
+    \includegraphics[width=0.9\textwidth]{./Figures/triggerUpgrade/tmux}
+  \caption{Comparison of the GCT (left) and TMT architectures (right) showing the flow of information
+  to the final global decision. The colours indicate the data from each bunch crossing. \cite{tmt}}
   \label{tmux}
 \end{figure}
 
-\section{Jet Algorithm}
+\begin{figure}
+\centering
+\subfigure[Input resolution: GCT]{\includegraphics[width=0.35\textwidth]{./Figures/triggerUpgrade/L1inputreslegacy.png}\label{subfig:inputlegacy}} \quad
+\subfigure[Input resolution: stage 2 upgrade]{\includegraphics[width=0.35\textwidth]{./Figures/triggerUpgrade/L1inputresupgrade.png}\label{subfig:inputupgrade}} 
+\caption{A representation of the CMS collaboration logo digitised with the input resolution of the L1 calorimeter trigger up to 
+\etaabs~$< 3$ using (a) the legacy system ($18 \times 14$ pixels) and (b) the stage 2 upgrade ($72 \times 56$ pixels).}
+\label{fig:inputres}
+\end{figure}
+
+\section{Level-1 jet algorithm upgrade}
 \label{algo}
-The focus of the results in this report will be on studies for jet definitions and pileup subtraction algorithms for the stage 2 
-trigger. The legacy jet algorithm is described in \cite{gctalgo}. At stage 2 the TMT allows 
-the granularity to be significantly increased compared to the legacy system (the cells used to 
-make the jets will reduce from $4\times4$ towers to single towers). The algorithm must change 
-to take advantage of this. Additionally, the increase in energy to $13TeV$ will mean jets 
-are  boosted and therefore smaller in size. To account for this at level one the 
-cone size should be decreased. The algorithm presented here uses a cone size of $9\times9$ 
-(compared to $12\times12$ for the GCT). This corresponds to the decrease in jet size for 
-the HLT - from $R=0.5$ to $R=0.4$ for the anti $k_T$ jet radius parameter \cite{Antik_t}. 
-Additionally, the boost for jets from the primary vertex means most of their energy is 
-likely to be in the central (seed) tower which should define their direction. The algorithm 
-is thus as follows: each trigger tower in turn is taken as the candidate. The 
-towers in the 4 surrounding rings (or up to the edge in $\eta$) are then 
-compared to the seed tower using the mask shown in figure \ref{mask}. If the comparison 
-is true for any tower then the seed is vetoed and the next tower is 
-checked. The mask is designed to be unambiguous for towers of equal energy. If a 
-seed is not vetoed then a jet is defined at that tower position with $p_T$ 
-given by the total energy of the towers.   
+
+The increase in pileup and luminosity in Run 2 makes triggering with jets
+significantly more challenging than during Run 1. To maintain sensitivity to
+new physics the new algorithm must allow high efficiencies and
+low rates even for high pileup scenarios.
+
+The stage 2 upgrade provides several advantages over the GCT system which can be 
+exploited in designing the jet algorithm, including significantly increased processing power
+and granularity (enhanced by factor 16). This allows more flexible algorithms, which can 
+exploit smaller features than previously accessible, to be defined. This is exploited in the 
+use of an improved jet clustering (described in Section\ref{sec:jet_algo}) algorithm as well as 
+online pileup subtraction techniques (described in Section ??) in the upgrade jet 
+identification and reconstruction algorithm.
+
+\subsection{Level-1 jet clustering}
+\label{sec:jet_algo}
+The GCT algorithm uses a $3\times3$ calorimeter region sliding jet window with a central seed 
+to reconstruction jets in the range $|\eta| < 5$. The algorithm scans the calorimeter in increments
+of regions and clusters a jet if the energy in the central seed region is greater than 
+both $5\GeV$ and each of the eight bordering regions. The threshold of $5\GeV$ was added during 
+the 2012 8\TeV run, when the number of pileup interactions increased, to remove soft pileup jets.
+The $12\times12$ TT ($\Delta\eta\times\Delta\phi = 1.04\times1.04$) jet size corresponds 
+approximately to $R=0.5$ for the anti$k_T$ jet algorithm used in offline reconstruction.
+
+The jet algorithm used for the stage 2 upgrade similarly uses a sliding window algorithm. This
+is composed of $9\times9$ TTs ($\Delta\eta\times\Delta\phi = 0.78\times0.78$), corresponding 
+to the $R=0.4$ used in Run 2. The use of an odd number of trigger towers ensures a central 
+seed tower can be defined. In designing the algorithm various central seed thresholds have 
+been considered, as discussed below.
+
+In order to ensure that jets do not overlap the seed tower is required to meet the conditions
+shown in Figure~\ref{mask}. The veto conditions are asymmetric along the diagonal to ensure  
+that TTs with the same energy cannot veto one another. These veto conditions ensure that there 
+is no double counting of overlapping jets. An inefficiency may be expected 
+as one jet may veto another which itself vetoes a third. However, this effect was found to 
+introduce a negligible (~0.1\%) inefficiency.
+
+If a seed passes the veto requirements a jet is defined with a position given
+by the seed position and an energy given by the total energy of the towers. The position is
+given by that of the seed as jets tend to be boosted objects with an energy deposited in
+a small central area.
+
 \begin{figure}
 \centering
     \includegraphics[width=0.5\textwidth]{./Figures/triggerUpgrade/mask.png}
-  \caption{Nine by nine mask 
-  used to define jets}
+  \caption{The $9\times9$ veto conditions used to define jets. The inequalities ensure
+  jet energies are not double counted}
   \label{mask}
 \end{figure}
-The two main problems with this algorithm are 
-that sufficiently close jets will appear as a single jet and that energy may be 
-lost if a tower that vetoes another is itself vetoed by a tower sufficiently far 
-away not to include the far tower's energy. The first case is common to all 
-jet algorithms with a fixed cone size, but as the energy is not lost, the 
-single jet or total energy will almost certainly be enough to trigger. Despite this a 
-quality bit adapted from the idea of n-subjetiness \cite{nsub} is under investigation. The lost energy 
-from chain vetos is found to be a small (~0.1\%) inefficiency.
 
 \section{Pileup Subtraction}
 \subsection{Pileup}
@@ -341,4 +385,3 @@ on the location of the tower to further reduce rate in areas of high pileup
 while maintaining efficiency in low pileup regions. Improving calibrations such that lower energy jets may 
 be utilised is also key. Finally, increasing the sample size to use $3\times3$ towers for 
 the seed should improve discrimination between pileup and boosted jets.
-
