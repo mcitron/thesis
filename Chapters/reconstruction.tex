@@ -163,7 +163,7 @@ lose $33\%$ of their energy on average in the central region
 and up to $86\%$ at $|\eta| = 1.4$. Their energy deposits are widely spread in $\phi$ but narrow in $\eta$. 
 The hybrid (multi) clustering algorithm exploits this characteristic to
 reconstruct high energy electrons and photons in the barrel (endcap). The hybrid algorithm
-uses a seed crystal and clusters up to ten \textit{dominoes} of $1\times3$ or $1\times5$ ($\phi\times\eta$) within 
+uses a seed crystal and clusters up to ten \emph{dominoes} of $1\times3$ or $1\times5$ ($\phi\times\eta$) within 
 $\Delta\phi < 0.3$ from the seed. Any domino with an energy under $100\MeV$ is discarded. The dominoes
 are themselves clustered in $\phi$ provided each disconnected subcluster has a seed 
 domino of energy $>350\MeV$. The combination of these subclusters is referred 
@@ -181,7 +181,7 @@ Additional selections are applied on all reconstructed electrons and photons to 
 For electrons these are mainly composed of misreconstructed jets, secondary electrons from photon
 conversions and semi-leptonic decays of heavy quarks. As electrons are mainly contained within 
 the ECAL, a requirement on the ratio of energies in the ECAL and HCAL provides a strong veto of hadronic
-backgrounds. In addition, requirements are made on the matching track \textit{impact
+backgrounds. In addition, requirements are made on the matching track \emph{impact
 parameters} such that the transverse distance from the primary vertex is $d_{xy} < 0.0261$ ($d_{xy} < 0.118$) 
 and the longitudinal distance is $d_z < 0.041$ ($d_z < 0.822$) for the barrel (endcap). 
 Several variables that rely on the shower shape and cluster width are used to
@@ -357,7 +357,7 @@ accounts for the increasing collinearity of the hadronic decays of boosted parti
 \subsection{Isolated tracks}
 
 Unreconstructed prompt leptons form a large background for hadronic searches.
-Such \textit{lost leptons} can be caused by both acceptance effects and by misreconstruction of 
+Such \emph{lost leptons} can be caused by both acceptance effects and by misreconstruction of 
 processes including $e^{-}$, $\mu^{-}$ decays and hadronic decays of $\tau$ leptons. 
 Typically, even if not associated to the lepton, the lepton track will still be
 reconstructed. Prompt leptons also tend to be isolated and so the background
@@ -401,7 +401,7 @@ are then recalculated.
 \end{itemize}
 
 These steps are repeated until no clusters remain. The algorithm used for the analysis in this thesis (and for most CMS analyses) is 
-the $anti-k_T$ algorithm for which $r=2$. The size of the jets is $R=0.4$ which optimises the balance between capturing all particles
+the anti-$k_T$ algorithm for which $r=2$. The size of the jets is $R=0.4$ which optimises the balance between capturing all particles
 associated with a jet and resilience against pileup. CMS uses jets with inputs from PF candidates (PF jets) and calorimeter deposits (calo jets)
 clustered using the \FASTJET~package~\cite{fastjet}. PF jets allow improved resolution with respect to calo jets due to the significant position and energy resolution 
 enhancement possible with use of the tracker. PF jets are therefore used in offline analysis while calo jets are used only in HLT reconstruction
