@@ -161,10 +161,10 @@ These can be made using both the jets and individual calorimeter deposits, analo
 the offline quantities. The baseline quantities that are constructed are
 
 \begin{itemize}
-\item total $E^{\text{trigger}}_{T}$ -- the scalar sum the $E_T$ of all calorimeter TTs;
-\item $\met^{\text{trigger}}$ -- the inverse vector sum of the $E_T$ of all calorimeter TTs;
-\item $\scalht^{\text{trigger}}$ -- the scalar sum of all L1 jet \pt;
-\item $\mht^{\text{trigger}}$ -- the inverse vector sum of all L1 jet \pt.
+\item L1 total \Et -- the scalar sum the $E_T$ of all calorimeter TTs;
+\item L1 \met -- the inverse vector sum of the $E_T$ of all calorimeter TTs;
+\item L1 \scalht -- the scalar sum of all L1 jet \pt;
+\item L1 \mht -- the inverse vector sum of all L1 jet \pt.
 \end{itemize}
 
 The quantities made using L1 jets require a minimum \Lonept of 20\GeV. As will be discussed in 
@@ -432,10 +432,10 @@ between the PUS algorithms are small.
 
 \begin{figure}[h!]
   \centering
-    \includegraphics[width=0.4\textwidth]{./Figures/triggerUpgrade/singleJet_150.png}~~
-    \includegraphics[width=0.4\textwidth]{./Figures/triggerUpgrade/doubleJet_110.png}\\
-    \includegraphics[width=0.4\textwidth]{./Figures/triggerUpgrade/quadJet_50.png}
-  \caption{\label{fig:rate_eff_jets} Rate against efficiency for (a) L1 leading jet with a threshold of 150\GeG, 
+    \subfigure[]{\includegraphics[width=0.4\textwidth]{./Figures/triggerUpgrade/singleJet_150.png}}~
+    \subfigure[]{\includegraphics[width=0.4\textwidth]{./Figures/triggerUpgrade/doubleJet_110.png}}\\
+    \subfigure[]{\includegraphics[width=0.4\textwidth]{./Figures/triggerUpgrade/quadJet_50.png}}
+  \caption{\label{fig:rate_eff_jets} Rate against efficiency for (a) L1 leading jet with a threshold of 150\GeV, 
   (b) L1 second leading jet with a threshold of 110\GeV and (c) L1 fourth leading jet with a threshold of 50\GeV.}
 \end{figure}
 
@@ -453,47 +453,46 @@ subtraction.
   \label{fig:rate_nvtx}
 \end{figure}
 
-The rate against efficiency for $\scalht^{\text{trigger}}$~and $\mht^{\text{trigger}}$~is shown in Figure~\ref{fig:rate_eff_sum}. All jets above $20\GeV$ are
-used to calculate $\scalht^{\text{trigger}}$ and so this quantity is particularly susceptible to pileup. The chunky doughnut 
+The rate against efficiency for L1 \scalht~and L1 \mht~is shown in Figure~\ref{fig:rate_eff_sum}. All jets above $20\GeV$ are
+used to calculate L1 \scalht and so this quantity is particularly susceptible to pileup. The chunky doughnut 
 PUS with a seed of 5 is shown to significantly improve the performance compared to the performance of other PUS
-methods and the legacy system\footnote{The performance of the UCT is n
-ot directly comparable as $\mht^{\text{trigger}}$ and  $\scalht^{\text{trigger}}$ are calculated using regions above a threshold
-rather than jets} (except global $\rho$ with a seed of 5, unviable in the L1 trigger). Similarly, the performance for 
-$\mht^{\text{trigger}}$ is optimal for chunky doughnut subtraction with a seed of 5 and global $\rho$ subtraction. 
-Figure  also shows  $\met^{\text{trigger}}$ which exhibits the best performance. This is expected as 
+methods and the legacy system\footnote{The performance of the UCT is not 
+directly comparable as L1 \scalht~and \mht are calculated using calo regions above a threshold
+rather than jets} (except global $\rho$ with a seed of 5, not viable in the L1 trigger). Similarly, the performance for 
+L1 \mht~is optimal for chunky doughnut subtraction with a seed of 5 and global $\rho$ subtraction. 
+Figure~\ref{fig:mht_rateEff} also shows L1 $\met$~which exhibits the best performance. This is expected as 
 pileup contributions are approximately uniformly deposited in $\phi$ throughout the detector and their contribution will
 cancel in the vector sum of the calo towers.
 
 \begin{figure}
-    \begin{center} 
-	\subfigure[\label{fig:ht_rateEff}]{\includegraphics[width=0.5\textwidth]{./Figures/triggerUpgrade/ht_200}}~
-	\subfigure[\label{fig:mht_rateEff}]{\includegraphics[width=0.5\textwidth]{./Figures/triggerUpgrade/mht_200}}
-	\caption{Rate against efficienccy for (a)  $\scalht^{\text{trigger}}$ and (b) $\mht^{\text{trigger}}$, both with a
+\centering
+	\subfigure[]{\includegraphics[width=0.5\textwidth]{./Figures/triggerUpgrade/ht_200}\label{fig:ht_rateEff}}~
+	\subfigure[]{\includegraphics[width=0.5\textwidth]{./Figures/triggerUpgrade/mht_200}\label{fig:mht_rateEff}}
+	\caption{Rate against efficiency for (a) L1 \scalht and (b) L1 \mht, both with a
 	threshold of 200\GeV.}
 	    \label{fig:rate_eff_sum}
-    \end{center} 
 \end{figure}
-\section{Conclusions}
-
-The jet algorithm has been shown to give very compatible 
-results with the offline anti-kT algorithm and maintain a high matching efficiency to generator level 
-quantities.  Pileup subtraction has been shown to be important for  run 2. While both global 
-and doughnut subtraction have been shown to flatten the response against number of interactions (\ref{fig:label:resolution}) 
-each has weaknesses that must be addressed. Figure \ref{fig:label:rateeff} shows that applying a seed threshold 
-is comparable to global subtraction at killing rate while maintaining efficiency. Donut subtraction appears to 
-perform less well than applying the seed threshold alone. This may be due to the 
-susceptibility to fluctuations and contamination. Further studies are underway to increase the sampling area for 
-doughnut subtraction which is expected to improve performance. Figure \ref{fig:label:sums} shows \rhoG~overestimating the 
-$H_T$. This is due to the under-subtraction bias leading to excess energy being left in 
-the event. This may be correcting by applying a seed threshold as for doughnut but 
-calculating $\rho$ using all jets. 
-
-Further studies are currently underway to utilise the $\eta$ 
-dependence of the pileup in the detector.  The seed threshold applied may be altered depending 
-on the location of the tower to further reduce rate in areas of high pileup 
-while maintaining efficiency in low pileup regions. Improving calibrations such that lower energy jets may 
-be utilised is also key. Finally, increasing the sample size to use $3\times3$ towers for 
-the seed should improve discrimination between pileup and boosted jets.
+% \section{Conclusions}
+%
+% The jet algorithm has been shown to give very compatible 
+% results with the offline anti-kT algorithm and maintain a high matching efficiency to generator level 
+% quantities.  Pileup subtraction has been shown to be important for  run 2. While both global 
+% and doughnut subtraction have been shown to flatten the response against number of interactions (\ref{fig:label:resolution}) 
+% each has weaknesses that must be addressed. Figure \ref{fig:label:rateeff} shows that applying a seed threshold 
+% is comparable to global subtraction at killing rate while maintaining efficiency. Donut subtraction appears to 
+% perform less well than applying the seed threshold alone. This may be due to the 
+% susceptibility to fluctuations and contamination. Further studies are underway to increase the sampling area for 
+% doughnut subtraction which is expected to improve performance. Figure \ref{fig:label:sums} shows \rhoG~overestimating the 
+% $H_T$. This is due to the under-subtraction bias leading to excess energy being left in 
+% the event. This may be correcting by applying a seed threshold as for doughnut but 
+% calculating $\rho$ using all jets. 
+%
+% Further studies are currently underway to utilise the $\eta$ 
+% dependence of the pileup in the detector.  The seed threshold applied may be altered depending 
+% on the location of the tower to further reduce rate in areas of high pileup 
+% while maintaining efficiency in low pileup regions. Improving calibrations such that lower energy jets may 
+% be utilised is also key. Finally, increasing the sample size to use $3\times3$ towers for 
+% the seed should improve discrimination between pileup and boosted jets.
 
 % The rate is defined as the number of 
 % background events passing selection per second. The nominal rate for the L1 trigger is $\mathcal{O}100kHz$. 
