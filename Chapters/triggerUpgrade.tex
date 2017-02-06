@@ -479,10 +479,11 @@ The performance plots described in this section have highlighted the importance 
 pileup subtraction for the L1 trigger. Significantly improved performance is observed over 
 the legacy and UCT systems, highlighting the advantages of additional granularity
 and algorithmic complexity afforded by the upgraded architecture.
-The best performance is seen with using the chunky doughnut (with a seed of 2.5$\GeV$) and global~$\rho$ PUS. 
-Due to latency constraints and the desire to account for local affects when 
-triggering, a local pileup subtraction algorithm is preferred. Therefore,
-the chunky doughnut subtraction has been used for data taking in 2016.
+The best performance is seen with using the chunky doughnut (with a seed threshold) 
+and global~$\rho$ PUS. Due to latency constraints and the desire to account for 
+local effects when triggering, a local pileup subtraction algorithm is preferred. 
+Therefore, the chunky doughnut subtraction has been used for data taking in 2016.
+The optimal seed value was found to be $4\GeV$.
 
 Figure~\ref{fig:trig_2016} shows two example performance plots made using early 2016 data. 
 The upgrade jet energy is seen to agree well with offline over a wide range of energies 
@@ -493,7 +494,7 @@ and shows little pileup dependence.
 \centering
 	\subfigure[]{\includegraphics[width=0.5\textwidth]{./Figures/triggerUpgrade/xy_SingleMu_jetEt_vs_l1JetEt_barrel-endcap}}~
 	\subfigure[]{\includegraphics[width=0.5\textwidth]{./Figures/triggerUpgrade/res_SingleMu_jetEt_over_l1JetEt_barrel-endcap_puBins}}
-	\caption{(a) Resolution for the L1 jet energy compared to offline in early 2016 data for a wide
+	\caption{(a) The L1 jet energy compared to offline in early 2016 data for a wide
 range of jet energies. (b) Resolution for the L1 jet energy compared to offline in early 2016 data for several different 
 pileup scenarios \cite{l1sums_perf}.}
 \label{fig:trig_2016}
