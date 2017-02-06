@@ -473,6 +473,33 @@ cancel in the vector sum of the calo towers.
 	    \label{fig:rate_eff_sum}
 \end{figure}
 
+\subsection{Summary}
+
+The performance plots described in this section have highlighted the importance of effective
+pileup subtraction for the L1 trigger. Significantly improved performance is observed over 
+the legacy and UCT systems, highlighting the advantages of additional granularity
+and algorithmic complexity afforded by the upgraded architecture.
+The best performance is seen with using the chunky doughnut (with a seed of 2.5$\GeV$) and global~$\rho$ PUS. 
+Due to latency constraints and the desire to account for local affects when 
+triggering, a local pileup subtraction algorithm is preferred. Therefore,
+the chunky doughnut subtraction has been used for data taking in 2016.
+
+Figure~\ref{fig:trig_2016} shows two example performance plots made using early 2016 data. 
+The upgrade jet energy is seen to agree well with offline over a wide range of energies 
+and shows little pileup dependence.
+
+
+\begin{figure}
+\centering
+	\subfigure[]{\includegraphics[width=0.5\textwidth]{./Figures/triggerUpgrade/xy_SingleMu_jetEt_vs_l1JetEt_barrel-endcap}}~
+	\subfigure[]{\includegraphics[width=0.5\textwidth]{./Figures/triggerUpgrade/res_SingleMu_jetEt_over_l1JetEt_barrel-endcap_puBins}}
+	\caption{(a) Resolution for the L1 jet energy compared to offline in early 2016 data for a wide
+range of jet energies. (b) Resolution for the L1 jet energy compared to offline in early 2016 data for several different 
+pileup scenarios \cite{l1sums_perf}.}
+\label{fig:trig_2016}
+\end{figure}
+
+
 \section{Cross trigger study}
 
 The simple single object triggers considered in the previous section are useful for selecting
@@ -501,8 +528,8 @@ for the dijet and multijet trigger respectively. For the upgrade trigger, chunky
 
 \begin{figure}
 \centering
-	\subfigure[Upgrade trigger]{\includegraphics[width=0.5\textwidth]{./Figures/triggerUpgrade/noHardBin12JetdphiFullS2}\label{fig:ht_rateEff}}~
-	\subfigure[UCT]{\includegraphics[width=0.5\textwidth]{./Figures/triggerUpgrade/noHardBin12JetdphiFullUCT}\label{fig:mht_rateEff}}
+	\subfigure[Upgrade trigger]{\includegraphics[width=0.5\textwidth]{./Figures/triggerUpgrade/noHardBin12JetdphiFullS2}}~
+	\subfigure[UCT]{\includegraphics[width=0.5\textwidth]{./Figures/triggerUpgrade/noHardBin12JetdphiFullUCT}}
 	\caption{Efficiency of the dijet selection for hadronic offline requirement $200 < \scalht < 300$ and $\alphat > 0.65$
 	in a band of rate of 5.5 to 7.5 kHz}
 	    \label{fig:dijet_cross}
@@ -510,8 +537,8 @@ for the dijet and multijet trigger respectively. For the upgrade trigger, chunky
 
 \begin{figure}
 \centering
-	\subfigure[Upgrade trigger]{\includegraphics[width=0.5\textwidth]{./Figures/triggerUpgrade/noHardBin1ge4JetdphiFullS2}\label{fig:ht_rateEff}}~
-	\subfigure[UCT]{\includegraphics[width=0.5\textwidth]{./Figures/triggerUpgrade/noHardBin1ge4JetdphiFullUCT}\label{fig:mht_rateEff}}
+	\subfigure[Upgrade trigger]{\includegraphics[width=0.5\textwidth]{./Figures/triggerUpgrade/noHardBin1ge4JetdphiFullS2}}~
+	\subfigure[UCT]{\includegraphics[width=0.5\textwidth]{./Figures/triggerUpgrade/noHardBin1ge4JetdphiFullUCT}}
 	\caption{Efficiency of the multijet selection for hadronic offline requirement $200 < \scalht < 300$ and $\alphat > 0.65$
 	in a band of rate of 5.5 to 7.5 kHz}	
 	    \label{fig:multijet_cross}
@@ -523,87 +550,3 @@ the upgraded system. Additionally, the maximal efficiency gain in using $\Delta\
 to that using a \scalht~trigger alone. For the dijet case there is a significant gain from $\sim 30\%$ to $\sim 70\%$, while for
 the multijet the gain is from $\sim 50\%$ to $\sim 80\%$ when $\Delta\phi_{1,2}$ is used in conjunction with \scalht.
 This highlights the importance of cross triggers in controlling rates while keeping low offline thresholds.
-% \section{Conclusions}
-%
-% The jet algorithm has been shown to give very compatible 
-% results with the offline anti-kT algorithm and maintain a high matching efficiency to generator level 
-% quantities.  Pileup subtraction has been shown to be important for  run 2. While both global 
-% and doughnut subtraction have been shown to flatten the response against number of interactions (\ref{fig:label:resolution}) 
-% each has weaknesses that must be addressed. Figure \ref{fig:label:rateeff} shows that applying a seed threshold 
-% is comparable to global subtraction at killing rate while maintaining efficiency. Donut subtraction appears to 
-% perform less well than applying the seed threshold alone. This may be due to the 
-% susceptibility to fluctuations and contamination. Further studies are underway to increase the sampling area for 
-% doughnut subtraction which is expected to improve performance. Figure \ref{fig:label:sums} shows \rhoG~overestimating the 
-% $H_T$. This is due to the under-subtraction bias leading to excess energy being left in 
-% the event. This may be correcting by applying a seed threshold as for doughnut but 
-% calculating $\rho$ using all jets. 
-%
-% Further studies are currently underway to utilise the $\eta$ 
-% dependence of the pileup in the detector.  The seed threshold applied may be altered depending 
-% on the location of the tower to further reduce rate in areas of high pileup 
-% while maintaining efficiency in low pileup regions. Improving calibrations such that lower energy jets may 
-% be utilised is also key. Finally, increasing the sample size to use $3\times3$ towers for 
-% the seed should improve discrimination between pileup and boosted jets.
-
-% The rate is defined as the number of 
-% background events passing selection per second. The nominal rate for the L1 trigger is $\mathcal{O}100kHz$. 
-% The efficiency is then the proportion of signal events which trigger. To evaluate this a 
-% cut is made on the gen jets ($50GeV$). The proportion of these events with a 
-% corresponding matched L1 jet over a threshold then defines the efficiency at that threshold.  For 
-% the trigger, the key test is to see that the efficiency for signal may be 
-% maintained while reducing the background rate. For the background a pure pileup sample was used 
-% while the $t\bar{t}$ samples was used for signal. In figure \ref{fig:label:ratejet1} the rate is shown 
-% for the leading jet. The performance compared to the GCT is shown to be improved. 
-% The seed cut appears to have the largest effect in reducing the rate as global 
-% is shown to be comparable to no pileup subtraction. Figure \ref{fig:label:ratenvtx} shows the evolution of 
-% the rate with the number of interactions. GCT shows the largest dependence, as expected, while 
-% for stage 2 pileup subtraction is shown to decrease this dependence. Applying doughnut subtraction appears 
-% to increase the rate compared to applying a seed alone. This may be due to 
-% contamination causing over subtraction. The calibration will then bring the energy above the seed. Finally, 
-% in figure \ref{fig:label:rateeff} the rate is shown against efficiency for the lead jet. The seed 
-% is shown to be comparable to global subtraction alone while applying doughnut subtraction worsens the 
-% performance. This may again be due to contamination.
-% \begin{figure}
-% \centering
-%     \includegraphics[width=8cm]{././Figures/triggerUpgrade/jet1RateEff}
-%   \caption{Rate 
-%   versus efficiency for lead jet. Performance is consistent except for doughnut which appears to 
-%   excessively reduce efficiency}
-%   \label{fig:label:rateeff}
-% \end{figure}
-% \subsection{Turn On Plots}
-% To benchmark the performance of the 
-% L1 jets their $p_T$ must be compared with matched generator level quantities. To do this 
-% the generator level quantity is plotted with a cut on the matched L1 quantity (the 
-% turn on). This is shown in figure \ref{turnon} for the 4th jet. The stage 2 
-% quantities are shown to be very comparable, however, the   GCT is less sharp and thus 
-% the agreement with gen worse. 
-% \begin{figure}
-% \centering
-%     \includegraphics[width=7.5cm]{./Figures/triggerUpgrade/turnon3_50}
-%   \caption{Turn on curve for the 4th jet 
-%   at 50 GeV showing comparable behaviour for the stage 2 quantities and a shallower 
-%   turn on for GCT.}
-%   \label{turnon}
-% \end{figure}
-% \subsection{Energy Sums}
-% Lastly, the energy sums, \scalht and 
-% \mht~, were investigated. To nullify the problem of the lower calibration limit, only jets above 
-% this are included in the sums. This also has the effect of removing the majority 
-% of remaining clustered pileup jets. Pileup is expected to be approximately uniform and so should 
-% not affect the missing energy in the event. The results for a $t\bar{t}$ sample are 
-% shown in figure \ref{fig:label:sums}. Pileup subtraction improves the agreement as compared to gen.  The \scalht 
-% shows especially good agreement with gen for the case of a seed as compared to 
-% global $\rho$. This is due to the under subtraction bias of this method. The \mht 
-% shows similar levels of agreement for all cases as expected. 
-% \begin{figure}
-% \hfill
-% \subfigure[\scalht\label{fig:label:ht}]{\includegraphics[width=7cm]{./Figures/triggerUpgrade/ht_ttbar}}
-% \hfill
-% \subfigure[\mht~\label{fig:label:mht}]{\includegraphics[width=7cm]{./Figures/triggerUpgrade/mht_ttbar}}
-%
-% \caption{In figure \ref{fig:label:ht} the total energy shows good agreement with the generator level quantity. This 
-% is improved by requiring a seed threshold. In figure \ref{fig:label:mht} similar agreement is shown for 
-% all cases}
-% \label{fig:label:sums}
-% \end{figure}
