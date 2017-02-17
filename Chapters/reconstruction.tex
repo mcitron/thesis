@@ -145,6 +145,7 @@ In addition, several WPs of selection criteria are defined for each physics obje
 which provide a range of efficiencies and corresponding proportion of false positives. 
 
 \subsection{Electron and photon reconstruction}
+\label{sec:ele_pho_reco}
 
 Photons and electrons interact similarly within the ECAL and so these objects 
 follow similar reconstruction techniques. Electrons are reconstructed by matching 
@@ -191,7 +192,7 @@ most energetic crystal). The value of $\sigma_{i\eta i\eta}$ allows background
 processes to be rejected as its value is larger on average for neutral meson decay to two collimated photons.
 
 \subsection{Muon reconstruction}
-\label{muon_reco}
+\label{sec:muon_reco}
 
 As muons are MIPs they leaving minimal energy deposits in the calorimetry
 subsystems and travel through the entire detector. The muons are therefore reconstructed using a 
@@ -274,7 +275,7 @@ is the same as defined above.
 the cluster in the more granular calorimeter is within that of the less granular. The link distance is defined
 as the distance in the ($\eta,\phi$) plane between the cluster positions.
 \item Charged particles tracks are associated with muon tracks following the global muon algorithm defined in 
-Section~\ref{muon_reco}. In this case the $\chi^2$ of the global fit defines the link distance.
+Section~\ref{sec:muon_reco}. In this case the $\chi^2$ of the global fit defines the link distance.
 \end{itemize}
 
 With the blocks defined, the algorithm for reconstruction and identification of the set of particles from each
@@ -318,10 +319,10 @@ A, as
 p_T^{\text{corr}} = p_T^{\text{raw}} - \rho \cdot A,
 \end{equation}
 
-where the values for $\rho$ are determined in Run 2 by partitioning the detector into a square grid of spacing
-0.55 and calculating the median energy of the energy density of all PF candidates within each cell~\cite{fastjet,jet_area}.
-The exact form of pileup subtraction carried out depends on the PF object, as
-will be discussed below.
+where the values for $\rho$ are determined by partitioning the detector into a square grid of spacing
+0.55 and calculating the median energy of the energy density of all PF candidates within each cell (grid $\rho$)~\cite{fastjet,jet_area}.
+This effective area (EA) correction mitigates the contributions of both charged and neutral 
+pileup particles.
 
 \subsection{Isolation}
 
@@ -458,7 +459,7 @@ for $\pt < 50\GeV$ while for higher values of \pt~the absolute and relative scal
 \end{figure}
 
 \subsection{B tagging}
-
+\label{sec:btag}
 For Run 2 the Combined Secondary Vertex version 2 (CSVv2) algorithm is used to tag jets as originating
 from b quarks. The algorithm exploits the long lifetime of the b hadron, the secondary vertex of its decay
 and the possible presence of a muon or electron (produced in $\sim 20\%$ of the b hadron decays). The 
@@ -468,9 +469,10 @@ information is obtained using the Inclusive Vertex Finder (IVF) algorithm~\cite{
 The dominant backgrounds for tagging b quarks are jets originating from c quarks and to a lesser extent
 jets from lighter quarks and gluons. The distribution of the CSVv2 discriminator is shown for PF Jets
 using $13\TeV$~data and simulation in Figure~\ref{fig:csv_fig}. The value of the discriminator
-used in the $\alphat$ analysis is 0.89 corresponding to an efficiency of $~67\%$ CHECK THIS and 
-a mistag rate of $~1\%$. The difference in efficiency and mistag rates in data and MC is measured 
-for a range of jet energies to provide scale factors to correct the MC. In the
+used in the $\alphat$ analysis is 0.89 corresponding to an efficiency of $\sim67\%$ CHECK THIS and 
+a mistag rate of $\sim 1\%$ for light quarks ($u$, $d$ and $s$ quarks) and gluons and a mistag rate of $\sim 10\%$ for
+charm quarks. The difference in efficiency and mistag rates in data and simulation is measured 
+for a range of jet energies to provide scale factors to correct the simulation. In the
 Run 2 dataset, these scale factors were around $0.94$ and $\sim1.1-1.3$ (depending on \pt) for the b-tag and mistag SFs 
 respectively~\cite{csv_fig}.
 
@@ -491,7 +493,7 @@ counting, a cross cleaning is performed. Any reconstructed jets within $\Delta R
 of an isolated lepton are removed.
 
 \subsection{Energy sums}
-
+\label{sec:energy_sums_reco}
 Energy sums are vital for hadronic searches for new physics such as the $\alphat$~search. The typical high
 mass scale of BSM models causes large quantities of energy to be transferred to particles in the final
 state. This energy is shared between both visible and invisible particles leading to large total and missing energy
