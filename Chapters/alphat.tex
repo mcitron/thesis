@@ -1,0 +1,130 @@
+\chapter{The \alphat search}
+
+Hadronic searches for new physics aim to exploit strong force modes of 
+production and decay. Such modes may be expected to dominate in the 
+proton-proton collisions at the LHC. The \alphat~analysis relies on a
+final state including jets and significant \met~to search for new physics.
+
+The \alphat~analysis uses dedicated dimensionless variables to effectively reject the
+dominant QCD multijet background. A robust data-driven estimate of the remaining
+backgrounds and systematic uncertainties reduces the reliance on simulation.
+During Run 1, this strategy has been used for several searches for supersymmetry at
+both $\sqrt{s} = 7 \TeV$ and $\sqrt{s} = 8 \TeV$ as well as a range of luminosities
+\cite{alphaT1,alphaT2,alphaT3,alphaT4}. As detailled in this section, substantial 
+improvements to the sensitivity and acceptance of the search have been made for Run 2.
+
+\section{Introduction to the \alphat analysis}
+
+In order to achieve sensitivity to a wide range of new physics signatures
+searches for new physics must reject backgrounds while maintaining signal acceptance.
+For any hadronic search, QCD multijet processes will dominate. The
+\alphat analysis uses selections based on key discriminating variables,
+described in Section~\ref{sec:important-variables}, to reduce such backgrounds
+to the percentage level. Additional hadronic and cleaning selections, summarised in
+Sections ?? and ??, define the signal region. 
+
+The determination of residual multijet backgrounds as well as backgrounds with 
+genuine \met~relies on data driven techniques described in Sections ?? and ?? respectively.
+These data driven predictions use signal depleted \emph{control regions} enriched in a particular
+background process (or related process). The selections in
+these control regions closely follow those in the signal region and are detailed in 
+Section ?? and ??.
+
+As discussed in Section~\ref{sec:triggerUpgrade}, an effective trigger strategy is 
+critical to ensure acceptance to models which may, for example, have relatively low
+\scalht~but significant~\mht. The trigger strategy for the signal and control regions
+is discussed in Section ??.
+
+To inclusively optimise sensitivity, the events that pass the signal region requirements 
+must be categorised to allow significant signal contributions for a wide range of models. 
+Several variables are used, as detailed in Section ??, to categorise the signal region. 
+The characterisation of these variables using the control
+regions is shown in Section ??.
+
+\section{backgrounds}
+\subsection{The QCD multijet background}
+The QCD multijet background dominates for hadronic searches at the LHC. The cross section for such
+inelastic scattering has been measured at $13\TeV$ as $\sim78.1mb$~\cite{inelast}. These events
+are typically balanced dijet events, though higher jet multiplicities are also possible. 
+Unlike the signal processes for which the $\alphat$ search is sensitive, these events have no
+true \met. Fluctuations in detector response and reconstruction can cause a small fraction 
+of the QCD events to gain significant \emph{fake} \met. As the total QCD cross section is 
+around 6-7 orders of magnitude larger than that of the electroweak background these events with
+fake \met become a dominant background. The main detector and reconstruction mechanisms that may introduce 
+this \met are summarised below:
+\begin{itemize}
+\item Detector inefficiencies due to regions with reduced or no response (\emph{dead cells}) can cause 
+a significant proportion or all of the energy of any incident physics object to be lost. If the true event 
+is balanced, when losses occur due to detector inefficient the \met~vector will point approximately in the
+$\phi$ direction of the problematic region.
+\item Misreconstruction due to effects such as tracking errors, incorrect object identification and
+under/over correction of jets when calibrating. This may apply to one or more objects in the event. If the 
+underlying event is balanced the \met~vector will typically point in or opposite to the direction 
+of the misreconstructed object in cases of under or over estimation of the energy respectively.
+\item Additional energy can be added in the event due to effects including \emph{hot cells} which consistently records energy 
+regardless of incident particles in the ECAL or HCAL, spontaneous discharges and direct particle interactions with detector
+electronics or photomultipliers
+\item The \emph{beam halo} of charged particles around the LHC beam, caused mainly by proton scattering off LHC collimators, 
+may interact with muon chambers causing fake muons to be reconstructed or deposit energy in the calorimeters as they traverse 
+the detector~\cite{beam_halo}.
+\item Imbalance nay be introduced by acceptance effects. If physics objects are excluded from the calculation
+of energy sums due to thresholds in quantities such as $\pt$ or $\eta$ \met will be introduced. These thresholds are typically 
+required due to imperfect detector coverage or to remove objects reconstructed due to effects such as detector 
+noise or pileup.
+\end{itemize}
+In addition to QCD multijet events with fake \met introduced by such detector and reconstruction effects,
+QCD scattering processes may produce events containing true \met. This is due to the rare production of heavy flavour 
+quarks which decay via leptons and neutrinos. Such events pass hadronic selection as the leptons
+are typically confined within a jet cone and so fails isolation requirements. In such cases the \met~vector
+is typically closely aligned with the $\phi$ direction of the jet.
+
+\label{sec:qcd-background-intro}
+\subsection{ewk}
+\label{sec:ewk-background-intro}
+%should this be in theory section?
+
+\section{important variables}
+\label{sec:important-variables}
+\subsection{alphaT}
+
+\subsection{bdphi}
+
+\subsection{mhtdivmet}
+
+\subsection{Forward jet veto}
+\section{Physics objects}
+\subsection{jets}
+\subsection{photons}
+\subsection{electrons}
+\subsection{muons}
+\subsection{iso tracks}
+\subsection{energy sums}
+\subsection{summary}
+
+\section{Preselection}
+\subsection{event filters}
+\subsection{event vetoes}
+\subsection{kinematic selections}
+\subsection{summary}
+
+\section{Trigger strategy}
+\subsection{Hadronic signal region}
+\subsection{Control regions}
+%Should this be earlier?
+
+\section{Analysis selections}
+\subsection{Hadronic signal region}
+\subsection{Hadronic control region}
+\subsection{Photon control region}
+\subsection{Muon control regions}
+\subsection{summary}
+
+\section{Categorisation}
+\subsection{njet nb ht}
+\subsection{mht}
+
+%Move to later chapter?
+\section{Characterisation of control regions}
+\subsection{Yields and distributions for muon}
+\subsection{Yields and distributions for dimuon}
+\subsection{Yields and distributions for photon}
