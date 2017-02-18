@@ -43,6 +43,7 @@ regions is shown in Section ??.
 
 \section{backgrounds}
 \subsection{The QCD multijet background}
+\label{sec:qcd-background-intro}
 The QCD multijet background dominates for hadronic searches at the LHC. The cross section for such
 inelastic scattering has been measured at $13\TeV$ as $\sim78.1mb$~\cite{inelast}. These events
 are typically balanced dijet events, though higher jet multiplicities are also possible. 
@@ -78,23 +79,29 @@ QCD scattering processes may produce events containing true \met. This is due to
 quarks which decay via leptons and neutrinos. Such events pass hadronic selection as the leptons
 are typically confined within a jet cone and so fails isolation requirements. In such cases the \met~vector
 is typically closely aligned with the $\phi$ direction of the jet.
-
-\label{sec:qcd-background-intro}
 \subsection{ewk}
 \label{sec:ewk-background-intro}
 %should this be in theory section?
 
-\section{important variables}
+\section{Suppression of the QCD multijet background}
 \label{sec:important-variables}
 \subsection{alphaT}
 
 \subsection{bdphi}
 
-\subsection{mhtdivmet}
+\subsection{\mht/\met}
+The \mht/\met cleaning cut is designed to reduce the contamination from balanced events
+due to acceptance effects from kinematic and pseudorapidity thresholds, 
+severe jet mismeasurement and particles not clustered into jets. The PF \met includes
+all PF candidates and so the contamination from such events may be mitigated 
+using a maximal threshold on the ratio of the \mht to the \met~.
 
 \subsection{Forward jet veto}
-\label{sec:fwd_jet_veto}
 
+The $\mht$ variable is made using jets with $\etaabs < 2.4$. Jets in the forward pseudorapidity 
+region may introduce large $\mht$. A veto on any jet in the forward region with $p_T > 40\GeV$
+is used to veto such events. 
+\label{sec:fwd_jet_veto}
 \section{Physics objects}
 \subsection{Jets}
 
