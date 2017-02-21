@@ -41,7 +41,7 @@ Several variables are used, as detailed in Section ??, to categorise the signal 
 The characterisation of these variables using the control
 regions is shown in Section ??.
 
-\section{backgrounds}
+\section{Backgrounds for hadronic searches}
 \subsection{The QCD multijet background}
 \label{sec:qcd-background-intro}
 The QCD multijet background dominates for hadronic searches at the LHC. The cross section for such
@@ -74,28 +74,214 @@ of energy sums due to thresholds in quantities such as $\pt$ or $\eta$ \met will
 required due to imperfect detector coverage or to remove objects reconstructed due to effects such as detector 
 noise or pileup.
 \end{itemize}
-In addition to QCD multijet events with fake \met introduced by such detector and reconstruction effects,
-QCD scattering processes may produce events containing true \met. This is due to the rare production of heavy flavour 
+In addition to QCD multijet events with fake~\met introduced by such detector and reconstruction effects,
+QCD scattering processes may produce events containing true~\met. This is due to the rare production of heavy flavour 
 quarks which decay via leptons and neutrinos. Such events pass hadronic selection as the leptons
 are typically confined within a jet cone and so fails isolation requirements. In such cases the \met~vector
 is typically closely aligned with the $\phi$ direction of the jet.
+
 \subsection{ewk}
 \label{sec:ewk-background-intro}
 %should this be in theory section?
 
+
 \section{Suppression of the QCD multijet background}
 \label{sec:important-variables}
-\subsection{alphaT}
 
-\subsection{bdphi}
+Predicting the QCD backgrounds presents significant challenges, discussed in Section ??, which
+can introduce large uncertainty in the background estimatation. A distinguishing feature
+of the \alphat~analysis is the aim to mitigate this uncertainty by reducing the 
+background from QCD processes to the percantage level. This is acheived using selections on
+the dedicated variabes \alphat, \bdphi, \mhtmet and the forward jet veto. This section
+describes how these variables distinguish QCD events from those containing true~\met
+by exploiting the topologies and features of QCD events containing fake~\met. Further
+event filters that specificly target events containing $\met$ introduced by
+known detector problems and beam halo effects are discussed in Section ??.
 
-\subsection{\mht/\met}
-The \mht/\met cleaning cut is designed to reduce the contamination from balanced events
+\subsection{\alphat}
+The \alphat variable is designed to reject balanced events which gain significant~\met through
+jet mismeasurement. The $\alpha$ variable was initially proposed in ?? and converted into the
+transverse variable, $\alphat$, to allow use with hadronic collisions in ??. The absolute
+value of the $\met$ is sensitive to the detector and reconstruction effects discussed in Section ??. 
+The \alphat variable is designed to be dimensionless such that the topology of the event is used to reject 
+QCD processes, regardless of the total value of the~\met, 
+
+For a dijet event, \alphat is defined as
+
+\begin{equation}
+\label{eq:alphat}
+\alphat\, =\, \frac{\Et^{{\rm j}_2}}{M_\text{T}} \, ,
+\end{equation}
+
+where $\Et^{\rm j_2}$ the transverse energy of the 
+less energetic jet and $M_\text{T}$ is the transverse
+mass of the dijet system, defined as 
+
+\begin{equation}
+  \label{eq:mt}
+  M_\text{T}\, = \,\sqrt{ \left( \sum_{i=1}^2 \Et^{{\rm j}_i}
+    \right)^2 - \left( \sum_{i=1}^2 p_x^{{\rm j}_i} \right)^2 - \left(
+      \sum_{i=1}^2 p_y^{{\rm j}_i} \right)^2} \, .
+\end{equation}
+
+where $\Et^{{\rm j}_i}$ is the transverse energy of jet ${\rm j}_i$ (
+$\Et^{{\rm j}_i} = E^{{\rm j}_i}\sin\theta^{{\rm j}_i}$), and
+$p_x^{{\rm j}_i}$ and $p_y^{{\rm j}_i}$ are the $x$ and $y$ components
+of the transverse momentum of the jet. 
+
+For events with three or more jets a pseudo-dijet system is defined 
+where all possible vectoral sums of the jets in the event into two
+pseudo-jets are considered. The combination into pseudo-jets 
+with the smallest difference in transverse energy, $\Delta E_T$, is chosen
+as the most balanced configuration and used to define \alphat. The $M_\text{T}$ for the event is insensitive
+to the clustering and is given by
+
+\begin{equation}
+  \label{eq:mt}
+  M_\text{T}\, = \,\sqrt{ \left( \sum_{i=1}^2 \Et^{{\rm{j}}_i}
+    \right) - \mht^2}.
+\end{equation}
+
+where the sum is over all jets in the event. The sub-leading psuedo jet energy,$E_{\textrm{T}}^{j'_2}$, 
+is given by
+
+\begin{equation}
+E_{\textrm{T}}^{j'_2} = \frac{\sum_{i} E_{\textrm{T}}^{j_i} - \Delta E_{\textrm{T}}}{2}.
+\end{equation}
+
+The definition of \alphat for any number of jets is therefore
+
+\begin{equation}
+  \label{eq:alphat2}
+   \alphat = \frac{\sum_{i} E_{\textrm{T}}^{j_i} - \Delta E_{\textrm{T}}}{2\sqrt{\left(\sum_{i} E_{\textrm{T}}^{j_i}\right)^2 - \mht^2}}.
+\end{equation}
+
+Most jets in the event contain significant boost such that $E_{\textrm{T}} \sim \pt$. The \alphat 
+definition can be approximated in this case by
+
+\begin{equation}
+  \label{eq:alphat3}
+   \alphat \approx \frac{\scalht - \Delta H_{\textrm{T}}}{2\sqrt{\scalht^2 - \mht^2}}.
+\end{equation}
+
+\begin{figure}
+\centering
+    \includegraphics[width=0.8\textwidth]{./Figures/alphat/alphat_cartoon}
+  \caption{\label{fig:alphat_cartoon} The \alphat~variable inputs and values for three types of event: balanced and well measured jets (left), balanced jets with
+  a mismeasured jet (middle) and well measured jets recoiling against true~\met (right). The solid cones signify the reconstructed jet momentum while the 
+  dashed cones represent the true momentum. The calculation of \alphat~is described in the text.} 
+\end{figure}
+where $\Delta H_{\textrm{T}}$ is the difference in \pt~of the pseudo jets.
+
+To illustrate the mechanism by which the \alphat~variable rejects $\met$ from mismeasured or lost jets,
+consider a dijet event as shown in Figure~\ref{fig:alphat_cartoon}. Three possible event topologies are shown: 
+a perfectly balanced event (left), a perfectly balanced event with a mismeasred jet (middle) and an event containing true \met (right).
+In a typical balanced QCD dijet event without mismeasurement, $Delta E_T = \mht = 0$ and the 
+value of \alphat will be 0.5. If one of the jets is under or over measured for an otherwise balanced dijet
+event, $\Delta H_{\textrm{T}} = \mht$ and Equation~\ref{eq:alphat3} can be written as 
+
+\begin{equation}
+  \label{eq:alphat4}
+   \alphat \approx \sqrt{\left(\frac{\scalht^2 - \mht^2}{2\scalht^2 + \mht^2}\right)} < 0.5.
+\end{equation}
+
+Conversely, if an event contains true $\met$ and the jets are recoiling against significant~\met 
+(which is not aligned with one of the jets in the event), as shown on the right of 
+Figure~\ref{fig:alphat_cartoon}, $\alphat > 0.5$. 
+
+In the general case of two or more jets, events containing \met~from mismeasurement or 
+neutrinos produced in heavy flavour decays the values of $\Delta E_{\textrm{T}}$ and \mht~are highly correlated, leading
+to values of $\alphat <= 0.5$. This correlation is much weaker in the case of pair produced, 
+R-parity conserving SUSY events where each decay chain ends in the 
+undetected LSP and SM processes containing genuine \met, allowing $\alphat > 0.5$.
+
+The \alphat~distribution is shown in Figure~\ref{fig:alphat-data}. The region of $\alphat < 0.5$ is dominated by
+QCD multijet events which sharply drops as \alphat~increases above 0.5. Multijet events with
+extremely rare large stochastic fluctuations in the measured jet energies can lead
+to values of \alphat~above 0.5. \footnote{QCD multijet events may also have \alphat values larger than 0.5 if the 
+\pt of one or more jets is sufficiently different from $E_T$, breaking the assumption used for Equation~\ref{eq:alphat4}. 
+However, this is found to have $< 1\%$ effect on the number of QCD multijet events passing $\alphat > 0.5$.}
+The \alphat~distribution becomes more sharply peaked with increasing \scalht~in the event as mismeasurements are larger
+ for lower jet \pt. Significantly larger values of \alphat~for QCD multijet events can also be caused by effects such as 
+hot cells or acceptance. These are mitigated by the other discriminating variables 
+discussed below and dedicated event filters. 
+
+Unlike the QCD processes, the SM backgrounds with true \met~have a long tail in
+values of $\alphat$ greater than 0.5. The \alphat~variable therefore allows a powerful discrimination 
+between the otherwise dominant QCD background and processes with true \met.
+
+\begin{figure}[!htb]
+  \centering
+    \includegraphics[width=0.49\textwidth]{./Figures/alphat/alphat_data.pdf}
+  \caption{
+    The \alphat distribution observed in data compared to simulation. 
+    The statistical uncertainties for the multijet and SM
+    expectations are represented by the hatched areas. 
+    The final bin of each distribution contains the overflow events. The events below $\alphat= 0.55$ use unbiased triggers with
+    a loose preselection while events above $\alphat = 0.55$ use the signal region triggers and selection.
+    }
+  \label{fig:alphat-data}
+\end{figure}
+
+\subsection{\bdphi}
+\begin{figure}
+\centering
+    \includegraphics[width=0.8\textwidth]{./Figures/alphat/bdphi_cartoon}
+  \caption{\label{fig:bdphi_cartoon} The \bdphi~variable inputs and values for a mismeasured balanced three jet events.
+  The third jet minimises the $\Delta \phi_i$ and is used to calculate \bdphi.}
+\end{figure}
+The \bdphi~variable is an additional topological variable designed to mitigate contamination
+from mismeasured QCD events (from reconstruction and instrumental issues) and semi-leptonic 
+heavy flavour decays. The variable is defined as follows:
+\begin{itemize}
+\item Each jet in the event is considered in turn as the probe jet, $j_i$.
+\item The \mhtvec~is recalculated with the probe jet removed, $\mhtvec^{j_i}$.
+\item The azimuthal separation of the probe jet and $\mhtvec^{j_i}$ is calculated, $\Delta \phi_i$
+\item The \bdphi~is calculated as the minimal $\Delta \phi_i$ over all jets in the event as
+\begin{equation}
+\label{equ:bdphi}
+\bdphi = \underset{\forall\, i\, \in \left[1,\nj\right]}{min} \Delta \phi_i.
+\end{equation}
+\end{itemize}
+
+If the \bdphi value is close to the jet cone size, the jet which minimizes $\Delta \phi_i$ (\jbdphi)~is likely 
+to be mismeasured or contain~\met from semi-leptonic decay. The \bdphi variable is insensitive to
+the~\pt of \jbdphi and rejects events containing a jet whose \pt~is either over or under measured.
+The jets in the electroweak background procoesses and signal models typically recoil against the
+\met~implying larger values of \bdphi. The calculation of \bdphi~for a mismeasured balanced 
+event containing three jets is shown in Figure~\ref{bdphi_cartoon}.
+In the \alphat analysis a threshold of 0.5 is used to reject QCD multijet events.
+
+The \bdphi variable can be compared to the nominal minimal $\Delta \phi$ between
+the \mht~and the lead four jets in the event used by many hadronic analyses, \dphimhtj.
+The advantages of \bdphi~include sensitivity to mismeasurement of any jet in the 
+event (not merely the lead four), sensitivity to both under and over measurement
+of jet energies (\dphimhtj does not provide rejection of events with an over-measured jet)
+and insensitivty to the \pt~of the jet which is mismeasured. The \bdphi variable
+can provide an order of magnitude better rejection of QCD for the same signal efficiency. 
+
+\begin{figure}[!htb]
+  \centering
+    \includegraphics[width=0.49\textwidth]{./Figures/alphat/bdphi_data.pdf}
+  \caption{
+    The \bdphi~distribution observed in data compared to simulation for a selection $\scalht > 800\GeV$.
+    The statistical uncertainties for the multijet and SM expectations are represented by the hatched areas. 
+    }
+  \label{fig:bdphi-data}
+\end{figure}
+
+The distribution of \bdphi~in data and simulation for $\scalht > 800\GeV$ is shown in Figure~\ref{fig:bdphi-data}.
+The QCD multijet background is seen to decrease by around five orders of magnitude as \bdphi increases
+to 0.5. In Figure~\ref{fig:bdphi-data} the electroweak background processes
+can be seed to have long tails up to $\bdphi = \pi$.
+
+
+\subsection{\mhtmet}
+The \mhtmet~cleaning cut is designed to reduce the contamination from balanced events
 due to acceptance effects from kinematic and pseudorapidity thresholds, 
-severe jet mismeasurement and particles not clustered into jets. The PF \met includes
+severe jet mismeasurement and particles not clustered into jets. The PF \met~includes
 all PF candidates and so the contamination from such events may be mitigated 
-using a maximal threshold on the ratio of the \mht to the \met~.
-
+using a maximal threshold on the ratio of the \mht~to the \met.
 \subsection{Forward jet veto}
 
 The $\mht$ variable is made using jets with $\etaabs < 2.4$. Jets in the forward pseudorapidity 
