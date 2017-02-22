@@ -434,25 +434,63 @@ using PF jets with $\pt > 15\GeV$. In the control regions the object(s) used to 
 the control region is not included the $\met$ calculation. The \mht~and \scalht~are defined
 using the vector and scalar sum respectively of all PF jets satisfying $\pt > 40\GeV$ and $\etaabs < 2.4$.
 
-\subsection{summary}
+\subsection{Summary}
+
+The physics objects defined in this Section are used for defining the
+discriminating variables discussed in Section ?? as well as additional selections
+discussed below. A summary of the physics objects and their
+kinematic requirements is presented in Table ??.
+
+\begin{table}[h!]
+  \caption{Electron identification requirements.\label{tab:ele-id}}
+  \centering
+  \footnotesize
+  \begin{tabular}{ lll }
+    \hline
+    \hline
+    Object 	& 	&Kinematic selection \\
+    \hline
+    \hline
+    Jet  		&Central jets& $\pt > 40 \GeV,\ \etaabs < 2.4$		    \\
+			&Leading central jets&	$\pt > 100 \GeV,\ \etaabs < 2.4$	\\	    	    
+			&Forward jet (veto) &$\pt > 40 \GeV,\ \etaabs > 2.4$	\\	    
+    Photon  		&\gj control region& $\pt > 200 \GeV,\ \etaabs < 1.45$	\\	    
+			&Veto& $\pt > 25 \GeV,\ \etaabs < 2.5$		    \\
+    Muon  		&\mj and \mmj control regions& $\pt > 30 \GeV,\ \etaabs < 2.1$	\\	    
+			&Veto& $\pt > 10 \GeV,\ \etaabs < 2.5$		    \\
+    Electron  		&Veto& $\pt > 10 \GeV,\ \etaabs < 2.5$		    \\
+    Isolated track  	&Veto& $\pt > 10 \GeV,\ \etaabs < 2.5$		    \\
+		
+    
+    \hline
+    \hline
+  \end{tabular}
+  \end{table}
 
 \section{Preselection}
-\subsection{event filters}
-\subsection{event vetoes}
-\subsection{kinematic selections}
-\subsection{summary}
+The objects described in Section ?? are used to define a common kinematic 
+preselection for the signal and control regions used in the $\alphat$ analysis. 
+The kinematic selections as well as event filters and vetoes targetting
+known instrumental, recontruction and beam effects are described in this Section.
 
-\section{Trigger strategy}
-\subsection{Hadronic signal region}
-\subsection{Control regions}
-%Should this be earlier?
+\subsection{Kinematic selections}
+The minimal requirements on the energy sums for both the signal and control regions are
+$\scalht > 200\GeV$ and $\mht > 200\GeV$. In addition, at least one jet satisfying the 
+requirements detailed in Section~\ref{} is required.
+\subsection{Event filters}
+\subsection{Event vetoes}
 
-\section{Analysis selections}
 \subsection{Hadronic signal region}
 \subsection{Hadronic control region}
 \subsection{Photon control region}
 \subsection{Muon control regions}
 \subsection{summary}
+
+
+\section{Trigger strategy}
+\subsection{Hadronic signal region}
+\subsection{Control regions}
+%Should this be earlier?
 
 \section{Categorisation}
 \subsection{njet nb ht}
