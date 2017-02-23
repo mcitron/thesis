@@ -439,10 +439,10 @@ using the vector and scalar sum respectively of all PF jets satisfying $\pt > 40
 The physics objects defined in this Section are used for defining the
 discriminating variables discussed in Section ?? as well as additional selections
 discussed below. A summary of the physics objects and their
-kinematic requirements is presented in Table ??.
+kinematic requirements is presented in Table~\ref{tab:kine-sel}.
 
 \begin{table}[h!]
-  \caption{Electron identification requirements.\label{tab:ele-id}}
+  \caption{Kinematic selections for physics objects.\label{tab:kine-sel}}
   \centering
   \footnotesize
   \begin{tabular}{ lll }
@@ -476,14 +476,148 @@ known instrumental, recontruction and beam effects are described in this Section
 \subsection{Kinematic selections}
 The minimal requirements on the energy sums for both the signal and control regions are
 $\scalht > 200\GeV$ and $\mht > 200\GeV$. In addition, at least one jet satisfying the 
-requirements detailed in Section~\ref{} is required.
+requirements detailed in Table~\ref{tab:kine-sel} is required. These selections are 
+designed by considering trigger efficiency constraints while maximising acceptance for
+signal models with small mass splittings.
 \subsection{Event filters}
-\subsection{Event vetoes}
+Event filters reject events contaminated by detector or reconstruction effects
+which can cause significant~\met. Such effects may not be known when the 
+background simulations are produced or can be difficult to simulate. Therefore,
+dedicated filters are used to remove such events in the data. These \met filters are summarised below,
+
+\begin{itemize}
+\item The \emph{HBHE noise and isolation filters} reject energy spikes in the HCAL caused by noise from sources 
+including direct particle interactions with HCAL instrumentation.
+\item The \emph{EE bad supercluster filter} removes events containting \TeV scale energy spikes from anomolous
+pulses in the EE.
+\item The \emph{CSC beam halo filter} uses the CSC to measure halo muons and reject events containing 
+significant contamination from the beam halo.
+\item The \emph{ECAL trigger primitive filter} rejects events where significant energy is deposited in dead cell regions.
+\item The \emph{Primary vertex filter} requires at least one well reconstructed vertex which ensures collisions have occured
+rather than an event triggered and reconstructed from detector noise.
+\item The \emph{bad muon and bad charged hadron filters} reject events containing poorly reconstructed muons reconstructed as 
+a muon or PF charged hadron respectively.
+\end{itemize}
+
+\begin{figure}
+\centering
+    \includegraphics[width=0.8\textwidth]{./Figures/alphat/met_clean}
+  \caption{\label{fig:met_filter} The $\met$~filters remove the long tail in the reconstructed \met~caused by detector, reconstruction
+  and beam effects in the data~\cite{met_fig}.} 
+\end{figure}
+The performance of the \met~filters for the reconstructed \met~in the data is shown in Figure~\ref{met_fig}. The long tail caused by
+the effects in data discussed above is mitigated by the filters. In addition to the \met~filters, 
+additional vetoes are used by the \alphat~analysis to reject events affected by misreconstruction and residual beam halo. These are
+\begin{itemize}
+\item A \emph{leading jet charged hadron energy fraction (CHEF) veto} which rejects events 
+contaminated by beam halo energy deposits which pass the CSC beam halo filter. The lead jet 
+in the event is required to satisfy CHEF > 0.1.
+\item The \emph{odd jet veto} rejects any event containing a jet which fails the 
+requirements in Table~\ref{tab:loose-jet-id}. These are often caused by noise or misreconstruction.
+\item The \emph{forward jet veto}, described in, rejects events containing jets which fall out of acceptance but
+are reconstructed in the forward region. 
+\end{itemize}
+%%MAYBE ADD PLOTS HERE TO MOTIVATE?
+
+\section{Analysis selections}
+The common preselections are applied for all events used by the \alphat~analysis. The events 
+passing these selections may then fall into the signal region or the hadronic,
+\gj, \mj or \mmj control region. These regions are exclusive such that no
+event may be double counted and the selections for each are summarised below.
 
 \subsection{Hadronic signal region}
-\subsection{Hadronic control region}
-\subsection{Photon control region}
-\subsection{Muon control regions}
+Events in the signal region are categorised (see Section~\ref{sec:cat}) and used
+to search for hadronic signatures of new physics. Selections are made to supress the QCD multijet
+background and reducible electroweak backgrounds.
+\subsubsection{QCD background suppression}
+\label{sec:qcd_sup}
+The QCD multijet background is suppressed using the discriminating variables
+discussed in Section ??. Thresholds on the \alphat, \bdphi~and \mhtmet~variables
+are used.
+A \scalht dependant threshold is used to account for the broadening \alphat distribution
+for lower \scalht values. These thresholds must also be efficient considering
+the trigger requirements and are shown in Table~\ref{tab:alphat-thresholds}. The highest threshold 
+of 0.65 is used for $200\GeV < \scalht < 300\GeV$ while there is no \alphat~
+requirement for $\scalht > 900\GeV$, for which region a pure \scalht~trigger is used.
+At least two jets are required to define~\alphat and therefore no threshold is used
+in events containing only one jet (monojet).
+
+\begin{table}[h!]
+  \caption{\alphat thresholds versus
+    lower bound of \scalht bin. For all \scalht bins satisfying $\scalht >
+    900\gev$, no \alphat cut is applied. No \alphat requirement is
+    imposed in the monojet bins.}
+  \label{tab:alphat-thresholds}
+  \centering
+  \footnotesize
+  \begin{tabular}{ lccccccccc }
+    \hline
+    \hline
+    \scalht            & 200       & 250       & 300       & 350       & 400       & 500       & 600 &  $>$900    \\
+    \hline                                                                                     
+    \alphat threshold  & 0.65      & 0.60      & 0.55      & 0.53      & 0.52      & 0.52      & 0.52 & --    \\
+    \hline
+    \hline
+  \end{tabular}
+\end{table}
+
+A \bdphi~threshold of 0.5 is used for all events passing signal region selection.
+This value is motivated by the jet cone size of 0.4 and desired level of 
+QCD suppression. For monojet events the \bdphi variable is defined including jets with 
+$\pt > 20 \GeV$, $\bdphi_{20}$. If there are no such jets no threshold on \bdphi is used.
+In such cases the QCD contamination is low due to the highly asymmetric event topology required.
+
+Finally, an $\mhtmet < 1.25$ requirement rejects events containing 
+\mht~due to energy present in the event which is not clustered into jets. 
+The values of the thresholds on \alphat, \bdphi~and \mhtmet~provide the desired 
+level of QCD multijet contamination, measured in data, of < 10\% 
+as measured in data (see Section ??).
+\subsubsection{Electroweak background suppression}
+
+The electroweak backgrounds containing \met~from final states including
+leptons (including \wl~and \tlb) can be supressed by vetoing leptons. 
+An additional veto on photons ensures a purely hadronic final state.
+Isolated tracks are used to identify W boson decays and single prong 
+decays of the $tau$. An events is vetoes if it contains at least one isolated track.
+\subsection{Control regions}
+The control regions are used to predict both the residual QCD multijet
+and electroweak backgrounds. Each of the control regions is enriched 
+in the background sample(s) predicted by that control region or a related 
+process. The selections used are described in this section and are designed to 
+be as close to the signal region selections as possible 
+while ensuring a large sample of events enriched in the relevant process. 
+\subsubsection{Hadronic control regions}
+The hadronic control regions are used to determine the level of QCD contamination
+remaining in the signal region. These are defined by inverting the selection on the 
+discriminating variables described in Section~\ref{sec:qcd_sup} to give a data sample 
+dominated by events from QCD processes. Any event containing a reconstructed photon or lepton is vetoed.
+\subsubsection{Photon control region}
+The \gj~control region is used to predict the \znunu~background in the signal region.
+One photon satisfying the requirements in Table~\ref{tab:kine-sel} is required in the 
+event and events containing leptons are vetoed. The energy sums are then calculated without this photon. To reduce the reliance on simulation, 
+all signal region selections are made except for those on the \bdphi~and \alphat variables.
+These requirements are removed to enhance the statistics in the control region sample 
+for predicting the \znunu~background. To ensure the photon is not affected by hadronic
+activity, any events with a jet satisfying $\Delta R(j,\gamma) < 1$ are vetoed. Finally,
+the $\mht > 200\GeV$ threshold in both signal and control helps ensure the Z is sufficiently
+boosted such that its mass does not bias the prediction from the \gj control region. 
+\subsubsection{Muon control regions}
+The muons used for the muon control regions are defined as detailed in
+Table~\ref{tab:kine-sel}. Energy sums are defined without including the muon 
+and all selections except for those on the \bdphi~and \alphat~variables are used.
+Events are vetoed if $\Delta R(j,\mu) < 0.5$ for all jets and muons in the event to
+ensure no hadronic activity affects the muon(s). Events are also rejected if they 
+contain an electron or photon.
+
+The \mj~conrol region is used to predict the lost lepton background from 
+a sample rich in \wj~and \ttbar~processes. A single muon is required and a selection used on the transverse mass variable
+of $\mt(\mu,\met) < 125\GeV$ to enrich the sample with \wj~and to ensure signal model depletion.
+
+The \mmj~conrol region is used along with the \gj~control region to predict the \znunu~background
+using a sample rich in the \zmmj~process. Exactly two oppositely charged muons are required with
+an invariant mass within 25\GeV of the mass of the Z boson, $|M_{\mu_1,\mu_2} - m_Z| < 25\GeV$.
+of $\mt(\mu,\met) < 125\GeV$ to enrich the sample with \wj~and to ensure signal model depletion.
+
 \subsection{summary}
 
 
@@ -493,6 +627,7 @@ requirements detailed in Section~\ref{} is required.
 %Should this be earlier?
 
 \section{Categorisation}
+\label{sec:cat}
 \subsection{njet nb ht}
 \subsection{mht}
 
