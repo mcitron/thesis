@@ -628,9 +628,83 @@ of $\mt(\mu,\met) < 125\GeV$ to enrich the sample with \wj~and to ensure signal 
 
 \section{Categorisation}
 \label{sec:cat}
-\subsection{njet nb ht}
-\subsection{mht}
+In order to maintain senstivity to a wide range of signal models events are categorised using
+several discriminating variables Each \emph{bin} may be sensitive to signal models with different 
+signatures. The categorisation and targeted signal features are described in this section.
 
+The \alphat~analysis uses a categorisation in \njet, \nb~and \scalht~for both 
+the signal and control regions. Each signal region category is therefore predicted using an identical 
+selection in these variables for the control region. The categorisations are determined through requirements of sufficient
+control region statistics to predict each \njet, \nb and \scalht bin as detailed below. The signal region is 
+further categorised according to~\mht. 
+
+\subsection{Categorisation in \njet}
+
+The \alphat analysis categorises events into three topologies, \emph{monojet},\emph{asymmetric} 
+and \emph{symmetric}, using selections on the second jet~\pt. For all topologies, the leading
+jet must satisfy $\pt^{j_1} > 100\GeV$.  The monojet topology vetoes events containing a second 
+jet with $\pt^{j_2} > 40\GeV$ and is designed to target generic DM 
+and compressed SUSY models. No jets are produced in s-channel and t-channel production of DM
+while for compressed supersymmetric models, the LSP carries the majority of the energy from 
+the heavy sparticle decay, meaning any jets produced in the decay are soft (small values of \pt). 
+These events may come into acceptance if one of the incoming/outgoing partons radiate a jet, initial/final state
+radiation (ISR/FSR), which is reconstructed. The monojet topology also rejects backgrounds from 
+\ttbar which tends to have high \njet multiplicities. The asymmetric topology selects events 
+containing a second jet with $40\GeV < \pt^{j_2} < 100\GeV$.
+Compressed SUSY models whose decay products are soft but can be reconstructed and models
+containing multiple ISR/FSR jets are targeted. Finally, the symmetric topology requires  
+$\pt^{j_2} > 100\GeV$ and targets more generic supersyemmtric models with large mass splittings 
+for which the decay products carry a large energy.
+
+The jet multiplicity varies widely depending on the signal model and background process.
+Supersymmetric signal models which predomenantly involve the production light quarks and/or models 
+with small mass splittings between the coloured particles and the LSP tend to produce 
+a small number of jets with significant energy. Conversely, models of gluino or stop production
+have larger jet multiplicities. The baackgrounds are also largely \njet~dependant as 
+\ttbar~decays typically produce high multiplicities while decays of vector boson backgrounds
+produce low multiplicities. The events with a symmetric topology are therefore categorised according
+to $\njet = 2,3,4,5,\ge6$.
+
+\subsection{Categorisation in \nb}
+
+A categorisation on \nb~improves sentivity to models containing heavy flavour squarks and gluino
+decays to heavy flavour quarks. Such models are favoured due to the naturalness of the
+inverted mass heirarchy and can produce from 2 to 4 bottom quarks depending on the decay.
+Events are categorised as $\njet = 0,1,2,3,\ge4$. The dominant background for events 
+with more than one b jet comes from the \ttbar process. The misidentification of 
+jets from light flavoured quarks as b jets increases the background rate for a high $\nb$ selection.
+
+\subsection{Categorisation in \scalht}
+
+The \scalht produced in an event provides a measure of the mass scale of 
+new physics models. This will be dependant on the mass splitting between
+the heavy sparticle and LSP in the model which determines the energy
+provided to the visible decay products. The control regions are binned
+in \scalht as 200-250\GeV,250-300\GeV,300-350\GeV,400-500\GeV,500-600\GeV,
+,600-750\GeV,750-900\GeV,900-1050\GeV and 900-1200\GeV. In the signal region
+the \scalht categorisation depends on the jet category. The finst \scalht
+regions are 200-400\GeV,400-600\GeV,600-900\GeV and 900-1200\GeV.
+These are merged from above depending on the requirement of at least one control region
+event observed in data per \scalht~region to allow a meaningful prediction.
+The highest \scalht~bin for each category is summarised in Table ??.
+
+
+\subsection{Categorisation in \mht}
+
+The categorisation in \mht~was introduced for the first analysis on
+Run 2 data. The control regions are not binned in this dimension 
+for the prediction but are used to validate the simulation as described
+in section ??. The \mht~variable is dependant on the energy carried by
+the invisible decay product of any new physics model. For compressed 
+models the categorisation in both \scalht~and \mht provides additional 
+sensitivity as, unlike the standard model backgrounds, such models tend to 
+have \mht~values near \scalht. The division of each \scalht, \njet 
+and \nb bin into \mht bins is done with the requirement of at least ??
+MC events to ensure a meaningful prediction.
+
+\subsection{Categorisation summary}
+
+??
 %Move to later chapter?
 \section{Characterisation of control regions}
 \subsection{Yields and distributions for muon}
