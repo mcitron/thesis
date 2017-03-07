@@ -1,45 +1,43 @@
 \chapter{The \alphat search}
 
-Hadronic searches for new physics aim to exploit strong force modes of 
-production and decay. Such modes may be expected to dominate in the 
-proton-proton collisions at the LHC. The \alphat~analysis relies on a
-final state including jets and significant \met~to search for new physics.
-
-The \alphat~analysis uses dedicated dimensionless variables to effectively reject the
-dominant QCD multijet background. A robust data-driven estimate of the remaining
-backgrounds and systematic uncertainties reduces the reliance on simulation.
-During Run 1, this strategy has been used for several searches for supersymmetry at
+The \alphat~analysis is an hadronic search for new physics which 
+targets models which are produced and decay via the strong force.
+Such modes may be expected to dominate in the proton-proton collisions 
+at the LHC. Exploiting an hadronic final state requires effecitive 
+background suppression and residual background prediction. During Run 1, the \alphat~analysis 
+strategy has been used for several searches for supersymmetry at
 both $\sqrt{s} = 7 \TeV$ and $\sqrt{s} = 8 \TeV$ as well as a range of luminosities
-\cite{alphaT1,alphaT2,alphaT3,alphaT4}. As detailled in this section, substantial 
-improvements to the sensitivity and acceptance of the search have been made for Run 2.
+\cite{alphaT1,alphaT2,alphaT3,alphaT4}. For Run 2, the selections and categorisation 
+have been updated to improve the sensitivity and acceptance of the search and are detailed below.
 
-\section{Introduction to the \alphat analysis}
+The \alphat~analysis~\emph{signal region} selects a final state 
+including jets and significant \met with no reconstructed leptons or photons
+to search for new physics. The QCD multijet process may pass such 
+a selection through the mechanisms described in Section~\ref{sec:qcd-background-intro}. 
+To mitigate this otherwise 
+dominant background, dedicated dimensionless variables, described in Section~\ref{sec:important-variables}, 
+are used to suppress the QCD multijet process in the signal region to the percentage level. 
+In defining the signal region, additional hadronic, kinematic and cleaning selections 
+are used for further QCD and electroweak background suppression and are described in section~\ref{sec:had_sr}.
 
-In order to achieve sensitivity to a wide range of new physics signatures
-searches for new physics must reject backgrounds while maintaining signal acceptance.
-For any hadronic search, QCD multijet processes will dominate. The
-\alphat analysis uses selections based on key discriminating variables,
-described in Section~\ref{sec:important-variables}, to reduce such backgrounds
-to the percentage level. Additional hadronic and cleaning selections, summarised in
-Sections ?? and ??, define the signal region. 
-
-The determination of residual multijet backgrounds as well as backgrounds with 
-genuine \met~relies on data driven techniques described in Sections ?? and ?? respectively.
+The determination of residual QCD multijet backgrounds as well as backgrounds with 
+genuine \met~(described in Section~\ref{sec:ewk-background-intro}) relies on data driven techniques described in Sections ?? and ?? respectively.
 These data driven predictions use signal depleted \emph{control regions} enriched in a particular
-background process (or related process). The selections in
+background process (or related process). All events used in the \alphat~analysis pass
+a common preselection described in Section~\ref{sec:presel}. Further selections in
 these control regions closely follow those in the signal region and are detailed in 
-Section ?? and ??.
+Section~\ref{sec:cr-sel}.
 
 As discussed in Section~\ref{sec:triggerUpgrade}, an effective trigger strategy is 
 critical to ensure acceptance to models which may, for example, have relatively low
 \scalht~but significant~\mht. The trigger strategy for the signal and control regions
-is discussed in Section ??.
+is discussed in Section~\ref{sec:ana-trigger}.
 
 To inclusively optimise sensitivity, the events that pass the signal region requirements 
 must be categorised to allow significant signal contributions for a wide range of models. 
-Several variables are used, as detailed in Section ??, to categorise the signal region. 
+Several variables are used, as detailed in Section~\ref{sec:cat}, to categorise the signal region. 
 The characterisation of these variables using the control
-regions is shown in Section ??.
+regions is shown in Section~\ref{sec:char}.
 
 \section{Backgrounds for hadronic searches}
 \subsection{The QCD multijet background}
@@ -80,22 +78,88 @@ quarks which decay via leptons and neutrinos. Such events pass hadronic selectio
 are typically confined within a jet cone and so fails isolation requirements. In such cases the \met~vector
 is typically closely aligned with the $\phi$ direction of the jet.
 
-\subsection{ewk}
+\subsection{Electroweak backgrounds}
 \label{sec:ewk-background-intro}
 %should this be in theory section?
+There are several SM processes which form backgrounds for hadronic searches. These include 
+true~\met from neutrinos and are termed the \emph{electroweak} backgrounds. The dominant 
+electroweak background processes are \wj,\ttj and \zj. An overview of these processes 
+and the mechanisms by which they may enter into the hadronic signal region 
+(defined in Section~\ref{sec:had_sr}) are described below. 
 
+\subsubsection{\zj background}
+
+The largest background process in the $\alphat$ signal region comes from Z production
+in association with jets (\zj) followed by decay to neutrinos, \znunu. This process is an \emph{irreducible} background
+as the neutrinos can cause significant \met in the final state. Across the signal region
+\znunu contributes $\sim 54\%$ of the overall background. The decay of the Z to leptons, \zll may also
+introduce $\met$ if one or both of the leptons is not reconstructed (\emph{lost}). However, as
+an hadronic final state is required, this background is sub-dominant, comprising $\sim 0.5\%$
+of the signal region, due to the low probability of failing to reconstruct both leptons.
+
+\subsubsection{\wj background}
+
+The \wj background comprises $\sim 38\%$ the overall background in the signal region.
+Purely leptonic decays of the W may pass hadronic selection if the lepton is not reconstructed. 
+This \emph{lost lepton} background may be introduced if the lepton falls out of acceptance,
+fails isolation requirements or is otherwise misreconstructed. Both the lost lepton 
+and the neutrino in the event may contribute to the \met. 
+% Typically, however, 
+% the neutrino dominates the \met~as low $\pt$ leptons are more likely to be misreconstructed.
+The branching fraction for a W decaying to an hadronically decaying $\tau$ is $\sim6\%$.
+In such events the associated $\tau$ neutrino may introduce significant~\met. If the hadronic
+decay products are reconstructed as a jet these events may pass the signal region selection.
+To reduce this background a single isolated track is used to reject single prong decays of the 
+$\tau$~($\tau{\pm}\rightarrow\pi^{\pm}+n\pi^{0}\nu$) which comprise $\sim70\%$ of the hadronic tau decays.
+
+\subsubsection{\ttj and single top background}
+
+The \ttj and single top background comprise around $5\%$ and 0.5\% of the overall
+background respectively. On production, the top quark will predominantly decay via the 
+weak force as \twb. The W boson may then decay hadronically, producing a final state
+with multiple jets or leptonically, producing a final state including a lepton and neutrino. 
+
+The final state in an event with \ttj production may include multiple jets (up to six
+if both tops decay hadronically) and/or significant \met depending on the decay of 
+the tops as well as two bottom quarks. If both W bosons decay hadronically ($\sim45.7\%$ of \ttbar~decays)
+up to six jets may be produced from the hadronisation of the quarks. In this case the $\met$
+may be introduced via jet mismeasurement or from bottom quark decay via neutrinos. If one of the 
+W bosons decays leptonically ($\sim45.8\%$ of \ttbar~decays) up to four jets may be expected to be produced in the decay
+as well as~\met from the neutrino. Such events may enter hadronic selection if the lepton is lost.
+Finally, if both W bosons decay leptonically ($\sim10.5\%$ of \ttbar~decays) the final state contains two 
+leptons and significant \met. This mode is subdominant due to the low probability of losing both leptons
+and lack of jets in the final state.
+
+The \alphat analysis categorises events using the number of reconstructed 
+jets identified as originating from bottom quarks. The \ttbar background is particularly
+enriched for $\nb \ge 2$, comprising $\sim60\%$ of the background for such events.
+
+Single top production occurs mainly via t-channel in association with a quark, production in 
+association with a W boson, or s-channel in association with a bottom quark with approximate
+proportions 72.5, 24 and 3.5\% respectively. As for \ttj, the single top background is enhanced for 
+categorisations with at least two reconstructed bottom quarks, rising to $\sim5\%$ of the total for
+such events.
+
+\subsubsection{Residual electroweak backgrounds}
+
+In addition to the backgrounds discussed above, there are several additional processes which 
+make minor contributions to the overall background. These contribution can be enhanced, however, 
+for particular categorisations. Such residual backgrounds include \ttbar production in association with a vector
+boson, comprising $\sim0.1\%$ of the total background, which rises to $\sim4\%$ for an $\nb \ge 2$ selection;
+pair production of vector bosons (ZZ, WZ and WW), comprising $\sim1.4\%$ of the total background and
+leptonic decays of the Z with two lost leptons (0.5\% of the overall background).
 
 \section{Suppression of the QCD multijet background}
 \label{sec:important-variables}
 
 Predicting the QCD backgrounds presents significant challenges, discussed in Section ??, which
-can introduce large uncertainty in the background estimatation. A distinguishing feature
+can introduce large uncertainty in the background estimation. A distinguishing feature
 of the \alphat~analysis is the aim to mitigate this uncertainty by reducing the 
-background from QCD processes to the percantage level. This is acheived using selections on
-the dedicated variabes \alphat, \bdphi, \mhtmet and the forward jet veto. This section
+background from QCD processes to the percentage level. This is achieved using selections on
+the dedicated variables \alphat, \bdphi, \mhtmet and the forward jet veto. This section
 describes how these variables distinguish QCD events from those containing true~\met
 by exploiting the topologies and features of QCD events containing fake~\met. Further
-event filters that specificly target events containing $\met$ introduced by
+event filters that specifically target events containing $\met$ introduced by
 known detector problems and beam halo effects are discussed in Section ??.
 
 \subsection{\alphat}
@@ -422,7 +486,7 @@ for passing trigger requirements and that the muon is well reconstructed.
 
 \subsection{Isolated tracks}
 
-Isolated tracks are used to identify W boson decays and single prong decays of the $tau$ (see Section ??). 
+Isolated tracks are used to identify W boson decays and single prong decays of the $\tau$ (see Section ??). 
 They are selected from the charged PF candidates satisfying $\pt > 10\GeV$, $\Delta z(\text{track},\text{PV})$ and 
 $I_{\text{PF}}^{\text{rel}} < 0.1$ with a cone of $\Delta R = 0.3$.
 
@@ -468,6 +532,7 @@ kinematic requirements is presented in Table~\ref{tab:kine-sel}.
   \end{table}
 
 \section{Preselection}
+\ref{sec:presel}
 The objects described in Section ?? are used to define a common kinematic 
 preselection for the signal and control regions used in the $\alphat$ analysis. 
 The kinematic selections as well as event filters and vetoes targetting
@@ -526,6 +591,7 @@ passing these selections may then fall into the signal region or the hadronic,
 event may be double counted and the selections for each are summarised below.
 
 \subsection{Hadronic signal region}
+\label{sec:had_sr}
 Events in the signal region are categorised (see Section~\ref{sec:cat}) and used
 to search for hadronic signatures of new physics. Selections are made to supress the QCD multijet
 background and reducible electroweak backgrounds.
@@ -580,6 +646,7 @@ An additional veto on photons ensures a purely hadronic final state.
 Isolated tracks are used to identify W boson decays and single prong 
 decays of the $tau$. An events is vetoes if it contains at least one isolated track.
 \subsection{Control regions}
+\label{sec:cr-sel}
 The control regions are used to predict both the residual QCD multijet
 and electroweak backgrounds. Each of the control regions is enriched 
 in the background sample(s) predicted by that control region or a related 
@@ -622,6 +689,7 @@ of $\mt(\mu,\met) < 125\GeV$ to enrich the sample with \wj~and to ensure signal 
 
 
 \section{Trigger strategy}
+\label{sec:ana-trigger}
 \subsection{Hadronic signal region}
 \subsection{Control regions}
 %Should this be earlier?
@@ -707,6 +775,7 @@ MC events to ensure a meaningful prediction.
 ??
 %Move to later chapter?
 \section{Characterisation of control regions}
+\label{sec:char}
 \subsection{Yields and distributions for muon}
 \subsection{Yields and distributions for dimuon}
 \subsection{Yields and distributions for photon}
