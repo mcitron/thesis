@@ -1,28 +1,28 @@
 \chapter{The \alphat search}
 
-The \alphat~analysis is an hadronic search for new physics which 
-targets models which are produced and decay via the strong force.
-Such modes may be expected to dominate in the proton-proton collisions 
-at the LHC. Exploiting an hadronic final state requires effecitive 
+The \alphat~analysis is an hadronic search for new physics 
+targeting models which are produced and which decay via the strong force.
+Such strong force modes may be expected to dominate in the proton-proton collisions 
+at the LHC. Exploiting an hadronic final state requires effective 
 background suppression and residual background prediction. During Run 1, the \alphat~analysis 
 strategy has been used for several searches for supersymmetry at
 both $\sqrt{s} = 7 \TeV$ and $\sqrt{s} = 8 \TeV$ as well as a range of luminosities
 \cite{alphaT1,alphaT2,alphaT3,alphaT4}. For Run 2, the selections and categorisation 
 have been updated to improve the sensitivity and acceptance of the search and are detailed below.
 
-The \alphat~analysis~\emph{signal region} selects a final state 
+The \alphat~analysis \emph{signal region} is defined by selecting a final state 
 including jets and significant \met with no reconstructed leptons or photons
-to search for new physics. The QCD multijet process may pass such 
-a selection through the mechanisms described in Section~\ref{sec:qcd-background-intro}. 
-To mitigate this otherwise 
-dominant background, dedicated dimensionless variables, described in Section~\ref{sec:important-variables}, 
-are used to suppress the QCD multijet process in the signal region to the percentage level. 
+to search for new physics. To mitigate the otherwise dominant QCD multijet background, 
+detailed in Section~\ref{sec:qcd-background-intro}, dedicated dimensionless variables, 
+defined in Section~\ref{sec:important-variables}, are used to strongly suppress this process.
 In defining the signal region, additional hadronic, kinematic and cleaning selections 
-are used for further QCD and electroweak background suppression and are described in section~\ref{sec:had_sr}.
+are used for further QCD and electroweak background suppression and are described in 
+section~\ref{sec:had_sr}.
 
 The determination of residual QCD multijet backgrounds as well as backgrounds with 
-genuine \met~(described in Section~\ref{sec:ewk-background-intro}) relies on data driven techniques described in Sections ?? and ?? respectively.
-These data driven predictions use signal depleted \emph{control regions} enriched in a particular
+genuine \met~(described in Section~\ref{sec:ewk-background-intro}) relies on data driven techniques 
+described in Sections ?? and ?? respectively. These data driven predictions use signal 
+depleted \emph{control regions} enriched in a particular
 background process (or related process). All events used in the \alphat~analysis pass
 a common preselection described in Section~\ref{sec:presel}. Further selections in
 these control regions closely follow those in the signal region and are detailed in 
@@ -42,68 +42,75 @@ regions is shown in Section~\ref{sec:char}.
 \section{Backgrounds for hadronic searches}
 \subsection{The QCD multijet background}
 \label{sec:qcd-background-intro}
-The QCD multijet background dominates for hadronic searches at the LHC. The cross section for such
-inelastic scattering has been measured at $13\TeV$ as $\sim78.1mb$~\cite{inelast}. These events
+The QCD multijet background from inelastic scattering dominates for hadronic searches at the LHC. 
+The cross section for this process has been measured at $13\TeV$ as $\sim78.1mb$~\cite{inelast}. These events
 are typically balanced dijet events, though higher jet multiplicities are also possible. 
-Unlike the signal processes for which the $\alphat$ search is sensitive, these events have no
-true \met. Fluctuations in detector response and reconstruction can cause a small fraction 
-of the QCD events to gain significant \emph{fake} \met. As the total QCD cross section is 
-around 6-7 orders of magnitude larger than that of the electroweak background these events with
-fake \met become a dominant background. The main detector and reconstruction mechanisms that may introduce 
-this \met are summarised below:
+Unlike the signal processes for which the $\alphat$ search is sensitive, these events contain
+no true~\met. Fluctuations in detector response and reconstruction can cause a small fraction 
+of the QCD events to gain significant \emph{fake}~\met. These form a dominant background as 
+the total QCD cross section ($\sim78.1mb$ at $13\TeV$~\cite{inelast})
+is 6 to 7 orders of magnitude larger than that of the electroweak backgrounds described in
+ Section~\ref{sec:ewk-background-intro} unless suppressed. 
+The main detector and reconstruction mechanisms that may introduce fake \met are summarised below:
+
 \begin{itemize}
 \item Detector inefficiencies due to regions with reduced or no response (\emph{dead cells}) can cause 
 a significant proportion or all of the energy of any incident physics object to be lost. If the true event 
-is balanced, when losses occur due to detector inefficient the \met~vector will point approximately in the
-$\phi$ direction of the problematic region.
+is balanced, losses which occur due to detector inefficiency will contain a \met~vector which points 
+approximately in the $\phi$ direction of the problematic region.
 \item Misreconstruction due to effects such as tracking errors, incorrect object identification and
 under/over correction of jets when calibrating. This may apply to one or more objects in the event. If the 
 underlying event is balanced the \met~vector will typically point in or opposite to the direction 
 of the misreconstructed object in cases of under or over estimation of the energy respectively.
-\item Additional energy can be added in the event due to effects including \emph{hot cells} which consistently records energy 
-regardless of incident particles in the ECAL or HCAL, spontaneous discharges and direct particle interactions with detector
+\item Additional energy can be added in the event due to effects including \emph{hot cells} which 
+consistently record energy depositions without incident particles in the ECAL or HCAL, 
+spontaneous discharges and direct particle interactions with detector
 electronics or photomultipliers
-\item The \emph{beam halo} of charged particles around the LHC beam, caused mainly by proton scattering off LHC collimators, 
-may interact with muon chambers causing fake muons to be reconstructed or deposit energy in the calorimeters as they traverse 
-the detector~\cite{beam_halo}. The beam halo has the largest effect for $\phi = 0$ and $\phi=\pi$ as the constituent particles
+\item The \emph{beam halo} of charged particles around the LHC beam, caused mainly 
+by proton scattering off LHC collimators, 
+may interact with muon chambers causing fake muons to be reconstructed or deposit energy 
+in the calorimeters as they traverse the detector~\cite{beam_halo}. The beam halo has the largest 
+effect for $\phi = 0$ and $\phi=\pi$ as the constituent particles
 tend to lie within the plane of the LHC ring.
 \item Imbalance nay be introduced by acceptance effects. If physics objects are excluded from the calculation
-of energy sums due to thresholds in quantities such as $\pt$ or $\eta$ \met will be introduced. These thresholds are typically 
+of energy sums due to thresholds in quantities such as $\pt$~or $\eta$~\met~will be introduced. These thresholds are typically 
 required due to imperfect detector coverage or to remove objects reconstructed due to effects such as detector 
 noise or pileup.
 \end{itemize}
-In addition to QCD multijet events with fake~\met introduced by such detector and reconstruction effects,
-QCD scattering processes may produce events containing true~\met. This is due to the rare production of heavy flavour 
-quarks which decay via leptons and neutrinos. Such events pass hadronic selection as the leptons
-are typically confined within a jet cone and so fails isolation requirements. In such cases the \met~vector
-is typically closely aligned with the $\phi$ direction of the jet.
+In addition to QCD multijet events with fake~\met discussed above, QCD scattering processes 
+may produce events containing true~\met. This is due to the rare production of heavy flavour 
+quarks which decay via leptons and neutrinos. These events pass hadronic selection as the leptons from 
+heavy flavour decay are usually confined within the jet cone and fail isolation requirements. 
+In such cases the \met~vector is typically closely aligned with the $\phi$ direction of the jet.
 
 \subsection{Electroweak backgrounds}
 \label{sec:ewk-background-intro}
 %should this be in theory section?
-There are several SM processes which form backgrounds for hadronic searches. These include 
-true~\met from neutrinos and are termed the \emph{electroweak} backgrounds. The dominant 
-electroweak background processes are \wj,\ttj and \zj. An overview of these processes 
-and the mechanisms by which they may enter into the hadronic signal region 
-(defined in Section~\ref{sec:had_sr}) are described below. 
+There are several SM processes which form backgrounds for hadronic searches. These
+backgrounds include \met~from neutrinos and are termed the \emph{electroweak} backgrounds. 
+The dominant electroweak background processes are \wj,\ttj~and \zj. The $\alphat$
+signal region, defined fully in Section~\ref{sec:had_sr}, selects purely hadronic events
+containing reconstructed jets and \met. An overview of the electroweak background processes 
+and the mechanisms by which they may enter into the signal region is given below. 
 
 \subsubsection{\zj background}
 
-The largest background process in the $\alphat$ signal region comes from Z production
-in association with jets (\zj) followed by decay to neutrinos, \znunu. This process is an \emph{irreducible} background
-as the neutrinos can cause significant \met in the final state. Across the signal region
-\znunu contributes $\sim 54\%$ of the overall background. The decay of the Z to leptons, \zll may also
-introduce $\met$ if one or both of the leptons is not reconstructed (\emph{lost}). However, as
-an hadronic final state is required, this background is sub-dominant, comprising $\sim 0.5\%$
-of the signal region, due to the low probability of failing to reconstruct both leptons.
+The largest background process in the signal region comes from Z boson production
+in association with jets (\zj) followed by decay to neutrinos, \znunu. This process is 
+an \emph{irreducible} background as the neutrinos produce significant \met~in the final 
+state with no associated leptons. Across the signal region, \znunu~contributes $\sim 54\%$ of 
+the overall background. The decay of the Z boson to leptons, \zll~may also introduce $\met$ if 
+one or both of the leptons is not reconstructed (\emph{lost}). Due to the low probability of
+losing both leptons in the event, this is a sub-dominant background, comprising $\sim 0.5\%$ of the signal region.
 
 \subsubsection{\wj background}
 
-The \wj background comprises $\sim 38\%$ the overall background in the signal region.
-Purely leptonic decays of the W may pass hadronic selection if the lepton is not reconstructed. 
+The production of a W boson in association with jets (\wj) where the W boson decays leptonically
+(\wl) comprises $\sim 38\%$ of the overall background in the signal region. 
+In such events the lepton is not reconstructed allowing them to pass hadronic selection.
 This \emph{lost lepton} background may be introduced if the lepton falls out of acceptance,
 fails isolation requirements or is otherwise misreconstructed. Both the lost lepton 
-and the neutrino in the event may contribute to the \met. 
+and the neutrino in the event may contribute to the~\met. 
 % Typically, however, 
 % the neutrino dominates the \met~as low $\pt$ leptons are more likely to be misreconstructed.
 The branching fraction for a W decaying to an hadronically decaying $\tau$ is $\sim6\%$.
@@ -114,22 +121,21 @@ $\tau$~($\tau{\pm}\rightarrow\pi^{\pm}+n\pi^{0}\nu$) which comprise $\sim70\%$ o
 
 \subsubsection{\ttj and single top background}
 
-The \ttj and single top background comprise around $5\%$ and 0.5\% of the overall
+The \ttj~and single top background comprise around $5\%$ and 0.5\% of the overall
 background respectively. On production, the top quark will predominantly decay via the 
 weak force as \twb. The W boson may then decay hadronically, producing a final state
 with multiple jets or leptonically, producing a final state including a lepton and neutrino. 
 
-The final state in an event with \ttj production may include multiple jets (up to six
-if both tops decay hadronically) and/or significant \met depending on the decay of 
-the tops as well as two bottom quarks. If both W bosons decay hadronically ($\sim45.7\%$ of \ttbar~decays)
+The final state in an event with \ttj production will include two bottom quarks as well as multiple 
+jets and/or significant \met depending on the decay. If both W bosons decay hadronically ($\sim45.7\%$ of \ttbar~decays)
 up to six jets may be produced from the hadronisation of the quarks. In this case the $\met$
 may be introduced via jet mismeasurement or from bottom quark decay via neutrinos. If one of the 
-W bosons decays leptonically ($\sim45.8\%$ of \ttbar~decays) up to four jets may be expected to be produced in the decay
+W bosons decays leptonically ($\sim45.8\%$ of \ttbar~decays) up to four jets may be expected
 as well as~\met from the neutrino. Such events may enter hadronic selection if the lepton is lost.
 Finally, if both W bosons decay leptonically ($\sim10.5\%$ of \ttbar~decays) the final state contains two 
-leptons and significant \met. This mode is subdominant due to the low probability of losing both leptons
-and lack of jets in the final state. In all cases the number of jets may be increased by processes such 
-as ISR and FSR.
+leptons and significant \met. This mode is sub-dominant due to the low probability of losing both leptons
+and lack of jets in the final state. For all decay modes the number of jets reconstructed in the event
+may be increased by processes such as ISR and FSR as well as pileup.
 
 The \alphat analysis categorises events using the number of reconstructed 
 jets identified as originating from bottom quarks. The \ttbar background is particularly
@@ -143,13 +149,13 @@ such events.
 
 \subsubsection{Residual electroweak backgrounds}
 
-In addition to the backgrounds discussed above, there are several additional processes which 
-make minor contributions to the overall background. These contribution can be enhanced, however, 
-for particular categorisations. Such residual backgrounds include \ttbar production in association with a vector
-boson, comprising $\sim0.1\%$ of the total background, which rises to $\sim4\%$ for an $\nb \ge 2$ selection;
-pair production of vector bosons (ZZ, WZ and WW), comprising $\sim1.4\%$ of the total background; production
-of a photon in association with jets where the photon is lost, comprising $\sim0.7\%$ of the overall background and
-leptonic decays of the Z with two lost leptons (0.5\% of the overall background).
+In addition to the backgrounds discussed above, there are several processes which 
+make minor contributions to the total background in the signal region (which can be enhanced
+for particular categorisations). Such residual backgrounds include \ttbar production in association with a vector
+boson, ($\sim0.1\%$ of the total background and $\sim4\%$ of the total background for an $\nb \ge 2$ selection); 
+pair production of vector bosons, ZZ, WZ and WW ($\sim1.4\%$ of the total background); 
+production of a (lost) photon in association with jets ($\sim0.7\%$ of the overall background) and
+leptonic decays of the Z with two lost leptons ($\sim0.5\%$ of the overall background).
 
 \section{Suppression of the QCD multijet background}
 \label{sec:important-variables}
@@ -158,19 +164,19 @@ Predicting the QCD backgrounds presents significant challenges, discussed in Sec
 can introduce large uncertainty in the background estimation. A distinguishing feature
 of the \alphat~analysis is the aim to mitigate this uncertainty by reducing the 
 background from QCD processes to the percentage level. This is achieved using selections on
-the dedicated variables \alphat, \bdphi, \mhtmet and the forward jet veto. This section
+the dedicated variables \alphat, \bdphi, \mhtmet~and the forward jet veto. This section
 describes how these variables distinguish QCD events from those containing true~\met
 by exploiting the topologies and features of QCD events containing fake~\met. Further
 event filters that specifically target events containing $\met$ introduced by
-known detector problems and beam halo effects are discussed in Section ??.
+known detector problems and beam halo effects are discussed in Section~\ref{sec:event_filters}.
 
 \subsection{\alphat}
 The \alphat variable is designed to reject balanced events which gain significant~\met through
-jet mismeasurement. The $\alpha$ variable was initially proposed in ?? and converted into the
-transverse variable, $\alphat$, to allow use with hadronic collisions in ??. The absolute
-value of the $\met$ is sensitive to the detector and reconstruction effects discussed in Section ??. 
+jet mismeasurement. The $\alpha$ variable was initially proposed in~\cite{Randall} and
+converted into the transverse variable, $\alphat$, to allow use with hadronic collisions. The absolute
+value of the $\met$ is sensitive to the detector and reconstruction effects discussed in Section~\ref{sec:qcd-background-intro} 
 The \alphat variable is designed to be dimensionless such that the topology of the event is used to reject 
-QCD processes, regardless of the total value of the~\met, 
+QCD processes, regardless of the total value of the~\met.
 
 For a dijet event, \alphat is defined as
 
@@ -179,9 +185,9 @@ For a dijet event, \alphat is defined as
 \alphat\, =\, \frac{\Et^{{\rm j}_2}}{M_\text{T}} \, ,
 \end{equation}
 
-where $\Et^{\rm j_2}$ the transverse energy of the 
+where $\Et^{\rm j_2}$ is the transverse energy of the 
 less energetic jet and $M_\text{T}$ is the transverse
-mass of the dijet system, defined as 
+mass of the dijet system, 
 
 \begin{equation}
   \label{eq:mt}
@@ -196,11 +202,11 @@ $p_x^{{\rm j}_i}$ and $p_y^{{\rm j}_i}$ are the $x$ and $y$ components
 of the transverse momentum of the jet. 
 
 For events with three or more jets a pseudo-dijet system is defined 
-where all possible vectoral sums of the jets in the event into two
+where all possible vectorial sums of the jets in the event into two
 pseudo-jets are considered. The combination into pseudo-jets 
 with the smallest difference in transverse energy, $\Delta E_T$, is chosen
-as the most balanced configuration and used to define \alphat. The $M_\text{T}$ for the event is insensitive
-to the clustering and is given by
+as the most balanced configuration and used to define \alphat. The $M_\text{T}$ for 
+the event is insensitive to the clustering and is given by
 
 \begin{equation}
   \label{eq:mt}
@@ -241,8 +247,8 @@ where $\Delta H_{\textrm{T}}$ is the difference in \pt~of the pseudo jets.
 
 To illustrate the mechanism by which the \alphat~variable rejects $\met$ from mismeasured or lost jets,
 consider a dijet event as shown in Figure~\ref{fig:alphat_cartoon}. Three possible event topologies are shown: 
-a perfectly balanced event (left), a perfectly balanced event with a mismeasred jet (middle) and an event containing true \met (right).
-In a typical balanced QCD dijet event without mismeasurement, $Delta E_T = \mht = 0$ and the 
+a perfectly balanced event (left), a perfectly balanced event with a mismeasured jet (middle) and an event containing true \met~(right).
+In a balanced dijet event without mismeasurement, $Delta E_T = \mht = 0$ and the 
 value of \alphat will be 0.5. If one of the jets is under or over measured for an otherwise balanced dijet
 event, $\Delta H_{\textrm{T}} = \mht$ and Equation~\ref{eq:alphat3} can be written as 
 
@@ -255,26 +261,11 @@ Conversely, if an event contains true $\met$ and the jets are recoiling against 
 (which is not aligned with one of the jets in the event), as shown on the right of 
 Figure~\ref{fig:alphat_cartoon}, $\alphat > 0.5$. 
 
-In the general case of two or more jets, events containing \met~from mismeasurement or 
+In the general case of two or more jets, for events containing \met~from mismeasurement or 
 neutrinos produced in heavy flavour decays the values of $\Delta E_{\textrm{T}}$ and \mht~are highly correlated, leading
 to values of $\alphat <= 0.5$. This correlation is much weaker in the case of pair produced, 
 R-parity conserving SUSY events where each decay chain ends in the 
-undetected LSP and SM processes containing genuine \met, allowing $\alphat > 0.5$.
-
-The \alphat~distribution is shown in Figure~\ref{fig:alphat-data}. The region of $\alphat < 0.5$ is dominated by
-QCD multijet events which sharply drops as \alphat~increases above 0.5. Multijet events with
-extremely rare large stochastic fluctuations in the measured jet energies can lead
-to values of \alphat~above 0.5. \footnote{QCD multijet events may also have \alphat values larger than 0.5 if the 
-\pt of one or more jets is sufficiently different from $E_T$, breaking the assumption used for Equation~\ref{eq:alphat4}. 
-However, this is found to have $< 1\%$ effect on the number of QCD multijet events passing $\alphat > 0.5$.}
-The \alphat~distribution becomes more sharply peaked with increasing \scalht~in the event as mismeasurements are larger
- for lower jet \pt. Significantly larger values of \alphat~for QCD multijet events can also be caused by effects such as 
-hot cells or acceptance. These are mitigated by the other discriminating variables 
-discussed below and dedicated event filters. 
-
-Unlike the QCD processes, the SM backgrounds with true \met~have a long tail in
-values of $\alphat$ greater than 0.5. The \alphat~variable therefore allows a powerful discrimination 
-between the otherwise dominant QCD background and processes with true \met.
+undetected LSP and for SM processes containing genuine \met, allowing $\alphat > 0.5$.
 
 \begin{figure}[!htb]
   \centering
@@ -289,42 +280,60 @@ between the otherwise dominant QCD background and processes with true \met.
   \label{fig:alphat-data}
 \end{figure}
 
+The \alphat~distribution is shown in Figure~\ref{fig:alphat-data}. The region of $\alphat < 0.5$ is dominated by
+QCD multijet events which sharply drops as \alphat~increases above 0.5. Multijet events with
+very rare large stochastic fluctuations in the measured jet energies can lead
+to values of \alphat~above 0.5. \footnote{QCD multijet events may also have \alphat values larger than 0.5 if the 
+\pt of one or more jets is sufficiently different from $E_T$, breaking the assumption used for Equation~\ref{eq:alphat4}. 
+However, this is found to have $< 1\%$ effect on the number of QCD multijet events passing $\alphat > 0.5$.}
+The \alphat~distribution becomes more sharply peaked with increasing \scalht~in the event as mismeasurements are larger
+ for lower jet \pt. Significantly larger values of \alphat~for QCD multijet events can also be caused by 
+hot cells or acceptance effects. These are mitigated by the other discriminating variables 
+discussed below and dedicated event filters. 
+
+Unlike the QCD processes, the electroweak backgrounds have a long tail in
+values of $\alphat$ greater than 0.5. The \alphat~variable allows a powerful discrimination 
+between the otherwise dominant QCD background and processes with \met~well
+separated from the jets.
+
+
 \subsection{\bdphi}
 \begin{figure}
 \centering
     \includegraphics[width=0.8\textwidth]{./Figures/alphat/bdphi_cartoon}
-  \caption{\label{fig:bdphi_cartoon} The \bdphi~variable inputs and values for a mismeasured balanced three jet events.
-  The third jet minimises the $\Delta \phi_i$ and is used to calculate \bdphi.}
+  \caption{\label{fig:bdphi_cartoon} The \bdphi~variable inputs and values for a mismeasured balanced three jet event.
+  The third jet minimises the $\Delta \phi_i$ and is used to calculate \bdphi~as described in the text.}
 \end{figure}
 The \bdphi~variable is an additional topological variable designed to mitigate contamination
-from mismeasured QCD events (from reconstruction and instrumental issues) and semi-leptonic 
+from mismeasured events (from reconstruction and instrumental issues) and semi-leptonic 
 heavy flavour decays. The variable is defined as follows:
 \begin{itemize}
 \item Each jet in the event is considered in turn as the probe jet, $j_i$.
 \item The \mhtvec~is recalculated with the probe jet removed, $\mhtvec^{j_i}$.
 \item The azimuthal separation of the probe jet and $\mhtvec^{j_i}$ is calculated, $\Delta \phi_i$
-\item The \bdphi~is calculated as the minimal $\Delta \phi_i$ over all jets in the event as
+\item The \bdphi~is calculated as the minimal $\Delta \phi_i$ over all jets in the event,
 \begin{equation}
 \label{equ:bdphi}
 \bdphi = \underset{\forall\, i\, \in \left[1,\nj\right]}{min} \Delta \phi_i.
 \end{equation}
 \end{itemize}
 
-If the \bdphi value is close to the jet cone size, the jet which minimizes $\Delta \phi_i$ (\jbdphi)~is likely 
-to be mismeasured or contain~\met from semi-leptonic decay. The \bdphi variable is insensitive to
-the~\pt of \jbdphi and rejects events containing a jet whose \pt~is either over or under measured.
-The jets in the electroweak background procoesses and signal models typically recoil against the
+If the \bdphi~value is close to the jet cone size, the jet which minimizes $\Delta \phi_i$ (\jbdphi)~is likely 
+to be mismeasured or contain~\met~from a leptonic decay of a heavy flavour quark. The \bdphi~variable is insensitive to
+the~\pt of \jbdphi~and rejects events containing a jet whose \pt~is either over or under measured.
+The jets in the electroweak background processes and signal models typically recoil against the
 \met~implying larger values of \bdphi. The calculation of \bdphi~for a mismeasured balanced 
-event containing three jets is shown in Figure~\ref{bdphi_cartoon}.
-In the \alphat analysis a threshold of 0.5 is used to reject QCD multijet events.
+event containing three jets is shown in Figure~\ref{fig:bdphi_cartoon}.
+In the \alphat~analysis a threshold of 0.5 is used to reject QCD multijet events.
 
-The \bdphi variable can be compared to the nominal minimal $\Delta \phi$ between
+The \bdphi~variable can be compared to the nominal minimal $\Delta \phi$~between
 the \mht~and the lead four jets in the event used by many hadronic analyses, \dphimhtj.
 The advantages of \bdphi~include sensitivity to mismeasurement of any jet in the 
 event (not merely the lead four), sensitivity to both under and over measurement
-of jet energies (\dphimhtj does not provide rejection of events with an over-measured jet)
-and insensitivty to the \pt~of the jet which is mismeasured. The \bdphi variable
-can provide an order of magnitude better rejection of QCD for the same signal efficiency. 
+of jet energies (\dphimhtj~does not provide rejection of events with an over-measured jet)
+and insensitivity to the \pt~of the jet which is mismeasured. Given these advantages, 
+the \bdphi~variable can provide an order of magnitude better rejection of QCD for the 
+same signal efficiency for a SUSY model containing significant \met~and hadronic activity.
 
 \begin{figure}[!htb]
   \centering
@@ -341,7 +350,6 @@ The QCD multijet background is seen to decrease by around five orders of magnitu
 to 0.5. In Figure~\ref{fig:bdphi-data} the electroweak background processes
 can be seed to have long tails up to $\bdphi = \pi$.
 
-
 \subsection{\mhtmet}
 The \mhtmet~cleaning cut is designed to reduce the contamination from balanced events
 due to acceptance effects from kinematic and pseudorapidity thresholds, 
@@ -349,196 +357,19 @@ severe jet mismeasurement and particles not clustered into jets. The PF \met~inc
 all PF candidates and so the contamination from such events may be mitigated 
 using a maximal threshold on the ratio of the \mht~to the \met.
 \subsection{Forward jet veto}
-
-The $\mht$ variable is made using jets with $\etaabs < 2.4$. Jets in the forward pseudorapidity 
-region may introduce large $\mht$. A veto on any jet in the forward region with $p_T > 40\GeV$
-is used to veto such events. 
 \label{sec:fwd_jet_veto}
-\section{Physics objects}
-\subsection{Jets}
-
-The jet collection is defined by PF jets (clustered from PF candidates) as defined in Section~\ref{sec:jet_reco} with
-$\Delta R = 0.4$. The jets are corrected for pileup contributions using CHS and jet area corrections. Additional cleaning cuts are then applied
-on the jet constituents as summarised in Table~\ref{tab:loose-jet-id}. These requirements are necessary to reject fake jets. The charged hadron
-fraction cut of $> 0.1$ additionally rejects jets reconstructed from beam halo interactions.
-
-A threshold of jet $\pt > 40\GeV$ is required for jets used in the analysis. As supersymmetric models tend to produce
-relatively hard jets this provides a good efficiency while effectively rejecting QCD backgrounds. Jets in the signal 
-region must satisfy the pseudorapidity requirement $\etaabs < 2.4$. The presence of any forward jets with $\etaabs > 2.4$
-is used as a cleaning veto as described in Section~\ref{sec:fwd_jet_veto}. Additionally, the leading jet in the 
-event must satisfy $\pt > 100\GeV$. 
-\begin{table}[ht!]
-  \caption{Jet identification requirements. \label{tab:loose-jet-id}}
-  \centering
-  \begin{tabular}{ ccc }
-    \hline
-    \hline
-    Variable & cut & notes \\ \hline
-    \multicolumn{3}{c}{$-3.0 < \eta_{\mathrm{jet}} < 3.0$} \\ \hline    
-    Neutral Hadron Fraction & $<0.99$ & - \\
-    Neutral EM Fraction & $<0.99$ & - \\
-    Number of constituents & $>1$ & - \\
-    Charged Hadron Fraction & $>0$ & only for $|\eta_{\mathrm{jet}}| < 2.4$ \\
-    Charged Multiplicity & $>0$ & only for $|\eta_{\mathrm{jet}}| < 2.4$ \\
-    Charged EM Fraction & $<0.99$ & only for $|\eta_{\mathrm{jet}}| < 2.4$ \\ \hline
-    \multicolumn{3}{c}{$|\eta_{\mathrm{jet}}| > 3.0$} \\ \hline        
-    Neutral EM Fraction & $<0.90$ & - \\
-    Number of Neutral Particles & $>10$ & - \\
-    \hline
-    \hline
-  \end{tabular}
-\end{table}
-
-\subsubsection{B-tagged jets}
-
-Jets originating from bottom quarks are identified using the CSVv2 algorithm defined in Section~\ref{sec:btag}. 
-The tagging efficiency for the working point of the discriminator of 0.89 is $\sim 67\%$ for a mistag rate
-of $\sim 1\%$ for light quarks ($u$, $d$ and $s$ quarks) and gluons and a mistag rate of $\sim 10\%$ for
-charm quarks.
-
-\subsection{Photons}
-
-Photons must be identified to define the \gj~control region and veto events in the signal and
-muon control regions. Their reconstruction is described in Sections~\ref{sec:ele_pho_reco}~and~\ref{sec:particle_flow}. The photon isolation is 
-ensured using PF relative isolation with a cone size of $\Delta R = 0.3$. Pileup contributions 
-and mitigated using EA correction. Additional selections are summarised 
-in Table~\ref{tab:photon-id-gamma} and an efficiency for photon identification of $\sim71\%$
-is achieved. The number of fake photons passing selection is measured as $2-10\%$ depending on $\scalht$.
-
-The kinematic selection for photons used to veto events in the signal region is $\pt > 25\GeV$
-and $\etaabs < 2.5$. The photons used to define the control region must satisfy the tighter 
-requirements $\pt > 25\GeV$ and $\etaabs < 1.4$ to ensure efficient trigger selection and
-that the photon is contained within the barrel where it can be better reconstructed.
-
-\begin{table}[ht!]
-  \caption{Photon identification requirements.\label{tab:photon-id-gamma}}
-  \centering
-  \footnotesize
-  \begin{tabular}{ ccc }
-    \hline
-    \hline
-    Categories & \multicolumn{2}{c}{Barrel}   \\
-    Working point  & Tight & Loose \\
-    \hline
-    Conversion safe electron veto & Yes & Yes  \\
-    Single Tower H/E              & 0.05 & 0.05  \\
-    $\sigma_{i\eta i\eta}$        & 0.0100 & 0.0102 \\
-    PF charged hadron isolation   & 0.76 & 3.32  \\
-    PF neutral hadron isolation   & 0.97 + 0.014 $\times$ $p_{\mathrm{T},\gamma}$ + 0.000019 $\times$ $p_{\mathrm{T},\gamma}^{2}$ & 1.92 + 0.014 $\times$ $p_{\mathrm{T},\gamma}$ + 0.000019 $\times$ $p_{\mathrm{T},\gamma}^{2}$  \\
-    PF photon isolation           & 0.08 + 0.0053 $\times$ $p_{\mathrm{T},\gamma}$ & 0.81 + 0.0053 $\times$ $p_{\mathrm{T},\gamma}$ \\
-    \hline
-    \hline
-    Categories & \multicolumn{2}{c}{Endcap}   \\
-    Working point  & Tight & Loose \\
-    \hline
-    Conversion safe electron veto & Yes & Yes  \\
-    Single Tower H/E              & 0.05 & 0.05  \\
-    $\sigma_{i\eta i\eta}$        & 0.0268 & 0.0274 \\
-    PF charged hadron isolation   & 0.56 & 1.97  \\
-    PF neutral hadron isolation   & 2.09 + 0.014 $\times$ $p_{\mathrm{T},\gamma}$ + 0.000025 $\times$ $p_{\mathrm{T},\gamma}^{2}$ & 11.86 + 0.014 $\times$ $p_{\mathrm{T},\gamma}$ + 0.000025 $\times$ $p_{\mathrm{T},\gamma}^{2}$ \\
-    PF photon isolation           &  0.16 + 0.0034 $\times$ $p_{\mathrm{T},\gamma}$ & 0.83 + 0.0034 $\times$ $p_{\mathrm{T},\gamma}$ \\
-    \hline
-    \hline
-  \end{tabular}
-\end{table}
-
-\subsection{Electrons}
-
-Electrons are identified to veto events in the signal and control regions. The full reconstruction is described in
-Sections~\ref{sec:ele_pho_reco}~and~\ref{sec:particle_flow}. The isolation uses PF mini-isolation 
-with a variable cone size of maximum radius $\Delta R = 0.2$. The requirements are summarised in 
-Table~/ref{tab:ele-id}. An overall efficiency for electron selection of $\sim90\%$ is achieved.
-
-The kinematic requirements for electrons used for vetoing are $\pt > 10\GeV$ and $\etaabs < 2.5$.
-\begin{table}[h!]
-  \caption{Electron identification requirements.\label{tab:ele-id}}
-  \centering
-  \footnotesize
-  \begin{tabular}{ lcc }
-    \hline
-    \hline
-    Categories                                               & Barrel    & EndCap    \\
-    \hline
-    $\Delta \eta_{In}$                                       & 0.0105   & 0.00814  \\
-    $\Delta \phi_{In}$                                       & 0.115    & 0.182  \\
-    $\sigma_{i\eta i\eta}$                                   & 0.0103    & 0.0301  \\
-    H/E                                                      & 0.104    & 0.0897   \\
-    d0 (vtx)                                                 & 0.0261    & 0.118  \\
-    dZ (vtx)                                                 & 0.041    & 0.822  \\
-    $\lvert(1/E_{\textrm{ECAL}} - 1/p_{\textrm{trk}})\rvert$ & 0.102     & 0.126  \\
-    Missing hits (inner tracker)                             & 2         & 1         \\
-    Conversion veto                                          & yes       & yes   \\
-    \hline
-    \hline
-  \end{tabular}
-  \end{table}
-\subsection{Muons}
-
-Muons are selected to define the single mu, $\mj$, and double mu, $\mmj$ control regions as well as 
-for veto in defining the signal regions. The reconstruction is described in Section~\ref{sec:muon_reco}.
-The isolation is defined using a PF relative isolation requirement of $I_{\text{PF}}^{\text{rel}} < 0.15$ 
-with a cone size of $\Delta R = 0.4$ for muons in the control regions and using a PF mini-isolation requirement of
-$I_{\text{PF}}^{\text{mini}} < 0.2$ with a maximum cone size of $\Delta R = 0.4$. The muons are pileup corrected
-using an EA correction. An efficiency for muon selection of $\sim98\%$ is achieved.
-
-The kinematic requirements for muons used for veto are $\pt > 10\GeV$ and $\etaabs < 2.4$, while muons 
-selected in the control regions must satisfy $\pt > 30\GeV$ and $\etaabs < 2.1$. This ensures efficiency
-for passing trigger requirements and that the muon is well reconstructed.
+The $\mht$ variable is made using jets with $\etaabs < 2.4$. Jets in the forward pseudorapidity 
+region will may introduce $\mht$. A veto on any jet in the forward region with $p_T > 40\GeV$
+is used to reject such events. 
 
 
-\subsection{Isolated tracks}
-
-Isolated tracks are used to identify W boson decays and single prong decays of the $\tau$ (see Section ??). 
-They are selected from the charged PF candidates satisfying $\pt > 10\GeV$, $\Delta z(\text{track},\text{PV})$ and 
-$I_{\text{PF}}^{\text{rel}} < 0.1$ with a cone of $\Delta R = 0.3$.
-
-\subsection{Energy sums}
-
-The $\met$ is computed from the magnitude of the vector sum of the transverse momentum of all PF candidates in
-the event. This is type-1 corrected, as described in Section~\ref{sec:energy_sums_reco}, 
-using PF jets with $\pt > 15\GeV$. In the control regions the object(s) used to define
-the control region is not included the $\met$ calculation. The \mht~and \scalht~are defined
-using the vector and scalar sum respectively of all PF jets satisfying $\pt > 40\GeV$ and $\etaabs < 2.4$.
-
-\subsection{Summary}
-
-The physics objects defined in this Section are used for defining the
-discriminating variables discussed in Section ?? as well as additional selections
-discussed below. A summary of the physics objects and their
-kinematic requirements is presented in Table~\ref{tab:kine-sel}.
-
-\begin{table}[h!]
-  \caption{Kinematic selections for physics objects.\label{tab:kine-sel}}
-  \centering
-  \footnotesize
-  \begin{tabular}{ lll }
-    \hline
-    \hline
-    Object 	& 	&Kinematic selection \\
-    \hline
-    \hline
-    Jet  		&Central jets& $\pt > 40 \GeV,\ \etaabs < 2.4$		    \\
-			&Leading central jets&	$\pt > 100 \GeV,\ \etaabs < 2.4$	\\	    	    
-			&Forward jet (veto) &$\pt > 40 \GeV,\ \etaabs > 2.4$	\\	    
-    Photon  		&\gj control region& $\pt > 200 \GeV,\ \etaabs < 1.45$	\\	    
-			&Veto& $\pt > 25 \GeV,\ \etaabs < 2.5$		    \\
-    Muon  		&\mj and \mmj control regions& $\pt > 30 \GeV,\ \etaabs < 2.1$	\\	    
-			&Veto& $\pt > 10 \GeV,\ \etaabs < 2.5$		    \\
-    Electron  		&Veto& $\pt > 10 \GeV,\ \etaabs < 2.5$		    \\
-    Isolated track  	&Veto& $\pt > 10 \GeV,\ \etaabs < 2.5$		    \\
-		
-    
-    \hline
-    \hline
-  \end{tabular}
-  \end{table}
 
 \section{Preselection}
 \ref{sec:presel}
-The objects described in Section ?? are used to define a common kinematic 
+The objects described in Section~\ref{sec:phys-obj} are used to define a common kinematic 
 preselection for the signal and control regions used in the $\alphat$ analysis. 
-The kinematic selections as well as event filters and vetoes targetting
-known instrumental, recontruction and beam effects are described in this Section.
+The kinematic selections as well as event filters and vetoes targeting
+known instrumental, reconstruction and beam effects are described in this Section.
 
 \subsection{Kinematic selections}
 The minimal requirements on the energy sums for both the signal and control regions are
@@ -547,6 +378,7 @@ requirements detailed in Table~\ref{tab:kine-sel} is required. These selections 
 designed by considering trigger efficiency constraints while maximising acceptance for
 signal models with small mass splittings.
 \subsection{Event filters}
+\label{sec:event_filters}
 Event filters reject events contaminated by detector or reconstruction effects
 which can cause significant~\met. Such effects may not be known when the 
 background simulations are produced or can be difficult to simulate. Therefore,
@@ -555,12 +387,12 @@ dedicated filters are used to remove such events in the data. These \met filters
 \begin{itemize}
 \item The \emph{HBHE noise and isolation filters} reject energy spikes in the HCAL caused by noise from sources 
 including direct particle interactions with HCAL instrumentation.
-\item The \emph{EE bad supercluster filter} removes events containting \TeV scale energy spikes from anomolous
+\item The \emph{EE bad supercluster filter} removes events containing \TeV scale energy spikes from anomalous
 pulses in the EE.
 \item The \emph{CSC beam halo filter} uses the CSC to measure halo muons and reject events containing 
 significant contamination from the beam halo.
 \item The \emph{ECAL trigger primitive filter} rejects events where significant energy is deposited in dead cell regions.
-\item The \emph{Primary vertex filter} requires at least one well reconstructed vertex which ensures collisions have occured
+\item The \emph{Primary vertex filter} requires at least one well reconstructed vertex which ensures collisions have occurred
 rather than an event triggered and reconstructed from detector noise.
 \item The \emph{bad muon and bad charged hadron filters} reject events containing poorly reconstructed muons reconstructed as 
 a muon or PF charged hadron respectively.
@@ -581,7 +413,7 @@ contaminated by beam halo energy deposits which pass the CSC beam halo filter. T
 in the event is required to satisfy CHEF > 0.1.
 \item The \emph{odd jet veto} rejects any event containing a jet which fails the 
 requirements in Table~\ref{tab:loose-jet-id}. These are often caused by noise or misreconstruction.
-\item The \emph{forward jet veto}, described in, rejects events containing jets which fall out of acceptance but
+\item The \emph{forward jet veto}, described in Section~\ref{sec:fwd_jet_veto}, rejects events containing jets which fall out of acceptance but
 are reconstructed in the forward region. 
 \end{itemize}
 %%MAYBE ADD PLOTS HERE TO MOTIVATE?
@@ -595,13 +427,12 @@ event may be double counted and the selections for each are summarised below.
 \subsection{Hadronic signal region}
 \label{sec:had_sr}
 Events in the signal region are categorised (see Section~\ref{sec:cat}) and used
-to search for hadronic signatures of new physics. Selections are made to supress the QCD multijet
+to search for hadronic signatures of new physics. Selections are made to suppress the QCD multijet
 background and reducible electroweak backgrounds.
 \subsubsection{QCD background suppression}
 \label{sec:qcd_sup}
-The QCD multijet background is suppressed using the discriminating variables
-discussed in Section ??. Thresholds on the \alphat, \bdphi~and \mhtmet~variables
-are used.
+The QCD multijet background is suppressed using thresholds on 
+the \alphat, \bdphi~and \mhtmet~variables and event filters.
 A \scalht dependant threshold is used to account for the broadening \alphat distribution
 for lower \scalht values. These thresholds must also be efficient considering
 the trigger requirements and are shown in Table~\ref{tab:alphat-thresholds}. The highest threshold 
@@ -643,7 +474,7 @@ as measured in data (see Section ??).
 \subsubsection{Electroweak background suppression}
 
 The electroweak backgrounds containing \met~from final states including
-leptons (including \wl~and \tlb) can be supressed by vetoing leptons. 
+leptons (including \wl~and \tlb) can be suppressed by vetoing leptons. 
 An additional veto on photons ensures a purely hadronic final state.
 Isolated tracks are used to identify W boson decays and single prong 
 decays of the $tau$. An events is vetoes if it contains at least one isolated track.
@@ -658,7 +489,7 @@ while ensuring a large sample of events enriched in the relevant process.
 \subsubsection{Hadronic control regions}
 The hadronic control regions are used to determine the level of QCD contamination
 remaining in the signal region. These are defined by inverting the selection on the 
-discriminating variables described in Section~\ref{sec:qcd_sup} to give a data sample 
+discriminating variables described in Section~\ref{sec:important-variables} to give a data sample 
 dominated by events from QCD processes. Any event containing a reconstructed photon or lepton is vetoed.
 \subsubsection{Photon control region}
 The \gj~control region is used to predict the \znunu~background in the signal region.
@@ -668,7 +499,7 @@ all signal region selections are made except for those on the \bdphi~and \alphat
 These requirements are removed to enhance the statistics in the control region sample 
 for predicting the \znunu~background. To ensure the photon is not affected by hadronic
 activity, any events with a jet satisfying $\Delta R(j,\gamma) < 1$ are vetoed. Finally,
-the $\mht > 200\GeV$ threshold in both signal and control helps ensure the Z is sufficiently
+the $\mht > 200 \GeV$ threshold in both signal and control helps ensure the Z is sufficiently
 boosted such that its mass does not bias the prediction from the \gj control region. 
 \subsubsection{Muon control regions}
 The muons used for the muon control regions are defined as detailed in
@@ -678,11 +509,11 @@ Events are vetoed if $\Delta R(j,\mu) < 0.5$ for all jets and muons in the event
 ensure no hadronic activity affects the muon(s). Events are also rejected if they 
 contain an electron or photon.
 
-The \mj~conrol region is used to predict the lost lepton background from 
+The \mj~control region is used to predict the lost lepton background from 
 a sample rich in \wj~and \ttbar~processes. A single muon is required and a selection used on the transverse mass variable
 of $\mt(\mu,\met) < 125\GeV$ to enrich the sample with \wj~and to ensure signal model depletion.
 
-The \mmj~conrol region is used along with the \gj~control region to predict the \znunu~background
+The \mmj~control region is used along with the \gj~control region to predict the \znunu~background
 using a sample rich in the \zmmj~process. Exactly two oppositely charged muons are required with
 an invariant mass within 25\GeV of the mass of the Z boson, $|M_{\mu_1,\mu_2} - m_Z| < 25\GeV$.
 of $\mt(\mu,\met) < 125\GeV$ to enrich the sample with \wj~and to ensure signal model depletion.
@@ -698,7 +529,7 @@ of $\mt(\mu,\met) < 125\GeV$ to enrich the sample with \wj~and to ensure signal 
 
 \section{Categorisation}
 \label{sec:cat}
-In order to maintain senstivity to a wide range of signal models events are categorised using
+In order to maintain sensitivity to a wide range of signal models events are categorised using
 several discriminating variables Each \emph{bin} may be sensitive to signal models with different 
 signatures. The categorisation and targeted signal features are described in this section.
 
@@ -712,34 +543,34 @@ further categorised according to~\mht.
 
 The \alphat analysis categorises events into three topologies, \emph{monojet},\emph{asymmetric} 
 and \emph{symmetric}, using selections on the second jet~\pt. For all topologies, the leading
-jet must satisfy $\pt^{j_1} > 100\GeV$.  The monojet topology vetoes events containing a second 
-jet with $\pt^{j_2} > 40\GeV$ and is designed to target generic DM 
+jet must satisfy $\pt^{j_1} > 100 \GeV$.  The monojet topology vetoes events containing a second 
+jet with $\pt^{j_2} > 40 \GeV$ and is designed to target generic DM 
 and compressed SUSY models. No jets are produced in s-channel and t-channel production of DM
 while for compressed supersymmetric models, the LSP carries the majority of the energy from 
 the heavy sparticle decay, meaning any jets produced in the decay are soft (small values of \pt). 
 These events may come into acceptance if one of the incoming/outgoing partons radiate a jet, initial/final state
 radiation (ISR/FSR), which is reconstructed. The monojet topology also rejects backgrounds from 
 \ttbar which tends to have high \njet multiplicities. The asymmetric topology selects events 
-containing a second jet with $40\GeV < \pt^{j_2} < 100\GeV$.
+containing a second jet with $40 \GeV < \pt^{j_2} < 100 \GeV$.
 Compressed SUSY models whose decay products are soft but can be reconstructed and models
 containing multiple ISR/FSR jets are targeted. Finally, the symmetric topology requires  
-$\pt^{j_2} > 100\GeV$ and targets more generic supersyemmtric models with large mass splittings 
+$\pt^{j_2} > 100 \GeV$ and targets more generic supersymmetric models with large mass splittings 
 for which the decay products carry a large energy.
 
 The jet multiplicity varies widely depending on the signal model and background process.
-Supersymmetric signal models which predomenantly involve the production light quarks and/or models 
+Supersymmetric signal models which predominantly involve the production light quarks and/or models 
 with small mass splittings between the coloured particles and the LSP tend to produce 
 a small number of jets with significant energy. Conversely, models of gluino or stop production
-have larger jet multiplicities. The baackgrounds are also largely \njet~dependant as 
+have larger jet multiplicities. The backgrounds are also largely \njet~dependant as 
 \ttbar~decays typically produce high multiplicities while decays of vector boson backgrounds
 produce low multiplicities. The events with a symmetric topology are therefore categorised according
 to $\njet = 2,3,4,5,\ge6$.
 
 \subsection{Categorisation in \nb}
 
-A categorisation on \nb~improves sentivity to models containing heavy flavour squarks and gluino
+A categorisation on \nb~improves sensitivity to models containing heavy flavour squarks and gluino
 decays to heavy flavour quarks. Such models are favoured due to the naturalness of the
-inverted mass heirarchy and can produce from 2 to 4 bottom quarks depending on the decay.
+inverted mass hierarchy and can produce from 2 to 4 bottom quarks depending on the decay.
 Events are categorised as $\njet = 0,1,2,3,\ge4$. The dominant background for events 
 with more than one b jet comes from the \ttbar process. The misidentification of 
 jets from light flavoured quarks as b jets increases the background rate for a high $\nb$ selection.
@@ -750,14 +581,28 @@ The \scalht produced in an event provides a measure of the mass scale of
 new physics models. This will be dependant on the mass splitting between
 the heavy sparticle and LSP in the model which determines the energy
 provided to the visible decay products. The control regions are binned
-in \scalht as 200-250\GeV,250-300\GeV,300-350\GeV,400-500\GeV,500-600\GeV,
-,600-750\GeV,750-900\GeV,900-1050\GeV and 900-1200\GeV. In the signal region
-the \scalht categorisation depends on the jet category. The finst \scalht
-regions are 200-400\GeV,400-600\GeV,600-900\GeV and 900-1200\GeV.
+as in~\ref{tab:ht-binning} In the signal region the \scalht categorisation depends 
+on the jet category. The finest \scalht regions are shown in Table~\ref{tab:ht-binning}
 These are merged from above depending on the requirement of at least one control region
 event observed in data per \scalht~region to allow a meaningful prediction.
-The highest \scalht~bin for each category is summarised in Table ??.
+The highest \scalht~bin used for each category is summarised in Table ??.
 
+\begin{table}[h!]
+  \caption{The definition of the lower boundaries of the bins for the hadronic signal region
+ and control regions. The next lower boundary defines the upper boundary for each bin.}
+  \label{tab:ht-binning}
+  \centering
+  \footnotesize
+  \begin{tabular}{ lcccccccccc }
+    \hline
+    \hline
+    Control region \scalht (\GeV)           & 200      & 300       & 350       & 400       & 500       & 600       & 750 & 900 & 1050 & $\ge 1200$  \\
+    \hline                                                                                     
+    Signal region  \scalht (\GeV)         & 200         & --      & --      & 400  & --        & 600 & -- & 900  & -- & $\ge 1200$  \\
+    \hline
+    \hline
+  \end{tabular}
+\end{table}
 
 \subsection{Categorisation in \mht}
 
