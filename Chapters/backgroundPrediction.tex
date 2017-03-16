@@ -1,0 +1,75 @@
+\chapter{Background estimation for the \alphat search}
+
+The accurate estimation of SM background yields is crucial for a sensitive and robust
+search for new physics. The $\alphat$ analysis uses data driven estimations for both the
+QCD multijet and electroweak background components of the backgrounds. As described below, 
+these are determined using the dedicated QCD background estimation and transfer factor 
+method techniques respectively. The reliance on the modelling of the backgrounds 
+is therefore reduced through the use of these control regions. The predictions for
+each \nj,\nb,\scalht bin is discussed in this section. 
+
+The use of data control regions mitigates the effect of mismodelling in simulation, however,
+differences between control and signal region selection mean residual biases may remain.
+The simulated events are therefore reweighted to account for known discrepancies, 
+such as the modelling of pileup. The corrections and the corresponding systematic uncertainties
+are described in Section ??. Additional data driven validations of the predictions from the
+control regions are carried out using \emph{Closure tests} between the control regions. 
+These are discussed in Section ?? and used to derive additional uncertainties to cover effects 
+that may not have been included in the systematic uncertainties derived using simulation.
+
+The modelling of the \mht~variable is taken directly from simulation in each \nj,\nb,\scalht bin.
+The validation of this modelling and derivation of related systematic uncertanties using
+data in the control regions is described in Section ??.
+
+\section{Datasets and simulated samples}
+\subsection{Datasets}
+\subsection{Simulated samples}
+\section{Corrections to simulation}
+\subsection{MC reweighting}
+\subsection{Studies in data}
+\section{Background estimation}
+\subsection{Electroweak background prediction}
+The electroweak backgrounds are predicted using the \emph{transfer factor} (TF)
+method. The control regions are binned identically
+to the signal region in \scalht, \nj and \nb. The simulation and data observed in the control region,
+$\nobs^{\rm control}(\njet,\nb,\scalht)$ and $\nsim^{\rm control}(\njet,\nb,\scalht)$ 
+, as well as the simulation in the signal region, $\nsim^{\rm signal}(\njet,\nb,\scalht)$, 
+is used to predict the bkacground in the signal region, $\npre^{\rm signal}(\njet,\nb,\scalht)$. 
+The TF is defined using the ratio of the number of events predicted in 
+simulation in the signal region and control region for the relevant processes,
+
+\begin{equation}
+  \label{equ:tf-ratio}
+  {\rm TF} = \frac{N_{\rm MC}^{\rm signal}(\njet,\nb,\scalht)}{N_{\rm
+      MC}^{\rm control}(\njet,\nb,\scalht)}.
+\end{equation}
+
+The prediction of the relevant process in the signal region can then be written as
+
+\begin{equation}
+  \label{equ:pred-method}
+  \npre^{\rm signal}(\njet,\nb,\scalht) = \frac{N_{\rm MC}^{\rm
+      signal}(\njet,\nb,\scalht)}{N_{\rm MC}^{\rm
+      control}(\njet,\nb,\scalht)} \times \nobs^{\rm
+    control}(\njet,\nb,\scalht).
+\end{equation}
+
+The \mj control region is used to predict the \wj and \ttbar backgrounds while the
+\znunu background is predicted using the \mmj and \gj control regions. As described
+in Section ?? the selections in the control region closely resemble those made for
+the signal region. This ensures that kinematically similar processes and objects
+are chosen in the control and signal regions.
+
+Many systematic effects are expected to cancel in the transfer factor. 
+% An example
+% of this can be seen in figure ?? where the variation expected from simulation in the 
+% signal region using simulation is compared to the variation in the transfer factor
+% prediction for ??. 
+% For the purposes of the transfer factor prediction the signal region is split into two background sources,
+% named \zInv and \ttW. 
+
+\subsection{QCD background prediction}
+\section{Systematic uncertainties}
+\subsection{Variation method}
+\subsection{Closure test method}
+\section{Addition of the \mht dimension}
