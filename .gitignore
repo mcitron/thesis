@@ -15,6 +15,8 @@
 
 *.swp
 *.swo
+*.swn
+*.swm
 ## Intermediate documents:
 *.dvi
 *-converted-to.*
