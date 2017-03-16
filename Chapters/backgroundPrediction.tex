@@ -34,7 +34,7 @@ method. The control regions are binned identically
 to the signal region in \scalht, \nj and \nb. The simulation and data observed in the control region,
 $\nobs^{\rm control}(\njet,\nb,\scalht)$ and $\nsim^{\rm control}(\njet,\nb,\scalht)$ 
 , as well as the simulation in the signal region, $\nsim^{\rm signal}(\njet,\nb,\scalht)$, 
-is used to predict the bkacground in the signal region, $\npre^{\rm signal}(\njet,\nb,\scalht)$. 
+is used to predict the background in the signal region, $\npre^{\rm signal}(\njet,\nb,\scalht)$. 
 The TF is defined using the ratio of the number of events predicted in 
 simulation in the signal region and control region for the relevant processes,
 
@@ -55,12 +55,30 @@ The prediction of the relevant process in the signal region can then be written 
 \end{equation}
 
 The \mj control region is used to predict the \wj and \ttbar backgrounds while the
-\znunu background is predicted using the \mmj and \gj control regions. As described
-in Section ?? the selections in the control region closely resemble those made for
-the signal region. This ensures that kinematically similar processes and objects
-are chosen in the control and signal regions.
+\znunu background is predicted using the \mmj and \gj control regions. The use of 
+the transfer factor method within the likelihood used for interpreting the results of the
+\alphat~analysis is described in detail in Section ??.
 
-Many systematic effects are expected to cancel in the transfer factor. 
+The selections in the control region closely resemble those made for
+the signal region. This ensures that similar objects and kinematic processes
+are chosen in the control and signal regions. The selection on the \alphat and
+\bpdhi variables are removed for the control regions to increase the statistical 
+power of the control regions while selections on quantities such as the invariant
+or transverse mass ensure the \mj and \mmj control regions are enriched in
+W, Z and \ttbar as appropriate. These selections also ensure the control regions
+are signal depleted.
+
+The transfer factors account for differences in the cross sections and branching fractions,
+acceptance and reconstruction efficiencies and kinematic requirements between signal 
+and control regions. The values of the transfer factors for the prediction from the \mj,
+\mmj and \gj control regions are shown in figure ??.
+
+Many systematic effects in the modelling of \scalht, \nb and \njet for the relevant processes 
+are expected to cancel or be mitigated in the transfer factor. Residual uncertainties from
+sources such as the potential mismodelling of kinematics, theoretical uncertainties (for example
+in predicting \znunu using \gj events), and mismodelling of the reconstruction of the objects
+used in the control region. The determination of these uncertainties using both simulation 
+and tests in data are discussed in detail in Section~\ref{sec:syst-uncs}. 
 % An example
 % of this can be seen in figure ?? where the variation expected from simulation in the 
 % signal region using simulation is compared to the variation in the transfer factor
@@ -69,7 +87,12 @@ Many systematic effects are expected to cancel in the transfer factor.
 % named \zInv and \ttW. 
 
 \subsection{QCD background prediction}
-\section{Systematic uncertainties}
+\section{Systematic uncertainties in the transfer factors}
+\label{sec:syst-uncs}
+This section describes the determination of systematic uncertainties 
+in the transfer factors using variations of systematic effects in 
+simulation and using the data driven \emph{closure tests}. 
+
 \subsection{Variation method}
 \subsection{Closure test method}
 \section{Addition of the \mht dimension}
