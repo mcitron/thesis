@@ -209,7 +209,7 @@ as the most balanced configuration and used to define \alphat. The $M_\text{T}$ 
 the event is insensitive to the clustering and is given by
 
 \begin{equation}
-  \label{eq:mt}
+  \label{eq:mt_njet}
   M_\text{T}\, = \,\sqrt{ \left( \sum_{i=1}^2 \Et^{{\rm{j}}_i}
     \right) - \mht^2}.
 \end{equation}
@@ -510,20 +510,21 @@ ensure no hadronic activity affects the muon(s). Events are also rejected if the
 contain an electron or photon.
 
 The \mj~control region is used to predict the lost lepton background from 
-a sample rich in \wj~and \ttbar~processes. A single muon is required and a selection used on the transverse mass variable
-of $\mt(\mu,\met) < 125\GeV$ to enrich the sample with \wj~and to ensure signal model depletion.
+a sample rich in \wj~and \ttbar~processes. A single muon is required and a selection used on the transverse mass variable,
+$\mt(\mu,\met) = \sqrt(2E^{\mu}_{T}\met(1-cos_{\Delta\phi_{\mu,\met}}))$,
+of $\mt(\mu,\met) = 2E^{\mu}_{T}\met(1-cosm_{mu} < 125\GeV$ to enrich the sample with \wj~and to ensure signal model depletion.
 
 The \mmj~control region is used along with the \gj~control region to predict the \znunu~background
 using a sample rich in the \zmmj~process. Exactly two oppositely charged muons are required with
 an invariant mass within 25\GeV of the mass of the Z boson, $|M_{\mu_1,\mu_2} - m_Z| < 25\GeV$.
 of $\mt(\mu,\met) < 125\GeV$ to enrich the sample with \wj~and to ensure signal model depletion.
 
-\subsection{summary}
+% \subsection{summary}
 
 
-\section{Trigger strategy}
-\label{sec:ana-trigger}
-\subsection{Hadronic signal region}
+
+
+The L1 trigger seeds used 
 \subsection{Control regions}
 %Should this be earlier?
 
@@ -620,6 +621,42 @@ MC events to ensure a meaningful prediction.
 \subsection{Categorisation summary}
 
 ??
+
+\section{Trigger strategy}
+\label{sec:ana-trigger}
+
+\subsection{Hadronic signal and control regions}
+The trigger strategy is designed to maximise acceptance for an inclusive set of new physics 
+models which may be produced at a low energy scale. A suite of dedicated cross triggers 
+is used at the HLT to achieve efficiencies near 100\% for selections on
+\scalht~and \mht~as low as 200\GeV. 
+
+For the monojet cateogory the events are selected at the HLT with an
+\mht-\met cross trigger using thresholds of 100\GeV on both quantities. For the symmetric and asymmetric
+categories, dedicated seeds are used which select events based on the \alphat,\scalht and the 
+average \pt of the leading two jets ($p^(j_1,j_2)_{\text{T}}$). The selections on \alphat and \scalht
+vary from X-X and Y-Y respectively to effectively seed the analysis bins.
+A selection of $p^(j_1,j_2)_{\text{T}} > 90\GeV$ was found to provide the optimal 
+balance of efficiency given rate across topologies. The efficiency for asymmetric categories is reduced
+more significantly by this threshold due to the low second jet \pt for such topologies.
+This reduction is recovered by the use of the \mht-\met cross trigger in addition to the dedicated cross triggers.
+Finally, for bins with $\scalht > 900 \GeV$, where there is no \alphat thereshold, 
+HLT seeds with a threshold only on \scalht,X, are used.
+
+The HLT requirements are seeded using thresholds on the L1 trigger. The event is required
+to pass any of the hadronic energy and missing energy requirements used for the L1 
+trigger to be considered at the HLT.
+
+The measurement of the trigger efficiencies is described in detail in section ?? using a muon reference trigger. 
+As shown in figure ??, an efficiency of > XX\% for the offline selection is achieved across the signal region.
+
+\subsection{Electroweak control regions}
+
+The control regions use a trigger requirement on the relevant object in that control region.
+The \mj~and \mmj~regions are selected using a threshold of XX on the muon at the HLT and XX at L1. 
+The efficiency is measured in data using the tag and probe method CITE. These efficiencies are applied as appropriate 
+per muon \pt and \eta. The \gj control region is selected using the HLT seeds ?? and L1 seed ??. The
+appropriate efficiency is applied per photon \pt and \eta.
 %Move to later chapter?
 \section{Characterisation of control regions}
 \label{sec:char}
