@@ -22,8 +22,43 @@ The validation of this modelling and derivation of related systematic uncertanti
 data in the control regions is described in Section ??.
 
 \section{Datasets and simulated samples}
-\subsection{Datasets}
+The analysis detailed in this thesis uses datasets collected during the 25ns running of the 
+LHC at 13 \TeV~during 2016 as well as simulated samples to model the backgrounds and
+signal contributions.
+\subsection{Data}
+The events recorded by CMS are collected and categorised depending on the trigger selections, 
+detailed in Section ??. For the signal region and hadronic control region, data passing the \alphat-\scalht,
+\mht-\met and \scalht triggers are collected into the HTMHT, MET and JetHT \emph{primary datasets}.
+For the other control regions, data passing the single photon and single muon triggers are collected 
+into the SinglePhoton and SingleMuon primary datasets. These primary datasets are filtered to remove
+any overlaps. The total integrated luminosity of each dataset is measured as XX\ifb.
 \subsection{Simulated samples}
+Simulated samples are necessary for background and signal model prediction. As detailed below, 
+different \emph{generators} are used to produce the processes expected to contribute to
+the \alphat analysis.
+
+The processes with the highest contributions to the signal and control regions, 
+including \zj, Drell-Yan (\dy) + jets, \gj, \ttbar, \wj and QCD multijet events, are generated at leading order (LO) 
+using \MADGRAPH \AMCATNLO~\cite{Alwall:2014hca}. The same generator is used at next-to-leading order (NLO)
+to generate samples of s-channel production of single top and \ttV events.
+The t-channel and tW-channel single top samples are generated using \POWHEG~\cite{Alioli:2010xd} at NLO.
+The diboson samples, WW, WZ and ZZ, are generated at NLO using \PYTHIA~\cite{PYTHIA}. 
+The simulated background samples are normalised using cross sections calculated with NLO and NNLO precision.%CITE?
+The full detector response is simulated using the \GEANTfour package for these samples.
+
+The signal samples include gluino-mediated and direct pair production of squarks, in
+association with up to two additional partons. These are generated using \MADGRAPH \AMCATNLO
+with the sparticle decay, taking 100\% branching fraction to the specified final state, 
+performed using \PYTHIA. The cross sections are calculated with
+NLO plus next-to-leading-logatithm (NLL) accuracy~\cite{sparticleXs}. The detector response
+is simulated using the CMS fast simulation package~\cite{fastsim}.
+
+The XX and YY parton distribution functions (PDFs) are used for the generators described above
+The showering and hadronisation is performed using \PYTHIA~\cite{PYTHIA}, with subsequent 
+$\tau$ lepton decay simulated using the dedicated \TAUOLA generator~\cite{TAUOLO}. The effects
+of pileup are simulated by combining the generated output with a minimum bias sample 
+before the detector simulation.
+
 \section{Corrections to simulation}
 \subsection{MC reweighting}
 \subsection{Studies in data}
@@ -62,7 +97,7 @@ the transfer factor method within the likelihood used for interpreting the resul
 The selections in the control region closely resemble those made for
 the signal region. This ensures that similar objects and kinematic processes
 are chosen in the control and signal regions. The selection on the \alphat and
-\bpdhi variables are removed for the control regions to increase the statistical 
+\bdphi variables are removed for the control regions to increase the statistical 
 power of the control regions while selections on quantities such as the invariant
 or transverse mass ensure the \mj and \mmj control regions are enriched in
 W, Z and \ttbar as appropriate. These selections also ensure the control regions
@@ -90,9 +125,19 @@ and tests in data are discussed in detail in Section~\ref{sec:syst-uncs}.
 \section{Systematic uncertainties in the transfer factors}
 \label{sec:syst-uncs}
 This section describes the determination of systematic uncertainties 
-in the transfer factors using variations of systematic effects in 
-simulation and using the data driven \emph{closure tests}. 
+in the transfer factors though both variations of simulation
+and using the data driven \emph{closure tests}. 
 
 \subsection{Variation method}
+In section ?? the corrections applied to the simulated samples are summarised. For each 
+simulated event the correction may apply to the weight carried by that events (such as b tag efficiency
+or pileup reweighting) or to the property of objects in the event (such as the jet energy scale). 
+These corrections carry uncertainties that may effect the predictions of the \alphat~analysis.
+To determine their effect, for each source of uncertainty the correction is varied to their
+value at $\pm$ 1 $\sigma$ and the prediction from simulation re-evaluated. These uncertainties are
+propagated to the likelihood as described in section ??. In this section the systematic variations
+of the transfer factor for each effect is discussed. The corresponding figures referenced in
+this section are in ??.
+
 \subsection{Closure test method}
 \section{Addition of the \mht dimension}
