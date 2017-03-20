@@ -60,8 +60,79 @@ of pileup are simulated by combining the generated output with a minimum bias sa
 before the detector simulation.
 
 \section{Corrections to simulation}
-\subsection{MC reweighting}
-\subsection{Studies in data}
+The simulation is corrected for known differences in conditions and modelling of
+the physics processes from the data. These corrections may be common to many analyses,
+such as reweighting to correct the pileup modelling, or derived specifically for the \alphat 
+analysis, such as the evaluation of the contribution of fakes and fragmentation
+to the photon control region, and are detailed in this section.
+\subsection{Pileup reweighting}
+The distribution of the pileup interactions in the simulated events is different from
+that in the data and is corrected using the \emph{pileup reweighting} procedure. 
+
+The reweighting factors are derived as a function of the \emph{nTrueInt} variable. 
+For simulation this is the parameter of the poisson distribution from which 
+both the number of interactions in that bunch crossing and the number of interactions in
+the neighbouring bunch crossing are drawn to simulate in-time and out-of-time pileup
+respectively. For data the nTrueInt is derived by measuring the instantaneous luminosity
+for each colliding bunch and multipliying by the predicted cross section 
+of the total inelastic pp interaction, XX mb. 
+
+The pileup reweighting factors are the ratios of the distributions in nTrueInt in data
+and simulation. These are normalised such that the total number of simulated events 
+is unchanged. The effect of this pileup reweighting is shown in Figure ??. The uncertainty
+in this reweighting is derived by constructing alternative weighting factors for variations 
+of the inelastic pp cross section of $\pm5\%$.
+
+\subsection{Lepton and photon scale factors}
+\label{sec:scale-factor}
+Differences in the efficiency for leptons and photons predicted in 
+simulation and measured in data are mitigated by the use of scale factors. 
+Each scale factor corrects a different source of mismodelling, such as 
+object identification, trigger efficiency, tracker efficiency and isolation requirements.
+They are derived by finding the ratio of the efficiency measured in data to that
+predicted by simulation using methods such as tag-and-probe~\cite{MuonReco} and are typically dependant on 
+the $\eta$, \pt and/or $\phi$ of the relevant object.
+
+\subsection{B tag scale factor correction}
+
+The b tag scale factors are computed using the ratio in efficiency observed in data
+to that predicted in simulation for identifying a jet as originating from a bottom
+quark. These scale factors depend on simulated jet flavour, \pt and $\eta$. 
+
+The simulated samples are corrected by reweighting
+each event rather than changing the properties of jets within the event. 
+The efficiency for tagging a jet, i, $\epsilon_{i}^{b}$, is measured in simulation per 
+jet \pt, $\eta$ and flavour separately for each of the 
+\alphat~signal and control regions. The probability of a particular configuration 
+of b tagged jets in data and simulation is then calculated for each event,
+
+\begin{align}
+P(\text{simulation}) &= \prod_{i=\text{tagged}} \epsilon^{b}_{i} \prod_{j=\text{not tagged}} (1-\epsilon^{b}_{j})\\
+P(\text{data}) &= \prod_{i=\text{tagged}} SF_{i}\epsilon^{b}_{i} \prod_{j=\text{not tagged}} (1-SF_{j}\epsilon^{b}_{j})
+\end{align}
+
+where $SF_{i}$ is the scale factor. Using these probabilities the b tag scale factor weighting for the event is 
+determined by
+
+\begin{equation}
+w = \frac{P(\text{data})}{P(\text{simulation})}.
+\end{equation}
+
+\subsection{Trigger efficiency}
+
+The simulated samples are corrected to account for inefficiencies in the selection of muons
+at the trigger. The muon trigger selection is emulated in the simulation with a scale factor
+applied as described in Section~\ref{sec:scale-factor}. The photon trigger efficiencies
+are not emulated in the simulation and therefore photon \pt~dependant corrections are measured 
+using data. 
+
+The efficiency for the signal triggers are measured using data, as described 
+in section ??, and are \scalht, \njet~and \mht~depedant.
+
+\subsection{sideband corrections}
+\subsection{photon fakes and fragmentation}
+\subsection{nisr??}
+\subsection{nlo??}
 \section{Background estimation}
 \subsection{Electroweak background prediction}
 The electroweak backgrounds are predicted using the \emph{transfer factor} (TF)

@@ -142,7 +142,7 @@ jets identified as originating from bottom quarks. The \ttbar background is part
 enriched for $\nb \ge 2$, comprising $\sim60\%$ of the background for such events.
 
 Single top production occurs mainly via t-channel in association with a quark, production in 
-association with a W boson, or s-channel in association with a bottom quark with approximate
+association with a W boson (tW), or s-channel in association with a bottom quark with approximate
 proportions 72.5, 24 and 3.5\% respectively. As for \ttj, the single top background is enhanced for 
 categorisations with at least two reconstructed bottom quarks, rising to $\sim5\%$ of the total for
 such events.
@@ -581,10 +581,9 @@ jets from light flavoured quarks as b jets increases the background rate for a h
 The \scalht produced in an event provides a measure of the mass scale of 
 new physics models. This will be dependant on the mass splitting between
 the heavy sparticle and LSP in the model which determines the energy
-provided to the visible decay products. The control regions are binned
-as in~\ref{tab:ht-binning} In the signal region the \scalht categorisation depends 
-on the jet category. The finest \scalht regions are shown in Table~\ref{tab:ht-binning}
-These are merged from above depending on the requirement of at least one control region
+provided to the visible decay products. The finest control and signal region 
+binning in \scalht~is shown in~\ref{tab:ht-binning}. These are merged from 
+above depending on the requirement of at least one control region
 event observed in data per \scalht~region to allow a meaningful prediction.
 The highest \scalht~bin used for each category is summarised in Table ??.
 
@@ -597,9 +596,9 @@ The highest \scalht~bin used for each category is summarised in Table ??.
   \begin{tabular}{ lcccccccccc }
     \hline
     \hline
-    Control region \scalht (\GeV)           & 200      & 300       & 350       & 400       & 500       & 600       & 750 & 900 & 1050 & $\ge 1200$  \\
-    \hline                                                                                     
-    Signal region  \scalht (\GeV)         & 200         & --      & --      & 400  & --        & 600 & -- & 900  & -- & $\ge 1200$  \\
+    \scalht~Binning (\GeV)           & 200      & 300       & 350       & 400       & 500       & 600       & 750 & 900 & 1050 & $\ge 1200$  \\
+    % \hline                                                                                     
+    % Signal region  \scalht (\GeV)         & 200         & --      & --      & 400  & --        & 600 & -- & 900  & -- & $\ge 1200$  \\
     \hline
     \hline
   \end{tabular}
@@ -647,16 +646,33 @@ The HLT requirements are seeded using thresholds on the L1 trigger. The event is
 to pass any of the hadronic energy and missing energy requirements used for the L1 
 trigger to be considered at the HLT.
 
-The measurement of the trigger efficiencies is described in detail in section ?? using a muon reference trigger. 
-As shown in figure ??, an efficiency of > XX\% for the offline selection is achieved across the signal region.
+The trigger efficiencies for the signal region are measured using the efficiency for 
+data selected by indepedent muon and electron \emph{reference} triggers to pass signal 
+region selection. For the case of the muon reference trigger the muon is cross-cleaned 
+such that jet based energy sums do not include the muon. For the electrons this 
+cross-cleaning is not applied. The central value of the trigger efficiency
+is taken from the measurement using the electron reference trigger. The efficiency in \mht~
+bins for different \scalht~ranges are shown in Figure ??. Given the selection of $\mht > 200\GeV$,
+an efficiency of $>90\%$ is acheived across the signal region. 
+
+Biases may be introduced in the trigger efficiency measurement due to contamination in the computation
+of event variables and different treatments between trigger and offline reconstructions.
+The different between the measurement of the efficiencies using the muon and electron reference 
+triggers is used to probe this bias and propagated as a systematic uncertainty. 
+
+
+%%%MUST ADD TRIGGER EFFICIENCY!!!!
 
 \subsection{Electroweak control regions}
 
 The control regions use a trigger requirement on the relevant object in that control region.
 The \mj~and \mmj~regions are selected using a threshold of XX on the muon at the HLT and XX at L1. 
-The efficiency is measured in data using the tag and probe method CITE. These efficiencies are applied as appropriate 
-per muon \pt and \eta. The \gj control region is selected using the HLT seeds ?? and L1 seed ??. The
-appropriate efficiency is applied per photon \pt and \eta.
+The efficiency is measured in data using the tag and probe method~\cite{MuonReco}. These efficiencies are 
+applied as appropriate per muon \pt and $\eta$. 
+
+The \gj control region is selected using the HLT seeds ?? and L1 seed ??. The efficiency is 
+measured in data using events in the JetHt primary dataset which satisfy the \gj control 
+region requirements. These efficiencies are showin in Figure ?? and applied per photon \pt.
 %Move to later chapter?
 \section{Characterisation of control regions}
 \label{sec:char}
