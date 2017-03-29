@@ -238,7 +238,13 @@ are expected to cancel or be mitigated in the transfer factor. Residual uncertai
 sources such as the potential mismodelling of kinematics, theoretical uncertainties (for example
 in predicting \znunu using \gj events), and mismodelling of the reconstruction of the objects
 used in the control region. The determination of these uncertainties using both simulation 
-and tests in data are discussed in detail in Section~\ref{sec:syst-uncs}. 
+and tests in data are discussed in detail in Section~\ref{sec:syst-uncs}.
+
+The values of the transfer factors from each of the control regions to the relevant
+signal region background are shown in Figure ??.
+
+%%%%TRANSFER FACTOR PLOT!!!
+
 % An example
 % of this can be seen in figure ?? where the variation expected from simulation in the 
 % signal region using simulation is compared to the variation in the transfer factor
@@ -247,6 +253,107 @@ and tests in data are discussed in detail in Section~\ref{sec:syst-uncs}.
 % named \zInv and \ttW. 
 
 \subsection{QCD background prediction}
+
+The prediction of the QCD multijet background follows a transfer factor method
+similar to that used for the electroweak backgrounds. The region used
+for the prediction is the QCD multijet enriched hadronic control region, 
+inverting the signal region selection on \mhtmet. Due to the limited statistical
+power, the predictions are made per \njet~and \scalht~category (inclusive in \nb).
+Figure~\ref{fig:qcd_plots} shows the QCD multijet events from simulation 
+in the hadronic control region and signal region and corresponding transfer factors.
+
+The hadronic control region contains a significant electroweak background component, 
+as shown in Figure~\ref{fig:ewk_fail}. This component must be accurately predicted
+using electroweak control regions (with the \mhtmet selecttion inverted) analagously 
+to the signal region. The remaining QCD multijet contribution in the control region,
+$N_{QCD}^{\rm control}$, then replaces $\nobs^{\rm control}$ in Equation~\ref{equ:pred-method} 
+to predict the QCD multijet contribution in the signal region. 
+
+\begin{figure}[!h]
+  \centering
+  \subfigure[Simulated QCD events in the signal region.\label{fig:qcd_pass}]{
+    \includegraphics[width=0.4\textwidth]{Figures/qcd/plots/signalQCD_MC}
+  } ~
+  \subfigure[Simulated QCD events in the \mhtmet hadronic control region.\label{fig:qcd_fail}]{
+    \includegraphics[width=0.4\textwidth]{Figures/qcd/plots/qcdSbQCD_MC}
+  } \\
+  \subfigure[Transfer factor from simulated QCD events.\label{fig:qcd_ratio}]{
+    \includegraphics[width=0.4\textwidth]{Figures/qcd/plots/signalQcdDivSbQcd_MC}
+  } ~ 
+  \subfigure[Simulated electroweak events in \mhtmet hadronic control region.\label{fig:ewk_fail}]{
+    \includegraphics[width=0.4\textwidth]{Figures/qcd/plots/qcdSbEwk_MC}
+   %    \includegraphics[width=0.4\textwidth]{Figures/qcd/v6/Ewk/SigTrig_FailMoM_NJet_vs_HT_bDPhigt0p5_Log}
+  } \\
+  \caption{Expected number of QCD multijet events determined from
+    simulation, binned according to \njet and \scalht, that (a) satisfy
+    and (b) fail the requirement $\mhtmet < 1.25$. Also shown in (c)
+    is the ratio \rmhtmet for QCD multijets, again determined from
+    simulation. Finally, (d) shows the expected number of EWK events
+    (V+jets and \ttbar, plus other residual non-multijet backgrounds)
+    that fail the $\mhtmet < 1.25$ requirement, again determined from
+    simulation and binned according to \njet and \scalht.}
+  \label{fig:qcd_plots}
+\end{figure}
+
+To detrmine the electroweak predictions in the hadronic control region transfer factors 
+from the \mhtmet electroweak control regions are constructed and a simultaneous
+fit is carried out, as described in Section ??. This fit includes all systematic variations discussed in Section ??, derived with
+the \mhtmet~selection inverted. $N_{QCD}^{\rm control}$ is derived by including an unconstrained
+contribution uncorrelated in each \njet~and \scalht~category which measures the difference between 
+the electroweak prediction and the observation. The values of $N_{QCD}^{\rm control}$ are shown, 
+including systematic and statistical uncertainty in Figure~\ref{fig:data_corr}. 
+
+The signal region prediction is then made by multiplying the QCD multijet component in the hadronic 
+control region by the transfer factors shown in Figure~\ref{fig:qcd_ratio}. The results of this prediction
+are shown in Figure~\ref{fig:qcd_pred} with the ratio between the multijet and non-multijet background
+predictions shown in Figure~\ref{fig:qcd_ewk_ratio}. The multijet component is typically $\le 1\%$. 
+
+\begin{figure}[!h]
+  \centering
+  % \subfigure[Binned data counts in \mhtmet sideband.\label{fig:data_fail}]{
+  %   \includegraphics[width=0.4\textwidth]{Figures/qcd/plots/obsYields_QcdSb}
+  % } 
+  \subfigure[Predicted QCD counts in \mhtmet hadronic control region.\label{fig:data_corr}]{
+    \includegraphics[width=0.4\textwidth]{Figures/qcd/plots/postFitQcdYields_QcdSb}
+  } ~
+  \subfigure[QCD multijet predictions in the signal region.\label{fig:qcd_pred}]{
+    \includegraphics[width=0.4\textwidth]{Figures/qcd/plots/predictedQcdYields_Signal}
+  } \\
+  \subfigure[Ratio of predicted multijet and non-multijet yields.\label{fig:qcd_ewk_ratio}]{
+    \includegraphics[width=0.4\textwidth]{Figures/qcd/plots/predictedQcdDivEwk_Signal}
+  } \\
+  \caption{
+    The QCD yields taken from the simultaneous fit binned according to \njet and \scalht are shown in (a).
+    Shown in (b) is the result of multiplying the observed multijet events predicted
+    in (a) by the translation factor from the sideband to the signal
+    region determined with simulation (shown in
+    Fig.~\ref{fig:qcd_plots}). This gives a data driven expectation of
+    the quantity of multijet background events in the signal region. 
+    Finally, (c), shows the ratio of expected
+    multijet background events in the signal region divided by
+    non-multijet backgrounds. The multijet background is therefore
+    shown to be at the percent level.}
+  \label{fig:qcd_plots2}
+\end{figure}
+
+The distribution of the QCD multijet contribution in \nb~and \mht~in each \scalht~and \njet~category
+is predicted using the distribution of the electroweak background. The validation 
+for this approximation is discussed in Appendix ??.
+
+\subsubsection{Validation of the multijet prediction}
+
+The QCD multijet prediction relies on an extrapolation in the \mhtmet requirement.
+Significant mismodelling of this variable can bias the QCD prediction and therefore a validation
+of this extrapolation is carried out in data. This is carried out using an additional hadronic control 
+region defined by inverting the $\bdphi > 0.5$ requirement. The ratio of events passing and failing 
+the requirement $\mhtmet < 1.25$ is made in data and simulation, $\mathcal{R}^{data}$ and $\mathcal{R}$,
+in categories of \njet~and \scalht. The ratio of $\mathcal{R}^{data}$ to $\mathcal{R}$ is shown in
+Fig ?? (excluding bins with insufficient statistics). Given the small contributions ($<\sim 1\%$)
+contribution of QCD multijet events, agreement within 100\% of unity is deemed acceptible. 
+Given the level of agreement, a fully correlated systematic of $100\%$ is included on
+the QCD contamination. This is included in addition to the uncertainty shown in 
+Figure ??, taken as uncorrelated in each category.
+
 \section{Systematic uncertainties in the transfer factors}
 \label{sec:syst-uncs}
 This section describes the determination of systematic uncertainties 
@@ -338,10 +445,16 @@ The events of one control sample, B, are predicted using events from another con
 using a transfer factor from the ratio in simulation, 
 
 \begin{equation}
-N^{B}_{\text{pred}} = N^{B}_{\text{sim}}/N^{A}_{\text{sim}} \times N^{A}_{\text{data}} = TF_{\text{AB}} \times N^{A}_{\text{data}}
+N^{B}_{\text{pred}} = N^{B}_{\text{sim}}/N^{A}_{\text{sim}} \times N^{A}_{\text{data}} = TF_{\text{AB}} \times N^{A}_{\text{data}},
 \end{equation}
 
-the agreement between the samples is measured by the ratio $R_{\text{AB}} = \frac{N^{A}_{\text{data}}-N^{B}_{\text{pred}}}{N^{B}_{\text{pred}}}$.
+the agreement between the samples is then measured by the ratio, 
+
+\begin{equation}
+R_{\text{AB}} = \frac{N^{A}_{\text{data}}-N^{B}_{\text{pred}}}{N^{B}_{\text{pred}}}.
+\end{equation}
+
+
 The closure between the samples is defined as the signficance of the deviation of this ratio from zero 
 considering statistical uncertainties in both observation and simulation in samples A and B.
 The tests are performed seperately per \njet and \scalht category to investigate the level of closure. 
@@ -365,11 +478,6 @@ to samples A and B in equation ??). This requirement is decided by the signal \s
 \alphat and is 0.5 for \bdphi. The systematic is derived from the \alphat closure tests for
 bins with $\scalht < 900 \GeV$ and the \bdphi tests for $\scalht > 900 \GeV$.
 
-The results of these tests are shown in figure ?? (AWAITING DECISION FOR HOW THESE SYSTS WILL BE DERIVED)
-
-\subsubsection{Modelling of the W/Z ratio}
-
-NOT CURRENTLY USED?
 The results of these tests are shown in figure ?? (AWAITING DECISION FOR HOW THESE SYSTS WILL BE DERIVED)
 
 \subsubsection{Modelling of the W acceptance due to polarisation effects}
@@ -453,16 +561,14 @@ to validate the scale anchoring approach.
 In Sec.~\ref{sec:systMhtDimension} 
 the procedure used to extract the systematic uncertainties in the 
 \mht dimension is described and results shown with 13 \TeV data. 
-In Appendix~\ref{sec:bias_injection} the results of a bias injection test described. 
-This shows that the fit is sensitive to a bias affecting only the last \mht bin.
-%% Finally, in Sec.~\ref{app:closureTests3fb} the expected systematics for 3\ifb in Run 2 are be shown. 
 
+The systematic uncertainties extracted from the control regions
+are added in addition to systematic from variations in simulation.
+The variation in simulation follows the same procedure as described in
+?? and a comparason of the different sources of systematic uncertainty
+is presented in Section~\ref{sec:mcSystStudiesShape}.
 
-% extent to which the control regions can constrain this bias 
-% to the flat hypothesis
-%Motivated by the inclusive distribution, a linear bias is assumed.
-
-\subsection{Validation with 13 TeV Data}
+\subsection{Validation using control regions in data}
 \label{sec:valid13}
 To parameterise the data/MC agreement
 for the three electroweak control regions
@@ -677,25 +783,23 @@ zero bias hypothesis as well as validating the method for deriving expected unce
 % \end{figure}
 
 \newpage
-\subsection{Comparison to known systematic sources}
+\subsection{Inclusion of systematic sources from simulation}
 \label{sec:mcSystStudiesShape}
-To further validate the data driven procedure a range of known systematic sources are studied.
-The size of the variation of the \mht distribution under $\pm1\sigma$ shifts of these sources is compared 
-to that of the orthogonal polynomial systematic described in \ref{sec:valid13} to ensure they are
-covered. The sources considered are the b-tag scale factor uncertainty, jet energy correction uncertainty, 
-pile-up reweighting uncertainty, and top \pt rewieghting uncertainty. For each source of systematic the prediction
-is varied by $\pm1\sigma$. To study the effect of this systematic variation on the \mht dimension, and not normalisation, 
-the resulting template is normalised to the nominal template in each jet category and \scalht bin. 
-These systematic effects can then be compared to the data-driven orthogonal polynomial systematic. 
 
-Figures~\ref{fig:mcCompLow} and \ref{fig:mcCompHigh} show the representative examples for two different \scalht 
-bins and jet-categories. As can be seen in each case the \mht dimension change under the variation of all 
-systematics considered is easily contained within the orthogonal polynomial variation. 
-To show the effect across all jet categories, except the monojet categories for which the \mht dimension is not used,
-and \scalht bins Fig~\ref{fig:lastBinVar} shows the maximum upwards/downwards variation in the last 
-\mht bin as a proportion of the orthogonal polynomial variation. In almost all bins this is shown to be 
-significantly less than unity confirming that the orthogonal polynomial can cover the known systematic
-deviations.
+The size of the variation of the \mht distribution under $\pm1\sigma$ shifts of the
+sources of systematic uncertainty described in Section ?? is compared 
+to that of the orthogonal polynomial systematic described in \ref{sec:valid13}.
+As for the transfer factor variations, for each source of systematic the prediction 
+is varied by $\pm1\sigma$. In the likelihood, the \mht shape and transfer factors
+are varied simultaneously for each source of uncertainty, as discussed in Section ??.
+
+To study the effect of the systematic variations on the \mht shape (and not normalisation) 
+the resulting template is normalised to the nominal template in each jet category and \scalht bin. 
+Figures~\ref{fig:mcCompLow} and \ref{fig:mcCompHigh} show the variations for two representative \scalht 
+bins and jet-categories. 
+% To show the effect across all jet categories, except the monojet categories for which the \mht dimension is not used,
+% and \scalht bins Fig~\ref{fig:lastBinVar} shows the maximum upwards/downwards variation in the last 
+% \mht bin as a proportion of the orthogonal polynomial variation.
 
 \begin{figure}[h!]
   \centering
@@ -710,15 +814,15 @@ deviations.
   than the orthogonal polynomial data-driven systematic for an example bin \scalht 400-500, \njet $= 2$, \nb $= 0$.}
 \end{figure}
 
-\begin{figure}[h!]
-\centering
-\subfigure[Upwards deviation]{
-\includegraphics[width=0.5\textwidth]{Figures/backgroundPrediction/mcComparison6fb/lastBinRatioMax.pdf}
-}
-\subfigure[Downwards deviation]{
-\includegraphics[width=0.5\textwidth]{Figures/backgroundPrediction/mcComparison6fb/lastBinRatioMin.pdf}
-}\\
-\caption{\label{fig:lastBinVar} Maximum upwards and downwards variations in the last \mht bin as a proportion of the orthogonal polynomial deviation}
-\end{figure}
+% \begin{figure}[h!]
+% \centering
+% \subfigure[Upwards deviation]{
+% \includegraphics[width=0.5\textwidth]{Figures/backgroundPrediction/mcComparison6fb/lastBinRatioMax.pdf}
+% }
+% \subfigure[Downwards deviation]{
+% \includegraphics[width=0.5\textwidth]{Figures/backgroundPrediction/mcComparison6fb/lastBinRatioMin.pdf}
+% }\\
+% \caption{\label{fig:lastBinVar} Maximum upwards and downwards variations in the last \mht bin as a proportion of the orthogonal polynomial deviation}
+% \end{figure}
 
 
