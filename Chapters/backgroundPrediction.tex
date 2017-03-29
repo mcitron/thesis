@@ -137,10 +137,56 @@ using data.
 The efficiency for the signal triggers are measured using data, as described 
 in section ??, and are \scalht, \njet~and \mht~depedant.
 
-\subsection{sideband corrections}
-\subsection{photon fakes and fragmentation}
-\subsection{nisr??}
-\subsection{nlo??}
+\subsection{Sideband corrections}
+\label{sec:sideband-corrections}
+
+In the high-\scalht, high-\etmiss corner of the phase space used in this search, the normalisations 
+of the simulated samples may not necessarily agree with data. This may be due
+to the kinematic selection as well as missing higher perturbative order corrections 
+to the overall cross section. The analysis strategy for background prediction
+using transfer factors (see Section ??) is designed to minimise sensitivity 
+to normalisation corrections as the background composition is similar
+in the control and signal regions. However, the data driven tests 
+described in Section~\ref{sec:closure-tests} may exhibit sensitivity to such corrections
+due to the extrapolations between samples required.
+
+In this section a procedure is described to derive process-dependent \emph{sideband corrections}
+where a likelihood fit to data in sidebands of the control regions is used to determine
+normalisation corrections. These corrections are derived after all other corrections to simulation
+described in this section are applied. The sideband corrections are applied and propagated 
+to all the steps of the analysis. No uncertainty is considered for these corrections as this will
+be accounted for by the systematics derived through the tests described in Section~\ref{sec:closure-tests}.
+
+To take advantage of the full phase space of the sidebands, a simultaneous 
+fit is used to derive the corrections for \gj, \wj, \zj and \ttbar, using the $100<\mht<130$ GeV sideband
+for the \mj and \mmj control region and an \alphat sideband (inverting the \alphat selection per \scalht bin)
+for the \gj control region. 
+
+The sideband is binned identically to the control region in \njet, \nb and \scalht and a floating 
+parameter per relevant process encodes the correction for that process (fully correlated across all bins).
+The \wj and \ttbar processes are mainly constrained by the \mj sideband while the \zj and \gj process is 
+constrained by the \mmj and \gj sidebands respectively. The values of the corrections and uncertainties
+given by the fit are shown in Table~\ref{tab:sbCorrsFromFit}.\\
+The correction derived for \zj is also applied to the \znunu sample. 
+
+\begin{table}[!h]
+  \scriptsize
+  \centering
+  \caption{Cross section corrections for SM backgrounds derived with fit to sidebands in data.}
+  \label{tab:sbCorrsFromFit}
+  \begin{tabular}
+    {cllc}
+    \hline\hline
+    \textbf{Process} & \textbf{Sideband} & \textbf{Selection} & \textbf{Corrrection} \\
+    \hline
+    \wj & $100 < \mht < 130 \, \mathrm{GeV}$ & \mj& $1.13 \pm 0.01$ \\
+    \zj & $100 < \mht < 130 \, \mathrm{GeV}$ & \mmj& $1.08 \pm 0.01$ \\
+    \gj & $0.50 < \alphat < 0.52(0.53)$ & \gj & $1.33 \pm 0.03$ \\
+    \ttbar + jets & $100 < \mht < 130 \, \mathrm{GeV}$ & \mj, \mmj  & $0.91 \pm 0.01$ \\
+    \hline \hline
+  \end{tabular}
+\end{table}
+
 \section{Background estimation}
 \subsection{Electroweak background prediction}
 The electroweak backgrounds are predicted using the \emph{transfer factor} (TF)
@@ -284,6 +330,7 @@ applied to each event.
 % \subsubsection{NLO??}
 
 \subsection{Closure test method}
+\label{sec:closure-tests}
 The variations described above cover systematic uncertainties that can be modelled
 in simulation. In addition, the \alphat~analysis uses the data driven control samples to
 further probe sources of bias in the transfer factors due to limitations in the simulation.
