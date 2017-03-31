@@ -1,0 +1,89 @@
+\chapter{Statistical results and interpretation}
+\section{Likelihood model}
+\label{sec:likelihood}
+
+Consider a given category of event as defined by \njet, \nb~and \scalht, which are in the following identified with \htcat. 
+In each category, the signal is extracted using the discriminating variable \mht. 
+Templates of the \mht~distribution are built for the signal and the background processes 
+using the simulated samples described in Sec.?? The \mht binning is tabulated in Sec.~\ref{sec:mhtBinning}.
+The binning of the templates is chosen taking into account both the limited statistics in the simulation and 
+the control of the background in data. 
+A maximum statistical uncertainty from the simulated events of 50\% (corresponding to four unweighted events) 
+is required in each bin of the template in order to ensure a statistically meaningful prediction. 
+A minimum bin width constraint of 50 GeV is applied in order to reduce the bin-by-bin migration 
+due to the finite \mht resolution.
+
+The likelihood model in each bin in \mht~and \htcat~is split into hadronic and control components linked
+by floating parameters for the prediction. In one \htcat~category, j, the hadronic component may be written as,
+
+\begin{multline}
+\label{eq:hadronicLikelihood}
+\mathcal{L}^{j}_{\mathrm{had}} = \prod_i \mathrm{Pois}(n^{j,i}_{\mathrm{had}} |\, b^{j,i}_{\zInv~,had}\times\phi^{j}(\mu\rightarrow\zInv~)\times a^{j}\times\rho^{j,i}_{\zInv~,had}\, + \\ 
+b^{j,i}_{\ttW,\mathrm{had}}\times\phi^{j}(\mu\rightarrow\ttW)\times a^{j}\times\rho^{j,i}_{\ttW,had}\, + \,s^{j,i}_{\mathrm{had}}\times\rho^{j,i}_{s,had})
+\end{multline}
+
+where $b^{j}$ are the predicted number of events from simulation, the $a^{j}$ parameter is unconstrained and 
+fully correlated with the prediction of the signal region may be connected 
+to the control region (see below), while the $\phi^{j,i}$ contain the systematic uncertainties on the 
+transfer factors on the relevant prediction from the data driven tests described in Section ?? and the 
+$\rho^{j}$ contain the systematics from variations in simulation as well as the uncertainty from the limited number of 
+simulated events for background and signal (described in Section ?? and ??). The constraint terms
+for these systematic uncertainties are detailed in Section ??.
+
+The component of the likelihood for the \mj~control region, which is not categorised in \mht~, can be written as
+
+\begin{equation}
+\label{eq:muLikelihood}
+\mathcal{L}^{j}_{\mathrm{\mu}} = \mathrm{Pois}(n^{j}_{\mathrm{\mu}} |\, b^{j}_{\mu}\times a^{j}\times\rho^{j}_{\mu} + \,s^{j}_{\mathrm{\mu}}\times\rho^{j}_{s,\mu})
+\end{equation}
+
+similarly to Equation, $\rho^{j}_{\mu}$ contains the uncertainty in the \htcat from variations in simulation. The $s^{j}_{\mathrm{\mu}}$
+econdes the signal \emph{contamination} in the control region which is small by design. The connection between the control and signal region
+is encoded by the unconstrained $a^{j}$ parameter. The \zInv~component in the signal 
+region is also predicted using the \gj and \mmj regions. By rewriting $\phi^{j}(\mu\rightarrow\zInv~)\times a^{j}$ and $\phi^{j}(\mu\rightarrow\ttW)\times a^{j}$
+as ${a'}(\mu\rightarrow\zInv~)$ and $a'(\mu\rightarrow\ttW~)$ respectively, the connections to the \gj~and \mmj~regions
+may be written as, 
+
+\begin{align}
+\label{eq:mumuLikelihood}
+\mathcal{L}^{j}_{\mathrm{\mu\mu}} &= \mathrm{Pois}(n^{j}_{\mathrm{\mu\mu}} |\, b^{j}_{\mu\mu}\times \left({a'}^{j}/\phi^{j}(\mu\mu\rightarrow\zInv~)\right)\times\rho^{j}_{\mu\mu} + \,s^{j}_{\mathrm{\mu\mu}}\times\rho^{j}_{s,\mu\mu}) \\
+\mathcal{L}^{j}_{\mathrm{\gamma}} &= \mathrm{Pois}(n^{j}_{\mathrm{\gamma}} |\, b^{j}_{\gamma}\times \left({a'}^{j}/\phi^{j}(\gamma\rightarrow\zInv~)\right)\times\rho^{j}_{\gamma} + \,s^{j}_{\mathrm{\gamma}}\times\rho^{j}_{s,\gamma})
+\end{align}
+
+where parameters are defined as in Equations~\ref{eq:hadronicLikelihood} and~\ref{eq:muLikelihood}. 
+The $\phi^{j}$ appear on the denominator as the connection between the control and signal region is 
+inverted.
+
+The modifier and constraint terms of the systematic uncertainties depend on the source
+and can be summarised as,
+\begin{itemize}
+\item The transfer factor systematics ($\phi$) are taken to be \emph{log normal} uncertainties
+such that for an uncertainty, k, the likelihood includes a modifier term on
+the connection between the relevant control and signal processes of $(1+k)^{\theta}$ and a constraint term for $\theta$ which 
+is Gaussian (normal) with mean 0 and width 1~\cite{templateMorphing}. These uncertainties 
+are correlated per topology and \scalht bin (pair of \scalht bin for uncertainties derived using \mmj)
+\item The systematic uncertainties from variations in simulation are included using vertical template morphing.
+The yields are interpolated quadratically between the $\pm 1\sigma$ variations for each source of
+uncertainty and extrapolated linearly beyond this range~\cite{templateMorphing}. The constraint term is again Gaussian
+with mean 0 and width 1. These uncertainties are fully correlated across all categories.
+\item The poisson uncertainty due to the limited number of simulated events is approximated using
+two parameters per bin which multply the total background and signal contributions and which 
+are Gaussian constrained. These uncertainties are fully uncorrelated across all categories.
+\end{itemize}
+
+The total likelihood can be written as a product over all \htcat~bins,
+
+\begin{equation}
+\mathcal{L} = \prod_{j\in\htcat} \mathcal{L}^{j}_{\mathrm{had}} \times \mathcal{L}^{j}_{\mathrm{\mu\mu}} \times \mathcal{L}^{j}_{\mathrm{\gamma}} \times \mathcal{L}^{j}_{\mathrm{\mu}}
+\end{equation}
+
+The background predictions for the signal region $b^{\htcat}_{\mathrm{had},j}$ are extracted from a likelihood fit 
+using the control regions in Eq.~\ref{eq:controlLikelihood} without the signal region (the signal region is \emph{masked}). 
+This control region only fit provides the best knowledge of the background yields in the signal region, 
+and the predictions can therefore be used to re-interpret the analysis. The values of $b_j$ are 
+scaled in the control and signal regions by the control region only fit values of $a_j$.
+This allows the expected limits to reflect the results of the control region only fit.
+In the second step, the fit is done using the full likelihood (Eq.~\ref{eq:total_likelihood}) and all 
+the correlations between the backgrounds in control regions and signal region are taken into account.
+
+\section{Procedure for deriving limits}
