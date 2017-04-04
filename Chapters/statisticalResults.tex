@@ -57,12 +57,12 @@ inverted.
 The modifier and constraint terms of the systematic uncertainties depend on the source
 and can be summarised as,
 \begin{itemize}
-\item The transfer factor systematics ($\phi$) are taken to be \emph{log normal} uncertainties
+\item The transfer factor systematics (in $\phi$) are taken to be \emph{log normal} uncertainties
 such that for an uncertainty, k, the likelihood includes a modifier term on
 the connection between the relevant control and signal processes of $(1+k)^{\theta}$ and a constraint term for $\theta$ which 
 is Gaussian (normal) with mean 0 and width 1~\cite{templateMorphing}. These uncertainties 
 are correlated per topology and \scalht bin (pair of \scalht bin for uncertainties derived using \mmj)
-\item The systematic uncertainties from variations in simulation are included using vertical template morphing.
+\item The systematic uncertainties from variations in simulation (in $\rho$) are included using vertical template morphing.
 The yields are interpolated quadratically between the $\pm 1\sigma$ variations for each source of
 uncertainty and extrapolated linearly beyond this range~\cite{templateMorphing}. The constraint term is again Gaussian
 with mean 0 and width 1. These uncertainties are fully correlated across all categories.
@@ -77,7 +77,7 @@ The total likelihood can be written as a product over all \htcat~bins,
 \mathcal{L} = \prod_{j\in\htcat} \mathcal{L}^{j}_{\mathrm{had}} \times \mathcal{L}^{j}_{\mathrm{\mu\mu}} \times \mathcal{L}^{j}_{\mathrm{\gamma}} \times \mathcal{L}^{j}_{\mathrm{\mu}}
 \end{equation}
 
-The background predictions for the signal region $b^{\htcat}_{\mathrm{had},j}$ are extracted from a likelihood fit 
+The background predictions for the signal region $b^{j}_{\mathrm{had}}$ are extracted from a likelihood fit 
 using the control regions in Eq.~\ref{eq:controlLikelihood} without the signal region (the signal region is \emph{masked}). 
 This control region only fit provides the best knowledge of the background yields in the signal region, 
 and the predictions can therefore be used to re-interpret the analysis. The values of $b_j$ are 
