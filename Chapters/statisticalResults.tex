@@ -18,7 +18,7 @@ by floating parameters for the prediction. In one \htcat~category, j, the hadron
 
 \begin{multline}
 \label{eq:hadronicLikelihood}
-\mathcal{L}^{j}_{\mathrm{had}} = \prod_i \mathrm{Pois}(n^{j,i}_{\mathrm{had}} |\, b^{j,i}_{\zInv~,had}\times\phi^{j}(\mu\rightarrow\zInv~)\times a^{j}\times\rho^{j,i}_{\zInv~,had}\, + \\ 
+\mathcal{L}^{j}_{\mathrm{had}} = \prod_i \mathcal{L}^{j,i}_{\mathrm{had}} = \prod_i \mathrm{Pois}(n^{j,i}_{\mathrm{had}} |\, b^{j,i}_{\zInv~,had}\times\phi^{j}(\mu\rightarrow\zInv~)\times a^{j}\times\rho^{j,i}_{\zInv~,had}\, + \\ 
 b^{j,i}_{\ttW,\mathrm{had}}\times\phi^{j}(\mu\rightarrow\ttW)\times a^{j}\times\rho^{j,i}_{\ttW,had}\, + b^{j,i}_{\text{QCD},had}\times\omega^{j,i}_{\text{QCD},had}\\\
 + \,r\times s^{j,i}_{\mathrm{had}}\times\rho^{j,i}_{s,had}) 
 \end{multline}
@@ -196,7 +196,7 @@ the likelihood defined in~\ref{eq:totalLikelihood}, the profile likelihood ratio
 
 \begin{equation}
 \label{eq:profile}
-\lambda(r) = \frac{\mathcal{L}(r,\hat{\boldsymbol{\theta}}(r))}{\mathcal{L}(\hat{r},\hat{\boldsymbol{\theta}})},
+q(r) = \frac{\mathcal{L}(r,\hat{\boldsymbol{\theta}}(r))}{\mathcal{L}(\hat{r},\hat{\boldsymbol{\theta}})},
 \end{equation}
 
 where $\hat{\boldsymbol{\theta}}$ and $\hat{r}$ are the values of $\boldsymbol{\theta}$ and r that maximise $\mathcal{L}$
@@ -206,10 +206,10 @@ of $\boldsymbol{\theta}$ that maximises $\mathcal{L}$ for the specified value of
 Given that $r < 0$ is unphysical the profile likelihood is modified as
 \begin{equation}
 \label{eq:profileNew}
-\tilde{\lambda}(r) = 
+\tilde{q}(r) = 
 \begin{cases}
-\lambda(0)\quad r \le 0, \\ 
-\lambda(r)\quad r > 0. \\ 
+q(0)\quad r \le 0, \\ 
+q(r)\quad r > 0. \\ 
 \end{cases}
 \end{equation}
 
@@ -218,7 +218,7 @@ The test statistic used to derive the upper limit on r is then defined as
 \begin{equation}
 t_r = 
 \begin{cases}
--2\,\text{ln}\,\tilde{\lambda(r)}\quad &\hat{r} \le r, \\ 
+-2\,\text{ln}\,\tilde{q(r)}\quad &\hat{r} \le r, \\ 
 0 \quad &\hat{r} > r. \\ 
 \end{cases}
 \end{equation}
