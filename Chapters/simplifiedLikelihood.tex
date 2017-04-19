@@ -1,6 +1,6 @@
 \chapter{Facilitating re-interpretation} % 
-The results of the \alphat search have been presented using limits on simpified model
-spectra which allow the sensivitity of the search to different topologies 
+The results of the \alphat search have been presented using limits on simplified model
+spectra which allow the sensuality of the search to different topologies 
 to be benchmarked. The search will be sensitive to a wide range of BSM models
 and the results must therefore be \emph{re-interpreted} by those outside the 
 CMS collaboration to provide constraints on such models.
@@ -14,11 +14,11 @@ level quantities (both methods are used in~\cite{Drees:2013wra,Papucci:2014rja,m
 The background contributions to the search regions and the associated systematic uncertainties often rely
 on simplifying assumptions which can lead to inaccuracies in the re-interpretation. 
 
-In this section, an alternative procedure for re-interpreting BSM physics searches by approximating
+In this section an alternative procedure for re-interpreting BSM physics searches by approximating
 the full background model and the associated systematic uncertainties is presented. 
-The procedure involves techniques both to simplify the categorisation of the search (aggregation)
+The procedure involves techniques both to simplify the categorisation of the search (\emph{aggregation})
 and to use a reduced set of information to describe the background model 
-and the correlations between different search regions (simplified likelihood),
+and the correlations between different search regions (\emph{simplified likelihood}),
 minimising the loss of sensitivity. The \alphat search is used to validate and illuminate
 the use of such techniques, however, they are applicable for a wide range of 
 searches and a general treatment may be found in~\cite{simp-lik}.
@@ -29,12 +29,13 @@ The \alphat analysis uses a fine categorisation in \njet, \nb, \scalht,and \mht 
 sensitivity to a wide range of new physics models. This categorisation makes re-interpreting
 the results of the search too computationally intensive to be feasible. Previously, 
 only the categories most sensitive to the relevant model have been used, however,
-this breaks the correlation model for the search and can significantly reduce
-the sensitivity of the search due to the loss of the indirect constraints from
-the neglected bins. In this section, the definition of aggregated regions 
-using the full likelihood is presented to allow the categorisation to be 
-simplified without breaking the background model. The method for aggregation based
-on the covariance between regions is described in Section ??.
+this will break the correlation model for the search and can significantly reduce
+the sensitivity due to the loss of indirect constraints from
+the neglected bins. 
+
+In this section, the definition of aggregated regions 
+using the full likelihood is presented. The aggregated regions allow the categorisation to be 
+simplified without breaking the background model. 
 
 \subsection{The aggregate region likelihood}
 
@@ -199,19 +200,21 @@ V_{ij}=E[\theta_i\times\theta_j],
 
 where $E[x]$ is the expectation value of $x$. The expectations and covariance
 must be derived following the fit over the control regions as these are not
-included when re-interpretating the search. The covariance matrix is determined
+included when re-interpreting the search. The covariance matrix is determined
 using pseudo-experiments to sample the nuisance parameters. 
 
 As shown in~\cite{simp-lik}, the covariance matrix may also be used to
-combine categories to define aggregate regions for the simpligied likelihood.
+combine categories into aggregated regions with appropriate covariance between
+the bins. These aggregated regions and covariance may then be used to define 
+the simplified likelihood.
 
-\subsection{Results for the alphat analysis}
+\subsection{Results for the \alphat~analysis}
 
 The covariance and predictions in the aggregated regions discussed
 in Section~\ref{sec:agg-reg} are used to define and validate the simplified likelihood. 
 Figure~\ref{fig:likelihoodscanAT} (a) shows the value of $q(r)$ as a function of r for 
-the T2bb model with $m_\text{SUSY} = 800 \gev$ and $m_{\chiz} = 200 \gev$. 
-The values of $q(r)$ are compared to those derived using the full likelihood and 
+a simplified model with direct bottom squark production and $m_\text{SUSY} = 800 \gev$ 
+and $m_{\chiz} = 200 \gev$. The values of $q(r)$ are compared to those derived using the full likelihood and 
 using the simplified likelihood, ignoring correlations between the background expectations. 
 The results using an Asimov dataset, assuming a signal strength of $r=1$, are also 
 shown as these are used to calculate limits using the asymptotic approximations 
@@ -220,7 +223,8 @@ considering correlations, is shown to be in good agreement with the full likelih
 the agreement is worsened when correlations are neglected.
 
 In Figure~\ref{fig:likelihoodscanAT} (b) the ratio between the observed $r_{95}$ for the simplified 
-and the full likelihood is shown for T2bb. The expected and observed contours of $r=1$ 
+and the full likelihood is shown in the ($m_{\text{SUSY}}$, $m_{\tilde{\chi}^{0}}$) plane for 
+the simplified model of direct production of bottom squarks. The expected and observed contours of $r=1$ 
 excluded at $95\%$ for the full likelihood, the simplified likelihood and the 
 simplified likelihood where correlations are neglected are overlaid. The results using the 
 full and simplified likelihoods are seen to agree well when the correlations between bins are considered.
@@ -231,11 +235,22 @@ full and simplified likelihoods are seen to agree well when the correlations bet
    \subfigure[]{\includegraphics[width=0.45\textwidth]{Figures/simplifiedLikelihood/simpResults/full_T2bb_obs}}
    \caption{(a) The value of $q(r)$ for the \alphat search defined using the simplified likelihood using the full covariance matrix, assuming no correlations between the 
    background yields and defined using the full likelihood. (b) Expected and observed exclusion contours defined as 
-   the boundary of the region where $r_{95} < 1$ in the T2bb plane for the \alphat search.
+   the boundary of the region where $r_{95} < 1$ for the \alphat search.
    The results are compared between the limits calculated using the full and the simplified likelihoods and the simplified likelihood assuming no correlations 
    between the background yields. The colour scale shows the ratio of $r_{95}$ calculated 
    using the simplified likelihood to the value using the full likelihood.}
    \label{fig:likelihoodscanAT} 
   \end{center}
 \end{figure}
+
+\section{Summary}
+
+To re-interpret the \alphat~search requires the background model and associated
+systematic uncertainties to be approximated. The categorisation may be
+robustly simplified through the use of aggregated search regions while the simplified 
+likelihood method uses a multivariate Gaussian to approximate the systematic uncertainties.
+The simplified likelihood is shown to give comparable upper limits at 95\% confidence 
+level for a representative signal model. These methods may be applied to a 
+wide range of searches for new physics and a general treatment 
+is presented in~\cite{simp-lik}.
 
