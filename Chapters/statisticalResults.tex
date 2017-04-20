@@ -1,11 +1,14 @@
 \chapter{Statistical results and interpretation}
+\label{cha:statisticalResults}
 
 In this section the statistical results and interpretations are discussed.
-In section~\rec{sec:likelihood} the likelihood model used to interpret the results of the \alphat search is
+In Section~\ref{sec:likelihood} the likelihood model used to interpret the results of the \alphat search is
 detailed and in Section~\ref{sec:results} the results of a maximum likelihood fit to the observed data presented. 
 As no significant excess is seen the results are interpreted by setting 95\% confidence limits
 on supersymmetric simplified models. The procedure for setting the limits and 
 the results are detailed in Sections~\ref{sec:limits} and~\ref{sec:limits-sms} respectively.
+In this section the \znunu background is labelled as \zInv~ while 
+the \ttj~plus \wj~background is labelled as \ttW.
 
 \section{Likelihood model}
 \label{sec:likelihood}
@@ -21,8 +24,7 @@ by floating parameters for the prediction. In one \htcat~category, j, the hadron
 \begin{multline}
 \label{eq:hadronicLikelihood}
 \mathcal{L}^{j}_{\mathrm{had}} = \prod_i \mathcal{L}^{j,i}_{\mathrm{had}} = \prod_i \mathrm{Pois}(n^{j,i}_{\mathrm{had}} |\, b^{j,i}_{\zInv~,had}\times\phi^{j}(\mu\rightarrow\zInv~)\times a^{j}\times\rho^{j,i}_{\zInv~,had}\, + \\ 
-b^{j,i}_{\ttW,\mathrm{had}}\times\phi^{j}(\mu\rightarrow\ttW)\times a^{j}\times\rho^{j,i}_{\ttW,had}\, + b^{j,i}_{\text{QCD},had}\times\omega^{j,i}_{\text{QCD},had}\\\
-+ \,r\times s^{j,i}_{\mathrm{had}}\times\rho^{j,i}_{s,had}) 
+b^{j,i}_{\ttW,\mathrm{had}}\times\phi^{j}(\mu\rightarrow\ttW)\times a^{j}\times\rho^{j,i}_{\ttW,had}\, + b^{j,i}_{\text{QCD},had}\times\omega^{j,i}_{\text{QCD},had} + \,r\times s^{j,i}_{\mathrm{had}}\times\rho^{j,i}_{s,had}) 
 \end{multline}
 
 where $b^{j}$ are the predicted number of events from simulation for the electroweak
@@ -158,8 +160,8 @@ prediction across the signal region. In Section~\ref{sec:agg-reg} the result is 
 
 \begin{figure}[!tbhp]
   \begin{center}
-    \includegraphics[width=0.49\textwidth]{Figures/statisticalResults/mhtShape_eq0b_ge5j_800_Inf_fit_b.pdf} 
-    \includegraphics[width=0.49\textwidth]{Figures/statisticalResults/mhtShape_ge3b_ge5j_800_Inf_fit_b.pdf} 
+    \includegraphics[width=0.45\textwidth]{Figures/statisticalResults/mhtShape_eq0b_ge5j_800_Inf_fit_b.pdf} 
+    \includegraphics[width=0.45\textwidth]{Figures/statisticalResults/mhtShape_ge3b_ge5j_800_Inf_fit_b.pdf} 
   \end{center}
   \caption{Event yields observed in data (solid circles) and SM
     expectations from the CR-only fit with their associated
@@ -299,7 +301,7 @@ in Table~\ref{tab:signal_systs} including typical magnitudes for direct bottom s
 
 
 \subsection{Upper limits on signal production cross section}
-\sec{sec:limits-sms}
+\label{sec:limits-sms}
 In Figure~\ref{fig:limits-sms} the upper limits at 95\% CL set on the production cross section are shown
 in the ($m_{\text{SUSY}}$, $m_{\tilde{\chi}^{0}}$) plane for the models considered.
 Also shown are the expected and observed contours of $r_{95} = 1$ (models \emph{excluded}

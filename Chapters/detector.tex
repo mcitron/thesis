@@ -1,13 +1,14 @@
 % Chapter 2
 
 \chapter{The LHC and CMS experiment} % 
+\label{cha:detector}
 \section{The Large Hadron Collider}
 \label{lhc_intro}
 %LHC intro 
 The LHC is a 27km circular circumference storage ring, accelerator and collider for 
 both protons and Pb ions. It is situated in a stable environment in a tunnel 
 100 metres underneath the Franco-Swiss border near Geneva, Switzerland.
-A double-ring synchotron, it is designed to collide proton-proton (p-p)
+A double-ring synchotron, it is designed to collide proton-proton (pp)
 pairs with a centre of mass energy of up to $\sqrt(s)=14\TeV$ and a 
 luminosity of up to $10^{34}cm^{-2}s^{-1}$. This makes the LHC the only collider
 in operation able to directly probe $\TeV$ scale physics. 
@@ -57,19 +58,19 @@ and the dipole magnets underwent a quench training programme.
 
 After LS1, from 2015-2016 (Run 2, which will continue up to 2018) the LHC has been running with record beam energies 
 of $6.5\TeV$ per beam with bunch spacings of 25 and 50 ns. 
-As shown in Figure~\ref{fig:LHC-integrated-lumi}, by the end of the 2016 run $40.7\fb$ of integrated luminosity has been 
-delivered to the CMS and ATLAS detectors, with $37.5\fb$ recorded by CMS. The dataset is validated by detector
+As shown in Figure~\ref{fig:LHC-integrated-lumi}, by July 2016 $16.0\fb$ of integrated luminosity was
+delivered to the CMS and ATLAS detectors, with $13.8\fb$ recorded by CMS. The dataset is validated by detector
 subsystem experts to ensure runs in which the data quality may be affected by any problem in one of the CMS detectors 
-subsystems are excluded. The luminosity of this certified dataset is XX and it is this dataset, 
-at a centre of mass energy of $\sqrt(s) = 13\TeV$, 
-which is used in Chapters XX to search for Supersymmetry at the highest energy reached at a collider.
+subsystems are excluded. The luminosity of this certified dataset is $12.9\fb$ and it is this dataset, 
+at a centre of mass energy of $\sqrt(s) = 13\TeV$, which forms the basis for the work in this thesis.
 
 %%%FIGURE - LHC lumi plot
 \begin{figure}
 \centering
-    \includegraphics[width=0.9\textwidth]{./Figures/detector/int_lumi_per_day_cumulative_pp_2016OnlineLumi}
+    \includegraphics[width=0.9\textwidth]{./Figures/detector/int_lumi_per_day_cumulative_pp_2016_Golden_ICHEP}
   \caption{Integrated luminosity measured online versus day delivered to (blue), 
-  and recorded by CMS (orange) during stable beams and for p-p collisions at 13\TeV~ centre-of-mass energy in 2016.}
+  and recorded by CMS (orange) during stable beams and for pp collisions at 13\TeV~ centre-of-mass 
+  energy by July 2016~\cite{cmslumi}.}
   \label{fig:LHC-integrated-lumi}
 \end{figure}
 
@@ -101,7 +102,7 @@ vector sums of the momenta of the relevant objects in the x-y plane.
 \begin{figure}
 \centering
     \includegraphics[width=0.9\textwidth]{./Figures/detector/CMS_Slice.jpg}
-  \caption{Cross Section of CMS showing the paths of various particle types 
+  \caption{Cross section of CMS showing the paths of various particle types 
   through different segments of the detector~\cite{cmsslice}}
   \label{CMS_SLICE}
 \end{figure}
@@ -123,7 +124,7 @@ high resolution hit timing and positioning to determine the muon trajectory. In 
 
 \section{Tracker}
 The CMS tracker is an all silicon tracker with an area sensitive to charged particles of around 200$m^2$. It is designed to measure hits along the
-curved trajectories of charged particles which result from the high energy p-p collisions. A cross section of the tracker in the r-z plane is shown in Fig~\ref{TRACKER_SLICE}.
+curved trajectories of charged particles which result from the high energy pp collisions. A cross section of the tracker in the r-z plane is shown in Fig~\ref{TRACKER_SLICE}.
 The tracker has coverage for $\|\eta\| < 2.5$ and achieves an optimal efficiency in the barrel region $\|\eta\| < 0.9$~\cite{tracker_performance,tracker_tdr}. 
 Close to the interaction vertex, $r < 20cm$, where the particle flux is maximal ($~10^7/s$) is the pixel detector. This system consists of an inner region of 66 million silicon 
 pixels of $100\mu m \times 150\mu m$ in three overlapping layers and a forward region with two endcap discs on each side.
@@ -313,7 +314,7 @@ a partial reconstruction using a reduced information set from the calorimetry an
 reconstruct physics objects in local regions of the detector which are passed to the global trigger which constructs global
 quantities and makes the final trigger decision. The various requirements are known as trigger seeds. 
 If accepted the event is fully read and transmitted to the final triggering
-stage. The L1 Trigger has undergone two stages of upgrade for the start of Run 2, described in detail in Sec~\ref{sec:triggerUpgrade}.
+stage. The L1 Trigger has undergone two stages of upgrade for the start of Run 2, described in detail in Chapter~\ref{cha:triggerUpgrade}.
 
 \subsection{The High Level Trigger}
 
@@ -334,7 +335,7 @@ a similar quantity of simulated events.
 To confront data from experimental observations with a theoretical hypothesis requires an accurate
 simulation of both background and signal processes as well as their interactions with the CMS detector.
 This is extremely challenging at the LHC due to the wide range of particle multiplicities and momenta 
-from the p-p collisions, often in non-perturbative regimes. The simulation of events at CMS 
+from the pp collisions, often in non-perturbative regimes. The simulation of events at CMS 
 is factorised into five stages: the hard scattering, fragmentation, hadronisation, decay and 
 detector simulation. A generic review of simulation for particle physics can be found in~\cite{sim_rev}.
 
@@ -355,10 +356,5 @@ particles.
 
 The interactions with the CMS detector of the generated particles must be simulated. This is performed using \GEANTfour~\cite{GEANT} which provides
 event information identical to the real data. This can then be used as the inputs for the reconstruction stages described 
-in Section~\ref{sec:reco}.
-
-Finally, effects due to additional simultaneous interactions must be simulated. This can be efficiently performed by using
-a large minimum bias QCD sample from which single pileup events are overlaid on the signal process to be reconstructed 
-together. This is done both for in-time pileup as well as additional events in a 12 bunch crossing window of the 
-signal event to allow OOTPU to be considered.
+in Chapter~\ref{cha:reco}.
 

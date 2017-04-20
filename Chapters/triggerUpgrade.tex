@@ -1,15 +1,16 @@
 \chapter{The Level 1 trigger upgrade} % 
-\label{sec:triggerUpgrade}
+\label{cha:triggerUpgrade}
 
 During Run 2, the LHC has provided collisions at an energy of 13\TeV~and at  
 a peak luminosity of $14\times10^{33}cm^{-2}s^{-1}$, marking a signifcant increase
 in peak energy and luminosity provided during Run 1 (8\TeV~and $7\times10^{33}cm^{-2}s^{-1}$).
-At 25ns bunch spacing an average of 25 simlutaneous interactions are produced per bunch crossing.
-The high luminosity and pileup provides a challenging environment for the L1 trigger system
-during Run 2, which must continue to provide an input rate to the HLT of 100kHz, which 
-exceeds design specifications. Simply increasing thresholds on the L1 trigger seeds would cause
+With a spacing between bunches of 25ns an average of 25 simlutaneous interactions are 
+produced per bunch crossing. This high luminosity and pileup provides a challenging
+environment for the L1 trigger system during Run 2, which must continue to provide 
+an input rate to the HLT of 100kHz, in conditions that exceed design specifications. 
+Simply increasing thresholds on the L1 trigger seeds would cause
 unacceptable inefficiencies for electroweak physics and \TeV~scale searches
-at CMS and the L1 trigger system, and associated algorithms, must therefore be upgraded. 
+and, therefore, the L1 trigger system, and associated algorithms, must be upgraded. 
 
 In this section, the upgrades to the L1 calorimetric trigger system and the 
 associated L1 jet algorithm are discussed. The muon trigger system 
@@ -41,7 +42,7 @@ event is processed entirely within one card using the full trigger tower granula
 
 \section{The Time Multiplexed Trigger architecture}
 
-The TMT uses two processing layers. The first, layer one, performs
+The TMT uses two processing layers. The first, \emph{layer one}, performs
 pre-processing and data formatting using 18 CTP7 cards \cite{mp7}. Each card requires
 only a regional view of the detector and performs local operations such as summing 
 ECAL and HCAL transverse energies. The data for each event is combined and transmitted to 
@@ -52,7 +53,7 @@ from the 9 nodes on layer two is passed to a demultiplexer board (also an MP7) b
 being sent to the GT. The GT makes the final trigger decision using both the calorimeter
 and muon trigger systems.
 
-The difference between the GCT (and UCT) and TMT architectures is shown schematically in Figure~\ref{tmux}. 
+The difference between the GCT/UCT and TMT architectures is shown schematically in Figure~\ref{tmux}. 
 In the TMT architecture, data is buffered and retransmitted to the first node (on layer 2)
 over 9 bunch crossings to allow the entire event to be processed on one card. This
 removes the need for a large number of links between cards and allows the full trigger
@@ -109,18 +110,19 @@ is composed of $9\times9$ TTs ($\Delta\eta\times\Delta\phi = 0.78\times0.78$), c
 to the $R=0.4$ used in Run 2. The use of an odd number of trigger towers ensures a central 
 seed tower can be defined. 
 
-In order to ensure that jets do not overlap such that energy deposits are double counted, 
-the seed tower is required to meet the conditions
+In order to ensure that jets do not overlap, which would cause energy deposits 
+to be double counted, the seed tower is required to meet the conditions
 shown in Figure~\ref{mask}. The veto conditions are asymmetric along the diagonal to prevent  
 TTs with the same energy vetoing one another. An inefficiency may be expected 
 if a jet vetoes another which itself vetoes a third. However, this effect was found to 
 introduce a negligible (~0.1\%) inefficiency. A threshold on the central seed tower may 
-additionally be required to reconstruct a jet, as discussed in section~\ref{sec:seed_thresh}. 
+additionally be required to reconstruct a jet, as discussed in Section~\ref{sec:seed_thresh}. 
 
-If a seed passes the veto requirements a jet is defined with the position 
-given by the seed tower and an energy given by the total energy of the towers. 
-The seed position is used as jets tend to be boosted objects with an energy deposited in
-a small central area. Note that the L1 jets are massless such that $\pt = \Et$.
+If a seed passes the veto requirements a jet is defined with a position 
+given by the seed tower and an energy given by the total energy of the towers
+making up the jet. The seed position is used as jets tend to be boosted
+ objects with an energy deposited in a small central area. 
+Note that the L1 jets are massless such that $\pt = \Et$.
 
 \begin{figure}
 \centering
@@ -138,7 +140,7 @@ most CMS analyses during Run 2, anti-$k_T$ with a distance
 parameter of 0.4, described in Section~\ref{sec:jet_reco}. 
 
 The trigger tower deposits were generated using a simulated sample of 
-top pair-production \footnote{In this section all simulated samples used have conditions 
+top pair-production (\ttj) \footnote{In this section all simulated samples used have conditions 
 of $\sqrt(s) = 13TeV$, bunch spacing $50ns$ and pileup Gaussian distributed around $40$ simultaneous interactions.} 
 due to the plentiful sample of jets produced in this process. The anti-$k_T$ algorithm is run over the same inputs as
 used for the L1 algorithm with the \FASTJET package~\cite{fastjet}.
@@ -357,7 +359,7 @@ such that the average response is an unreliable estimate of the jet algorithm re
 The performance of the jet algorithm and the various pileup suppression techniques is tested using
 Monte Carlo simulation. In each case, the corrected \Lonept~is calibrated following the procedure in Section~\ref{sec:calib}.
 Comparisons are made with algorithms used for both the legacy GCT and UCT systems to benchmark the performance.
-Efficiencies are measured using a simulated top pair production sample while 
+Efficiencies are measured using a simulated \ttbar sample while 
 background rates are measured using a simulated minimum bias sample.
 
 \subsection{Matching efficiency}
@@ -396,7 +398,7 @@ L1 and matched generator jets. The matching procedure is the same as that descri
 The resolution provides an important measure of the ability of the algorithm to reject jets from pileup
 energy deposits as well as to remove the contribution of pileup from real jets from the hard scatter.
 In Figure~\ref{fig:resolution1}, the resolution as a function of the number of simultaneous interactions is shown for
-a simulated top pair production sample. The resolution is flat near unity when pileup subtraction is applied,
+a simulated \ttbar sample. The resolution is flat near unity when pileup subtraction is applied,
 but exhibits a strong dependence on pileup if uncorrected. To illustrate the pileup contamination for different
 \Genpt~jets, a linear fit to the resolution as a function of pileup is made in \Genpt~bins and the resultant gradients
 shown in Figure~\ref{fig:resolution2}. Pileup subtraction is shown to significantly reduce the 

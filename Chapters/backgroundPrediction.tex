@@ -1,4 +1,5 @@
 \chapter{Background estimation for the \alphat~search}
+\label{cha:backgroundPrediction}
 
 The accurate estimation of SM background yields is crucial for a sensitive and robust
 search for new physics. In this section, the data driven estimations used by
@@ -47,7 +48,7 @@ different \emph{generators} are used to produce the processes.
 The processes with the highest contributions to the signal and control regions, 
 including \znunu + jets, Drell-Yan (\dy) + jets, \gj, \ttj, \wj and QCD multijet events, are generated at leading order (LO) 
 in using \MADGRAPH \AMCATNLO~\cite{Alwall:2014hca}. The same generator is used at next-to-leading order (NLO)
-in the strong coupling constant ($\alpha_s$) to generate samples of s-channel production of single top and \ttV (where V is a vector boson) events.
+in the strong coupling constant ($\alpha_s$) to generate samples of s-channel production of single top and \ttV events.
 The t-channel and tW-channel single top samples are generated using \POWHEG~\cite{Alioli:2010xd}.
 The diboson samples, WW, WZ and ZZ, are generated using \PYTHIA~\cite{PYTHIA}. 
 The simulated background samples are normalised using cross sections calculated with NLO and NNLO precision.%CITE?
@@ -65,8 +66,8 @@ The showering and hadronisation is performed using \PYTHIA~\cite{PYTHIA}, with s
 $\tau$ lepton decay simulated using the dedicated \TAUOLA generator~\cite{TAUOLA}. The effects
 of pileup are simulated by combining the generated output with a minimum bias sample 
 with a mean of twenty simultaneous interactions. This is done in a 12 bunch 
-crossing window of the signal event to include the effects of both
- out of time and in time pileup to be considered.
+crossing window of the signal event to include the effects of both 
+out of time and in time pileup to be considered.
 
 \section{Corrections to simulation}
 \label{sec:corr-sim}
@@ -143,7 +144,7 @@ are not emulated in the simulation and therefore photon \pt~dependant correction
 using data. 
 
 The efficiency for the signal triggers are measured using data, as described 
-in section~\ref{sec:ana-trigger}, and are \scalht, \njet~and \mht~dependant.
+in Section~\ref{sec:ana-trigger}, and are \scalht, \njet~and \mht~dependant.
 
 \subsection{Sideband corrections}
 \label{sec:sideband-corrections}
@@ -261,10 +262,10 @@ by up to 30\%, the transfer factor variations are under $10\%$.
 \begin{figure}[!h]
   \centering
   \subfigure[Variation in \ttbar/W~simulation]{
-    \includegraphics[width=0.4\textwidth]{Figures/backgroundPrediction/mcSystematics12p9fb/Ttw/mu/ratiotfh_ht_mht_alltopPtWeight_Up.pdf}
+    \includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/mcSystematics12p9fb/Ttw/mu/ratiotfh_ht_mht_alltopPtWeight_Up.pdf}
   } ~~
   \subfigure[Variation in \mj to \ttbar/W~transfer factor]{
-    \includegraphics[width=0.4\textwidth]{Figures/backgroundPrediction/mcSystematics12p9fb/Ttw/mu/ratioh_ht_mht_alltopPtWeight_Up.pdf}
+    \includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/mcSystematics12p9fb/Ttw/mu/ratioh_ht_mht_alltopPtWeight_Up.pdf}
   }\\
   \caption{\label{fig:tfSimVar} The relative change in the
   \ttbar/W simulation compared to the $\mj \rightarrow (\ttbar/W)$ transfer
@@ -293,17 +294,17 @@ to predict the QCD multijet contribution in the signal region.
 \begin{figure}[!h]
   \centering
   \subfigure[Simulated QCD events in the signal region.\label{fig:qcd_pass}]{
-    \includegraphics[width=0.4\textwidth]{Figures/qcd/plots/signalQCD_MC}
+    \includegraphics[width=0.45\textwidth]{Figures/qcd/plots/signalQCD_MC}
   } ~
   \subfigure[Simulated QCD events in the \mhtmet hadronic control region.\label{fig:qcd_fail}]{
-    \includegraphics[width=0.4\textwidth]{Figures/qcd/plots/qcdSbQCD_MC}
+    \includegraphics[width=0.45\textwidth]{Figures/qcd/plots/qcdSbQCD_MC}
   } \\
   \subfigure[Transfer factor from simulated QCD events.\label{fig:qcd_ratio}]{
-    \includegraphics[width=0.4\textwidth]{Figures/qcd/plots/signalQcdDivSbQcd_MC}
+    \includegraphics[width=0.45\textwidth]{Figures/qcd/plots/signalQcdDivSbQcd_MC}
   } ~ 
   \subfigure[Simulated electroweak events in \mhtmet hadronic control region.\label{fig:ewk_fail}]{
-    \includegraphics[width=0.4\textwidth]{Figures/qcd/plots/qcdSbEwk_MC}
-   %    \includegraphics[width=0.4\textwidth]{Figures/qcd/v6/Ewk/SigTrig_FailMoM_NJet_vs_HT_bDPhigt0p5_Log}
+    \includegraphics[width=0.45\textwidth]{Figures/qcd/plots/qcdSbEwk_MC}
+   %    \includegraphics[width=0.45\textwidth]{Figures/qcd/v6/Ewk/SigTrig_FailMoM_NJet_vs_HT_bDPhigt0p5_Log}
   } \\
   \caption{Expected number of QCD multijet events determined from
     simulation, binned according to \njet and \scalht, that (a) satisfy
@@ -334,23 +335,23 @@ predictions shown in Figure~\ref{fig:qcd_ewk_ratio}. The multijet component is t
 \begin{figure}[!h]
   \centering
   % \subfigure[Binned data counts in \mhtmet sideband.\label{fig:data_fail}]{
-  %   \includegraphics[width=0.4\textwidth]{Figures/qcd/plots/obsYields_QcdSb}
+  %   \includegraphics[width=0.45\textwidth]{Figures/qcd/plots/obsYields_QcdSb}
   % } 
   \subfigure[Predicted QCD counts in \mhtmet hadronic control region.\label{fig:data_corr}]{
-    \includegraphics[width=0.4\textwidth]{Figures/qcd/plots/postFitQcdYields_QcdSb}
+    \includegraphics[width=0.45\textwidth]{Figures/qcd/plots/postFitQcdYields_QcdSb}
   } ~
   \subfigure[QCD multijet predictions in the signal region.\label{fig:qcd_pred}]{
-    \includegraphics[width=0.4\textwidth]{Figures/qcd/plots/predictedQcdYields_Signal}
+    \includegraphics[width=0.45\textwidth]{Figures/qcd/plots/predictedQcdYields_Signal}
   } \\
   \subfigure[Ratio of predicted multijet and non-multijet yields.\label{fig:qcd_ewk_ratio}]{
-    \includegraphics[width=0.4\textwidth]{Figures/qcd/plots/predictedQcdDivEwk_Signal}
+    \includegraphics[width=0.45\textwidth]{Figures/qcd/plots/predictedQcdDivEwk_Signal}
   } \\
   \caption{
     The QCD yields taken from the simultaneous fit binned according to \njet and \scalht are shown in (a).
     Shown in (b) is the result of multiplying the observed multijet events predicted
     in (a) by the translation factor from the sideband to the signal
     region determined with simulation (shown in
-    Fig.~\ref{fig:qcd_plots}). This gives a data driven expectation of
+    Figure~\ref{fig:qcd_plots}). This gives a data driven expectation of
     the quantity of multijet background events in the signal region. 
     Finally, (c), shows the ratio of expected
     multijet background events in the signal region divided by
@@ -364,6 +365,9 @@ is predicted using the distribution of the electroweak background with the norma
 derived as described above. This approximation is necessary due to the very low QCD multijet
 event yields for high \nb and \mht. As the multijet background is typically $\le 1\%$, 
 deviations from the electroweak shape in these variables have a small effect on the background prediction.
+
+The multijet contribution in the electroweak control regions is small, typically $<1\%$, and is 
+therefore taken from simulation.
 
 \subsubsection{Validation of the multijet prediction}
 
@@ -395,17 +399,17 @@ and using the data driven \emph{closure tests}.
 
 \subsection{Variation method}
 \label{sec:syst-uncs-var}
-In section~\ref{sec:syst-summary} the corrections applied to the simulated samples are summarised. For each 
+In Section~\ref{sec:syst-summary} the corrections applied to the simulated samples are summarised. For each 
 simulated event the correction may apply to the weight carried by that events (such as b tag efficiency
 or pileup reweighting) or to the property of objects in the event (such as the jet energy scale). 
 These corrections carry uncertainties that may effect the predictions of the \alphat~analysis.
 To determine their effect, for each source of uncertainty the correction is varied to their
 value at $\pm$ 1 $\sigma$ and the prediction from simulation re-evaluated. The inclusion of the systematic uncertainty 
 in these predictions, in particular how the modifier term morphs between alternative \emph{templates} 
-for $\pm$ 1 $\sigma$ variations is described in section~\ref{sec:likelihood}. In this section the systematic variations
+for $\pm$ 1 $\sigma$ variations is described in Section~\ref{sec:likelihood}. In this section the systematic variations
 of the transfer factor for each effect is discussed. The corresponding figures referenced in
 this section can be found in App.~\ref{app:systematics}. The effect of these systematics on 
-the \mht~shape is discussed in section~\ref{sec:syst-on-shape}.
+the \mht~shape is discussed in Section~\ref{sec:syst-on-shape}.
 
 \subsubsection{Pileup reweighting}
 
@@ -459,7 +463,7 @@ and typically vary from $1-3\%$.
 \label{sec:tfSyst_pho}
 The photon trigger correction is derived for the \gj control region. The systematic uncertainty is
 taken as the size of the inefficiency measured. The relative change in the \gj transfer factor 
-is presented in Fig.~\ref{fig:tfSyst_photonTrigger_gjToZinv} and is typically under $\sim3\%$.
+is presented in Figure~\ref{fig:tfSyst_photonTrigger_gjToZinv} and is typically under $\sim3\%$.
 
 \subsubsection{Signal trigger uncertainty}
 \label{sec:tfSyst_trigger}
@@ -518,7 +522,7 @@ to samples A and B in Equation~\ref{equ:abPred}). This requirement is decided by
 \alphat and is 0.5 for \bdphi. The systematic is derived from the \alphat closure tests for
 bins with $\scalht < 900 \GeV$ and the \bdphi tests for $\scalht > 900 \GeV$.
 
-The result of these tests are shown in Fig.~\ref{fig:closureAlphaT} as a function of \scalht and \njet. 
+The result of these tests are shown in Figure~\ref{fig:closureAlphaT} as a function of \scalht and \njet. 
 The grey band is the systematic uncertainty propagated through the analysis, 
 taken as un-correlated per \scalht~bin and jet topology
 (symmetric/asymmetric). The systematic derived from these tests is
@@ -526,12 +530,12 @@ in the range $4-32\%$.
 
 \begin{figure}[h!]
   \begin{center}
-    \subfigure[]{\includegraphics[width=0.4\textwidth]{Figures/backgroundPrediction/closureTests/alphaT_sym__noFit.pdf}}
+    \subfigure[]{\includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/closureTests/alphaT_sym__noFit.pdf}}
     ~~
-    \subfigure[]{\includegraphics[width=0.4\textwidth]{Figures/backgroundPrediction/closureTests/alphaT_asym__noFit.pdf}}\\
-    \subfigure[]{\includegraphics[width=0.4\textwidth]{Figures/backgroundPrediction/closureTests/bDPhi_sym__noFit.pdf}}
+    \subfigure[]{\includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/closureTests/alphaT_asym__noFit.pdf}}\\
+    \subfigure[]{\includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/closureTests/bDPhi_sym__noFit.pdf}}
     ~~
-    \subfigure[]{\includegraphics[width=0.4\textwidth]{Figures/backgroundPrediction/closureTests/bDPhi_asym__noFit.pdf}} 
+    \subfigure[]{\includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/closureTests/bDPhi_asym__noFit.pdf}} 
 
     \caption{Tests in data probing the \alphat (top row) and \bdphi (bottom row) extrapolation for each
       \njet category (open symbols) overlaid on top of the systematic
@@ -552,7 +556,7 @@ of $W^{+}$ over $W^{-}$ in the signal region compared to \mj control region. Thi
 in the prediction and a data driven test is carried out by splitting the \mj sample into events 
 with either a $\mu^{+}$ or $\mu^{-}$ (corresponding to samples A and B in Equation~\ref{equ:abPred}).
 
-The results are shown in Fig.~\ref{fig:closureMuPToMuM} as a function of \scalht and \njet. 
+The results are shown in Figure~\ref{fig:closureMuPToMuM} as a function of \scalht and \njet. 
 The grey band is the systematic uncertainty propagated through the analysis, 
 taken as un-correlated per each \scalht bin and jet topology (symmetric/asymmetric).
 The systematic derived from these tests is in the range $3-12\%$.
@@ -561,9 +565,9 @@ The systematic derived from these tests is in the range $3-12\%$.
 
 \begin{figure}[h!]
   \begin{center}
-    \subfigure[]{\includegraphics[width=0.4\textwidth]{Figures/backgroundPrediction/closureTests/muplus_muminus_sym__noFit.pdf}}
+    \subfigure[]{\includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/closureTests/muplus_muminus_sym__noFit.pdf}}
     ~~
-    \subfigure[]{\includegraphics[width=0.4\textwidth]{Figures/backgroundPrediction/closureTests/muplus_muminus_asym__noFit.pdf}} 
+    \subfigure[]{\includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/closureTests/muplus_muminus_asym__noFit.pdf}} 
     \caption{Data-driven tests probing the W polarisation effects. 
       These are shown for each
       \njet category (open symbols) overlaid on top of the systematic
@@ -583,7 +587,7 @@ These tests probe differences in the modelling of the Z and W, potential accepta
 reconstruction effects (expected to be subdominant) and the effect of 
 the \ttbar~contribution to \mj.
 
-The results are shown in Fig.~\ref{fig:closureMuToMuMu} as a function of \scalht and \njet. 
+The results are shown in Figure~\ref{fig:closureMuToMuMu} as a function of \scalht and \njet. 
 The grey band is the systematic uncertainty propagated through the analysis, 
 taken as un-correlated per each \scalht bin and jet topology (symmetric/asymmetric). The systematic derived from these tests is
 in the range $3-20\%$.
@@ -592,9 +596,9 @@ in the range $3-20\%$.
 
 \begin{figure}[h!]
   \begin{center}
-    \subfigure[]{\includegraphics[width=0.4\textwidth]{Figures/backgroundPrediction/closureTests/mu_mumu_sym_half_noFit.pdf}}
+    \subfigure[]{\includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/closureTests/mu_mumu_sym_half_noFit.pdf}}
     ~~
-    \subfigure[]{\includegraphics[width=0.4\textwidth]{Figures/backgroundPrediction/closureTests/mu_mumu_asym_half_noFit.pdf}} 
+    \subfigure[]{\includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/closureTests/mu_mumu_asym_half_noFit.pdf}} 
     \caption{Data-driven tests probing the use of the \mj control sample
       to predict the \znunu background for each
       \njet category (open symbols) overlaid on top of the systematic
@@ -611,7 +615,7 @@ between $\gamma$ and Z is tested by using the \gj control region to predict the 
 These tests probe differences in the modelling of the Z and $\gamma$ as well as potential acceptance and
 reconstruction effects for $\mu$ and $\gamma$ and the effect of contamination of non-prompt photons.
 
-The results are shown in Fig.~\ref{fig:closurePhoToMuMu} as a function of \scalht and \njet. 
+The results are shown in Figure~\ref{fig:closurePhoToMuMu} as a function of \scalht and \njet. 
 The grey band is the systematic uncertainty propagated through the analysis, 
 taken as un-correlated per each \scalht bin and jet topology (symmetric/asymmetric). The systematic derived from these tests is
 in the range $7-15\%$.
@@ -619,9 +623,9 @@ in the range $7-15\%$.
 
 \begin{figure}[h!]
   \begin{center}
-    \subfigure[]{\includegraphics[width=0.4\textwidth]{Figures/backgroundPrediction/closureTests/phot_mumu_sym_half_noFit.pdf}}
+    \subfigure[]{\includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/closureTests/phot_mumu_sym_half_noFit.pdf}}
     ~~
-    \subfigure[]{\includegraphics[width=0.4\textwidth]{Figures/backgroundPrediction/closureTests/phot_mumu_asym_half_noFit.pdf}} 
+    \subfigure[]{\includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/closureTests/phot_mumu_asym_half_noFit.pdf}} 
     \caption{Data-driven tests probing the Z/$\gamma$ ratio for each
       \njet category (open symbols) overlaid on top of the systematic
       uncertainty estimates used for each of the seven \scalht bins
@@ -640,16 +644,16 @@ To probe potential bias introduced due to this admixture change the sample is sp
 0 and 1 b tag (corresponding to samples A and B in Equation~\ref{equ:abPred}). These tests will also probe 
 uncertainties related to the b tagging efficiency and related scale factors. 
 
-The results are shown in Fig.~\ref{fig:closureBTag} as a function of \scalht and \njet. 
+The results are shown in Figure~\ref{fig:closureBTag} as a function of \scalht and \njet. 
 The grey band is the systematic uncertainty propagated through the analysis, 
 taken as un-correlated per each \scalht bin and jet topology (symmetric/asymmetric). The systematic derived from these tests is
 in the range $4-25\%$.
 
 \begin{figure}[h!]
   \begin{center}
-    \subfigure[]{\includegraphics[width=0.4\textwidth]{Figures/backgroundPrediction/closureTests/eq0b_eq1b_muon_sym__noFit.pdf}}
+    \subfigure[]{\includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/closureTests/eq0b_eq1b_muon_sym__noFit.pdf}}
     ~~
-    \subfigure[]{\includegraphics[width=0.4\textwidth]{Figures/backgroundPrediction/closureTests/eq0b_eq1b_muon_asym__noFit.pdf}} 
+    \subfigure[]{\includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/closureTests/eq0b_eq1b_muon_asym__noFit.pdf}} 
     \caption{Data-driven tests probing the W and \ttbar~admixture 
       in each \njet category (open symbols) overlaid on top of the systematic
       uncertainty estimates used for each of the seven \scalht bins
@@ -706,7 +710,7 @@ range in systematic uncertainty for each uncertainty.
 The estimate of the number of events per (\njet,~\nb,~\scalht) bin,
 integrated over \mht, is derived from data control samples, with
 the associated systematic uncertainty determined as 
-described in Sec.~\ref{sec:closure-tests}. This section
+described in Section~\ref{sec:closure-tests}. This section
 describes the method used to assess the systematic uncertainties in
 the distribution of events according to~\mht. A data driven approach is
 utilised to validate the \mht~modelling using the data in the control regions.
@@ -729,8 +733,8 @@ in the following, is used in this analysis. The distribution in \mht
 is measured in data using the control regions and compared to MC
 to determine the validity of the zero bias hypothesis after scale anchoring.
 
-In Sec.~\ref{sec:valid13} the scale anchoring approach is validated and 
-in Sec.~\ref{sec:systMhtDimension} the procedure used to 
+In Section~\ref{sec:valid13} the scale anchoring approach is validated and 
+in Section~\ref{sec:systMhtDimension} the procedure used to 
 extract the systematic uncertainties in the \mht dimension is described 
 and the results summarised.
 
@@ -756,7 +760,7 @@ distribution is defined in Eq.~\ref{equ:orthog-polynomial}.
 
 where $\bar{x}$ is the weighted mean of the distribution and $p_k = 0$ 
 implies the $k^{th}$ order is negligible.
-In Fig.~\ref{fig:linearMotiv} the data/MC 
+In Figure~\ref{fig:linearMotiv} the data/MC 
 distribution against \mht for the control region selection 
 (detailed in \cite{Khachatryan:2016pxa}) is shown inclusive 
 in \scalht and categories. By fitting a first order
@@ -774,13 +778,13 @@ is then defined following the data-driven method used in Run 1, see Sec,~\ref{se
 \begin{figure}[h!]
   \centering
   \subfigure[\mj]{
-    \includegraphics[width=0.4\textwidth]{Figures/backgroundPrediction/shapeOutput12FbInc/scale_ht_variable_mht/SingleMu/Inc_Inc/finalFits/mht_Inc_Inc_ht_Inc_SingleMu_Graph.pdf}
+    \includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/shapeOutput12FbInc/scale_ht_variable_mht/SingleMu/Inc_Inc/finalFits/mht_Inc_Inc_ht_Inc_SingleMu_Graph.pdf}
   }~~
   \subfigure[\gj]{
-    \includegraphics[width=0.4\textwidth]{Figures/backgroundPrediction/shapeOutput12FbInc/scale_ht_variable_mht/SinglePhoton/Inc_Inc/finalFits/mht_Inc_Inc_ht_Inc_SinglePhoton_Graph.pdf}
+    \includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/shapeOutput12FbInc/scale_ht_variable_mht/SinglePhoton/Inc_Inc/finalFits/mht_Inc_Inc_ht_Inc_SinglePhoton_Graph.pdf}
   }\\
   \subfigure[\mmj]{
-    \includegraphics[width=0.4\textwidth]{Figures/backgroundPrediction/shapeOutput12FbInc/scale_ht_variable_mht/DoubleMu/Inc_Inc/finalFits/mht_Inc_Inc_ht_Inc_DoubleMu_Graph.pdf}
+    \includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/shapeOutput12FbInc/scale_ht_variable_mht/DoubleMu/Inc_Inc/finalFits/mht_Inc_Inc_ht_Inc_DoubleMu_Graph.pdf}
   }\\
   \caption{\label{fig:linearMotiv} 
   The data/MC distribution against \mht for an inclusive selection on category and \scalht
@@ -789,20 +793,20 @@ is then defined following the data-driven method used in Run 1, see Sec,~\ref{se
 \end{figure}
 
 By anchoring the scale using binning in the \scalht dimension the remaining
-bias is assumed to be negligible. In Fig.~\ref{fig:linearFitExamples} 
+bias is assumed to be negligible. In Figure~\ref{fig:linearFitExamples} 
 example fits of an orthogonal linear function to the data/MC ratio 
 are shown for the three control regions. Comparing to the inclusive distribution 
 the linear component can be seen to be compatible with the null hypothesis, 
 i.e. no bias. In order to formalise this assertion 
 the pull of the linear component from zero is calculated.
 This pull distribution is shown for each of the three control regions in
-in Fig.~\ref{fig:pulls} and can be seen in each case to have mean and sigma fairly 
+in Figure~\ref{fig:pulls} and can be seen in each case to have mean and sigma fairly 
 consistent with zero and one respectively. 
 and the uncertainty on the parameter is correctly estimated by the fit.
 Fig.~\ref{fig:frenchFlagPulls} shows the distribution of the pulls 
 in category and \scalht bins showing no significant trend across the phase space.
 The linear fits to the data/MC ratio additionally show a p-value following 
-a uniform distribution between 0 and 1 as shown in Fig.~\ref{fig:pValues}.
+a uniform distribution between 0 and 1 as shown in Figure~\ref{fig:pValues}.
 This confirms that the linear component is reasonably compatible with zero ($p_1 = 0$), %i.e. no significant bias is observed, 
 
 %Finally, an additional validation 
@@ -813,38 +817,38 @@ This confirms that the linear component is reasonably compatible with zero ($p_1
 \begin{figure}[h!]
   \centering
   \subfigure[\gj, 1b, 2j category and \scalht 400-500\GeV bin]{
-    \includegraphics[width=0.4\textwidth]{Figures/backgroundPrediction/shapeOutput12Fb/scale_ht_variable_mht/representativeFits/mht_eq1b_eq2j_ht_400_500_SinglePhoton_Graph.pdf}
+    \includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/shapeOutput12Fb/scale_ht_variable_mht/representativeFits/mht_eq1b_eq2j_ht_400_500_SinglePhoton_Graph.pdf}
   }~~
   \subfigure[\mj, 1b, 4a category and \scalht 600-800\GeV bin]{
-    \includegraphics[width=0.4\textwidth]{Figures/backgroundPrediction/shapeOutput12Fb/scale_ht_variable_mht/representativeFits/mht_eq1b_eq4a_ht_600_800_SingleMu_Graph.pdf}
+    \includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/shapeOutput12Fb/scale_ht_variable_mht/representativeFits/mht_eq1b_eq4a_ht_600_800_SingleMu_Graph.pdf}
   }\\
   \subfigure[\mmj, 0b, 4j category and \scalht 300-350\GeV bin]{
-    \includegraphics[width=0.4\textwidth]{Figures/backgroundPrediction/shapeOutput12Fb/scale_ht_variable_mht/representativeFits/mht_eq0b_eq4j_ht_300_350_DoubleMu_Graph.pdf}
+    \includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/shapeOutput12Fb/scale_ht_variable_mht/representativeFits/mht_eq0b_eq4j_ht_300_350_DoubleMu_Graph.pdf}
   }~~
   \subfigure[\gj, 1b, 3j category and \scalht 600-800\GeV bin]{
-    \includegraphics[width=0.4\textwidth]{Figures/backgroundPrediction/shapeOutput12Fb/scale_ht_variable_mht/SinglePhoton/eq1b_eq3j/finalFits/mht_eq1b_eq3j_ht_600_800_SinglePhoton_Graph.pdf}
+    \includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/shapeOutput12Fb/scale_ht_variable_mht/SinglePhoton/eq1b_eq3j/finalFits/mht_eq1b_eq3j_ht_600_800_SinglePhoton_Graph.pdf}
   }\\
   \subfigure[\mj, 2b, 4j category and \scalht 600-800\GeV bin]{
-    \includegraphics[width=0.4\textwidth]{Figures/backgroundPrediction/shapeOutput12Fb/scale_ht_variable_mht/SingleMu/eq2b_eq4j/finalFits/mht_eq2b_eq4j_ht_600_800_SingleMu_Graph.pdf}
+    \includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/shapeOutput12Fb/scale_ht_variable_mht/SingleMu/eq2b_eq4j/finalFits/mht_eq2b_eq4j_ht_600_800_SingleMu_Graph.pdf}
   }~~
   \subfigure[\mmj, 0b, 3a category and \scalht 300-350\GeV bin]{
-    \includegraphics[width=0.4\textwidth]{Figures/backgroundPrediction/shapeOutput12Fb/scale_ht_variable_mht/DoubleMu/eq0b_eq3a/finalFits/mht_eq0b_eq3a_ht_300_350_DoubleMu_Graph.pdf}
+    \includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/shapeOutput12Fb/scale_ht_variable_mht/DoubleMu/eq0b_eq3a/finalFits/mht_eq0b_eq3a_ht_300_350_DoubleMu_Graph.pdf}
   }\\
   \caption{\label{fig:linearFitExamples} 
   The data/MC distribution against \mht for example categories and control regions.
-  The large bias in the linear component seen in Fig.~\ref{fig:linearMotiv} is mitigated.}
+  The large bias in the linear component seen in Figure~\ref{fig:linearMotiv} is mitigated.}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
   \subfigure[\mj]{
-    \includegraphics[width=0.4\textwidth]{Figures/backgroundPrediction/shapeOutput12Fb/scale_ht_variable_mht/SingleMu/fitOut/Linear2DShiftMean/pull_Linear2DShiftMean_p1_SingleMu.pdf}
+    \includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/shapeOutput12Fb/scale_ht_variable_mht/SingleMu/fitOut/Linear2DShiftMean/pull_Linear2DShiftMean_p1_SingleMu.pdf}
   }~~
   \subfigure[\gj]{
-    \includegraphics[width=0.4\textwidth]{Figures/backgroundPrediction/shapeOutput12Fb/scale_ht_variable_mht/SinglePhoton/fitOut/Linear2DShiftMean/pull_Linear2DShiftMean_p1_SinglePhoton.pdf}
+    \includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/shapeOutput12Fb/scale_ht_variable_mht/SinglePhoton/fitOut/Linear2DShiftMean/pull_Linear2DShiftMean_p1_SinglePhoton.pdf}
   }\\
   \subfigure[\mmj]{
-    \includegraphics[width=0.4\textwidth]{Figures/backgroundPrediction/shapeOutput12Fb/scale_ht_variable_mht/DoubleMu/fitOut/Linear2DShiftMean/pull_Linear2DShiftMean_p1_DoubleMu.pdf}
+    \includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/shapeOutput12Fb/scale_ht_variable_mht/DoubleMu/fitOut/Linear2DShiftMean/pull_Linear2DShiftMean_p1_DoubleMu.pdf}
   }~~
   \\
   \caption{\label{fig:pulls} 
@@ -853,13 +857,13 @@ This confirms that the linear component is reasonably compatible with zero ($p_1
 \begin{figure}[h!]
   \centering
   \subfigure[\mj]{
-    \includegraphics[width=0.4\textwidth]{Figures/backgroundPrediction/shapeOutput12Fb/scale_ht_variable_mht/SingleMu/fitOut/Linear2DShiftMean/frenchFlagPull_Linear2DShiftMean_p1_SingleMu.pdf}
+    \includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/shapeOutput12Fb/scale_ht_variable_mht/SingleMu/fitOut/Linear2DShiftMean/frenchFlagPull_Linear2DShiftMean_p1_SingleMu.pdf}
   }~~
   \subfigure[\gj]{
-    \includegraphics[width=0.4\textwidth]{Figures/backgroundPrediction/shapeOutput12Fb/scale_ht_variable_mht/SinglePhoton/fitOut/Linear2DShiftMean/frenchFlagPull_Linear2DShiftMean_p1_SinglePhoton.pdf}
+    \includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/shapeOutput12Fb/scale_ht_variable_mht/SinglePhoton/fitOut/Linear2DShiftMean/frenchFlagPull_Linear2DShiftMean_p1_SinglePhoton.pdf}
   }\\
   \subfigure[\mmj]{
-    \includegraphics[width=0.4\textwidth]{Figures/backgroundPrediction/shapeOutput12Fb/scale_ht_variable_mht/DoubleMu/fitOut/Linear2DShiftMean/frenchFlagPull_Linear2DShiftMean_p1_DoubleMu.pdf}
+    \includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/shapeOutput12Fb/scale_ht_variable_mht/DoubleMu/fitOut/Linear2DShiftMean/frenchFlagPull_Linear2DShiftMean_p1_DoubleMu.pdf}
   }~~
   \\
   \caption{\label{fig:frenchFlagPulls} The pull distribution of the linear parameter from the flat hypothesis across all
@@ -870,13 +874,13 @@ This confirms that the linear component is reasonably compatible with zero ($p_1
 \begin{figure}[h!]
   \centering
   \subfigure[\mj]{
-    \includegraphics[width=0.4\textwidth]{Figures/backgroundPrediction/shapeOutput12Fb/scale_ht_variable_mht/SingleMu/fitOut/Linear2DShiftMean/pValue_Linear2DShiftMean_SingleMu.pdf}
+    \includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/shapeOutput12Fb/scale_ht_variable_mht/SingleMu/fitOut/Linear2DShiftMean/pValue_Linear2DShiftMean_SingleMu.pdf}
   }~~
   \subfigure[\gj]{
-    \includegraphics[width=0.4\textwidth]{Figures/backgroundPrediction/shapeOutput12Fb/scale_ht_variable_mht/SinglePhoton/fitOut/Linear2DShiftMean/pValue_Linear2DShiftMean_SinglePhoton.pdf}
+    \includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/shapeOutput12Fb/scale_ht_variable_mht/SinglePhoton/fitOut/Linear2DShiftMean/pValue_Linear2DShiftMean_SinglePhoton.pdf}
   }\\
   \subfigure[\mmj]{
-    \includegraphics[width=0.4\textwidth]{Figures/backgroundPrediction/shapeOutput12Fb/scale_ht_variable_mht/DoubleMu/fitOut/Linear2DShiftMean/pValue_Linear2DShiftMean_DoubleMu.pdf}
+    \includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/shapeOutput12Fb/scale_ht_variable_mht/DoubleMu/fitOut/Linear2DShiftMean/pValue_Linear2DShiftMean_DoubleMu.pdf}
   }~~
   \\
   \caption{\label{fig:pValues} The distributions of the p-value for the linear fit.} 
@@ -904,8 +908,8 @@ for \zInv~and \ttbar/W, is defined using the best fit value of the $p_1$ paramet
 from the simultaneous fit to the relevant control regions
 added in quadrature to its uncertainty.
 
-% Example templates with this uncertainty are shown in Fig.~\ref{fig:mht-templates-sym}, \ref{fig:mht-templates-asym} 
-% in Sec.~\ref{sec:results}. Here the template variations for both relevant 
+% Example templates with this uncertainty are shown in Figure~\ref{fig:mht-templates-sym}, \ref{fig:mht-templates-asym} 
+% in Section~\ref{sec:results}. Here the template variations for both relevant 
 % backgrounds are combined to show the overall uncertainty on the \mht dimension. 
 % The scatter of the points around one is compatible with statistical fluctuations.
 
@@ -913,45 +917,45 @@ An additional validation is carried out by comparing expected and observed uncer
 on the linear parameter defining the template variations.
 The expected uncertainties are derived by using a linear fit to the MC/MC ratio where the numerator
 is treated as data. The relative uncertainties per 100 \GeV~from the weighted mean of \mht
-for \ttbar/W and \zInv~ are shown in Fig.~\ref{fig:expectedObservedTtw} 
-and Fig.~\ref{fig:expectedObservedZinv} and compared to those observed.
+for \ttbar/W and \zInv~ are shown in Figure~\ref{fig:expectedObservedTtw} 
+and Figure~\ref{fig:expectedObservedZinv} and compared to those observed.
 These show good agreement which provides additional motivation for the 
 zero bias hypothesis as well as validating the method for deriving expected uncertainties.
 %%%ADD WHEN UNLIND!!
 % As an additional gauge of the effect of the template variations the uncertainty parameter 
 % can be translate to an uncertainty on the last bin. This is typically
 % of the order of 10-100\% depending on the category and is shown
-% in Fig.~\ref{fig:frenchFlagLastBin}.
+% in Figure~\ref{fig:frenchFlagLastBin}.
 
 
 \begin{figure}[h!]
   \centering
   \subfigure[\label{fig:expectedTtw} Expected uncertainties]{
-    \includegraphics[width=0.4\textwidth]{Figures/backgroundPrediction/shapeOutput12FbMC/scale_ht_variable_mht/Ttw/fitOut/Linear2DShiftMean/frenchFlagErrComplete_Linear2DShiftMean_p1_Ttw.pdf}
+    \includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/shapeOutput12FbMC/scale_ht_variable_mht/Ttw/fitOut/Linear2DShiftMean/frenchFlagErrComplete_Linear2DShiftMean_p1_Ttw.pdf}
   }~~
   \subfigure[\label{fig:observedTtw} Observed uncertainties]{
-    \includegraphics[width=0.4\textwidth]{Figures/backgroundPrediction/shapeOutput12Fb/scale_ht_variable_mht/Ttw/fitOut/Linear2DShiftMean/frenchFlagErrComplete_Linear2DShiftMean_p1_Ttw.pdf}
+    \includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/shapeOutput12Fb/scale_ht_variable_mht/Ttw/fitOut/Linear2DShiftMean/frenchFlagErrComplete_Linear2DShiftMean_p1_Ttw.pdf}
   }\\
-  \caption{\label{fig:expectedObservedTtw} Expected relative uncertainties per 100 \GeV shown for \ttbar/W in Fig.~\ref{fig:expectedTtw} are consistent
-  with observed uncertainties shown in Fig.~\ref{fig:observedTtw}.}
+  \caption{\label{fig:expectedObservedTtw} Expected relative uncertainties per 100 \GeV shown for \ttbar/W in Figure~\ref{fig:expectedTtw} are consistent
+  with observed uncertainties shown in Figure~\ref{fig:observedTtw}.}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
   \subfigure[\label{fig:expectedZinv} Expected uncertainties]{
-    \includegraphics[width=0.4\textwidth]{Figures/backgroundPrediction/shapeOutput12FbMC/scale_ht_variable_mht/Zinv/fitOut/Linear2DShiftMean/frenchFlagErrComplete_Linear2DShiftMean_p1_Zinv.pdf}
+    \includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/shapeOutput12FbMC/scale_ht_variable_mht/Zinv/fitOut/Linear2DShiftMean/frenchFlagErrComplete_Linear2DShiftMean_p1_Zinv.pdf}
   }~~
   \subfigure[\label{fig:observedZinv} Observed uncertainties]{
-    \includegraphics[width=0.4\textwidth]{Figures/backgroundPrediction/shapeOutput12Fb/scale_ht_variable_mht/Zinv/fitOut/Linear2DShiftMean/frenchFlagErrComplete_Linear2DShiftMean_p1_Zinv.pdf}
+    \includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/shapeOutput12Fb/scale_ht_variable_mht/Zinv/fitOut/Linear2DShiftMean/frenchFlagErrComplete_Linear2DShiftMean_p1_Zinv.pdf}
   }\\
-  \caption{\label{fig:expectedObservedZinv}Expected relative uncertainties per 100 \GeV shown for \zInv~ in Fig.~\ref{fig:expectedZinv} are consistent
-  with observed uncertainties shown in Fig.~\ref{fig:observedZinv}.}
+  \caption{\label{fig:expectedObservedZinv}Expected relative uncertainties per 100 \GeV shown for \zInv~ in Figure~\ref{fig:expectedZinv} are consistent
+  with observed uncertainties shown in Figure~\ref{fig:observedZinv}.}
 \end{figure}
 
 
 % \begin{figure}[h!]
 %   \centering
-%   \includegraphics[width=0.8\textwidth]{figures/template13TeV/2p2fb/frenchFlagLastBin.pdf}
+%   \includegraphics[width=0.6\textwidth]{figures/template13TeV/2p2fb/frenchFlagLastBin.pdf}
 %   \caption{\label{fig:frenchFlagLastBin} Observed uncertainties in the 
 %   last bin of \mht over all categories and \scalht bins for 2.2\ifb.}
 % \end{figure}
@@ -977,13 +981,13 @@ nominal template such that only the shape is varied.
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.8\textwidth]{Figures/backgroundPrediction/mcComparison6fb/totalSMS-T1tttt_mGluino-1000_mLSP-100_25ns_mht_ge5j_ge3b_800.pdf}
+  \includegraphics[width=0.6\textwidth]{Figures/backgroundPrediction/mcComparison6fb/totalSMS-T1tttt_mGluino-1000_mLSP-100_25ns_mht_ge5j_ge3b_800.pdf}
   \caption{\label{fig:mcCompLow} MC based systematic variations compared to the orthogonal 
   polynomial data-driven systematic for an example bin \scalht $800-\infty$, \njet $\geq 5$, \nb $\geq 2$.}
 \end{figure}
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.8\textwidth]{Figures/backgroundPrediction/mcComparison6fb/totalSMS-T1tttt_mGluino-1000_mLSP-100_25ns_mht_eq2j_eq0b_400.pdf}
+  \includegraphics[width=0.6\textwidth]{Figures/backgroundPrediction/mcComparison6fb/totalSMS-T1tttt_mGluino-1000_mLSP-100_25ns_mht_eq2j_eq0b_400.pdf}
   \caption{\label{fig:mcCompHigh} MC based systematic variations compared to the 
 orthogonal polynomial data-driven systematic for an example bin \scalht 400-500, \njet $= 2$, \nb $= 0$.}
 \end{figure}
@@ -991,10 +995,10 @@ orthogonal polynomial data-driven systematic for an example bin \scalht 400-500,
 % \begin{figure}[h!]
 % \centering
 % \subfigure[Upwards deviation]{
-% \includegraphics[width=0.4\textwidth]{Figures/backgroundPrediction/mcComparison6fb/lastBinRatioMax.pdf}
+% \includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/mcComparison6fb/lastBinRatioMax.pdf}
 % }
 % \subfigure[Downwards deviation]{
-% \includegraphics[width=0.4\textwidth]{Figures/backgroundPrediction/mcComparison6fb/lastBinRatioMin.pdf}
+% \includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/mcComparison6fb/lastBinRatioMin.pdf}
 % }\\
 % \caption{\label{fig:lastBinVar} Maximum upwards and downwards variations in the last \mht bin as a proportion of the orthogonal polynomial deviation}
 % \end{figure}
