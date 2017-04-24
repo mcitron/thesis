@@ -63,7 +63,7 @@ illustrated in Figure~\ref{fig:inputres}.
 \begin{figure}
 
 \centering
-    \includegraphics[width=0.9\textwidth]{./Figures/triggerUpgrade/tmux}
+    \includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/tmux}
   \caption{Comparison of the GCT (left) and TMT architectures (right) showing the flow of information
   to the final global decision. The colours indicate the data from each bunch crossing. \cite{tmt}}
   \label{tmux}
@@ -71,8 +71,8 @@ illustrated in Figure~\ref{fig:inputres}.
 
 \begin{figure}
 \centering
-\subfigure[Input resolution: GCT]{\includegraphics[width=0.5\textwidth]{./Figures/triggerUpgrade/L1inputreslegacy.png}\label{subfig:inputlegacy}} \quad
-\subfigure[Input resolution: TMT]{\includegraphics[width=0.5\textwidth]{./Figures/triggerUpgrade/L1inputresupgrade.png}\label{subfig:inputupgrade}} 
+\subfigure[Input resolution: GCT]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/L1inputreslegacy.png}\label{subfig:inputlegacy}} \quad
+\subfigure[Input resolution: TMT]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/L1inputresupgrade.png}\label{subfig:inputupgrade}} 
 \caption{A representation of the CMS collaboration logo digitised with the input resolution of the L1 calorimeter trigger up to 
 \etaabs~$< 3$ using (a) the legacy system ($18 \times 14$ pixels) and (b) the TMT ($72 \times 56$ pixels).}
 \label{fig:inputres}
@@ -126,7 +126,7 @@ Note that the L1 jets are massless such that $\pt = \Et$.
 
 \begin{figure}
 \centering
-    \includegraphics[width=0.5\textwidth]{./Figures/triggerUpgrade/mask.png}
+    \includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/mask.png}
   \caption{The $9\times9$ veto conditions used to define jets. The inequalities ensure
   jet energies are not double counted}
   \label{mask}
@@ -154,7 +154,7 @@ algorithm size is fixed.
 
 \begin{figure}
 \centering
-    \includegraphics[width=0.8\textwidth]{./Figures/triggerUpgrade/jet_l1s2_compak4}
+    \includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/jet_l1s2_compak4}
   \caption{Comparison of the L1 jet finding algorithm with the anti-$k_T$ algorithm using
   trigger tower inputs. Distributions of \pt~and $\eta$ are shown for the leading and fourth
   jet.}
@@ -230,7 +230,7 @@ is therefore not considered in this section.
 
 \begin{figure}
 \centering
-    \includegraphics[width=0.8\textwidth]{./Figures/triggerUpgrade/median}
+    \includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/median}
   \caption{Dependence of \rhoG (arbitrary units) on the number of interactions}
   \label{fig:medianNint}
 \end{figure}  
@@ -238,7 +238,7 @@ is therefore not considered in this section.
 \subsection{Doughnut subtraction}
 \begin{figure}
 \centering
-    \includegraphics[width=0.8\textwidth]{./Figures/triggerUpgrade/deltaR2}
+    \includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/deltaR2}
   \caption{$\Delta R$ distribution between the seed and constituent TTs using data from Run 1~\cite{mark-thesis}.}
   \label{fig:deltaR2}
 \end{figure}  
@@ -264,9 +264,9 @@ with the energy density for the chunky doughnut pileup estimation (\rhoC) is sho
 
 \begin{figure}
 \hfill
-\subfigure[Doughnut rings\label{fig:donut}]{\includegraphics[width=7cm]{./Figures/triggerUpgrade/donut}}
+\subfigure[Doughnut rings\label{fig:donut}]{\includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/donut}}
 \hfill
-\subfigure[Chunky doughnut rings\label{fig:chunkyDonut}]{\includegraphics[width=7cm]{./Figures/triggerUpgrade/chunkyDonut}}
+\subfigure[Chunky doughnut rings\label{fig:chunkyDonut}]{\includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/chunkyDonut}}
 \hfill
 \caption{The rings used to sample the local pileup energy density for the doughnut (a) and chunky doughnut (b)
 pileup subtraction. The median two strips (in energy density) are used in each case.}
@@ -274,7 +274,7 @@ pileup subtraction. The median two strips (in energy density) are used in each c
 
 \begin{figure}
 \centering
-    \includegraphics[width=0.8\textwidth]{./Figures/triggerUpgrade/threestrips}
+    \includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/threestrips}
   \caption{Dependence of \rhoC~(arbitrary units) on the number of interactions}
   \label{fig:threestripNint}
 \end{figure}  
@@ -330,7 +330,7 @@ The average \Lonept~in the bin is calculated to obtain the distribution of the m
 
 The calibration must be done separately for each choice of pileup subtraction algorithm, seed threshold and zero suppression. 
 An example response for \emph{seed 5}, chunky doughnut corrected jets is shown as a function of \Lonept~for 
-the $0. < \eta < 0.75$ range in Figure~\ref{response}. The fitted calibration function defines the correction 
+the $0. < \eta < 0.75$ range in Figure~\ref{fig:response}. The fitted calibration function defines the correction 
 factors and is shown to agree well with the data.
 
 In Figure~\ref{fig:closure_response} the response for the same QCD dijet sample is shown as a function of the \Lonept. The calibration
@@ -340,7 +340,7 @@ such that the average response is an unreliable estimate of the jet algorithm re
 
 \begin{figure}
 \centering
-    \includegraphics[width=0.8\textwidth]{./Figures/triggerUpgrade/calibrationSeed5Chunky}
+    \includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/calibrationSeed5Chunky}
   \caption{
   Fitted response for a QCD dijet sample in the range $0. < \eta < 0.75$ }
   \label{fig:response}
@@ -348,7 +348,7 @@ such that the average response is an unreliable estimate of the jet algorithm re
 
 \begin{figure}
 \centering
-    \includegraphics[width=0.8\textwidth]{./Figures/triggerUpgrade/calib_s5_chunky}
+    \includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/calib_s5_chunky}
   \caption{Calibrated response in the QCD dijet sample used to derive the calibration factors. The calibration is seen to be 
   effective for the range $\Lonept > \sim 20\GeV$.}
   \label{fig:closure_response}
@@ -383,11 +383,11 @@ matching the fourth leading jet.
 
 \begin{figure}
 \begin{center}
-\subfigure[All jets\label{fig:label:alljet}]{\includegraphics[width=0.5\textwidth]{./Figures/triggerUpgrade/alljet}}
-\subfigure[4th jet\label{fig:label:jet4}]{\includegraphics[width=0.5\textwidth]{./Figures/triggerUpgrade/jet4}}
+\subfigure[All jets\label{fig:label:alljet}]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/alljet}}
+\subfigure[4th jet\label{fig:label:jet4}]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/jet4}}
 \caption{Matching efficiencies for jets showing effect of seed and pileup subtraction at low energies. In \ref{fig:label:jet4} 
 a comparison with the GCT is shown.}
-\label{match}
+\label{fig:match}
 \end{center}
 \end{figure}
 
@@ -407,8 +407,8 @@ the magnitude of the gradient is particularly enhanced for low \Genpt~where pile
 
 \begin{figure}
     \begin{center} 
-	\subfigure[\label{fig:resolution1}]{\includegraphics[width=0.5\textwidth]{./Figures/triggerUpgrade/resolution}}~
-	\subfigure[\label{fig:resolution2}]{\includegraphics[width=0.5\textwidth]{./Figures/triggerUpgrade/p1eta_14to28_calib_fits}}
+	\subfigure[\label{fig:resolution1}]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/resolution}}~
+	\subfigure[\label{fig:resolution2}]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/p1eta_14to28_calib_fits}}
 	\caption{(a) Resolution as a function of the number of interactions. (b) Gradients of linear fits to 
 	    resolution as a function of number of interactions in bins of $p^{gen}_{T}$.}
 	    \label{fig:label:resolution}
@@ -423,8 +423,8 @@ than the GCT quantities and plateaus at higher values than the legacy system.
 
 \begin{figure}
     \begin{center} 
-	\subfigure[\label{fig:resolution1}]{\includegraphics[width=0.5\textwidth]{./Figures/triggerUpgrade/leadJet150_noUct}}~
-	\subfigure[\label{fig:resolution2}]{\includegraphics[width=0.5\textwidth]{./Figures/triggerUpgrade/fourthJet100_noUct}}
+	\subfigure[\label{fig:resolution1}]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/leadJet150_noUct}}~
+	\subfigure[\label{fig:resolution2}]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/fourthJet100_noUct}}
 	\caption{Efficiency as a function of $\Genpt$ for (a) a L1 threshold of 150\GeV~on the leading jet and (b) 
 	a L1 threshold of 100\GeV~on the fourth leading jet.}
 	    \label{fig:turnon}
@@ -443,9 +443,9 @@ between the pileup subtraction algorithms are small.
 
 \begin{figure}[h!]
   \centering
-    \subfigure[]{\includegraphics[width=0.5\textwidth]{./Figures/triggerUpgrade/singleJet_150.png}}~
-    \subfigure[]{\includegraphics[width=0.5\textwidth]{./Figures/triggerUpgrade/doubleJet_110.png}}\\
-    \subfigure[]{\includegraphics[width=0.5\textwidth]{./Figures/triggerUpgrade/quadJet_50.png}}
+    \subfigure[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/singleJet_150.png}}~
+    \subfigure[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/doubleJet_110.png}}\\
+    \subfigure[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/quadJet_50.png}}
   \caption{\label{fig:rate_eff_jets} Rate against efficiency for (a) L1 leading jet with a threshold of 150\GeV, 
   (b) L1 second leading jet with a threshold of 110\GeV and (c) L1 fourth leading jet with a threshold of 50\GeV.}
 \end{figure}
@@ -459,7 +459,7 @@ subtraction.
 
 \begin{figure}
 \centering
-    \includegraphics[width=0.8\textwidth]{./Figures/triggerUpgrade/neutrinonvtx_jet1}
+    \includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/neutrinonvtx_jet1}
   \caption{The dependence of the rate for a threshold of $\Lonept=30GeV$ on the number of simultaneous interactions}
   \label{fig:rate_nvtx}
 \end{figure}
@@ -477,8 +477,8 @@ cancel in the vector sum of the towers.
 
 \begin{figure}
 \centering
-	\subfigure[]{\includegraphics[width=0.5\textwidth]{./Figures/triggerUpgrade/ht_200}\label{fig:ht_rateEff}}~
-	\subfigure[]{\includegraphics[width=0.5\textwidth]{./Figures/triggerUpgrade/mht_200}\label{fig:mht_rateEff}}
+	\subfigure[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/ht_200}\label{fig:ht_rateEff}}~
+	\subfigure[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/mht_200}\label{fig:mht_rateEff}}
 	\caption{Rate against efficiency for (a) L1 \scalht and (b) L1 \mht, both with a
 	threshold of 200\GeV.}
 	    \label{fig:rate_eff_sum}
@@ -502,8 +502,8 @@ and shows little pileup dependence.
 
 \begin{figure}
 \centering
-	\subfigure[]{\includegraphics[width=0.5\textwidth]{./Figures/triggerUpgrade/xy_SingleMu_jetEt_vs_l1JetEt_barrel-endcap}}~
-	\subfigure[]{\includegraphics[width=0.5\textwidth]{./Figures/triggerUpgrade/res_SingleMu_jetEt_over_l1JetEt_barrel-endcap_puBins}}
+	\subfigure[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/xy_SingleMu_jetEt_vs_l1JetEt_barrel-endcap}}~
+	\subfigure[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/res_SingleMu_jetEt_over_l1JetEt_barrel-endcap_puBins}}
 	\caption{(a) The L1 jet energy compared to offline in early 2016 data for a wide
 range of jet energies. (b) Resolution for the L1 jet energy compared to offline in early 2016 data for several different 
 pileup scenarios \cite{l1sums_perf}.}
@@ -519,7 +519,7 @@ the full range of the CMS physics program at higher luminosities, sophisticated 
 of the single object triggers, \emph{cross triggers}, are required. In this section, the \alphat 
 analysis is used to highlight the utility of such a cross trigger at L1. 
 
-The \alphat analysis is fully described in Section ??. In order to maximise the acceptance
+The \alphat analysis is detailed in Chapter~\ref{cha:alphat}. In order to maximise acceptance
 to supersymmetric models at lower energy scales a low \scalht~threshold is required. 
 However, without an additional requirement, the rate
 would be unacceptably high. A cross trigger using a combined selection on the difference 
@@ -540,8 +540,8 @@ for the dijet and multijet trigger respectively. For the TMT, chunky doughnut co
 
 \begin{figure}
 \centering
-	\subfigure[Upgrade trigger]{\includegraphics[width=0.5\textwidth]{./Figures/triggerUpgrade/noHardBin12JetdphiFullS2}}~
-	\subfigure[UCT]{\includegraphics[width=0.5\textwidth]{./Figures/triggerUpgrade/noHardBin12JetdphiFullUCT}}
+	\subfigure[Upgrade trigger]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/noHardBin12JetdphiFullS2}}~
+	\subfigure[UCT]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/noHardBin12JetdphiFullUCT}}
 	\caption{Efficiency of the dijet selection for hadronic offline requirement $200 < \scalht < 300$ and $\alphat > 0.65$
 	in a band of rate of 5.5 to 7.5 kHz}
 	    \label{fig:dijet_cross}
@@ -549,8 +549,8 @@ for the dijet and multijet trigger respectively. For the TMT, chunky doughnut co
 
 \begin{figure}
 \centering
-	\subfigure[Upgrade trigger]{\includegraphics[width=0.5\textwidth]{./Figures/triggerUpgrade/noHardBin1ge4JetdphiFullS2}}~
-	\subfigure[UCT]{\includegraphics[width=0.5\textwidth]{./Figures/triggerUpgrade/noHardBin1ge4JetdphiFullUCT}}
+	\subfigure[Upgrade trigger]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/noHardBin1ge4JetdphiFullS2}}~
+	\subfigure[UCT]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/noHardBin1ge4JetdphiFullUCT}}
 	\caption{Efficiency of the multijet selection for hadronic offline requirement $200 < \scalht < 300$ and $\alphat > 0.65$
 	in a band of rate of 5.5 to 7.5 kHz}	
 	    \label{fig:multijet_cross}
