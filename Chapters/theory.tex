@@ -1,10 +1,37 @@
 \chapter{Introduction and theory}
+
+In this chapter the current best theory of particle physics, the standard model (SM),
+is outlined. Outstanding problems are detailed and used to motivate beyond
+standard model (BSM) physics and in particular Supersymmetry (SUSY). 
+The features of supersymmetric theories are outlined and the possible 
+experimental signatures which would enable such a theory to be 
+discoverd are detailed.
+
+Natural units, Einstein summation convention
+and Feynman slash notation are used throughout. Electric charges 
+are in units of the charge of the electron.
+
 \label{chap:theory}
 \section{The standard model}
 
-The standard model (SM) of particle physics is a quantum field theory whose excitations
+\label{sec:sm}
+The standard model (SM) of particle physics is a quantum field theory (QFT) whose excitations
 correspond to the elementary particles forming all known matter and the mediators of
-all known forces. The SM includes two classes of symmetries:
+all known forces~\cite{ftsm}. The SM contains spinor fields that result in the spin-1/2 fermions
+vector fields resulting in spin-1 bosons, and a scalar field that results in a spin-0
+boson. 
+
+The spin-1/2 fermions compose the known matter in the universe and are summarised 
+in Table~\cite{tab:fermions}. These are split into \emph{quarks} which carry colour charge (see Section~\ref{sm-gs})
+and leptons which do not. Each of the three generations of quarks and leptons vary only in
+mass from the other generations in their quantum numbers.
+
+The spin-1 fermions mediate the forces in the SM and are summarised in Table~\ref{tab:bosons}. 
+The gluon and photon are massless while the W and Z bosons are massive. 
+The mechanism for determining the masses of these particles in discussed in 
+Section~\ref{sec:sm-gs} and gives rise to a further fundamental spin-0 particle, the Higgs boson.
+
+The SM contains two classes of symmetries:
 
 \begin{itemize}
 \item Space-time symmetries corresponding to translations and rotations of the space-time coordinates.
@@ -12,17 +39,17 @@ The SM satisfies the Poincar\'{e} group of space-time transformations that defin
 \item \emph{Gauge} symmetries corresponding to transformations of the fields within the SM.
 \end{itemize}
 
-The particles in the SM have been observed and measured over the last two hundred years.
-Their properties are summarised in Table ??. In the section below the inclusion of these
-particles and the interactions between them in the SM are discussed.
+The mechanism by which the guage symmetries give rise to the properties and interactions 
+of the particles in the SM is detailed in the remainder of this section. 
 
 \begin{table}
-  \caption[The fundamental fermions observed in nature separated into their three generations. Each particle shown also has an antiparticle with opposite charge and identical mass. The electric charges are given in units of the magnitude of the charge of the electron.]{The fundamental fermions observed in nature separated into their three generations. 
-  Each particle shown also has an antiparticle with opposite charge and identical mass. The electric charges are given in units of the magnitude of the charge of the electron~\cite{Agashe:2014kda}.}
+  \caption[The fundamental spin-1/2 fermions observed in nature separated into their three generations. 
+  Each particle shown also has an antiparticle with opposite charge and identical mass]{The fundamental fermions observed in nature separated into their three generations. 
+  Each particle shown also has an antiparticle with opposite charge and identical mass~\cite{pdg}.}
   \label{tab:fermions}
   \begin{tabular}{ccccccc}
   \hline\hline
-  &\multicolumn{3}{|c|}{Leptons}& \multicolumn{3}{c}{Hadrons} \\
+  &\multicolumn{3}{|c|}{Leptons}& \multicolumn{3}{c}{Quarks} \\
   \cline{2-7}
   Generation & \multicolumn{1}{|c}{Particle} & Mass & \multicolumn{1}{c|}{Electric Charge} & Particle & Mass & Electric Charge \\
   \hline\hline
@@ -38,10 +65,9 @@ particles and the interactions between them in the SM are discussed.
   \end{tabular}
 \end{table}
 
-The bosons in nature also exist in two types. The first type are vector bosons, which mediate the three fundamental interactions described by the SM. The vector bosons are summarised in \TableRef{tab:bosons}, where it can be seen that their masses are very different, the photon and the eight gluons being massless, while the \PWpm and \PZ bosons are massive. As we will see in \SectionRef{sec:ssb}, explaining these masses requires the Higgs mechanism~\cite{Englert:1964et,Higgs:1964ia,Higgs:1964pj,Guralnik:1964eu,Higgs:1966ev,Kibble:1967sv}. The Higgs mechanism also gives rise to the other type of boson seen in nature, the scalar Higgs boson. In order to see how all of the above particles are represented in the SM, an introduction to gauge theories is necessary.
-
 \begin{table}
-  \caption[The fundamental vector bosons observed in nature separated by the force which they mediate. The electric charges are given in units of the magnitude of the charge of the electron.]{The fundamental vector bosons observed in nature separated by the force which they mediate. The electric charges are given in units of the magnitude of the charge of the electron~\cite{Agashe:2014kda}.}
+  \caption[The fundamental spin-1 vector bosons observed in nature and the force which they mediate.]{The fundamental spin-1 vector 
+bosons observed in nature and the force which they mediate~\cite{pdg}.}
   \label{tab:bosons}
   \begin{tabular}{lccc}
     \hline
@@ -62,7 +88,7 @@ The bosons in nature also exist in two types. The first type are vector bosons, 
 
 \subsection{Gauge symmetries}
 
-Consider a Lagrangian containing a fermionic field, $\psi$,
+The derivation in this section follows that in~\cite{ewk-int}. Consider a Lagrangian containing a fermionic field, $\psi$,
 
 \begin{equation}
 \mathcal{L} = \psi(x)^{\dagger} (i\gamma^{\mu}D_{\mu} - m)\psi(x) = \psi(x)^{\dagger} (i\cancel{D} - m)\psi(x)
@@ -110,22 +136,31 @@ that $A_{\mu} = A^{a}_{\mu} t_{a}$, the field strength tensor can be written as
 F^{a}_{\mu\nu}t_{a} = \left(\partial_{\mu}A^{a}_{\nu} - \partial_{\nu} A^{a}_{\mu} - g f_{bc}^{a}A^b_{\mu}A^c_{\nu}\right)t_a
 \end{equation}
 where $f_{bc}^{a}$ are the structure constants of the group defined by the 
-commutation of the group generators. These may be non zero if the group is non-abelian and will introduce
-cubic and quadratic self interactions among the gauge fields.
+commutation of the group generators. 
 
-\begin{equation}
-\left[t_b,t_c\right] = f_{bc}^{a}T_{a}. 
-\end{equation}
+The gauge symmetries of the Lagrangian therefore result in massless vector 
+bosons that are \emph{mediators} of the resultant forces. The properties and 
+the forces, such as whether the mediators are self interacting, depend on the 
+details of the gauge symmetry. In the next section the gauge symmetries
+of the SM are discussed. 
+
+% These may be non zero if the group is non-abelian and will introduce
+% cubic and quadratic self interactions among the gauge fields.
+%
+% \begin{equation}
+% \left[t_b,t_c\right] = f_{bc}^{a}T_{a}. 
+% \end{equation}
 
 % The Lagrangian may then by expanded as
 % \begin{equation}
 % \mathcal{L} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} + i\psi^{dagger}\gamma^\mu D_{\mu}\psi
 % \end{equation}
-\subsection{Gauge symmetries of the standard model}
 
-The standard model has the gauge symmetry group
+\subsection{Gauge symmetries of the standard model}
+\label{sec:sm-gs}
+The gauge symmetry group of the standard model is given by~\cite{ewk-int}
 \begin{equation}
-G_{SM} = SU(3)_{c}\otimes SU(2)_{L}\otimes U(1)_{Y},
+G_{SM} = SU(3)_{c}\otimes SU(2)_{L}\otimes U(1)_{Y}.
 \end{equation}
 
 The $SU(3)_c$ gauge symmetry is unbroken and therefore the associated
@@ -137,8 +172,8 @@ the strong force short range. Due to \emph{charge screening} the strong coupling
 reduces with energy. This \emph{asymptotic freedom} requires quarks to be confined into colour singlets
 of two (mesons) or three (baryons) quarks into hadrons. The energy required to separate these colour singlets 
 is sufficient to generate additional quark/antiquark pairs (\emph{hadronisation}). High
-energy collisions of hadrons results in the production of highly 
-collimated emissions of hadrons (\emph{jets}) due to the liberation of quarks.
+energy collisions of protons, such as those at the LHC, result in the production of highly 
+collimated emissions of hadrons (\emph{jets}) due to the liberation of quarks~\cite{salam}.
 
 The gauge symmetry of the electroweak sector of the SM is $SU(2)_L\otimes U(1)_Y$. These symmetries lead
 to the electromagnetic and weak forces mediated by the W/Z and $\gamma$ bosons respectively.
@@ -159,7 +194,7 @@ three generations of quarks and leptons as,
 
 The left handed fields transform as doublets under the $SU(2)_L$ symmetry
 while the right handed field are singlets.
-For the first generation $\psi$ may therefore be written as
+For the first generations of quarks and leptons $\psi$ may therefore be written as
 
 \begin{align}
 \qquad\qquad\qquad\psiL =\,&{\begin{pmatrix} u_L \\ d_L \end{pmatrix}},\, &{\begin{pmatrix} \nu_{e\,L} \\ e_L \end{pmatrix}},\nonumber\qquad\qquad\qquad\\
@@ -173,7 +208,7 @@ The covariant derivative therefore acts on the left and right handed components 
 D_{\mu} \psiL = (\partial_\mu + igW^i_{\mu}T^i + ig'YB_\mu)\psiL \, D_{\mu} \psiR = (\partial_\mu + ig'YB_\mu)\psiR
 \end{equation}
 
-where g and g' are the coupling constants of the $SU(2)_L$ and $U(1)$ groups respectively, 
+where g and g' are the coupling constants of the $SU(2)_L$ and $U(1)_Y$ groups respectively, 
 $W^i$ are the three gauge bosons that couple to the weak-isospin, T, and B is the gauge boson
 coupling to hypercharge, Y. The hypercharge values are chosen such that the sum of the hypercharge and 
 the third component of weak-isospin corresponds to the electric charge.
@@ -239,7 +274,7 @@ W^{\pm} = \frac{1}{\sqrt{2}} (W^1_\mu \mp i W^2_\mu), \begin{pmatrix} Z_\mu \\ A
 \end{equation}
 
 where $\theta_W \equiv \text{atan}(g'/g)$ is the weak mixing angle. From Equation~\ref{equ:phiExp} and
-the kinetic term of Equation~\ref{equ:higgs-lagrangian} the masses may be identified as
+the first term of Equation~\ref{equ:higgs-lagrangian} the masses may be identified as
 
 \begin{equation}
 M_W^\pm = \frac{1}{2}gv, M_Z = \frac{gv}{2cos\theta_W}, M_A = 0
@@ -251,32 +286,40 @@ The masses of the fermions are derived from the Yukawa term in the Lagrangian,
 \end{equation}
 
 where $f_{mn}$, $h_{mn}$ and $k_{mn}$ are the Yukawa coupling matrices between the different generations. These may be diagonalised via unitary transformations
-to generate mass terms for the quarks and leptons. The neutrino is massless in the SM as there is no right handed component, 
-however, extensions which provide a massive neutrino (as is observed) are possible. The same unitary transformations
-also introduces mixing between quark generations from the kinetic term of the Lagrangian. The mixings are summarised in the 
-CKM matrix and occur as no basis of mass eigenstates is simultaneously diagonal for up and down type quarks. Flavour changing
-interactions between quarks are mediated by the $W^{\pm}$ boson.
+to generate mass terms for the quarks and leptons. The neutrino is massless in the SM as there is no right handed component.
+This contradicts the observation of oscillations between neutrino flavours~\cite{neutOsc},
+however, extensions which predict non-zero neutrino masses are possible~\cite{neutM}. 
 
-\section{Physics beyond the Standard Model}
+The same unitary transformations also introduce mixing between quark generations from the 
+terms including covariant derivatives in the Lagrangian. The mixings are summarised in the 
+CKM matrix and occur as no basis of mass eigenstates is simultaneously diagonal for 
+up and down type quarks~\cite{CKM}. Flavour changing
+interactions between quarks are mediated by the $W^{\pm}$ boson while interactions via 
+the Z and $\gamma$ bosons are flavour preserving. There are no flavour changing interactions
+predicted for the leptons.
+
+\section{Physics beyond the standard model}
 
 The SM describes the properties and interactions between all known particles. These properties 
 have been measured and the predictions of the SM verified in a multitude
-of experiements\footnote{Except for the mass of the neutrino which may be
-included in a simple extension~\cite{}}. However, the theory cannot be complete 
-as there remain fundamental problems which the Standard Model does not resolve.
+of experiements. However, the theory cannot be complete 
+as there remain fundamental problems which the standard model does not resolve.
 Several of the largest such problems are described below.
 
-On a theoretical level, gravity cannot be included within 
-the SM~\cite{}. While negligible at electroweak energy
+On a theoretical level, a renormalisable theory of gravity cannot be included within 
+the SM~\cite{gravRenorm}. While negligible at electroweak energy
 scales, quantum gravitiational effects become increasingly important as
 energies approach the planck scale, $M_{\text{planck}} \sim 10^{18} \GeV$. 
 
 Measurements from cosmology and astrophysics have highlighted several areas
-the SM fails to adequately describe Nature. The \emph{cosmological constant}, $\lambda$,
-may be expected expected to be approximated by $M^4_{\text{planck}}$. However,
-cosmological measurements of $\lambda$ imply $\lambda/M_{\text{planck}} \sim 10^{120}$.
+the SM fails to adequately describe Nature. The vacuum energy density 
+of the universe (\emph{cosmological constant}), $\Lambda$, 
+may be expected to be approximated by $M^4_{\text{planck}}$ by dimensional 
+arguments. However, cosmological measurements of $\Lambda$ imply 
+$\Lambda/M_{\text{planck}}^4 \sim 10^{-120}$~\cite{cosConst}. This discrepancy
+is related to the failure to include gravity in a quantum field theory.
 
-trophysical observations~\cite{} imply the existance 
+Astrophysical observations~\cite{WIMP} imply the existance 
 of a weakly-interacting particle (WIMP) that forms the majority of the mat
 ter within the universe. The SM has no viable candidates for 
 this particle. In addition, the matter-antimatter asymmetry observed in the universe requires 
@@ -285,9 +328,9 @@ charge-parity violating processes far in excess of those occuring in the SM.
 The discovery of the Higgs boson at $m_{h}\sim125\GeV$ raises the \emph{heirarchy problem}. In QFT, 
 the corrections to $m_h$ are related to the heaviest particle in the theory and therefore
 one may expect $m_h \sim M_{\text{planck}}$. In addition, quantum corrections from SM particles
-require fine-tuning in the SM to stabilise $m_h$ (the \emph{technical heirarchy problem}, see ??).
+require fine-tuning in the SM to stabilise $m_h$ (the \emph{technical heirarchy problem}, see Section~\ref{sec:natSUSY}).
 
-These problems form the motivation for the existance of a Beyond Standard Model (BSM) physics model that
+These problems form the motivation for the existance of a Beyond standard model (BSM) physics model that
 can resolve some or all of the oustanding issues in the SM. Supersymmetry (SUSY) is a particularly
 well motivated BSM theory that can resolve the hierarchy problem, provide a DM candidate
 and may include a quantum theory of gravity.
@@ -296,8 +339,8 @@ and may include a quantum theory of gravity.
 
 There are many possibilities for extending the SM including new particles/interactions, new (internal) gauge symmetries, 
 extra spacial dimensions and/or new space-time (external) symmetries. SUSY is 
-an external symmetry that relates fermions and bosons by extending the Poincar\'{e} algebra. The Coleman-Mandula theorem shows that any
-such extension through new bosonic generators (such as those responsible for Lorentz 
+an external symmetry that relates fermions and bosons by extending the Poincar\'{e} algebra~\cite{SUSYC}. 
+The Coleman-Mandula theorem shows that any such extension through new bosonic generators (such as those responsible for Lorentz 
 transformations and translations) forbids non-zero scattering amplitudes. 
 Supersymmetry therefore introduces fermionic generators, Q, such that (heuristically),
 
@@ -320,9 +363,9 @@ known SM particles \emph{sparticles} have not been observed and therefore SUSY m
 % that SUSY provides a natural solution to
 % the technical heirarchy problem (see Section~\ref{sec:natSUSY}).
 
-\subsection{The Minimally Supersymmetric Standard Model}
+\subsection{The minimally supersymmetric standard model}
 
-The Minimally Supersymmetric Standard Model (MSSM) is the simplest SUSY extension of the Standard Model.
+The minimally supersymmetric standard model (MSSM) is the simplest SUSY extension of the standard model~\cite{SUSYP}.
 The fermions in the standard model are \emph{chiral} (left and right handed pieces transform differently)
 with two fermionic degrees of freedom per helicity state. The number of bosonic and fermionic degrees 
 of freedom must be equivalent in each supermultiplet and therefore the simplest supermultiplet
@@ -337,13 +380,50 @@ gauge anomoly. This may be avoided by including two Higgs chiral supermultiplets
 opposite hypercharge. The SM Higgs is a linear combination of the neutral components 
 of these supermutiplets.
 
-The particle content of the MSSM is summarised in Table ?? for the chiral supermultiplets
-and Table ?? for the gauge supermultiplets. The neutral higgs and electroweak 
+\begin{table}[!h]
+  \centering
+  \caption{Chiral supermultiplets in the MSSM~\cite{SUSYP}}
+  \label{tab:chiral}
+  \begin{tabular}
+    {ccc}
+    \hline\hline
+    Name& spin-0 & spin-1/2 \\
+    \hline
+    \multirow{3}{*}{squarks, quarks (3 families) }& ($\tilde{u}_L\,\tilde{d}_L$) & ($u_L\,d_L$) \\
+    & ($\tilde{u}^{*}_R$) & ($u_R^{\dagger}$) \\
+    & ($\tilde{d}^{*}_R$) & ($d_R^{\dagger}$) \\
+    \hline
+    \multirow{2}{*}{sleptons, leptons (3 families) }& ($\tilde{\nu}\,\tilde{e}_L$) & ($\nu_L\,e_L$) \\
+    & ($\tilde{e}^{*}_R$) & ($e_R^{\dagger}$) \\
+    \hline
+    \multirow{2}{*}{Higgs, higgsinos}& ($H_u^{+}\,H_u^{0}$) &  ($\tilde{H}_u^{+}\,\tilde{H}_u^{0}$) \\
+    & ($H_d^{0}\,H_d^{-}$) &  ($\tilde{H}_d^{0}\,\tilde{H}_d^{-}$) \\
+  \end{tabular}
+\end{table}
+
+\begin{table}[!h]
+  \centering
+  \caption{Gauge supermultiplets in the MSSM~\cite{SUSYP}}
+  \label{tab:vector}
+  \begin{tabular}
+    {ccc}
+    \hline\hline
+    Name& spin-0 & spin-1/2 \\
+    \hline
+    gluino, gluon & $\tilde{g}$ & g \\
+    winos, W bosons & $\tilde{W}^{\pm}\,\tilde{W}^0$ & $W^{\pm}\,W^{0}$ \\
+    bino, B boson & $\tilde{B}^0$ & g \\
+  \end{tabular}
+\end{table}
+
+The particle content of the MSSM (before symmetry breaking) 
+is summarised in Table~\ref{tab:chiral} for the chiral supermultiplets
+and Table~\ref{tab:vector} for the gauge supermultiplets. The neutral higgs and electroweak 
 gaugino sectors combine to form mass eigenstates labelled \emph{neutralinos} 
 (\chiz), while the charged higgs and electroweak gaugino sectors combine
 to form \emph{charginos} (\chip). Gravity may also be included in the theory
 by adding a spin-2 graviton and a spin-3/2 superparticle
-called the gravitino. 
+called the gravitino~\cite{SUSYP}. 
 
 The mass scale of the sparticles is dependant on the mechanism of SUSY breaking.
 As discussed below, naturalness arguments motivate the lightest sparticle masses 
@@ -359,9 +439,9 @@ to the Higgs mass, $\delta m^2_{H}$ will be
 \Delta m^2_H =  \frac{|\lambda_f|^2}{8\pi^2}\left[-\Lambda^2_{\text{UV}} + 6 {m_f}^2\log\frac{\LUV}{m_f}\right] + \mathcal{O}\frac{1}{\LUV^2}
 \end{equation}
 
-which is quadratically divergent. The correction is proportional to the size of the coupling of the Higgs to the fermion 
+which is quadratically divergent~\cite{HMSSM}. The correction is proportional to the size of the coupling of the Higgs to the fermion 
 and is therefore largest for the top quark in the SM. Assuming the cut-off scale is at $M_{\text{planck}}$, the quantum 
-corrections must be fine-tuned to $\sim 30$ orders of magnitude to give the observed Higgs mass. 
+corrections must be fine-tuned to $\sim 30$ orders of magnitude to predict the observed Higgs mass. 
 
 In a BSM theory containing complex scalars, s, the Lagrangian will gain a term $-\lambda_{s}|\phi|^2|s|^2$.
 Assuming for simplicity each component of the complex scalaar has mass $m_s$, the correction to the Higgs mass will be
@@ -383,57 +463,59 @@ and the quadratic divergence is naturally cancelled. In unbroken SUSY, the logar
 Experimental observations imply the sparticle masses cannot be equal to their SM partners and
 therefore an additional SUSY breaking term is required in the lagrangian. This must be a \emph{soft} breaking,
 at a mass scale such that $\lambda_f^2 = -\lambda_s$ still holds to cancel the quadratic divergence.
-To avoid fine funing the logarithmic term in~\ref{corrHiggsSusy}, the lightest sparticles should have 
+To avoid fine funing the logarithmic term in~\ref{equ:corrHiggsSusy}, the lightest sparticles should have 
 masses around the $\TeV$ scale. 
 
 \subsection{R-Parity}
 
 The general MSSM \emph{super potential} containts terms which violate baryon number, B, and lepton number, 
-L. Such terms lead to predictions of photon decay, which is constrained experimentally to $> 10^{34}$ years~\cite{}, 
+L. Such terms lead to predictions of photon decay, which is constrained experimentally to $> 10^{34}$ years~\cite{protonDecay}, 
 on the order of seconds. To forbid such a process an extra symmetry called \emph{R parity} defined as 
 \begin{equation}
 R \equiv (-1)^{3(B-L)+2S} = 
 \begin{cases}
-+ 1\quad \text{SM particles}
++ 1\quad \text{SM particles}\\
 - 1\quad \text{superpartners}
 \end{cases},
 \end{equation}
-
-where S is the spin. R parity has several physical implications including a stable lightest supersymmetric 
+where S is the spin~\cite{SUSYP}. R parity has several physical implications including a stable lightest supersymmetric 
 particle (LSP). This particle must be electrically and colour neutral from cosmological constraints.
 Typically, it is taken to be the lightest neutralino in the MSSM and is an ideal WIMP candidate for DM. 
 In addition R parity also requires superpartners 
 to be formed in pairs in collisions and that each superpartner decays to another superpartner
 in a chain that must with the LSP. The LSP does not interact with any detector and therefore
-such collisions will produce signatures containing significant momentum imbalance (see Section ??).
+such collisions will produce signatures containing significant momentum imbalance.
 
 \subsection{Experiemental SUSY signatures at the LHC}
 
-The LHC provides pp collisions at $\sqrt{s} = 13 \TeV$. The superparticles have identical charges under 
-the symmetries of the SM and therefore coloured sparticles are predominantly produced. 
-Assuming R-parity, these sparticles can be produced through
+The LHC provides proton collisions at $\sqrt{s} = 13 \TeV$. The sparticles have identical charges under 
+the symmetries of the SM and, therefore, in a generic (natural) MSSM model 
+coloured sparticles may be expected to have the highest production 
+cross-section~\cite{susyprod}. Assuming R-parity, these sparticles can be produced through
+
 
 \item quark-antiquark scattering or gluon fusion to produce a gluino or squark pair
 \item quark and gluon scattering to produce a squark and gluino
 \item quark-quark scattering to produce a squark pair
 
-As described in Section ??, each of the sparticles will decay in a chain to the LSP. 
-In the decay, coloured SM particles are produced which will hadronise into jets.
-The signature will therefore be of significant hadronic activity in 
+Each of the sparticles will decay in a chain to the LSP. In the decay, 
+coloured SM particles are produced which will hadronise into jets.
+The signature produced by such processes will therefore be significant hadronic activity in 
 the form of jets as well as momentum imbalance from the LSP. The energy in
 the final state and the momentum carried by the LSP are dependant on the masses
 of the sparticles.
 
 In natural SUSY, the lightest sparticle is expected to be the partner of the top
 as the top makes the largest contribution to the Higgs divergence. Therefore a signature
-of multiple top quarks is expected in the final state. As discussed in Section ??, tops
-decay primarily through the b quark. The sparticles in the MSSM may therefore be expected
+of multiple top quarks is expected in the final state. As discussed in Section~\ref{topbg}, top quarks
+decay primarily to a b quark and W boson. The sparticles in a natural MSSM theory may therefore be expected
 to produce a final state containing multiple b quarks.
 
 The SM contains processes which produces events with similar signatures to 
-those of hadronic SUSY described above. These are described fully in Section ??,
-and, in order to be sensitive to SUSY signals, such backgrounds must be m
-itigated and any residual backgrounds measured as described in Sections ?? and ??
+those of hadronic SUSY described above. These are described fully in Section~\ref{sec:ewk-background-intro},
+and, in order to be sensitive to SUSY signals, such backgrounds must be mitigated 
+and any residual backgrounds measured. The search described in this thesis relies on several
+techniques to mitigate and measure backgrounds as described in Chapters~\ref{cha:alphat} and~\ref{cha:backgroundPrediction}
 respectively.
 
 \subsection{Simplified models}
@@ -441,7 +523,7 @@ respectively.
 The MSSM contains up to 105 free parameters which affect the production and decay modes of the sparticles.
 It is therefore not possible to interepret the results of searches for SUSY in the full MSSM. 
 In previous searches for SUSY, the constrained MSSM (the CMSSM), which leaves five free parameters, was 
-used to interpret~\cite{} the results. However, while parametrically simple, the decay chains of sparticles 
+used to interpret~\cite{SMS} the results. However, while parametrically simple, the decay chains of sparticles 
 in the CMSSM are complicated, making such interpretations model dependant. 
 
 To evaluate model independant reach in terms of gluino and squark masses, searches are interpreted using 
@@ -450,17 +532,43 @@ Simplified models are effective models where the majority of the particle conten
 are decoupled at high masses. Each of the simplified models considered in this thesis involves
 the direct pair production of only one sparticle type which then decays directly to the LSP.
 
-The \emph{T2} model is a simplified version of squark-antisquark production. Each squark undergoes
+The T2 simplified models are simplified versions of squark-antisquark production. Each squark undergoes
 a two-body decay to a quark and the LSP. In this thesis direct bottom squark production followed
 by decay to bottom quark and LSP as well as direct top squark production followed by decay to top
 quark and LSP are considered.
 
-The \emph{T1} model is a simplified version of gluino pair production. Each gluino undergoes a three-body 
+The T1 simplified models are a simplified versions of gluino pair production. Each gluino undergoes a three-body 
 decay to a quark-antiquark pair and the LSP. In this thesis, decays to top-antitop as well as bottom-antibottom
 pairs are considered. As the three body decay proceeds via the virtual squark these models 
 are referred to as gluino-mediated squark production.
 
-Figure~\ref{} displays the decay chains for the models considered in this theis. 
+\begin{figure}[h!]
+  \begin{center}
+    \subfigure[Gluino mediated bottom squark production]{
+      \includegraphics[width=0.3\textwidth]{Figures/theory/T1bbbb_feyn}
+      \label{fig:T1bbbb_feyn}
+    } ~~
+    \subfigure[Glunio mediated top squark production]{
+      \includegraphics[width=0.3\textwidth]{Figures/theory/T1tttt_feyn}
+      \label{fig:T1tttt_feyn}
+    } \\
+    \subfigure[Direct bottom squark production]{
+      \includegraphics[width=0.3\textwidth]{Figures/theory/T2bb_feyn}
+      \label{fig:T2bb_feyn}
+    } ~~
+    \subfigure[Direct top squark production]{
+      \includegraphics[width=0.3\textwidth]{Figures/theory/T2tt_feyn}
+      \label{fig:T2tt_feyn}
+    } 
+    \caption{
+      Graphical representation of the production and decay of supersymmetric particles 
+      for the simplified models considered in this thesis~\cite{SMS}.
+    }
+    \label{fig:simplified-models-feyn}
+  \end{center}
+\end{figure}
+
+Figure~\ref{fig:simplified-models-feyn} displays the decay chains for the models considered in this theis. 
 In the simplified models the masses of the heavy sparticle and of the LSP are free parameters.
 The topology of the model is crucial in determining the reach of experimental searches. 
 In cases where the mass splitting is large the final state typically contains significant
@@ -470,7 +578,7 @@ the momentum imbalanca and hadronic energy is suppressed.
 The simplified models may be used to approximate the impact of searches on a complete theory 
 by determining the relevant simplified topologies contained in the full theory. The impact
 of searches for many different types of signatures may be combined using programes 
-such as FastLim~\cite{}.
+such as FastLim~\cite{Fastlim}.
 % Simplified models with an intermediate particle in the decay may also be considered.
 % For the work contained in this thesis
 
