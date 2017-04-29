@@ -3,7 +3,7 @@
 
 The accurate estimation of SM background yields is crucial for a sensitive and robust
 search for new physics. In this section, the data driven estimations used by
-the \alphat analysis to predict the QCD multijet and electroweak 
+the \alphat~analysis to predict the QCD multijet and electroweak 
 background components are detailed. 
 
 Differences between control region and signal 
@@ -36,63 +36,55 @@ signal contributions.
 \subsection{Data}
 The events recorded by CMS are collected and categorised depending on the trigger selections
 detailed in Section~\ref{sec:ana-trigger}. For the signal hadronic control regions, data passing the \alphat-\scalht,
-\mht-\met and \scalht triggers are collected into the HTMHT, MET and JetHT \emph{primary datasets} respectively.
+\mht-\met~and \scalht~triggers are collected into the HTMHT, MET and JetHT \emph{primary datasets} respectively.
 For the electroweak control regions, data passing the single photon and single muon triggers are collected 
 into the SinglePhoton and SingleMuon primary datasets. These primary datasets are filtered to remove
 any overlaps. The total integrated luminosity of each dataset is measured as $12.9\pm0.8$\ifb.
 
 \subsection{Simulated samples}
-Simulated samples are necessary for background and signal prediction. As detailed below, 
-different \emph{generators} are used to produce the processes.
+
+Simulated samples are necessary for background and signal prediction. 
+The different \emph{generators} used to produce the processes are detailed below.
 
 The processes with the highest contributions to the signal and control regions, 
-including \znunu + jets, Drell-Yan (\dy) + jets, \gj, \ttj, \wj and QCD multijet events, are generated at leading order (LO) 
-in using \MADGRAPH \AMCATNLO~\cite{Alwall:2014hca}. The same generator is used at next-to-leading order (NLO)
-in the strong coupling constant ($\alpha_s$) to generate samples of s-channel production of single top and \ttV events.
+including \znunu~+ jets, Drell-Yan (\dy) + jets, \gj, \ttj, \wj~and QCD multijet events, are generated at leading order (LO) 
+in using \MADGRAPH~\AMCATNLO~\cite{Alwall:2014hca}. The same generator is used at next-to-leading order (NLO)
+in the strong coupling constant ($\alpha_s$) to generate samples of s-channel production of single top and \ttV~events.
 The t-channel and tW-channel single top samples are generated using \POWHEG~\cite{Alioli:2010xd}.
 The diboson samples, WW, WZ and ZZ, are generated using \PYTHIA~\cite{PYTHIA}. 
-The simulated background samples are normalised using cross sections calculated with NLO and NNLO precision.%CITE?
 The full detector response is simulated using the \GEANTfour~\cite{Agostinelli2003250} package for these samples.
 
 The signal samples include both gluino-mediated and direct pair production of squarks in
-association with up to two additional partons. These are generated using \MADGRAPH \AMCATNLO
-with the sparticle decay performed using \PYTHIA  taking 100\% branching fraction 
+association with up to two additional partons. These are generated using \MADGRAPH~\AMCATNLO
+with the sparticle decay performed using \PYTHIA~taking 100\% branching fraction 
 to the specified final state. The cross sections are calculated with
-NLO plus next-to-leading-logatithm (NLL) accuracy~\cite{sparticleXs}. The detector response
-is simulated using the CMS fast simulation package~\cite{fastsim}.
+NLO plus next-to-leading-logatithm (NLL) accuracy~\cite{sparticleXs}. 
 
-% The XX and YY parton distribution functions (PDFs) are used for the generators described above
-The showering and hadronisation is performed using \PYTHIA~\cite{PYTHIA}, with subsequent 
-$\tau$ lepton decay simulated using the dedicated \TAUOLA generator~\cite{TAUOLA}. The effects
-of pileup are simulated by combining the generated output with a minimum bias sample 
-with a mean of twenty simultaneous interactions. This is done in a 12 bunch 
-crossing window of the signal event to include the effects of both 
-out of time and in time pileup to be considered.
 
 \section{Corrections to simulation}
 \label{sec:corr-sim}
 The simulation is corrected to improve the modelling of kinematics and detector effects 
 as they are observed in data. These corrections may be common to many analyses,
-such as reweighting to correct the pileup modelling, or derived specifically for the \alphat 
-analysis, such as the evaluation of cross section corrections in the \alphat phase space, 
+such as reweighting to correct the pile-up modelling, or derived specifically for the \alphat~analysis, 
+such as the evaluation of cross section corrections in the \alphat~phase space, 
 and are detailed in this section.
 
 \subsection{Pileup reweighting}
-The distribution of the pileup interactions in the simulated events is different from
-that in the data and is corrected using the \emph{pileup reweighting} procedure. 
+The distribution of the pile-up interactions in the simulated events is different from
+that in the data and is corrected using the \emph{pile-up reweighting} procedure. 
 
 The reweighting factors are derived as a function of the number 
 of interactions in the bunch crossing. For data, this is derived by measuring the instantaneous luminosity
 for each colliding bunch and multiplying by the cross section 
 of the total inelastic pp interaction, 63 mb. 
 
-The pileup reweighting factors are the ratios of the distributions of the number
+The pile-up reweighting factors are the ratios of the distributions of the number
 of simulated interactions in data and simulation. These are normalised such that the 
 total number of simulated events is unchanged. The uncertainty in this reweighting is derived by 
 constructing alternative weighting factors for variations 
 of the inelastic pp cross section of $\pm5\%$.
 
-\subsection{Top \pt reweighting}
+\subsection{Top \pt~reweighting}
 
 The top \pt~distribution is significantly different in simulation and data for 
 \ttbar~events. A reweighting is carried out based on the result of the CMS 
@@ -108,13 +100,13 @@ Each scale factor corrects a different source of mis-modelling, such as
 object identification, trigger efficiency, tracker efficiency and isolation requirements.
 These are derived from the ratio of the efficiency measured in data to that
 in simulation using methods such as tag-and-probe~\cite{MuonReco} 
-and are typically dependant on the $\eta$, \pt and/or $\phi$ of the relevant object.
+and are typically dependant on the $\eta$, \pt~and/or $\phi$ of the relevant object.
 
 \subsection{B tag scale factor correction}
 
 The b tag scale factors are computed using the ratio in efficiency observed in data
 to that in simulation for identifying a jet as originating from a bottom
-quark. These scale factors depend on simulated jet flavour, \pt and $\eta$. 
+quark. These scale factors depend on simulated jet flavour, \pt~and $\eta$. 
 
 The simulated samples are corrected by reweighting
 each event rather than changing the properties of jets within the event. 
@@ -149,7 +141,7 @@ in Section~\ref{sec:ana-trigger}, and are \scalht, \njet~and \mht~dependant.
 \subsection{Sideband corrections}
 \label{sec:sideband-corrections}
 
-Given the high-\scalht, high-\etmiss selection used in this search, 
+Given the high-\scalht, high-\etmiss~selection used in this search, 
 the normalisations of the simulated samples may not necessarily agree with data. 
 This can be due to the kinematic selection as well as missing higher 
 perturbative order corrections to the overall cross section. 
@@ -168,14 +160,14 @@ to all the steps of the analysis. No uncertainty is considered for these correct
 this will be covered by the systematics derived through the tests described in Section~\ref{sec:closure-tests}.
 
 To take advantage of the full phase space of the sidebands, a simultaneous 
-fit is used to derive the corrections for \gj, \wj, \zj and \ttbar, using the $100<\mht<130$ GeV sideband
-for the \mj and \mmj control region and an \alphat sideband (inverting the \alphat selection per \scalht bin)
-for the \gj control region. 
+fit is used to derive the corrections for \gj, \wj, \zj~and \ttbar, using the $100<\mht<130$ GeV sideband
+for the \mj~and \mmj~control region and an \alphat~sideband (inverting the \alphat~selection per \scalht~bin)
+for the \gj~control region. 
 
-The sideband is binned identically to the control region in \njet, \nb and \scalht and a floating 
+The sideband is binned identically to the control region in \njet, \nb~and \scalht~and a floating 
 parameter per relevant process encodes the correction for that process (fully correlated across all bins).
 The \wj~and \ttbar~processes are mainly constrained by the \mj~sideband while the \zj~and \gj~processes are
-constrained by the \mmj and \gj sidebands respectively. The values of the corrections and their statistical uncertainties
+constrained by the \mmj~and \gj~sidebands respectively. The values of the corrections and their statistical uncertainties
 given by the fit are shown in Table~\ref{tab:sbCorrsFromFit}. The correction derived for \zj~is
 also applied to the \znunu~sample. 
 
@@ -187,7 +179,7 @@ also applied to the \znunu~sample.
   \begin{tabular}
     {cllc}
     \hline\hline
-    \textbf{Process} & \textbf{Sideband} & \textbf{Selection} & \textbf{Corrrection} \\
+    \textbf{Process} & \textbf{Sideband} & \textbf{Selection} & \textbf{Correction} \\
     \hline
     \wj & $100 < \mht < 130 \, \mathrm{GeV}$ & \mj& $1.13 \pm 0.01$ \\
     \zj & $100 < \mht < 130 \, \mathrm{GeV}$ & \mmj& $1.08 \pm 0.01$ \\
@@ -202,7 +194,7 @@ also applied to the \znunu~sample.
 \label{sec:tf-pred}
 The electroweak backgrounds are predicted using the \emph{transfer factor} (TF)
 method. The control regions are binned identically
-to the signal region in \scalht, \nj and \nb. The simulation and data observed in the control region,
+to the signal region in \scalht, \nj~and \nb. The simulation and data observed in the control region,
 $\nobs^{\rm control}(\njet,\nb,\scalht)$ and $\nsim^{\rm control}(\njet,\nb,\scalht)$ 
 , as well as the simulation in the signal region, $\nsim^{\rm signal}(\njet,\nb,\scalht)$, 
 are used to predict the background in the signal region, $\npre^{\rm signal}(\njet,\nb,\scalht)$. 
@@ -225,8 +217,8 @@ The prediction of the relevant process in the signal region can then be written 
     control}(\njet,\nb,\scalht).
 \end{equation}
 
-The \mj control region is used to predict the \wj plus \ttbar~backgrounds (\ttbar/W) while the
-\znunu background is predicted using the \mj, \mmj and \gj control regions. The use of 
+The \mj~control region is used to predict the \wj~plus \ttbar~backgrounds (\ttbar/W) while the
+\znunu background is predicted using the \mj, \mmj~and \gj~control regions. The use of 
 the transfer factor method within the likelihood used by the
 \alphat~analysis is described in detail in Section~\ref{sec:likelihood}.
 %
@@ -244,7 +236,7 @@ acceptance and reconstruction efficiencies and kinematic requirements between si
 and control regions. The values of the transfer factors for the prediction from the \mj,
 \mmj~and \gj~control regions are shown in Figures~\ref{fig:tfSyst_nominal_muToZinv}-\ref{fig:tfSyst_nominal_muToTtw}.
 
-Many systematic effects in the modelling of \scalht, \nb~and \njet for the relevant processes 
+Many systematic effects in the modelling of \scalht, \nb~and \njet~for the relevant processes 
 are expected to cancel or be mitigated in the transfer factor. Residual uncertainties 
 remain due to sources such as theoretical uncertainties (for example
 in predicting \znunu~using \gj~events) and mis-modelling of the reconstruction of the objects
@@ -264,12 +256,12 @@ by up to 30\%, the transfer factor variations are under $10\%$.
   \subfigure[Variation in \ttbar/W~simulation]{
     \includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/mcSystematics12p9fb/Ttw/mu/ratiotfh_ht_mht_alltopPtWeight_Up.pdf}
   } ~~
-  \subfigure[Variation in \mj to \ttbar/W~transfer factor]{
+  \subfigure[Variation in \mj~to \ttbar/W~transfer factor]{
     \includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/mcSystematics12p9fb/Ttw/mu/ratioh_ht_mht_alltopPtWeight_Up.pdf}
   }\\
   \caption{\label{fig:tfSimVar} The relative change in the
   \ttbar/W simulation compared to the $\mj \rightarrow (\ttbar/W)$ transfer
-  factor when varying the top \pt uncertainty to $+1\sigma$.
+  factor when varying the top \pt~uncertainty to $+1\sigma$.
   }
 \end{figure}
 
@@ -286,7 +278,7 @@ between the regions.
 
 The hadronic control region contains a significant electroweak background component, 
 as shown in Figure~\ref{fig:ewk_fail}. This component must be accurately predicted
-using electroweak enriched control regions (with the \mhtmet selection inverted) analogously 
+using electroweak enriched control regions (with the \mhtmet~selection inverted) analogously 
 to the signal region. The remaining QCD multijet contribution in the control region,
 $N_{QCD}^{\rm control}$, then replaces $\nobs^{\rm control}$ in Equation~\ref{equ:pred-method} 
 to predict the QCD multijet contribution in the signal region. 
@@ -296,29 +288,29 @@ to predict the QCD multijet contribution in the signal region.
   \subfigure[Simulated QCD events in the signal region.\label{fig:qcd_pass}]{
     \includegraphics[width=0.45\textwidth]{Figures/qcd/plots/signalQCD_MC}
   } ~
-  \subfigure[Simulated QCD events in the \mhtmet hadronic control region.\label{fig:qcd_fail}]{
+  \subfigure[Simulated QCD events in the \mhtmet~hadronic control region.\label{fig:qcd_fail}]{
     \includegraphics[width=0.45\textwidth]{Figures/qcd/plots/qcdSbQCD_MC}
   } \\
   \subfigure[Transfer factor from simulated QCD events.\label{fig:qcd_ratio}]{
     \includegraphics[width=0.45\textwidth]{Figures/qcd/plots/signalQcdDivSbQcd_MC}
   } ~ 
-  \subfigure[Simulated electroweak events in \mhtmet hadronic control region.\label{fig:ewk_fail}]{
+  \subfigure[Simulated electroweak events in \mhtmet~hadronic control region.\label{fig:ewk_fail}]{
     \includegraphics[width=0.45\textwidth]{Figures/qcd/plots/qcdSbEwk_MC}
    %    \includegraphics[width=0.45\textwidth]{Figures/qcd/v6/Ewk/SigTrig_FailMoM_NJet_vs_HT_bDPhigt0p5_Log}
   } \\
   \caption{Expected number of QCD multijet events determined from
-    simulation, binned according to \njet and \scalht, that (a) satisfy
+    simulation, binned according to \njet~and \scalht, that (a) satisfy
     and (b) fail the requirement $\mhtmet < 1.25$. Also shown in (c)
     is the transfer factor for QCD multijets from hadronic control to signal region, 
     again determined from simulation. Finally, (d) shows the expected number of EWK events
     (V+jets and \ttbar, plus other residual non-multijet backgrounds)
     that fail the $\mhtmet < 1.25$ requirement, again determined from
-    simulation and binned according to \njet and \scalht.}
+    simulation and binned according to \njet~and \scalht.}
   \label{fig:qcd_plots}
 \end{figure}
 
 To determine the electroweak predictions in the hadronic control region transfer factors 
-from the \mhtmet electroweak control regions are constructed and a simultaneous
+from the \mhtmet~electroweak control regions are constructed and a simultaneous
 fit is carried out, similar to that described in Section~\ref{sec:likelihood} for the signal region. 
 This fit includes all systematic variations discussed in Section~\ref{sec:syst-uncs}, 
 derived with the \mhtmet~selection inverted. An unconstrained contribution in the fit, 
@@ -347,7 +339,7 @@ predictions shown in Figure~\ref{fig:qcd_ewk_ratio}. The multijet component is t
     \includegraphics[width=0.45\textwidth]{Figures/qcd/plots/predictedQcdDivEwk_Signal}
   } \\
   \caption{
-    The QCD yields taken from the simultaneous fit binned according to \njet and \scalht are shown in (a).
+    The QCD yields taken from the simultaneous fit binned according to \njet~and \scalht~are shown in (a).
     Shown in (b) is the result of multiplying the observed multijet events predicted
     in (a) by the translation factor from the sideband to the signal
     region determined with simulation (shown in
@@ -363,7 +355,7 @@ predictions shown in Figure~\ref{fig:qcd_ewk_ratio}. The multijet component is t
 The distribution of the QCD multijet contribution in \nb~and \mht~in each \scalht~and \njet~category
 is predicted using the distribution of the electroweak background with the normalisation
 derived as described above. This approximation is necessary due to the very low QCD multijet
-event yields for high \nb and \mht. As the multijet background is typically $\le 1\%$, 
+event yields for high \nb~and \mht. As the multijet background is typically $\le 1\%$, 
 deviations from the electroweak shape in these variables have a small effect on the background prediction.
 
 The multijet contribution in the electroweak control regions is small, typically $<1\%$, and is 
@@ -371,7 +363,7 @@ therefore taken from simulation.
 
 \subsubsection{Validation of the multijet prediction}
 
-The QCD multijet prediction relies on an extrapolation in the \mhtmet requirement.
+The QCD multijet prediction relies on an extrapolation in the \mhtmet~requirement.
 Significant mis-modelling of this variable can bias the QCD prediction and therefore a validation
 of this extrapolation is carried out using an additional hadronic control 
 region which is defined by inverting the $\bdphi > 0.5$ requirement. The ratio of events passing and failing 
@@ -385,7 +377,7 @@ Figure~\ref{fig:qcd_ewk_ratio}, taken as uncorrelated in each category.
 \begin{figure}[h!]
   \begin{center}        
     \includegraphics[width=0.6\textwidth]{figures/qcd/plots/doubleQcdSbSrRatio1D}
-    \caption{ Ratio of the measurement of \rmhtmet, the pass/fail ratio for the \mhtmet selection, from data and Monte Carlo in the $\bdphi < 0.5$ sideband in (\scalht, \njet) bins.  
+    \caption{ Ratio of the measurement of \rmhtmet, the pass/fail ratio for the \mhtmet~selection, from data and Monte Carlo in the $\bdphi < 0.5$ sideband in (\scalht, \njet) bins.  
     }
     \label{fig:RR_qcd}
   \end{center} 
@@ -401,7 +393,7 @@ and using the data driven \emph{closure tests}.
 \label{sec:syst-uncs-var}
 In Section~\ref{sec:corr-sim} the corrections applied to the simulated samples are summarised. For each 
 simulated event the correction may apply to the weight carried by that events (such as b tag efficiency
-or pileup reweighting) or to the property of objects in the event (such as the jet energy scale). 
+or pile-up reweighting) or to the property of objects in the event (such as the jet energy scale). 
 These corrections carry uncertainties that may effect the predictions of the \alphat~analysis.
 To determine their effect, for each source of uncertainty the correction is varied to their
 value at $\pm$ 1 $\sigma$ and the prediction from simulation re-evaluated. The inclusion of the systematic uncertainty 
@@ -413,20 +405,20 @@ the \mht~shape is discussed in Section~\ref{sec:syst-on-shape}.
 
 \subsubsection{Pileup reweighting}
 
-The uncertainty on the inelastic pp cross section of $\pm5\%$ is propagated by deriving the pileup
+The uncertainty on the inelastic pp cross section of $\pm5\%$ is propagated by deriving the pile-up
 weights for the cross section at the $\pm1\%$ sigma values. These weights are used to derive
 alternative predictions for each variation. The effect on the transfer factors is shown in 
 Figures~\ref{fig:tfSyst_pu_muToZinv}-\ref{fig:tfSyst_pu_muToTtw}. Typically the uncertainty 
-introduced by pileup reweighting is small, varying up to $\sim2\%$.
+introduced by pile-up reweighting is small, varying up to $\sim2\%$.
 
 \subsubsection{Jet energy scale}
 \label{sec:tfSyst_jec}
-The energies of jets used in the analysis are corrected as a function of their \pt and
+The energies of jets used in the analysis are corrected as a function of their \pt~and
 $\eta$ via the procedure described in Section~\ref{sec:jec}. The uncertainty on
-this correction is propagated through the analysis. As the \scalht and jet multiplicity binning is 
+this correction is propagated through the analysis. As the \scalht~and jet multiplicity binning is 
 mirrored in signal and control regions, the variation in the transfer factors is small.
 To avoid statistical fluctuations the variation is averaged across~\nb. The relative change 
-in the transfer factors is presented as a function of \scalht and jet category 
+in the transfer factors is presented as a function of \scalht~and jet category 
 in Figures~\ref{fig:tfSyst_jec_muToZinv}-\ref{fig:tfSyst_jec_muToTtw}.
 The changes are typically in the range of $1-5\%$.
 
@@ -438,7 +430,7 @@ Since no extrapolation is performed in the background prediction across differen
 \nb multiplicities, the analysis is expected to be robust against variations in the 
 b tagging efficiency. The scale factors associated with b and c jets are varied together 
 (since their measurements are correlated), while those associated with light jets are varied separately.
-The relative change in the transfer factors is presented as a function of \scalht and jet category 
+The relative change in the transfer factors is presented as a function of \scalht~and jet category 
 for the variations of scale factors for both heavy and light b tag SF.
 in Figures~\ref{fig:tfSyst_bsf_muToZinv}-\ref{fig:tfSyst_bsfl_muToTtw}.
 They are typically in the range of $1-3\%$.
@@ -446,23 +438,23 @@ They are typically in the range of $1-3\%$.
 \subsubsection{Lepton trigger/identification/isolation efficiency}
 \label{sec:tfSyst_lepton}
 
-Leptons out of \pt and $\eta$ acceptance, or within detector
+Leptons out of \pt~and $\eta$ acceptance, or within detector
 acceptance but not identified properly by lepton identification or isolation
 requirements contribute to the lost lepton background. The variation 
 in the lost lepton background is measured using a simulated sample with no lepton veto.
 Using this sample, the variation in probability for reconstructing a lepton in the signal region,
-and the variation for reconstructing a muon for the \mj control region is determined with 
+and the variation for reconstructing a muon for the \mj~control region is determined with 
 appropriate correlation. Each source of systematic uncertainty 
-on the muon and electron scale factors (trigger, identification and isolation) is varied seperately. 
-An additional uncertainty is considered on the \mj control region for the muon tracking
+on the muon and electron scale factors (trigger, identification and isolation) is varied separately. 
+An additional uncertainty is considered on the \mj~control region for the muon tracking
 scale factor. The size of the uncertainty for these variations on the transfer factors are
 shown in Figures~\ref{fig:tfSyst_lepton_muToZinv}-\ref{fig:tfSyst_lepton_muToTtw}
 and typically vary from $1-3\%$.
 
 \subsubsection{Photon trigger uncertainty}
 \label{sec:tfSyst_pho}
-The photon trigger correction is derived for the \gj control region. The systematic uncertainty is
-taken as the size of the inefficiency measured. The relative change in the \gj transfer factor 
+The photon trigger correction is derived for the \gj~control region. The systematic uncertainty is
+taken as the size of the inefficiency measured. The relative change in the \gj~transfer factor 
 is presented in Figure~\ref{fig:tfSyst_photonTrigger_gjToZinv} and is typically under $\sim3\%$.
 
 \subsubsection{Signal trigger uncertainty}
@@ -473,7 +465,7 @@ electron reference triggers. This uncertainty affects only the signal region pre
 and not the control region predictions. The relative change in the transfer factors is typically in the range
 $1-7\%$, as presented in Figs.~\ref{fig:tfSyst_trigger_muToZinv}-\ref{fig:tfSyst_trigger_muToTtw}.
 
-\subsubsection{Top \pt reweighting}
+\subsubsection{Top \pt~reweighting}
 \label{sec:topSyst}
 The uncertainty in the top \pt~reweighting is taken as the size of the reweighting
 applied to each event. The relative change in the transfer factors is typically in the range
@@ -501,28 +493,28 @@ R_{\text{AB}} = \frac{N^{A}_{\text{data}}-N^{B}_{\text{pred}}}{N^{B}_{\text{pred
 
 The closure between the samples is defined as the significance of the deviation of this ratio from zero 
 considering statistical uncertainties in both observation and simulation in samples A and B.
-The tests are performed separately per \njet and \scalht category to investigate the level of closure. 
-The uncertainties are derived per \scalht bin by merging the \njet categories into 
+The tests are performed separately per \njet~and \scalht~category to investigate the level of closure. 
+The uncertainties are derived per \scalht~bin by merging the \njet~categories into 
 the symmetric and asymmetric (including monojet) topologies. For each such category, the systematic
 uncertainty is defined by the value of $R_{\text{AB}}$ added in quadrature to its statistical uncertainty.
-For tests involving the \mmj sample, which has lower statistical power, pairs of \scalht bins 
+For tests involving the \mmj~sample, which has lower statistical power, pairs of \scalht~bins 
 are merged for the closure tests. 
 
 The systematics derived using these tests are applied to the transfer factors. They are considered
-as un-correlated per \scalht and jet topology (correlated in other categorisations). The tests carried 
+as un-correlated per \scalht~and jet topology (correlated in other categorisations). The tests carried 
 out and systematic biases probed are discussed below.
 
 \subsubsection{Extrapolation in \alphat~and \bdphi}
 
-The extrapolation in \alphat and \bdphi from the \mj and \mmj control regions 
-and in \bdphi for the \gj control region to the signal region may introduce bias
- due to modelling differences in data and simulation. To test the \alphat (\bdphi) modelling the \mj sample is divided 
-into events with an \alphat (\bdphi) requirement and with the requirement inverted (corresponding
-to samples A and B in Equation~\ref{equ:abPred}). This requirement is decided by the signal \scalht bin for 
-\alphat and is 0.5 for \bdphi. The systematic is derived from the \alphat closure tests for
-bins with $\scalht < 900 \GeV$ and the \bdphi tests for $\scalht > 900 \GeV$.
+The extrapolation in \alphat~and \bdphi~from the \mj~and \mmj~control regions 
+and in \bdphi~for the \gj~control region to the signal region may introduce bias
+ due to modelling differences in data and simulation. To test the \alphat~(\bdphi) modelling the \mj~sample is divided 
+into events with an \alphat~(\bdphi) requirement and with the requirement inverted (corresponding
+to samples A and B in Equation~\ref{equ:abPred}). This requirement is decided by the signal \scalht~bin for 
+\alphat and is 0.5 for \bdphi. The systematic is derived from the \alphat~closure tests for
+bins with $\scalht < 900 \GeV$ and the \bdphi~tests for $\scalht > 900 \GeV$.
 
-The result of these tests are shown in Figure~\ref{fig:closureAlphaT} as a function of \scalht and \njet. 
+The result of these tests are shown in Figure~\ref{fig:closureAlphaT} as a function of \scalht~and \njet. 
 The grey band is the systematic uncertainty propagated through the analysis, 
 taken as un-correlated per \scalht~bin and jet topology
 (symmetric/asymmetric). The systematic derived from these tests is
@@ -537,9 +529,9 @@ in the range $4-32\%$.
     ~~
     \subfigure[]{\includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/closureTests/bDPhi_asym__noFit.pdf}} 
 
-    \caption{Tests in data probing the \alphat (top row) and \bdphi (bottom row) extrapolation for each
-      \njet category (open symbols) overlaid on top of the systematic
-      uncertainty estimates used for each of the seven \scalht bins (shaded bands). 
+    \caption{Tests in data probing the \alphat~(top row) and \bdphi~(bottom row) extrapolation for each
+      \njet~category (open symbols) overlaid on top of the systematic
+      uncertainty estimates used for each of the seven \scalht~bins (shaded bands). 
       The symmetric (asymmetric) jet topologies are shown in the left (right) plot. 
     }
     \label{fig:closureAlphaT}
@@ -547,18 +539,18 @@ in the range $4-32\%$.
 \end{figure}
 \subsubsection{Modelling of the W acceptance due to polarisation effects}
 
-The production mechanism of W bosons from pp collisions means high \pt W bosons are predominantly left 
+The production mechanism of W bosons from pp collisions means high \pt~W bosons are predominantly left 
 handed~\cite{lhW}. This means that $W^{+}$ bosons will decay to the left handed neutrino \emph{along}
 its direction of motion while the lepton points backwards. The $W^{-}$ bosons behave oppositely, decaying
 to the lepton along its direction of motion. As the signal region relies on boosted neutrinos 
-for acceptance and the \mj control region on a boosted lepton there is a corresponding preponderance
-of $W^{+}$ over $W^{-}$ in the signal region compared to \mj control region. This may introduce bias
-in the prediction and a data driven test is carried out by splitting the \mj sample into events 
+for acceptance and the \mj~control region on a boosted lepton there is a corresponding preponderance
+of $W^{+}$ over $W^{-}$ in the signal region compared to \mj~control region. This may introduce bias
+in the prediction and a data driven test is carried out by splitting the \mj~sample into events 
 with either a $\mu^{+}$ or $\mu^{-}$ (corresponding to samples A and B in Equation~\ref{equ:abPred}).
 
-The results are shown in Figure~\ref{fig:closureMuPToMuM} as a function of \scalht and \njet. 
+The results are shown in Figure~\ref{fig:closureMuPToMuM} as a function of \scalht~and \njet. 
 The grey band is the systematic uncertainty propagated through the analysis, 
-taken as un-correlated per each \scalht bin and jet topology (symmetric/asymmetric).
+taken as un-correlated per each \scalht~bin and jet topology (symmetric/asymmetric).
 The systematic derived from these tests is in the range $3-12\%$.
 
 
@@ -570,8 +562,8 @@ The systematic derived from these tests is in the range $3-12\%$.
     \subfigure[]{\includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/closureTests/muplus_muminus_asym__noFit.pdf}} 
     \caption{Data-driven tests probing the W polarisation effects. 
       These are shown for each
-      \njet category (open symbols) overlaid on top of the systematic
-      uncertainty estimates used for each of the seven \scalht bins
+      \njet~category (open symbols) overlaid on top of the systematic
+      uncertainty estimates used for each of the seven \scalht~bins
       (shaded bands). 
       The symmetric (asymmetric) jet topologies are shown in the left (right) plot.       
     }
@@ -581,15 +573,15 @@ The systematic derived from these tests is in the range $3-12\%$.
 
 \subsubsection{Modelling of the W/Z ratio}
 
-The \alphat analysis uses \mj events to predict the \znunu background. The extrapolation 
-between W and Z is tested by using the \mj control region to predict the \mmj control region.
+The \alphat~analysis uses \mj~events to predict the \znunu~background. The extrapolation 
+between W and Z is tested by using the \mj~control region to predict the \mmj~control region.
 These tests probe differences in the modelling of the Z and W, potential acceptance and
 reconstruction effects (expected to be subdominant) and the effect of 
 the \ttbar~contribution to \mj.
 
-The results are shown in Figure~\ref{fig:closureMuToMuMu} as a function of \scalht and \njet. 
+The results are shown in Figure~\ref{fig:closureMuToMuMu} as a function of \scalht~and \njet. 
 The grey band is the systematic uncertainty propagated through the analysis, 
-taken as un-correlated per each \scalht bin and jet topology (symmetric/asymmetric). The systematic derived from these tests is
+taken as un-correlated per each \scalht~bin and jet topology (symmetric/asymmetric). The systematic derived from these tests is
 in the range $3-20\%$.
 
 
@@ -599,10 +591,10 @@ in the range $3-20\%$.
     \subfigure[]{\includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/closureTests/mu_mumu_sym_half_noFit.pdf}}
     ~~
     \subfigure[]{\includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/closureTests/mu_mumu_asym_half_noFit.pdf}} 
-    \caption{Data-driven tests probing the use of the \mj control sample
-      to predict the \znunu background for each
-      \njet category (open symbols) overlaid on top of the systematic
-      uncertainty estimates used for each of the seven \scalht bins (shaded bands).  
+    \caption{Data-driven tests probing the use of the \mj~control sample
+      to predict the \znunu~background for each
+      \njet~category (open symbols) overlaid on top of the systematic
+      uncertainty estimates used for each of the seven \scalht~bins (shaded bands).  
       The symmetric (asymmetric) jet topologies are shown in the left (right) plot. 
     }
     \label{fig:closureMuToMuMu}
@@ -610,14 +602,14 @@ in the range $3-20\%$.
 \end{figure}
 \subsubsection{Modelling of the Z/$\gamma$ ratio}
 
-The \alphat analysis uses \gj events to predict the \znunu background. The extrapolation 
-between $\gamma$ and Z is tested by using the \gj control region to predict the \mmj control region.
+The \alphat~analysis uses \gj~events to predict the \znunu~background. The extrapolation 
+between $\gamma$ and Z is tested by using the \gj~control region to predict the \mmj~control region.
 These tests probe differences in the modelling of the Z and $\gamma$ as well as potential acceptance and
 reconstruction effects for $\mu$ and $\gamma$ and the effect of contamination of non-prompt photons.
 
-The results are shown in Figure~\ref{fig:closurePhoToMuMu} as a function of \scalht and \njet. 
+The results are shown in Figure~\ref{fig:closurePhoToMuMu} as a function of \scalht~and \njet. 
 The grey band is the systematic uncertainty propagated through the analysis, 
-taken as un-correlated per each \scalht bin and jet topology (symmetric/asymmetric). The systematic derived from these tests is
+taken as un-correlated per each \scalht~bin and jet topology (symmetric/asymmetric). The systematic derived from these tests is
 in the range $7-15\%$.
 
 
@@ -627,8 +619,8 @@ in the range $7-15\%$.
     ~~
     \subfigure[]{\includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/closureTests/phot_mumu_asym_half_noFit.pdf}} 
     \caption{Data-driven tests probing the Z/$\gamma$ ratio for each
-      \njet category (open symbols) overlaid on top of the systematic
-      uncertainty estimates used for each of the seven \scalht bins
+      \njet~category (open symbols) overlaid on top of the systematic
+      uncertainty estimates used for each of the seven \scalht~bins
       (shaded bands). 
       The symmetric (asymmetric) jet topologies are shown in the left (right) plot.      
     }
@@ -638,15 +630,15 @@ in the range $7-15\%$.
 
 \subsubsection{Modelling of the W/\ttbar~admixture}
 
-The \mj control region is used to predict the \wj and \ttbar~processes. However, the admixture
+The \mj~control region is used to predict the \wj~and \ttbar~processes. However, the admixture
 between these processes may not be identical in the signal and control region.
 To probe potential bias introduced due to this admixture change the sample is split into events with
 0 and 1 b tag (corresponding to samples A and B in Equation~\ref{equ:abPred}). These tests will also probe 
 uncertainties related to the b tagging efficiency and related scale factors. 
 
-The results are shown in Figure~\ref{fig:closureBTag} as a function of \scalht and \njet. 
+The results are shown in Figure~\ref{fig:closureBTag} as a function of \scalht~and \njet. 
 The grey band is the systematic uncertainty propagated through the analysis, 
-taken as un-correlated per each \scalht bin and jet topology (symmetric/asymmetric). The systematic derived from these tests is
+taken as un-correlated per each \scalht~bin and jet topology (symmetric/asymmetric). The systematic derived from these tests is
 in the range $4-25\%$.
 
 \begin{figure}[h!]
@@ -655,8 +647,8 @@ in the range $4-25\%$.
     ~~
     \subfigure[]{\includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/closureTests/eq0b_eq1b_muon_asym__noFit.pdf}} 
     \caption{Data-driven tests probing the W and \ttbar~admixture 
-      in each \njet category (open symbols) overlaid on top of the systematic
-      uncertainty estimates used for each of the seven \scalht bins
+      in each \njet~category (open symbols) overlaid on top of the systematic
+      uncertainty estimates used for each of the seven \scalht~bins
       (shaded bands). 
       The symmetric (asymmetric) jet topologies are shown in the left (right) plot.      
     }
@@ -717,13 +709,13 @@ utilised to validate the \mht~modelling using the data in the control regions.
 The level of closure in the control regions is used
 to derive alternative templates accounting for systematic uncertainties.
 
-When looking at the \mht dimension inclusively in \scalht there are
+When looking at the \mht~shape inclusively in \scalht~there are
 large theoretical uncertainties that originate from mixing events
 at different scales. These uncertainties can be mitigated if the events 
 are binned according to a variable, such as \scalht, 
 which is strongly correlated with the scale of the event. 
 After this categorisation is applied, the uncertainty in 
-the distribution of the \mht variable
+the distribution of the \mht~variable
 (as well as any other MET-like variable) is expected to be 
 mainly affected by the MC modelling of the particle 
 decays and, to a lesser extent, by jet reconstruction effects, 
@@ -735,7 +727,7 @@ to determine the validity of the zero bias hypothesis after scale anchoring.
 
 In Section~\ref{sec:valid13} the scale anchoring approach is validated and 
 in Section~\ref{sec:systMhtDimension} the procedure used to 
-extract the systematic uncertainties in the \mht dimension is described 
+extract the systematic uncertainties in the \mht~shape is described 
 and the results summarised.
 
 The systematic uncertainties extracted from the control regions
@@ -761,19 +753,19 @@ distribution is defined in Eq.~\ref{equ:orthog-polynomial}.
 where $\bar{x}$ is the weighted mean of the distribution and $p_k = 0$ 
 implies the $k^{th}$ order is negligible.
 In Figure~\ref{fig:linearMotiv} the data/MC 
-distribution against \mht for the control region selection 
+distribution against \mht~for the control region selection 
 (detailed in \cite{Khachatryan:2016pxa}) is shown inclusive 
-in \scalht and categories. By fitting a first order
+in \scalht~and categories. By fitting a first order
 orthogonal polynomial it can be seen that there is a large bias. 
 This bias in the data/MC agreement is expected as events 
 at different scales are mixed.
 The first order orthogonal polynomial
 is used to measure the level of bias remaining 
-when the \mht dimension is binned in \scalht.
+when the \mht~shape is binned in \scalht.
 This allows the normalisation parameter to be
 decorrelated from the parameter which controls
 the distribution in \mht.
-The normalisation in each \scalht bin and its systematics 
+The normalisation in each \scalht~bin and its systematics 
 is then defined following the data-driven method used in Run 1, see Sec,~\ref{sec:systMhtDimension} for details.
 \begin{figure}[h!]
   \centering
@@ -787,12 +779,12 @@ is then defined following the data-driven method used in Run 1, see Sec,~\ref{se
     \includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/shapeOutput12FbInc/scale_ht_variable_mht/DoubleMu/Inc_Inc/finalFits/mht_Inc_Inc_ht_Inc_DoubleMu_Graph.pdf}
   }\\
   \caption{\label{fig:linearMotiv} 
-  The data/MC distribution against \mht for an inclusive selection on category and \scalht
+  The data/MC distribution against \mht~for an inclusive selection on category and \scalht
   showing the results of a linear fit. A large bias is observed as well as a low p-value for the constant fits. 
  }
 \end{figure}
 
-By anchoring the scale using binning in the \scalht dimension the remaining
+By anchoring the scale using binning in the \scalht~dimension the remaining
 bias is assumed to be negligible. In Figure~\ref{fig:linearFitExamples} 
 example fits of an orthogonal linear function to the data/MC ratio 
 are shown for the three control regions. Comparing to the inclusive distribution 
@@ -804,7 +796,7 @@ in Figure~\ref{fig:pulls} and can be seen in each case to have mean and sigma fa
 consistent with zero and one respectively. 
 and the uncertainty on the parameter is correctly estimated by the fit.
 Fig.~\ref{fig:frenchFlagPulls} shows the distribution of the pulls 
-in category and \scalht bins showing no significant trend across the phase space.
+in category and \scalht~bins showing no significant trend across the phase space.
 The linear fits to the data/MC ratio additionally show a p-value following 
 a uniform distribution between 0 and 1 as shown in Figure~\ref{fig:pValues}.
 This confirms that the linear component is reasonably compatible with zero ($p_1 = 0$), %i.e. no significant bias is observed, 
@@ -835,7 +827,7 @@ This confirms that the linear component is reasonably compatible with zero ($p_1
     \includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/shapeOutput12Fb/scale_ht_variable_mht/DoubleMu/eq0b_eq3a/finalFits/mht_eq0b_eq3a_ht_300_350_DoubleMu_Graph.pdf}
   }\\
   \caption{\label{fig:linearFitExamples} 
-  The data/MC distribution against \mht for example categories and control regions.
+  The data/MC distribution against \mht~for example categories and control regions.
   The large bias in the linear component seen in Figure~\ref{fig:linearMotiv} is mitigated.}
 \end{figure}
 
@@ -867,8 +859,8 @@ This confirms that the linear component is reasonably compatible with zero ($p_1
   }~~
   \\
   \caption{\label{fig:frenchFlagPulls} The pull distribution of the linear parameter from the flat hypothesis across all
-  \scalht bins and categories. There are no significant pulls for the \scalht binned
-  fits while the \scalht inclusive case shows very large pulls as expected.}
+  \scalht~bins and categories. There are no significant pulls for the \scalht~binned
+  fits while the \scalht~inclusive case shows very large pulls as expected.}
 \end{figure}
 
 \begin{figure}[h!]
@@ -885,9 +877,9 @@ This confirms that the linear component is reasonably compatible with zero ($p_1
   \\
   \caption{\label{fig:pValues} The distributions of the p-value for the linear fit.} 
 \end{figure}
-\subsection{Deriving systematics on the \mht~dimension}
+\subsection{Deriving systematics on the \mht~shape}
 \label{sec:systMhtDimension}
-The systematic in the \mht dimension is extracted from the hypothesis
+The systematic in the \mht~shape is extracted from the hypothesis
 of no bias. This is done by using the control regions 
 to determine the statistical precision to which this hypothesis can
 be confirmed. This information is then used to derive the systematic 
@@ -895,12 +887,12 @@ uncertainty, as described in the following.
 
 Each background in the signal region (\ttbar/W  and \zInv~) is predicted 
 using several control regions. In order to determine the uncertainty in
-the \mht dimension a combined linear fit is made over all relevant control regions. 
+the \mht~shape a combined linear fit is made over all relevant control regions. 
 A requirement of at least 10 events and a non-trivial
 number of degrees of freedom is made to ensure a reasonable fit. Where this
-requirement is not satisfied the \mht distribution is not used in the signal region.
-An \mht requirement of 130 \GeV is made to ensure a similar phase space to 
-the signal region (this maps the minimum \mht due to the \alt requirements in the signal region).
+requirement is not satisfied the \mht~distribution is not used in the signal region.
+An \mht~requirement of 130 \GeV~is made to ensure a similar phase space to 
+the signal region (this maps the minimum \mht~due to the \alphat~requirements in the signal region).
 The uncertainty on the linear parameter from the fit is then
 used to define the up and down one sigma variations of the nominal template.
 As a conservative estimate, the systematic uncertainty in each category, and separately
@@ -910,7 +902,7 @@ added in quadrature to its uncertainty.
 
 % Example templates with this uncertainty are shown in Figure~\ref{fig:mht-templates-sym}, \ref{fig:mht-templates-asym} 
 % in Section~\ref{sec:results}. Here the template variations for both relevant 
-% backgrounds are combined to show the overall uncertainty on the \mht dimension. 
+% backgrounds are combined to show the overall uncertainty on the \mht shape. 
 % The scatter of the points around one is compatible with statistical fluctuations.
 
 An additional validation is carried out by comparing expected and observed uncertainties
@@ -936,7 +928,7 @@ zero bias hypothesis as well as validating the method for deriving expected unce
   \subfigure[\label{fig:observedTtw} Observed uncertainties]{
     \includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/shapeOutput12Fb/scale_ht_variable_mht/Ttw/fitOut/Linear2DShiftMean/frenchFlagErrComplete_Linear2DShiftMean_p1_Ttw.pdf}
   }\\
-  \caption{\label{fig:expectedObservedTtw} Expected relative uncertainties per 100 \GeV shown for \ttbar/W in Figure~\ref{fig:expectedTtw} are consistent
+  \caption{\label{fig:expectedObservedTtw} Expected relative uncertainties per 100 \GeV~shown for \ttbar/W in Figure~\ref{fig:expectedTtw} are consistent
   with observed uncertainties shown in Figure~\ref{fig:observedTtw}.}
 \end{figure}
 
@@ -948,7 +940,7 @@ zero bias hypothesis as well as validating the method for deriving expected unce
   \subfigure[\label{fig:observedZinv} Observed uncertainties]{
     \includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/shapeOutput12Fb/scale_ht_variable_mht/Zinv/fitOut/Linear2DShiftMean/frenchFlagErrComplete_Linear2DShiftMean_p1_Zinv.pdf}
   }\\
-  \caption{\label{fig:expectedObservedZinv}Expected relative uncertainties per 100 \GeV shown for \zInv~ in Figure~\ref{fig:expectedZinv} are consistent
+  \caption{\label{fig:expectedObservedZinv}Expected relative uncertainties per 100 \GeV~shown for \zInv~ in Figure~\ref{fig:expectedZinv} are consistent
   with observed uncertainties shown in Figure~\ref{fig:observedZinv}.}
 \end{figure}
 
@@ -966,16 +958,16 @@ zero bias hypothesis as well as validating the method for deriving expected unce
 
 The effect on the \mht~shape of the uncertainties derived from variations in simulation 
 (described in Section~\ref{sec:syst-uncs-var}) are included within the likelihood.
-In this section, the size of the variation of the \mht distribution under $\pm1\sigma$ shifts of the
+In this section, the size of the variation of the \mht~distribution under $\pm1\sigma$ shifts of the
 sources of systematic uncertainty and the orthogonal polynomial systematic uncertainty
-described in \ref{sec:valid13} are compared. In the likelihood, the \mht shape and transfer factors
+described in \ref{sec:valid13} are compared. In the likelihood, the \mht~shape and transfer factors
 are varied simultaneously for each source of uncertainty, as discussed in Section~\ref{sec:likelihood}.
 
-To study the effect of the systematic variations on the \mht shape, 
-Figures~\ref{fig:mcCompLow} and \ref{fig:mcCompHigh} show the \mht variations in two representative \scalht 
-bins and jet categories. The templates for each $\pm 1 \sigma$ variation are normalised to the
+To study the effect of the systematic variations on the \mht~shape, 
+Figures~\ref{fig:mcCompLow} and \ref{fig:mcCompHigh} show the \mht~variations in two representative \scalht~bins 
+and jet categories. The templates for each $\pm 1 \sigma$ variation are normalised to the
 nominal template such that only the shape is varied.
-% To show the effect across all jet categories, except the monojet categories for which the \mht dimension is not used,
+% To show the effect across all jet categories, except the monojet categories for which the \mht shape is not used,
 % and \scalht bins Fig~\ref{fig:lastBinVar} shows the maximum upwards/downwards variation in the last 
 % \mht bin as a proportion of the orthogonal polynomial variation.
 

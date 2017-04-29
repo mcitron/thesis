@@ -5,7 +5,7 @@ During Run 2, the LHC has provided collisions at an energy of 13\TeV~and at
 a peak luminosity of $14\times10^{33}cm^{-2}s^{-1}$, marking a signifcant increase
 in peak energy and luminosity provided during Run 1 (8\TeV~and $7\times10^{33}cm^{-2}s^{-1}$).
 With a spacing between bunches of 25ns an average of 25 simlutaneous interactions are 
-produced per bunch crossing. This high luminosity and pileup provides a challenging
+produced per bunch crossing. This high luminosity and pile-up provides a challenging
 environment for the L1 trigger system during Run 2, which must continue to provide 
 an input rate to the HLT of 100kHz, in conditions that exceed design specifications. 
 Simply increasing thresholds on the L1 trigger seeds would cause
@@ -35,7 +35,7 @@ from the Global Muon Trigger (GMT) and makes the final trigger decision.
 The upgrade of the GCT was carried out in two stages. The first stage,
 Upgrade Calorimetric Trigger (UCT), was used for data taking during 2015
 and used updated firmware and algorithms to allow improved jet and object 
-identification, including pileup subtraction \cite{uct}. In the second stage the 
+identification, including pile-up subtraction \cite{uct}. In the second stage the 
 architecture was entirely replaced by the Time Multiplexed Trigger (TMT) 
 to allow \emph{time multiplexing}, whereby each
 event is processed entirely within one card using the full trigger tower granularity. 
@@ -81,18 +81,18 @@ illustrated in Figure~\ref{fig:inputres}.
 \section{L1 jet algorithm}
 \label{algo}
 
-The increase in pileup and luminosity in Run 2 makes triggering with jets
+The increase in pile-up and luminosity in Run 2 makes triggering with jets
 significantly more challenging than during Run 1. To maintain sensitivity to
 new physics the upgrade jet identification and reconstruction 
 algorithm must provide high efficiencies and low rates for L1 trigger seeds.
-This performance must be maintained for high pileup scenarios.
+This performance must be maintained for high pile-up scenarios.
 
 The TMT architecture provides several advantages over the GCT system which can be 
 exploited in designing the jet algorithm. These include significantly increased processing power
 and granularity (enhanced by factor 16). More flexible algorithms, which 
 exploit smaller features than previously accessible, can be defined. This is exploited in the 
 use of an improved jet clustering algorithm, described in Section~\ref{sec:jet_algo}, as well as 
-online pileup subtraction, described in Section~\ref{sec:pileup_algo}, for jet 
+online pile-up subtraction, described in Section~\ref{sec:pileup_algo}, for jet 
 identification and reconstruction with the TMT.
 
 \subsection{L1 jet clustering}
@@ -101,7 +101,7 @@ The GCT algorithm uses a $3\times3$ calorimeter region sliding jet window with a
 to reconstruction jets in the range $|\eta| < 5$. The algorithm scans the calorimeter in increments
 of calorimeter regions and clusters a jet if the energy in the central seed region is greater than 
 both $5\GeV$ and each of the eight bordering regions. The threshold of $5\GeV$ was added during 
-the 2012 8\TeV run, when the number of pileup interactions increased, to remove soft pileup jets.
+the 2012 8\TeV run, when the number of pile-up interactions increased, to remove soft pile-up jets.
 The $12\times12$ TT jet size ($\Delta\eta\times\Delta\phi = 1.04\times1.04$) corresponds 
 approximately to $R=0.5$ for the anti$k_T$ jet algorithm used in offline reconstruction.
 
@@ -141,7 +141,7 @@ parameter of 0.4, described in Section~\ref{sec:jet_reco}.
 
 The trigger tower deposits were generated using a simulated sample of 
 top pair-production (\ttj) \footnote{In this section all simulated samples used have conditions 
-of $\sqrt(s) = 13TeV$, bunch spacing $50ns$ and pileup Gaussian distributed around $40$ simultaneous interactions.} 
+of $\sqrt(s) = 13TeV$, bunch spacing $50ns$ and pile-up Gaussian distributed around $40$ simultaneous interactions.} 
 due to the plentiful sample of jets produced in this process. The anti-$k_T$ algorithm is run over the same inputs as
 used for the L1 algorithm with the \FASTJET package~\cite{fastjet}.
 
@@ -175,7 +175,7 @@ the offline quantities. The baseline quantities that are constructed are
 
 The quantities made using L1 jets require a minimum \pt of 20\GeV. As will be discussed in 
 Section~\ref{sec:trig_perf}, this requirement provides additional robustness against soft
-jet reconstructed from detector noise or pileup. Additional quantities based 
+jet reconstructed from detector noise or pile-up. Additional quantities based 
 on jets and/or energy sums may also be used to define trigger seeds. 
 A study of the performance of one such variable is detailed in Section~\ref{sec:cross_trigger}.
 
@@ -183,32 +183,32 @@ A study of the performance of one such variable is detailed in Section~\ref{sec:
 \label{sec:pileup_algo}
 Simultaneous soft interactions cause additional energy to be deposited throughout
 the detector. This will be approximately isotropically distributed ($\sim1\GeV$ per unit area), however, variations
-in detector response as well as the profile of pileup events can cause $\eta$ and,
+in detector response as well as the profile of pile-up events can cause $\eta$ and,
 to a lesser extent $\phi$ dependence. In addition, event-by-event fluctuations in the distribution 
-and magnitude of the pileup deposits can greatly affect calorimeter objects. 
-For jets, pileup can both increase the energy of jets associated to the hard 
-scatter as well as causing \emph{pileup jets} to be clustered 
-entirely from pileup energy deposits.
+and magnitude of the pile-up deposits can greatly affect calorimeter objects. 
+For jets, pile-up can both increase the energy of jets associated to the hard 
+scatter as well as causing \emph{pile-up jets} to be clustered 
+entirely from pile-up energy deposits.
 
-Pileup subtraction at L1 aims to remove pileup contributions such that the trigger
+Pileup subtraction at L1 aims to remove pile-up contributions such that the trigger
 decision is unbiased by the presence of simultaneous interactions. Changes during running
-to detector response and beam conditions as well as the random nature of pileup necessitate an event-by-event
-estimation and mitigation of the pileup contribution. For the TMT, this must be done using only the calorimeter as 
+to detector response and beam conditions as well as the random nature of pile-up necessitate an event-by-event
+estimation and mitigation of the pile-up contribution. For the TMT, this must be done using only the calorimeter as 
 tracker information is unavailable. 
 
-Several methods of pileup subtraction that meet the stringent latency requirement
+Several methods of pile-up subtraction that meet the stringent latency requirement
 are discussed in this section. These rely on both global and local estimations of 
-pileup in each event to perform pileup correction and reject pileup jets. 
+pile-up in each event to perform pile-up correction and reject pile-up jets. 
 Local methods are more susceptible to statistical fluctuations, however,
 unlike global methods, they allow anisotropy in the 
-pileup distribution to be considered.
+pile-up distribution to be considered.
 
 \subsection{Global $\rho$~subtraction}
 
-Global $\rho$~subtraction uses the jets themselves to estimate the pileup energy density~(\rhoP) using
+Global $\rho$~subtraction uses the jets themselves to estimate the pile-up energy density~(\rhoP) using
 the median energy density of all jets in the event, defined as \rhoG~\cite{jet_area}. 
-The main assumptions in this method are that the pileup distribution is independent of $\eta$ and $\phi$,  
-and the number of pileup jets is much larger than the number from the hard scatter. Using \rhoG, 
+The main assumptions in this method are that the pile-up distribution is independent of $\eta$ and $\phi$,  
+and the number of pile-up jets is much larger than the number from the hard scatter. Using \rhoG, 
 a correction to each jet can be made
 
 \begin{equation}
@@ -222,9 +222,9 @@ to variation in the jet tower size). If $\rho \cdot A_j > p_{Tj}^{\text{raw}}$ t
 Figure~\ref{fig:medianNint} shows a strong linear dependence between \rhoG~and the number of interactions for
 minimum bias events. The non-zero intercept is caused by contamination of jets from the hard scatter.
 
-To account for $\eta$ dependence in the pileup, the \rhoG~subtraction may be amended by
+To account for $\eta$ dependence in the pile-up, the \rhoG~subtraction may be amended by
 dividing the calorimeter into strips of phi and calculating the median $\rho$ for jets in each 
-strip. However, this local $\rho$ significantly adds to the latency in the pileup subtraction and may 
+strip. However, this local $\rho$ significantly adds to the latency in the pile-up subtraction and may 
 be less robust as fewer jets can be sampled in each $\eta$ slice. This \emph{local $\rho$} 
 is therefore not considered in this section.
 
@@ -250,7 +250,7 @@ for use during heavy ion collisions~\cite{doughnut}. The energy contribution fro
 itself is negligible outside the $9\times9$ ring as shown in Figure~\ref{fig:deltaR2}. 
 For doughnut subtraction the transverse energy density is sampled by taking four strips around 
 the jet as shown in Figure~\ref{fig:donut}. The strips are ordered according to energy density,
-and the median two strips taken. The pileup energy density estimated from the 
+and the median two strips taken. The pile-up energy density estimated from the 
 energy density of the median two strips. This \rhoD~is used to correct the
 jet analogously to Equation~\ref{equ:global_rho}. Typically the strip with the largest
 energy density is susceptible to contribution from nearby jets. Using the median 
@@ -260,7 +260,7 @@ Unlike global subtraction, doughnut subtraction allows local variations in \rhoP
 included, however, it is significantly more susceptible to statistical fluctuations due to the 
 reasonably small area sampled. An extension, \emph{chunky} doughnut, shown in Figure~\ref{fig:chunkyDonut},
 uses enlarged strips to sample three times the area in measuring~$\rhoP$. The dependence of the number of interactions
-with the energy density for the chunky doughnut pileup estimation (\rhoC) is shown in Figure~\ref{fig:threestripNint}.
+with the energy density for the chunky doughnut pile-up estimation (\rhoC) is shown in Figure~\ref{fig:threestripNint}.
 
 \begin{figure}
 \hfill
@@ -268,8 +268,8 @@ with the energy density for the chunky doughnut pileup estimation (\rhoC) is sho
 \hfill
 \subfigure[Chunky doughnut rings\label{fig:chunkyDonut}]{\includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/chunkyDonut}}
 \hfill
-\caption{The rings used to sample the local pileup energy density for the doughnut (a) and chunky doughnut (b)
-pileup subtraction. The median two strips (in energy density) are used in each case.}
+\caption{The rings used to sample the local pile-up energy density for the doughnut (a) and chunky doughnut (b)
+pile-up subtraction. The median two strips (in energy density) are used in each case.}
 \end{figure}
 
 \begin{figure}
@@ -283,20 +283,20 @@ pileup subtraction. The median two strips (in energy density) are used in each c
 \label{sec:seed_thresh}
 
 The requirement of a threshold on the seed tower when identifying a jet
-provides a powerful rejection of pileup jets. This takes advantage of the
-diffuser energy deposition for pileup jets compared to jets originating from 
-the hard scatter. A seed threshold does not allow pileup contamination in real jets to be corrected
-but can be used in conjunction with other pileup subtraction techniques such as doughnut
+provides a powerful rejection of pile-up jets. This takes advantage of the
+diffuser energy deposition for pile-up jets compared to jets originating from 
+the hard scatter. A seed threshold does not allow pile-up contamination in real jets to be corrected
+but can be used in conjunction with other pile-up subtraction techniques such as doughnut
 subtraction. Global~$\rho$ subtraction is incompatible with a seed threshold as this technique relies
-on reconstructing substantially more pileup jets than those from the hard scatter. 
+on reconstructing substantially more pile-up jets than those from the hard scatter. 
 This problem may be addressed by using a separate jet collection with no seed threshold
 for calculating $\rhoG$, however, latency constraints do not permit this for the L1 trigger.
 
-Zero suppression is a rudimentary form of pileup correction whereby only towers with
+Zero suppression is a rudimentary form of pile-up correction whereby only towers with
 an energy deposition above a given threshold are included in the reconstruction of each jet.
-This cannot be easily adapted for different pileup regimes but provides a simple baseline 
+This cannot be easily adapted for different pile-up regimes but provides a simple baseline 
 for assessing more complex algorithms. Zero suppression may also be used in conjunction
-with other pileup correction techniques. 
+with other pile-up correction techniques. 
 
 The thresholds used for the seed and zero suppression may be $\eta$ (or even $\phi$) dependant, however,
 such variable thresholds are not considered in the studies presented below. The smallest energy quanta
@@ -313,7 +313,7 @@ to account for changes in detector response. In each region the procedure is as 
 \item Cluster generator particles in the QCD sample (except muons and neutrinos) using the anti-$k_T$ algorithm with R = 0.4 into \emph{generator} jets
 \item Match L1 jets to generator jets by finding the closest in $\Delta R$ between the central tower of the L1 jet and the generator jet. L1 jets with 
 $\Delta R > 0.3$ from any generator jet are ignored.
-\item Define the \emph{response} for each L1 jet as the ratio of the (pileup corrected) \Lonept~to the matched generator jet $pt$ (\Genpt).
+\item Define the \emph{response} for each L1 jet as the ratio of the (pile-up corrected) \Lonept~to the matched generator jet $pt$ (\Genpt).
 \item For each bin in \Genpt, fit the response with a Gaussian to obtain the mean response for that \Genpt. 
 The average \Lonept~in the bin is calculated to obtain the distribution of the mean response against \Lonept.
 \item Perform a $\chi^2$ fit of the distribution of mean response against \Lonept~using the calibration
@@ -328,14 +328,14 @@ The average \Lonept~in the bin is calculated to obtain the distribution of the m
 \label{equ:jecfit}
 \end{equation}
 
-The calibration must be done separately for each choice of pileup subtraction algorithm, seed threshold and zero suppression. 
+The calibration must be done separately for each choice of pile-up subtraction algorithm, seed threshold and zero suppression. 
 An example response for \emph{seed 5}, chunky doughnut corrected jets is shown as a function of \Lonept~for 
 the $0. < \eta < 0.75$ range in Figure~\ref{fig:response}. The fitted calibration function defines the correction 
 factors and is shown to agree well with the data.
 
 In Figure~\ref{fig:closure_response} the response for the same QCD dijet sample is shown as a function of the \Lonept. The calibration
 is effective for $\Lonept > \sim 20\GeV$ where the response is flat at unity. Below this \pt,
-the matching procedure degrades (the majority of matched jets come from pileup or detector noise) 
+the matching procedure degrades (the majority of matched jets come from pile-up or detector noise) 
 such that the average response is an unreliable estimate of the jet algorithm response to real jets.
 
 \begin{figure}
@@ -356,7 +356,7 @@ such that the average response is an unreliable estimate of the jet algorithm re
 
 \section{Jet performance}
 \label{sec:trig_perf}
-The performance of the jet algorithm and the various pileup suppression techniques is tested using
+The performance of the jet algorithm and the various pile-up suppression techniques is tested using
 Monte Carlo simulation. In each case, the corrected \Lonept~is calibrated following the procedure in Section~\ref{sec:calib}.
 Comparisons are made with algorithms used for both the legacy GCT and UCT systems to benchmark the performance.
 Efficiencies are measured using a simulated \ttbar sample while 
@@ -367,16 +367,16 @@ background rates are measured using a simulated minimum bias sample.
 The matching efficiency to generator jets provides a measure of the ability of the L1 jet algorithm 
 to reconstruct real jets from the hard scatter. The matching procedure is the same as that used for the calibration. 
 The matching efficiency for all generator jets and the fourth leading jet is shown 
-in Figure~\ref{fig:match} as a function of $\Genpt$ for several benchmark pileup suppression algorithms. 
-The efficiency plateaus at unity around $\Genpt=50\GeV$. The pileup subtraction and seed threshold is shown to reduce
+in Figure~\ref{fig:match} as a function of $\Genpt$ for several benchmark pile-up suppression algorithms. 
+The efficiency plateaus at unity around $\Genpt=50\GeV$. The pile-up subtraction and seed threshold is shown to reduce
 the matching efficiency at low $p_T$, however, for this low $p_T$ region the L1 jets matched to generator jets are typically
-reconstructed from pileup calorimeter deposits and their energy does not therefore
+reconstructed from pile-up calorimeter deposits and their energy does not therefore
 reflect that of the matched generator jet. A substantial improvement in efficiency over the GCT is observed in 
 matching the fourth leading jet.
 
 
 % The matching efficiency does not fully describe the performance as L1 jets matched to generated jets may be reconstructed
-% from pileup energy deposits. The resolution is observed to plateau at unity for $\Genpt > \sim30\GeV$.
+% from pile-up energy deposits. The resolution is observed to plateau at unity for $\Genpt > \sim30\GeV$.
 
 
 %%WOULD LIKE PLOT HERE!!
@@ -385,7 +385,7 @@ matching the fourth leading jet.
 \begin{center}
 \subfigure[All jets\label{fig:label:alljet}]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/alljet}}
 \subfigure[4th jet\label{fig:label:jet4}]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/jet4}}
-\caption{Matching efficiencies for jets showing effect of seed and pileup subtraction at low energies. In \ref{fig:label:jet4} 
+\caption{Matching efficiencies for jets showing effect of seed and pile-up subtraction at low energies. In \ref{fig:label:jet4} 
 a comparison with the GCT is shown.}
 \label{fig:match}
 \end{center}
@@ -395,15 +395,15 @@ a comparison with the GCT is shown.}
 
 The resolution, defined as $(\Lonept-\Genpt)/\Genpt$, measures the level of agreement between the energies of the 
 L1 and matched generator jets. The matching procedure is the same as that described in \Section~{sec:calib}.
-The resolution provides an important measure of the ability of the algorithm to reject jets from pileup
-energy deposits as well as to remove the contribution of pileup from real jets from the hard scatter.
+The resolution provides an important measure of the ability of the algorithm to reject jets from pile-up
+energy deposits as well as to remove the contribution of pile-up from real jets from the hard scatter.
 In Figure~\ref{fig:resolution1}, the resolution as a function of the number of simultaneous interactions is shown for
-a simulated \ttbar sample. The resolution is flat near unity when pileup subtraction is applied,
-but exhibits a strong dependence on pileup if uncorrected. To illustrate the pileup contamination for different
-\Genpt~jets, a linear fit to the resolution as a function of pileup is made in \Genpt~bins and the resultant gradients
+a simulated \ttbar sample. The resolution is flat near unity when pile-up subtraction is applied,
+but exhibits a strong dependence on pile-up if uncorrected. To illustrate the pile-up contamination for different
+\Genpt~jets, a linear fit to the resolution as a function of pile-up is made in \Genpt~bins and the resultant gradients
 shown in Figure~\ref{fig:resolution2}. Pileup subtraction is shown to significantly reduce the 
-pileup dependence of the resolution across $\Genpt$. If no pileup subtraction is applied, 
-the magnitude of the gradient is particularly enhanced for low \Genpt~where pileup contamination dominates. 
+pile-up dependence of the resolution across $\Genpt$. If no pile-up subtraction is applied, 
+the magnitude of the gradient is particularly enhanced for low \Genpt~where pile-up contamination dominates. 
 
 \begin{figure}
     \begin{center} 
@@ -439,7 +439,7 @@ a leading jet, second leading jet and fourth leading jet with $\Genpt$ threshold
 $100\GeV$ and $50\GeV$ respectively. As the jet multiplicity increases and threshold decreases
 the performance of the upgrade L1 jets compared to the legacy system is substantially improved.
 For the upgrade L1 jets, the global $\rho$~subtraction exhibits the best performance, however, the differences 
-between the pileup subtraction algorithms are small.
+between the pile-up subtraction algorithms are small.
 
 \begin{figure}[h!]
   \centering
@@ -450,11 +450,11 @@ between the pileup subtraction algorithms are small.
   (b) L1 second leading jet with a threshold of 110\GeV and (c) L1 fourth leading jet with a threshold of 50\GeV.}
 \end{figure}
 
-During Run 2 the pileup is not constant but varies with changes in instantaneous luminosity. 
-Stability in the rate for different pileup scenarios is import to ensure that L1 trigger thresholds 
+During Run 2 the pile-up is not constant but varies with changes in instantaneous luminosity. 
+Stability in the rate for different pile-up scenarios is import to ensure that L1 trigger thresholds 
 do not need to be increased during running. Figure~\ref{fig:rate_nvtx} shows the rate against the number of 
-simultaneous interactions for a lead jet threshold of $30\GeV$. The dependence on pileup is 
-seen to be significantly mitigated by chunky doughnut pileup subtraction compared to no pileup subtraction and global $\rho$
+simultaneous interactions for a lead jet threshold of $30\GeV$. The dependence on pile-up is 
+seen to be significantly mitigated by chunky doughnut pile-up subtraction compared to no pile-up subtraction and global $\rho$
 subtraction. 
 
 \begin{figure}
@@ -465,14 +465,14 @@ subtraction.
 \end{figure}
 
 To benchmark the energy sums performance the rate against efficiency for L1 \scalht~and L1 \mht~is shown in Figure~\ref{fig:rate_eff_sum}.
-All jets above $20\GeV$ are used to calculate L1 \scalht, making this quantity particularly susceptible to pileup. The chunky doughnut 
-pileup subtraction with a seed of 5 is shown to significantly improve performance compared to the other pileup subtraction
+All jets above $20\GeV$ are used to calculate L1 \scalht, making this quantity particularly susceptible to pile-up. The chunky doughnut 
+pile-up subtraction with a seed of 5 is shown to significantly improve performance compared to the other pile-up subtraction
 methods and the legacy system\footnote{The performance of the UCT is not 
 directly comparable as L1 \scalht~and \mht are calculated using calorimeter regions above a threshold
 rather than jets} (except global $\rho$ with a seed of 5, not viable in the L1 trigger). Similarly, the performance for 
 L1 \mht~is optimal for chunky doughnut subtraction with a seed of 5 and global $\rho$ subtraction. 
 Figure~\ref{fig:mht_rateEff} also shows L1 $\met$~which exhibits the best performance. This is expected as 
-pileup contributions are approximately uniformly deposited in $\phi$ throughout the detector and their contribution will
+pile-up contributions are approximately uniformly deposited in $\phi$ throughout the detector and their contribution will
 cancel in the vector sum of the towers.
 
 \begin{figure}
@@ -487,17 +487,17 @@ cancel in the vector sum of the towers.
 \subsection{Summary}
 
 The performance plots described in this section have highlighted the importance of effective
-pileup subtraction for the L1 trigger. Significantly improved performance is observed over 
+pile-up subtraction for the L1 trigger. Significantly improved performance is observed over 
 the legacy and UCT systems, highlighting the advantages of additional granularity
 and algorithmic complexity afforded by the upgraded architecture.
 The best performance is seen with the chunky doughnut (with a seed threshold) 
-and global~$\rho$ pileup subtraction. Due to latency constraints and the desire to account for 
-local effects when triggering, a local pileup subtraction algorithm is preferred. 
+and global~$\rho$ pile-up subtraction. Due to latency constraints and the desire to account for 
+local effects when triggering, a local pile-up subtraction algorithm is preferred. 
 Therefore, the chunky doughnut subtraction has been used for data taking in 2016.
 
 Figure~\ref{fig:trig_2016} shows two example performance plots made using early 2016 data. 
 The upgrade jet energy is seen to agree well with offline over a wide range of energies 
-and shows little pileup dependence.
+and shows little pile-up dependence.
 
 
 \begin{figure}
@@ -506,7 +506,7 @@ and shows little pileup dependence.
 	\subfigure[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/res_SingleMu_jetEt_over_l1JetEt_barrel-endcap_puBins}}
 	\caption{(a) The L1 jet energy compared to offline in early 2016 data for a wide
 range of jet energies. (b) Resolution for the L1 jet energy compared to offline in early 2016 data for several different 
-pileup scenarios \cite{l1sums_perf}.}
+pile-up scenarios \cite{l1sums_perf}.}
 \label{fig:trig_2016}
 \end{figure}
 
