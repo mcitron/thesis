@@ -1,7 +1,7 @@
 \ProvidesClass{mythesis}
 %% For normal draft builds
 
-\LoadClass[noroman,nobind,twoside,draft]{hepthesis}
+%\LoadClass[noroman,nobind,twoside,draft,hidefront]{hepthesis}
 
 %\LoadClass[noroman,hyperpdf,nobind,sftitles,oneside]{hepthesis}
 %\LoadClass[noroman,hyperpdf,nobind,draft,sftitles,oneside]{../../../style/hepthesis}
@@ -12,9 +12,9 @@
 %% For short draft builds (breaks citations by necessity)
 %\LoadClass[noroman,hyperpdf,nobind,draft,hidefrontback]{hepthesis}
 %% For Cambridge soft-bound version 
-%\LoadClass[noroman,hyperpdf,bindnopdf]{hepthesis}
+%\LoadClass[noroman,hyperpdf,twoside,bindnopdf]{hepthesis}
 %% For Cambridge hard-bound version (must be one-sided)
-%\LoadClass[noroman,hyperpdf,oneside]{hepthesis}
+\LoadClass[noroman,hyperpdf,oneside]{hepthesis}
 
 %% ------------------------------------- %% Standard packages %% ------------------------------------- 
 \RequirePackage{cite} 

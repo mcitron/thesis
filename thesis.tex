@@ -2,12 +2,17 @@
 % nw709
 \documentclass{mythesis}
 \usepackage{mythesis}
-
+\usepackage{braket}
+\usepackage{lscape}
+\usepackage{cancel}
 \usepackage{rotating} % For making a sideways table
 \usepackage{multirow} % For putting a header over more than 1 column
 \usepackage{comment} % Allows you to comment out whole chunks of text
 \usepackage{setspace}
 \usepackage[numbers]{natbib}
+\usepackage{enumitem}
+\setlist{nolistsep}
+\raggedbottom
 
 \newcolumntype{A}{>{\centering\arraybackslash}p{1cm}} % allows you to centre columns
 \newcolumntype{B}{>{\centering\arraybackslash}p{2cm}} % allows you to centre columns
@@ -30,16 +35,16 @@
 \hypersetup{%
 pdftitle = {},
 pdfsubject = {},
-pdfkeywords = {LHC, CMS, Higgs boson, Higgs to two photons, Combinations },
-pdfauthor = {\textcopyright\ Nicholas Wardle}
+pdfkeywords = {LHC, CMS, SUSY},
+pdfauthor = {\textcopyright\ Matthew Citron}
 }
 }{}
 \makeatother
 
 % Define the thesis title and author
-\title{Observation of a New Particle in the Search for the 
-       Standard Model Higgs Boson at the CMS Detector}
-\author{Nicholas Wardle}
+\title{Search for supersymmetry in $\sqrt{s} = 13$~TeV p-p collisions
+using the $\alpha_\text{T}$ variable with the CMS detector}
+\author{Matthew Citron}
 
 % Start the document
 %\bibliographystyle{unsrt}
@@ -49,18 +54,22 @@ pdfauthor = {\textcopyright\ Nicholas Wardle}
 
 % Define the un-numbered front matter (cover pages, rubrik and table of contents)
 \begin{frontmatter}
-\pagenumbering{arabic}
   \input{frontmatter}
 \end{frontmatter}
 
 %\doublespacing
 %$ Start the content body of the thesis
 \begin{mainmatter}
-\input{Chapters/detector}
-\input{Chapters/reconstruction}
-\input{Chapters/triggerUpgrade}
 % \input{Chapters/introduction}
 % \input{Chapters/theory}
+% \input{Chapters/detector}
+\input{Chapters/reconstruction}
+% \input{Chapters/triggerUpgrade}
+% \input{Chapters/alphat}
+% \input{Chapters/backgroundPrediction}
+% \input{Chapters/statisticalResults}
+% \input{Chapters/simplifiedLikelihood}
+% \input{Chapters/conclusions.tex}
 \end{mainmatter}
 
 % \bibliographystyle{unsrt}
@@ -69,7 +78,7 @@ pdfauthor = {\textcopyright\ Nicholas Wardle}
 
 % Produce the appendices
 \begin{appendices}
-  \input{Appendices/aptest}
+  \input{Appendices/app_systematics}
 \end{appendices}
 
 % Produce the un-numbered back matter (e.g. colophon,

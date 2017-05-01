@@ -338,7 +338,6 @@
 %% ========================================================================
 %% Length definitions
 %% ========================================================================
-
 \setlength{\parindent}{0.6cm}          % tweak the initial indent in paras
 \setlength{\parskip}{0.3cm}            % tweak the intra-para gap size
 \setlength{\topmargin}{0in}
@@ -489,7 +488,7 @@
 
   %%   Hyperlinks (optional, has to come late in the package list)
   \ifx\@requirehyper\@empty\else%
-  \RequirePackage[colorlinks=true,bookmarks=true,plainpages=false]{hyperref}%
+  \RequirePackage[hidelinks,bookmarks=true,plainpages=false]{hyperref}%
   % pdfpagemode=None, FullScreen, UseThumbs, UseOutlines
   \fi
 }
