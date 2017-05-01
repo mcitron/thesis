@@ -234,7 +234,7 @@ the transfer factor method within the likelihood used by the
 The transfer factors account for differences in the cross sections and branching fractions,
 acceptance and reconstruction efficiencies and kinematic requirements between signal 
 and control regions. The values of the transfer factors for the prediction from the \mj,
-\mmj~and \gj~control regions are shown in Figures~\ref{fig:tfSyst_nominal_muToZinv}-\ref{fig:tfSyst_nominal_muToTtw}.
+\mmj~and \gj~control regions are shown in Figures~\ref{fig:tfSyst_nominal_mu}-\ref{fig:tfSyst_nominal_mumug}.
 
 Many systematic effects in the modelling of \scalht, \nb~and \njet~for the relevant processes 
 are expected to cancel or be mitigated in the transfer factor. Residual uncertainties 
@@ -399,17 +399,15 @@ To determine their effect, for each source of uncertainty the correction is vari
 value at $\pm$ 1 $\sigma$ and the prediction from simulation re-evaluated. The inclusion of the systematic uncertainty 
 in these predictions, in particular how the modifier term morphs between alternative \emph{templates} 
 for $\pm$ 1 $\sigma$ variations is described in Section~\ref{sec:likelihood}. In this section the systematic variations
-of the transfer factor for each effect is discussed. The corresponding figures referenced in
-this section can be found in App.~\ref{app:systematics}. The effect of these systematics on 
+of the transfer factor for each effect is discussed. The effect of these systematics on 
 the \mht~shape is discussed in Section~\ref{sec:syst-on-shape}.
 
 \subsubsection{Pileup reweighting}
 
 The uncertainty on the inelastic pp cross section of $\pm5\%$ is propagated by deriving the pile-up
 weights for the cross section at the $\pm1\%$ sigma values. These weights are used to derive
-alternative predictions for each variation. The effect on the transfer factors is shown in 
-Figures~\ref{fig:tfSyst_pu_muToZinv}-\ref{fig:tfSyst_pu_muToTtw}. Typically the uncertainty 
-introduced by pile-up reweighting is small, varying up to $\sim2\%$.
+alternative predictions for each variation. Typically the uncertainty 
+introduced by pile-up reweighting is small, varying up to $\sim2\%$ depending on the category.
 
 \subsubsection{Jet energy scale}
 \label{sec:tfSyst_jec}
@@ -417,10 +415,8 @@ The energies of jets used in the analysis are corrected as a function of their \
 $\eta$ via the procedure described in Section~\ref{sec:jec}. The uncertainty on
 this correction is propagated through the analysis. As the \scalht~and jet multiplicity binning is 
 mirrored in signal and control regions, the variation in the transfer factors is small.
-To avoid statistical fluctuations the variation is averaged across~\nb. The relative change 
-in the transfer factors is presented as a function of \scalht~and jet category 
-in Figures~\ref{fig:tfSyst_jec_muToZinv}-\ref{fig:tfSyst_jec_muToTtw}.
-The changes are typically in the range of $1-5\%$.
+To avoid statistical fluctuations the variation is averaged across~\nb.
+The systematic variations are typically in the range of $1-5\%$ depending on the category.
 
 \subsubsection{B-tagging efficiency}
 
@@ -430,10 +426,7 @@ Since no extrapolation is performed in the background prediction across differen
 \nb multiplicities, the analysis is expected to be robust against variations in the 
 b tagging efficiency. The scale factors associated with b and c jets are varied together 
 (since their measurements are correlated), while those associated with light jets are varied separately.
-The relative change in the transfer factors is presented as a function of \scalht~and jet category 
-for the variations of scale factors for both heavy and light b tag SF.
-in Figures~\ref{fig:tfSyst_bsf_muToZinv}-\ref{fig:tfSyst_bsfl_muToTtw}.
-They are typically in the range of $1-3\%$.
+The systematic variations are typically in the range of $1-3\%$ depending on the category.
 
 \subsubsection{Lepton trigger/identification/isolation efficiency}
 \label{sec:tfSyst_lepton}
@@ -447,29 +440,27 @@ and the variation for reconstructing a muon for the \mj~control region is determ
 appropriate correlation. Each source of systematic uncertainty 
 on the muon and electron scale factors (trigger, identification and isolation) is varied separately. 
 An additional uncertainty is considered on the \mj~control region for the muon tracking
-scale factor. The size of the uncertainty for these variations on the transfer factors are
-shown in Figures~\ref{fig:tfSyst_lepton_muToZinv}-\ref{fig:tfSyst_lepton_muToTtw}
-and typically vary from $1-3\%$.
+scale factor. The systematic variations are typically in the range of $1-3\%$ depending on the category.
 
 \subsubsection{Photon trigger uncertainty}
 \label{sec:tfSyst_pho}
 The photon trigger correction is derived for the \gj~control region. The systematic uncertainty is
-taken as the size of the inefficiency measured. The relative change in the \gj~transfer factor 
-is presented in Figure~\ref{fig:tfSyst_photonTrigger_gjToZinv} and is typically under $\sim3\%$.
+taken as the size of the inefficiency measured. The systematic variation in the \gj~transfer factors 
+is typically under $\sim3\%$.
 
 \subsubsection{Signal trigger uncertainty}
 \label{sec:tfSyst_trigger}
 
 A systematic is taken as the difference in the efficiency measured using muon and 
 electron reference triggers. This uncertainty affects only the signal region predictions
-and not the control region predictions. The relative change in the transfer factors is typically in the range
-$1-7\%$, as presented in Figs.~\ref{fig:tfSyst_trigger_muToZinv}-\ref{fig:tfSyst_trigger_muToTtw}.
+and not the control region predictions. The systematic variation in the transfer factors is 
+typically in the range $1-7\%$.
 
 \subsubsection{Top \pt~reweighting}
 \label{sec:topSyst}
 The uncertainty in the top \pt~reweighting is taken as the size of the reweighting
-applied to each event. The relative change in the transfer factors is typically in the range
-$1-7\%$, as presented in Figs.~\ref{fig:tfSyst_topPt_muToZinv}-\ref{fig:tfSyst_topPt_muToTtw}.  
+applied to each event. The systematic variation in the transfer factors is typically in the range
+$1-7\%$.
 
 \subsection{Closure test method}
 \label{sec:closure-tests}
@@ -741,7 +732,7 @@ is presented in Section~\ref{sec:mcSystStudiesShape}.
 To parameterise the data/MC agreement
 for the three electroweak control regions
 orthogonal polynomials are used such that odd and even powers 
-are decorrelated \cite{cohen2013applied}. 
+are decorrelated~\cite{cohen2013applied}. 
 The $n^{th}$ order orthogonal polynomial which is fitted to the data/MC 
 distribution is defined in Eq.~\ref{equ:orthog-polynomial}.
 
@@ -754,17 +745,14 @@ where $\bar{x}$ is the weighted mean of the distribution and $p_k = 0$
 implies the $k^{th}$ order is negligible.
 In Figure~\ref{fig:linearMotiv} the data/MC 
 distribution against \mht~for the control region selection 
-(detailed in \cite{Khachatryan:2016pxa}) is shown inclusive 
-in \scalht~and categories. By fitting a first order
-orthogonal polynomial it can be seen that there is a large bias. 
-This bias in the data/MC agreement is expected as events 
-at different scales are mixed.
-The first order orthogonal polynomial
+is shown inclusive in \scalht~and categories. By fitting a first order
+orthogonal polynomial it can be seen that there is a large bias in the
+$p_1$ parameter. This bias in the data/MC agreement is expected as events 
+at different scales are mixed. The first order orthogonal polynomial
 is used to measure the level of bias remaining 
 when the \mht~shape is binned in \scalht.
 This allows the normalisation parameter to be
-decorrelated from the parameter which controls
-the distribution in \mht.
+decorrelated from the parameter which controls the distribution in \mht.
 The normalisation in each \scalht~bin and its systematics 
 is then defined following the data-driven method used in Run 1, see Sec,~\ref{sec:systMhtDimension} for details.
 \begin{figure}[h!]
