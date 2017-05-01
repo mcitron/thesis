@@ -609,11 +609,12 @@ The kinematic selection for photons used to veto events in the signal region is 
 and $\etaabs < 2.5$. The photons used to define the control region must satisfy the tighter 
 requirements $\pt > 25\GeV$ and $\etaabs < 1.4$ to ensure efficient trigger selection and
 to be sure that the photon is contained within the barrel where it can be better reconstructed.
-
 \begin{table}[ht!]
   \caption{Photon identification requirements.\label{tab:photon-id-gamma}}
   \centering
   \footnotesize
+ \centering\makebox[\textwidth]
+ {\resizebox{\textwidth}{!}{%
   \begin{tabular}{ ccc }
     \hline
     \hline
@@ -639,9 +640,8 @@ to be sure that the photon is contained within the barrel where it can be better
     PF photon isolation           &  0.16 + 0.0034 $\times$ $p_{\mathrm{T},\gamma}$ & 0.83 + 0.0034 $\times$ $p_{\mathrm{T},\gamma}$ \\
     \hline
     \hline
-  \end{tabular}
+  \end{tabular}}}
 \end{table}
-
 \subsection{Electrons}
 
 Electrons are identified to veto events in the signal and control regions. The full reconstruction is described in
