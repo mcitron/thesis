@@ -1,7 +1,7 @@
 \chapter{Facilitating re-interpretation} % 
 \label{cha:simplifiedLikelihood}
 The results of the \alphat search have been presented using limits on simplified model
-spectra which allow the sensuality of the search to different topologies 
+spectra which allow the sensitivity of the search to different topologies 
 to be benchmarked. The search will be sensitive to a wide range of BSM models
 and the results must therefore be re-interpreted by those outside the 
 CMS collaboration to provide constraints on such models.
@@ -17,11 +17,11 @@ on simplifying assumptions which can lead to inaccuracies in the re-interpretati
 
 In this section an alternative procedure for re-interpreting BSM physics searches by approximating
 the full background model and the associated systematic uncertainties is presented. 
-The procedure involves techniques both to simplify the categorisation of the search (\emph{aggregation})
+The procedure involves techniques both to simplify the categorisation of the search (`aggregation')
 and to use a reduced set of information to describe the background model 
-and the correlations between different search regions (\emph{simplified likelihood}),
+and the correlations between different search regions (`simplified likelihood'),
 minimising the loss of sensitivity. The \alphat search is used to validate and illuminate
-the use of such techniques, however, they are applicable for a wide range of 
+the use of such techniques; however, they are applicable for a wide range of 
 searches and a general treatment may be found in~\cite{simp-lik}.
 
 \section{Aggregation}%
@@ -29,7 +29,7 @@ searches and a general treatment may be found in~\cite{simp-lik}.
 The \alphat analysis uses a fine categorisation in \njet, \nb, \scalht,and \mht to provide
 sensitivity to a wide range of new physics models. This categorisation makes re-interpreting
 the results of the search too computationally intensive to be feasible. Previously, 
-only the categories most sensitive to the relevant model have been used, however,
+only the categories most sensitive to the relevant model have been used; however,
 this will break the correlation model for the search and can significantly reduce
 the sensitivity due to the loss of indirect constraints from
 the neglected bins. 
@@ -42,7 +42,7 @@ simplified without breaking the background model.
 
 Consider the hadronic component of the likelihood defined in Equation~\ref{eq:hadronicLikelihood}.
 The aggregate likelihood is defined by summing the contributions within the Poisson for
-each \mht, \scalht, \nb and \njet category to be aggregated as,
+each \mht, \scalht, \nb and \njet category to be aggregated as:
 
 \begin{multline}
 \label{eq:aggregatedLikelihood}
@@ -53,15 +53,15 @@ b^{j,i}_{\ttW,\mathrm{had}}\times\phi^{j}(\mu\rightarrow\ttW)\times a^{j}\times\
 
 The control region component of the likelihood is unchanged such that the prediction model
 is maintained from the full likelihood. This allows, for example, the scale anchoring 
-scheme to maintain validity while allowing events at different scales to be included 
+scheme to maintain validity while enabling events at different scales to be included 
 within the same aggregate region.
 
 \subsection{Definition of aggregated regions}
 \label{sec:ssr-alphat}
 The categorisation used for the full likelihood is summarised in Section~\ref{sec:cat}. 
-The large number of categories provide generic sensitivity but are not optimal for re-interpretation. 
-The thirty one jet categories are therefore reduced to eight aggregate jet categories while
-the (up to) eight \scalht bins are merged into one ($\scalht \geq 200 GeV$).
+The large number of categories provides generic sensitivity but is not optimal for re-interpretation. 
+The thirty-one jet categories are therefore reduced to eight aggregate jet categories while
+the (up to) eight \scalht bins are merged into one bin ($\scalht \geq 200 GeV$).
 The final categories are shown in Table~\ref{tab:agg-binning}.
 These are defined to be disjoint, contiguous and to cover the full
 signal region such that in combination the regions reflect the sensitivity of
@@ -71,7 +71,7 @@ full signal region phase space.
   \caption{To define the aggregate regions for the \alphat search the \scalht dimension is
   merged to $\geq200\GeV$ and $\nb$ to two categories of \nb~$<2$ and $\geq2$. 
   The merged \nj~ categories are summarised in this table. Each category is
-  further binned using eight \mht bins with lower bounds from $100-800\GeV$.}
+  further binned using eight \mht bins with lower bounds from $100$ to $800\,\GeV$.}
   \label{tab:agg-binning}
   \centering
   \footnotesize
@@ -88,11 +88,11 @@ full signal region phase space.
   \end{tabular}
 \end{table}
 
-The jet categories are merged to four seperate categories motivated by their sensitivity to 
-different new physics topologies. For example, the Monojet-like topology is targeted towards
-dark matter models and compressed spectra while the high \nj topology targets 
+The jet categories are merged to four separate categories motivated by their sensitivity to 
+different new physics topologies. For example, the monojet-like topology is targeted towards
+compressed spectra while the high \nj topology targets 
 uncompressed gluino and squark models. The \nb categories are combined 
-as $\nb=0,1$ and $\nb\geq2$ targeted at light and heavy flavour new physics respectively. 
+as $\nb=0,1$ and $\nb\geq2$, targeted at light and heavy flavour new physics respectively. 
 Finally, the \scalht dimension is entirely merged as the \mht dimension generally provides better sensitivity
 for new physics models. The use of the aggregated regions ensures that the backgrounds are 
 still predicted by the nominal, finely binned regions (with appropriate systematics).
@@ -102,7 +102,7 @@ still predicted by the nominal, finely binned regions (with appropriate systemat
 The aggregated regions provide an easily comprehensible
 overview of the signal region when compared to the results
 of the nominal signal bins. Figure~\ref{fig:aggFitResult} shows
-the post fit predictions in the mid and high \nj categories
+the post-fit predictions in the mid and high \nj categories
 for the aggregated regions compared to the observed data.
 
 \clearpage
@@ -110,31 +110,32 @@ for the aggregated regions compared to the observed data.
     \caption{ Signal region predictions and data observations for the aggregated regions. 
     The predictions are made using a fit to the control region only. \label{fig:aggFitResult} }
   \begin{center}
-    \subfigure[Mid \nj, $\nb \leq 1$]   { \includegraphics[width=0.45\textwidth]{Figures/simplifiedLikelihood/agg_fitResults/mhtShape_le1b_ge3j_200_Inf_crfit_aux.pdf} } ~~
-    \subfigure[Mid \nj, $\nb \geq 2$]{ \includegraphics[width=0.45\textwidth]{Figures/simplifiedLikelihood/agg_fitResults/mhtShape_ge2b_ge3j_200_Inf_crfit_aux.pdf} } \\
-    \subfigure[High \nj, $\nb \leq 1$]   { \includegraphics[width=0.45\textwidth]{Figures/simplifiedLikelihood/agg_fitResults/mhtShape_le1b_ge5j_200_Inf_crfit_aux.pdf} } ~~
-    \subfigure[High \nj, $\nb \geq 2$]{ \includegraphics[width=0.45\textwidth]{Figures/simplifiedLikelihood/agg_fitResults/mhtShape_ge2b_ge5j_200_Inf_crfit_aux.pdf} } \\
+    \subfloat[Mid \nj, $\nb \leq 1$]   { \includegraphics[width=0.45\textwidth]{Figures/simplifiedLikelihood/agg_fitResults/mhtShape_le1b_ge3j_200_Inf_crfit_aux.pdf} } ~~
+    \subfloat[Mid \nj, $\nb \geq 2$]{ \includegraphics[width=0.45\textwidth]{Figures/simplifiedLikelihood/agg_fitResults/mhtShape_ge2b_ge3j_200_Inf_crfit_aux.pdf} } \\
+    \subfloat[High \nj, $\nb \leq 1$]   { \includegraphics[width=0.45\textwidth]{Figures/simplifiedLikelihood/agg_fitResults/mhtShape_le1b_ge5j_200_Inf_crfit_aux.pdf} } ~~
+    \subfloat[High \nj, $\nb \geq 2$]{ \includegraphics[width=0.45\textwidth]{Figures/simplifiedLikelihood/agg_fitResults/mhtShape_ge2b_ge5j_200_Inf_crfit_aux.pdf} } \\
   \end{center}
 \end{figure}
 
-To evaluate the effect on the sensitivity of the \alphat analysis of using
-the aggregated regions the expected and observed 95\% upper limit
-on the signal strength for the full signal region 
+To evaluate the effect of using aggregated regions on the sensitivity of the \alphat analysis, 
+the expected and observed 95\% upper limit on the signal strength for the full signal region 
 is compared to the limits derived using the aggregated regions. The limits are shown side by side
-in Fig~\ref{fig:limit-planes-agg} for three models, T2tt T2bb and T1bbbb. Where the mass
-splittings are small the expected limits typically reduce by $\mathcal{O} 100\GeV$ 
+in Fig~\ref{fig:limit-planes-agg} for the simplified models of direct and 
+gluino mediated bottom squark production. Where the mass
+splittings are small the expected limits typically reduce by $\sim100\GeV$ 
 compared to the full signal region.
 
 \clearpage
 \begin{figure}[!tbhp]
-    \caption{Limit planes shown for both the full signal regions (left) and the aggregated regions (right).\label{fig:limit-planes-agg}.}
+    \caption{Limit planes shown for both the full signal regions
+    (left) and the aggregated regions (right).\label{fig:limit-planes-agg}}
   \begin{center}
-    \subfigure[T2bb full signal region]{ \includegraphics[width=0.45\textwidth]{Figures/simplifiedLikelihood/limitPlanesNominal/SUS16T2bbXSEC.png} } ~~
-    \subfigure[T2bb aggregated regions]{ \includegraphics[width=0.45\textwidth]{Figures/simplifiedLikelihood/limitPlanesAgg/SUS16T2bbXSEC.png} } \\
-    \subfigure[T2tt full signal region]   { \includegraphics[width=0.45\textwidth]{Figures/simplifiedLikelihood/limitPlanesNominal/SUS16T2ttXSEC.png} } ~~
-    \subfigure[T2tt aggregated regions]{ \includegraphics[width=0.45\textwidth]{Figures/simplifiedLikelihood/limitPlanesAgg/SUS16T2ttXSEC.png} } \\
-    \subfigure[T1bbbb full signal region]   { \includegraphics[width=0.45\textwidth]{Figures/simplifiedLikelihood/limitPlanesNominal/SUS16T1bbbbXSEC.png} } ~~
-    \subfigure[T1bbbb aggregated regions]{ \includegraphics[width=0.45\textwidth]{Figures/simplifiedLikelihood/limitPlanesAgg/SUS16T1bbbbXSEC.png} } \\
+    \subfloat[Direct bottom squark production (full signal region)]{ \includegraphics[width=0.45\textwidth]{Figures/simplifiedLikelihood/limitPlanesNominal/SUS16T2bbXSEC.png} } ~~
+    \subfloat[Direct bottom squark production (aggregated regions)]{ \includegraphics[width=0.45\textwidth]{Figures/simplifiedLikelihood/limitPlanesAgg/SUS16T2bbXSEC.png} } \\
+    % \subfloat[T2tt full signal region]   { \includegraphics[width=0.45\textwidth]{Figures/simplifiedLikelihood/limitPlanesNominal/SUS16T2ttXSEC.png} } ~~
+    % \subfloat[T2tt aggregated regions]{ \includegraphics[width=0.45\textwidth]{Figures/simplifiedLikelihood/limitPlanesAgg/SUS16T2ttXSEC.png} } \\
+    \subfloat[Gluino-mediated bottom squark production (full signal region)]   { \includegraphics[width=0.45\textwidth]{Figures/simplifiedLikelihood/limitPlanesNominal/SUS16T1bbbbXSEC.png} } ~~
+    \subfloat[Gluino-mediated bottom squark production (aggregated regions)]{ \includegraphics[width=0.45\textwidth]{Figures/simplifiedLikelihood/limitPlanesAgg/SUS16T1bbbbXSEC.png} } \\
   \end{center}
 \end{figure}
 
@@ -142,13 +143,13 @@ compared to the full signal region.
 
 In this section a method for simplifying the likelihood by approximating the nuisance parameters
 using a multivariate Gaussian is described. The approximations and areas of applicability 
-are made are discussed and a validation shown using the \alphat~search.
+are discussed and a validation shown using the \alphat~search.
 
 \subsection{Definition of the simplified likelihood}
 
-The form of the likelihood (either aggregate or full) used by the \alphat~analysis (product of poisson terms 
+The form of the likelihood (either aggregate or full) used by the \alphat~analysis (product of Poisson terms 
 for the observation in each bin given the prediction and uncertainties)
-is typical for searches for BSM physics. Neglecting uncertainties on the signal contribution,
+is typical of searches for BSM physics. Neglecting uncertainties on the signal contribution,
 the likelihood may be written as 
 
 \begin{equation}
@@ -166,19 +167,19 @@ on the following (as detailed in~\cite{simp-lik}):
 \item{The constraints on the background contributions are Gaussian such that the distribution of 
 the total number of background events is symmetric about the expectation, $b_{i}$, 
 with a variance independent of $\boldsymbol{\theta}$. For the \alphat search, as for many analyses, 
-this assumption is valid as the background contributions are estimated using control regions in 
+this assumption is valid because the background contributions are estimated using control regions in 
 data with large sample sizes.}
 
 \item{The covariance, and therefore only the linear correlation, 
 between the background contribution in each region is sufficient 
 to approximate $p(\tilde{\boldsymbol{\theta}}|\boldsymbol{\theta})$ 
-at least for values of $\boldsymbol{\theta}$ which are close to $\tilde{\boldsymbol{\theta}}$.}
+at least for values of $\boldsymbol{\theta}$ that are close to $\tilde{\boldsymbol{\theta}}$.}
 
 \item{The systematic uncertainties in the signal model can be neglected. The validity of 
 this assumption will strongly depend on the specific BSM physics model being considered. 
 Systematic uncertainties on the signal could be accounted for by adding appropriate 
 nuisance parameters with Gaussian constraints (as for the background contributions), however,
-their derivation is not feasible for those outside the collaboration.} 
+their derivation is not feasible for those outside the CMS collaboration.} 
 \end{itemize}
 
 Under these assumptions, $p(\tilde{\boldsymbol{\theta}}|\boldsymbol{\theta})$ can be modelled as a multivariate 
@@ -230,16 +231,18 @@ excluded at $95\%$ for the full likelihood, the simplified likelihood and the
 simplified likelihood where correlations are neglected are overlaid. The results using the 
 full and simplified likelihoods are seen to agree well when the correlations between bins are considered.
 
-\begin{figure}[hbt]
+\begin{figure}[]
   \begin{center} 
-   \subfigure[]{\includegraphics[width=0.45\textwidth]{Figures/simplifiedLikelihood/simpResults/rAT.pdf}}
-   \subfigure[]{\includegraphics[width=0.45\textwidth]{Figures/simplifiedLikelihood/simpResults/full_T2bb_obs}}
-   \caption{(a) The value of $q(r)$ for the \alphat search defined using the simplified likelihood using the full covariance matrix, assuming no correlations between the 
-   background yields and defined using the full likelihood. (b) Expected and observed exclusion contours defined as 
-   the boundary of the region where $r_{95} < 1$ for the \alphat search.
-   The results are compared between the limits calculated using the full and the simplified likelihoods and the simplified likelihood assuming no correlations 
-   between the background yields. The colour scale shows the ratio of $r_{95}$ calculated 
-   using the simplified likelihood to the value using the full likelihood.}
+   \subfloat[]{\includegraphics[width=0.45\textwidth]{Figures/simplifiedLikelihood/simpResults/rAT.pdf}}~~
+   \subfloat[]{\includegraphics[width=0.45\textwidth]{Figures/simplifiedLikelihood/simpResults/full_T2bb_obs}}\\
+   \caption{(a) The value of $q(r)$ for the \alphat search derived with the simplified 
+   likelihood using the full covariance matrix, derived with the simplified likelihood 
+   assuming no correlations between the background yields and 
+   derived with the full likelihood. (b) Expected and observed exclusion contours for the \alphat search
+   derived with the simplified likelihood using the full covariance matrix,
+   derived wit the simplified likelihood assuming no correlations between the background yields
+   and derived with the full likelihood. The colour scale shows the ratio of $r_{95}$ calculated 
+   derived with the simplified likelihood using the full covariance matrix to the value using the full likelihood.}
    \label{fig:likelihoodscanAT} 
   \end{center}
 \end{figure}
@@ -252,6 +255,6 @@ robustly simplified through the use of aggregated search regions while the simpl
 likelihood method uses a multivariate Gaussian to approximate the systematic uncertainties.
 The simplified likelihood is shown to give comparable upper limits at 95\% confidence 
 level for a representative signal model. These methods may be applied to a 
-wide range of searches for new physics and a general treatment 
+wide range of searches for new physics; a general treatment 
 is presented in~\cite{simp-lik}.
 

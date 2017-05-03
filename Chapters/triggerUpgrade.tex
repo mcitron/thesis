@@ -23,7 +23,7 @@ the L1 trigger are detailed in~\cite{ele_algo,tau_algo,muon_algo}.
 The Global Calorimeter Trigger (GCT) was used during Run 1 to find jets, electrons and photons and to 
 compute global energy sums \cite{gct}. The trigger system takes input from trigger towers (TTs) 
 corresponding to $5\times5$ ECAL crystals and an identical area in the HCAL. 
-These are grouped into $4\times4$ \emph{calorimeter regions} that form the input for physics object and
+These are grouped into $4\times4$ `calorimeter regions' that form the input for physics object and
 reconstruction algorithms for the GCT. Trigger Primitive Generators (TPGs) provide the interface
 with the detector to compute trigger inputs. Due to hardware limitations the detector is split into 16 
 sections, each processed by a Regional Calorimetric Trigger (RCT) to form candidates and sum 
@@ -37,13 +37,13 @@ Upgrade Calorimetric Trigger (UCT), was used for data taking during 2015
 and used updated firmware and algorithms to allow improved jet and object 
 identification, including pileup subtraction \cite{uct}. In the second stage the 
 architecture was entirely replaced by the Time Multiplexed Trigger (TMT) 
-to allow \emph{time multiplexing}, whereby each
+to allow `time multiplexing', whereby each
 event is processed entirely within one card using the full trigger tower granularity
 ~\cite{tmt}. 
 
 \section{The Time Multiplexed Trigger architecture}
 
-The TMT uses two processing layers. The first, \emph{layer one}, performs
+The TMT uses two processing layers. The first, `layer one', performs
 preprocessing and data formatting using 18 CTP7 cards \cite{mp7}. Each card requires
 only a regional view of the detector and performs local operations such as summing 
 ECAL and HCAL transverse energies. The data for each event is combined and transmitted to 
@@ -71,8 +71,8 @@ illustrated in Figure~\ref{fig:inputres}.
 
 \begin{figure}
 \centering
-\subfigure[Input resolution: GCT]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/L1inputreslegacy.png}\label{subfig:inputlegacy}} \quad
-\subfigure[Input resolution: TMT]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/L1inputresupgrade.png}\label{subfig:inputupgrade}} 
+\subfloat[Input resolution: GCT]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/L1inputreslegacy.png}\label{subfig:inputlegacy}} \quad
+\subfloat[Input resolution: TMT]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/L1inputresupgrade.png}\label{subfig:inputupgrade}} 
 \caption{A representation of the CMS collaboration logo digitised with the input resolution of the L1 calorimeter trigger up to 
 \etaabs~$< 3$ using (a) the legacy system ($18 \times 14$ pixels) and (b) the TMT ($72 \times 56$ pixels).}
 \label{fig:inputres}
@@ -186,7 +186,7 @@ in detector response as well as the profile of pileup events can cause $\eta$ an
 to a lesser extent, $\phi$ dependence. In addition, event-by-event fluctuations in the distribution 
 and magnitude of the pileup deposits can greatly affect calorimeter objects. 
 For jets, pileup can both increase the energy of jets associated with the hard 
-scatter and cause \emph{pileup jets} to be clustered 
+scatter and cause `pileup jets' to be clustered 
 entirely from pileup energy deposits.
 
 Pileup subtraction at L1 aims to remove pileup contributions such that the trigger
@@ -224,7 +224,7 @@ minimum bias events. The non-zero intercept is caused by contamination of jets f
 To account for $\eta$ dependence in the pileup, the \rhoG~subtraction may be amended by
 dividing the calorimeter into strips of phi and calculating the median $\rho$ for jets in each 
 strip. However, this local $\rho$ significantly adds to the latency in the pileup subtraction and may 
-be less robust as fewer jets can be sampled in each $\eta$ slice. This \emph{local $\rho$} 
+be less robust as fewer jets can be sampled in each $\eta$ slice. This `local $\rho$' 
 is therefore not considered in this section.
 
 \begin{figure}
@@ -257,15 +257,15 @@ strips to estimate \rhoP~allows such contamination to be mitigated.
 
 Unlike global subtraction, doughnut subtraction allows local variations in \rhoP~to be 
 included; however, it is significantly more susceptible to statistical fluctuations because of the 
-relatively small area sampled. An extension, \emph{chunky} doughnut, shown in Figure~\ref{fig:chunkyDonut},
+relatively small area sampled. An extension, `chunky' doughnut, shown in Figure~\ref{fig:chunkyDonut},
 uses enlarged strips to sample three times the area in measuring~$\rhoP$. The dependence of the number of interactions
 with the energy density for the chunky doughnut pileup estimation (\rhoC) is shown in Figure~\ref{fig:threestripNint}.
 
 \begin{figure}
 \hfill
-\subfigure[Doughnut rings\label{fig:donut}]{\includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/donut}}
+\subfloat[Doughnut rings\label{fig:donut}]{\includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/donut}}
 \hfill
-\subfigure[Chunky doughnut rings\label{fig:chunkyDonut}]{\includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/chunkyDonut}}
+\subfloat[Chunky doughnut rings\label{fig:chunkyDonut}]{\includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/chunkyDonut}}
 \hfill
 \caption{The rings used to sample the local pileup energy density for the doughnut (a) and chunky doughnut (b)
 pileup subtraction. The median two strips (in energy density) are used in each case.}
@@ -297,9 +297,9 @@ This cannot be easily adapted for different pileup regimes but provides a simple
 for assessing more complex algorithms. Zero suppression may also be used in conjunction
 with other pileup correction techniques. 
 
-The thresholds used for the seed and zero suppression may be $\eta$ (or even $\phi$) dependant; however,
+The thresholds used for the seed and zero suppression may be $\eta$ (or even $\phi$) dependent; however,
 such variable thresholds are not considered in the studies presented below. The smallest energy quanta
-available at L1 is 0.5 \GeV and defines a \emph{L1 unit}. The thresholds considered in this section are 5 L1 units
+available at L1 is 0.5 \GeV and defines a `L1 unit'. The thresholds considered in this section are 5 L1 units
 for the central seed (seed 5) and 1 or 2 L1 units for the zero suppression (labelled as TSup1 or TSup2).
 
 \subsection{Calibration}
@@ -312,7 +312,7 @@ to account for changes in detector response. In each region the procedure is as 
 \item Cluster generator particles in the QCD sample (except muons and neutrinos) using the anti-$k_T$ algorithm with R = 0.4 into generator jets.
 \item Match L1 jets to generator jets by finding the closest in $\Delta R$ between the central tower of the L1 jet and the generator jet. L1 jets with 
 $\Delta R > 0.3$ from any generator jet are ignored.
-\item Define the \emph{response} for each L1 jet as the ratio of the (pileup-corrected) \Lonept~to the matched generator jet $pt$ (\Genpt).
+\item Define the `response' for each L1 jet as the ratio of the (pileup-corrected) \Lonept~to the matched generator jet $pt$ (\Genpt).
 \item For each bin in \Genpt, fit the response with a Gaussian to obtain the mean response for that \Genpt. 
 The average \Lonept~in the bin is calculated to obtain the distribution of the mean response against \Lonept.
 \item Perform a $\chi^2$ fit of the distribution of mean response against \Lonept~using the calibration
@@ -382,8 +382,8 @@ matching the fourth leading jet.
 
 \begin{figure}
 \begin{center}
-\subfigure[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/alljet}}
-\subfigure[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/jet4}}
+\subfloat[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/alljet}}
+\subfloat[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/jet4}}
 \caption{Matching efficiencies for jets showing effect of seed and pileup subtraction at low energies for all jets (a) and for the fourth jet (b). In (b)
 a comparison with the GCT is shown.}
 \label{fig:match}
@@ -406,8 +406,8 @@ the magnitude of the gradient is particularly enhanced for low \Genpt~where pile
 
 \begin{figure}
     \begin{center} 
-	\subfigure[\label{fig:resolution1}]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/resolution}}~
-	\subfigure[\label{fig:resolution2}]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/p1eta_14to28_calib_fits}}
+	\subfloat[\label{fig:resolution1}]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/resolution}}~
+	\subfloat[\label{fig:resolution2}]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/p1eta_14to28_calib_fits}}
 	\caption{(a) Resolution as a function of the number of interactions. (b) Gradients of linear fits to 
 	    resolution as a function of number of interactions in bins of $p^{gen}_{T}$.}
 	    \label{fig:label:resolution}
@@ -416,14 +416,14 @@ the magnitude of the gradient is particularly enhanced for low \Genpt~where pile
 
 \subsection{Rates and efficiencies}
 
-The \emph{turn-on} of the efficiency for generator quantities for a L1 selection of 150 \GeV~on the leading jet
+The `turn-on' of the efficiency for generator quantities for a L1 selection of 150 \GeV~on the leading jet
 and 100 \GeV~on the fourth leading jet are shown in Figure \ref{fig:turnon}. The upgrade trigger exhibits a sharper turn-on
 than the GCT quantities and plateaus at higher values than the legacy system. 
 
 \begin{figure}
     \begin{center} 
-	\subfigure[\label{fig:resolution1}]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/leadJet150_noUct}}~
-	\subfigure[\label{fig:resolution2}]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/fourthJet100_noUct}}
+	\subfloat[\label{fig:resolution1}]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/leadJet150_noUct}}~
+	\subfloat[\label{fig:resolution2}]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/fourthJet100_noUct}}
 	\caption{Efficiency as a function of $\Genpt$ for (a) a L1 threshold of 150 \GeV~on the leading jet and (b) 
 	a L1 threshold of 100 \GeV~on the fourth leading jet.}
 	    \label{fig:turnon}
@@ -442,9 +442,9 @@ between the pileup subtraction algorithms are small.
 
 \begin{figure}[h!]
   \centering
-    \subfigure[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/singleJet_150.png}}~
-    \subfigure[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/doubleJet_110.png}}\\
-    \subfigure[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/quadJet_50.png}}
+    \subfloat[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/singleJet_150.png}}~
+    \subfloat[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/doubleJet_110.png}}\\
+    \subfloat[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/quadJet_50.png}}
   \caption{\label{fig:rate_eff_jets} Rate against efficiency for (a) L1 leading jet with a threshold of 150 \GeV, 
   (b) L1 second leading jet with a threshold of 110 \GeV and (c) L1 fourth leading jet with a threshold of 50 \GeV.}
 \end{figure}
@@ -475,8 +475,8 @@ therefore cancel in the vector sum of the towers.
 
 \begin{figure}
 \centering
-	\subfigure[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/ht_200}\label{fig:ht_rateEff}}~
-	\subfigure[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/mht_200}\label{fig:mht_rateEff}}
+	\subfloat[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/ht_200}\label{fig:ht_rateEff}}~
+	\subfloat[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/mht_200}\label{fig:mht_rateEff}}
 	\caption{Rate against efficiency for (a) L1 \scalht and (b) L1 \mht, both with a
 	threshold of 200 \GeV.}
 	    \label{fig:rate_eff_sum}
@@ -500,8 +500,8 @@ and shows little pileup dependence.
 
 \begin{figure}
 \centering
-	\subfigure[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/xy_SingleMu_jetEt_vs_l1JetEt_barrel-endcap}}~
-	\subfigure[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/res_SingleMu_jetEt_over_l1JetEt_barrel-endcap_puBins}}
+	\subfloat[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/xy_SingleMu_jetEt_vs_l1JetEt_barrel-endcap}}~
+	\subfloat[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/res_SingleMu_jetEt_over_l1JetEt_barrel-endcap_puBins}}
 	\caption{(a) The L1 jet energy compared to offline in early 2016 data for a wide
 range of jet energies. (b) Resolution for the L1 jet energy compared to offline in early 2016 data for several different 
 pileup scenarios \cite{l1sums_perf}.}
@@ -514,7 +514,7 @@ pileup scenarios \cite{l1sums_perf}.}
 The simple single object triggers considered in the previous section are useful for selecting
 high \pt~signatures and for low luminosities. In order to provide efficiency for
 the full range of the CMS physics program at higher luminosities, sophisticated combinations
-of the single object triggers, \emph{cross-triggers}, are required. In this section, the \alphat 
+of the single object triggers, `cross-triggers', are required. In this section, the \alphat 
 analysis is used to highlight the utility of such a cross-trigger at L1. 
 
 The \alphat analysis is detailed in Chapter~\ref{cha:alphat}. In order to maximise acceptance
@@ -538,8 +538,8 @@ for the dijet and multijet trigger respectively. For the TMT, chunky-doughnut-co
 
 \begin{figure}
 \centering
-	\subfigure[Upgrade trigger]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/noHardBin12JetdphiFullS2}}~
-	\subfigure[UCT]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/noHardBin12JetdphiFullUCT}}
+	\subfloat[Upgrade trigger]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/noHardBin12JetdphiFullS2}}~
+	\subfloat[UCT]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/noHardBin12JetdphiFullUCT}}
 	\caption{Efficiency of the dijet selection for hadronic offline requirement $200 < \scalht < 300$ and $\alphat > 0.65$
 	in a band of rate of 5.5 to 7.5 kHz}
 	    \label{fig:dijet_cross}
@@ -547,8 +547,8 @@ for the dijet and multijet trigger respectively. For the TMT, chunky-doughnut-co
 
 \begin{figure}
 \centering
-	\subfigure[Upgrade trigger]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/noHardBin1ge4JetdphiFullS2}}~
-	\subfigure[UCT]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/noHardBin1ge4JetdphiFullUCT}}
+	\subfloat[Upgrade trigger]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/noHardBin1ge4JetdphiFullS2}}~
+	\subfloat[UCT]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/noHardBin1ge4JetdphiFullUCT}}
 	\caption{Efficiency of the multijet selection for hadronic offline requirement $200 < \scalht < 300$ and $\alphat > 0.65$
 	in a band of rate of 5.5 to 7.5 kHz}	
 	    \label{fig:multijet_cross}

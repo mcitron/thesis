@@ -29,7 +29,7 @@
 %% according to the Babel language that is set 
 \RequirePackage[babel]{csquotes}
 %% Subfigures - note subfig is incompatible with ccaption 
-\RequirePackage{subfigure}
+\RequirePackage{subfig}
 %% TikZ is a marvellous drawing package
 \RequirePackage{tikz}
 

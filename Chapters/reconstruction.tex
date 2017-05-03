@@ -73,8 +73,8 @@ measured in early LHC data and compared with simulation as shown in Fig~\ref{fig
 
 \begin{figure}[hbt]
   \begin{center} 
-   \subfigure[\label{fig:pvEff}]{\includegraphics[width=0.45\textwidth]{Figures/detector/pvEff}}~
-   \subfigure[\label{fig:pvRes}]{\includegraphics[width=0.45\textwidth]{Figures/detector/pvRes}}
+   \subfloat[\label{fig:pvEff}]{\includegraphics[width=0.45\textwidth]{Figures/detector/pvEff}}~
+   \subfloat[\label{fig:pvRes}]{\includegraphics[width=0.45\textwidth]{Figures/detector/pvRes}}
    \caption{(a) PV efficiency as a function of the number of associated tracks. (b) PV
    resolution in the z coordinate as a function of the number of associated tracks for three track \pt~scenarios~\cite{tracker_seven}
    \label{fig:pvEffRes} }
@@ -138,11 +138,16 @@ for the HCAL component are derived during LHC running~\cite{hcal_calib}.
 \section{Physics object reconstruction}
 
 The reconstructed tracks and calorimeter deposits form 
-the inputs used to reconstruct particles and jets. These \emph{physics objects}
+the inputs used to reconstruct particles and jets. These `physics objects'
 form the basis of the selections used by many analyses. A combination 
 of dedicated local reconstruction algorithms as well as the global event Particle
 Flow (PF) algorithm, described in Section~\ref{sec:particle_flow} are used in 
-reconstructing the physics objects. 
+reconstructing the physics objects. This section describes the recostruction
+of muons, electrons and photons. The reconstruction of jets
+is described in Section~\ref{sec:jet_reco}. The reconstruction of
+the $\tau$ lepton physics object, not used for the \alphat~analysis, is 
+detailed in~\cite{Khachatryan:2062435}.
+
 
 \subsection{Electron and photon reconstruction}
 \label{sec:ele_pho_reco}
@@ -226,7 +231,7 @@ including additional selections, these provide an efficiency of $>95\%$ for reco
 with \pt~larger than a few \GeV~over the full $\eta$ range covered by the
 muon system and a fake rate from hadrons of $<1\%$~\cite{muon_reco}.
 
-\section{Particle Flow}
+\subsection{Particle Flow}
 \label{sec:particle_flow}
 The particle flow (PF) algorithm combines the inputs from dedicated track reconstruction and calorimeter clustering
 algorithms using all detector subsystems to identify and reconstruct all stable particles in the event.
@@ -251,7 +256,7 @@ The PF algorithm utilises a specific clustering algorithm for calorimeter deposi
 in each calorimeter subdetector. First, cluster seeds are identified as local cell maxima over a threshold energy.
 Second, these are grown into topological clusters by aggregating any cells with at least one side in common with
 a cell already in the cluster and with an energy above a given, detector
-subsystem dependant, threshold. Finally, the total energy in each topological cluster
+subsystem dependent, threshold. Finally, the total energy in each topological cluster
 is shared between all encompassed seed clusters according to the cell-cluster distance to 
 form a PF cluster for each seed. Along with reconstructed tracks, these PF clusters form the inputs 
 required to build PF candidates.
@@ -352,7 +357,7 @@ energy density computed from neutral particles, $\rho_{grid}^{\text{Neutral}}$
 \sum_{PU}p_T^{\text{Neutral}} = \rho_{grid}^{\text{Neutral}}\cdot A_{eff}.
 \end{equation}
 
-the cone size may be fixed (relative isolation) or dependant on the \pt~of the particle (mini-isolation). The use of mini-isolation
+the cone size may be fixed (relative isolation) or dependent on the \pt~of the particle (mini-isolation). The use of mini-isolation
 accounts for the increasing collinearity of the hadronic decays of boosted particles. 
 
 \subsection{Isolated tracks}
@@ -480,14 +485,14 @@ respectively~\cite{csv_fig}.
 The stacked, coloured histograms indicate the contributions of the different 
 jet flavours in the simulation~\cite{csv_fig}}.
 \end{figure}
-
-\subsection{Cross cleaning}
-
-The lepton and jet reconstruction algorithms are run independently and so the same detector
-signals may be reconstructed as different physics objects. To avoid this double
-counting cross-cleaning is performed. Any reconstructed jets within $\Delta R < 0.4$ 
-of an isolated lepton are removed.
-
+%
+% \subsection{Cross cleaning}
+%
+% The lepton and jet reconstruction algorithms are run independently and so the same detector
+% signals may be reconstructed as different physics objects. To avoid this double
+% counting cross-cleaning is performed. Any reconstructed jets within $\Delta R < 0.4$ 
+% of an isolated lepton are removed.
+%
 \subsection{Energy sums}
 \label{sec:energy_sums_reco}
 Energy sums are vital for hadronic searches for new physics such as the $\alphat$~search. The typical high
@@ -528,11 +533,11 @@ in calorimeter response. This bias is reduced by correcting the \pt~of CHS-corre
 using the JECs and propagating the correction to the \metvec~as
 
 \begin{equation}
-\metvec^{\,\rm{corr}} = \metvec - \sum_{j}(\vec{p}^{\,\text{corr},j}_\text{T} -
+\text{corrected}\,\metvec = \metvec - \sum_{j}(\vec{p}^{\,\text{corr},j}_\text{T} -
 \vec{p}_\text{T}^{\,j}).
 \end{equation}
 
-This \emph{type-1} correction~\cite{met_fig}~uses all corrected jets with $\pt > 15\GeV$ with less than 0.9 of their energy deposited in the ECAL.
+This `type-1' correction~\cite{met_fig}~uses all corrected jets with $\pt > 15\GeV$ with less than 0.9 of their energy deposited in the ECAL.
 The 4-momenta of any muons found in jets are subtracted when performing the correction and added back to the corrected object.
 Figure~\ref{fig:met_fig} shows excellent agreement between simulation and data
 in reconstructing the \met~with 13\TeV~Run 2 data.
@@ -560,12 +565,13 @@ physics objects used for the \alphat~analysis.
 
 The jet collection is defined by PF jets (clustered from PF candidates using the anti-$k_\text{T}$ algorithm) as defined in Section~\ref{sec:jet_reco}, with
 $R = 0.4$. The jets are corrected for pileup contributions using CHS and jet area corrections. Additional cleaning cuts are then applied
-on the jet constituents as summarised in Table~\ref{tab:loose-jet-id}. These requirements are necessary to reject fake jets. The charged hadron
+on the jet constituents as summarised in Table~\ref{tab:loose-jet-id}. These requirements are necessary to reject fake jets and jets reconstructed
+from pileup. The charged hadron
 fraction cut of $> 0.1$ additionally rejects jets reconstructed from beam halo interactions.
 
 A threshold of jet $\pt > 40 \GeV$ is required for jets used in the analysis which further rejects
 fake jets. Jets in the signal region must satisfy the pseudorapidity requirement $\etaabs < 2.4$. The presence of any forward jets with $\etaabs > 2.4$
-is used as a cleaning veto as described in Section~\ref{sec:fwd_jet_veto}. Additionally, the leading jet in the 
+is used to improve the \mht~resolution and reject the QCD multijet background (as described in Section~\ref{sec:fwd_jet_veto}). Additionally, the leading jet in the 
 event must satisfy $\pt > 100\GeV$. 
 \begin{table}[ht!]
   \caption{Jet identification requirements. \label{tab:loose-jet-id}}
@@ -579,6 +585,7 @@ event must satisfy $\pt > 100\GeV$.
     Neutral EM Fraction & $<0.99$ & - \\
     Number of constituents & $>1$ & - \\
     Charged Hadron Fraction & $>0$ & only for $|\eta_{\mathrm{jet}}| < 2.4$ \\
+    Charged Hadron Fraction & $>0.1$ & for highest \pt jet (otherwise veto event) \\
     Charged Multiplicity & $>0$ & only for $|\eta_{\mathrm{jet}}| < 2.4$ \\
     Charged EM Fraction & $<0.99$ & only for $|\eta_{\mathrm{jet}}| < 2.4$ \\ \hline
     \multicolumn{3}{c}{$|\eta_{\mathrm{jet}}| > 3.0$} \\ \hline        
@@ -592,9 +599,6 @@ event must satisfy $\pt > 100\GeV$.
 \subsubsection{B-tagged jets}
 
 Jets originating from bottom quarks are identified using the CSVv2 algorithm defined in Section~\ref{sec:btag}. 
-The tagging efficiency for the working point of the discriminator of 0.89 is $\sim 67\%$ for a mistag rate
-of $\sim 1\%$ for light quarks ($u$, $d$ and $s$ quarks) and gluons and a mistag rate of $\sim 10\%$ for
-charm quarks.
 
 \subsection{Photons}
 
@@ -603,7 +607,7 @@ muon control regions. Their reconstruction is described in Sections~\ref{sec:ele
 ensured using PF relative isolation with a cone size of $\Delta R = 0.3$. Pileup contributions 
 are mitigated using EA correction. Additional selections are summarised 
 in Table~\ref{tab:photon-id-gamma}; an efficiency for photon identification of $\sim71\%$
-is achieved. The number of fake photons passing selection is measured as $2-10\%$ depending on $\scalht$.
+is achieved. The number of fake and non-prompt photons passing selection is measured as $2-10\%$ depending on $\scalht$.
 
 The kinematic selection for photons used to veto events in the signal region is $\pt > 25\GeV$
 and $\etaabs < 2.5$. The photons used to define the control region must satisfy the tighter 
@@ -675,10 +679,10 @@ The kinematic requirements for electrons used to vetoing are $\pt > 10\GeV$ and 
 \subsection{Muons}
 
 Muons are selected to define the single mu, $\mj$, and double mu, $\mmj$ control regions as well as 
-for veto in defining the signal regions. The reconstruction is described in Section~\ref{sec:muon_reco}.
+to veto events in the signal regions. The reconstruction is described in Section~\ref{sec:muon_reco}.
 The isolation is defined using a PF relative isolation requirement of $I_{\text{PF}}^{\text{rel}} < 0.15$ 
-with a cone size of $\Delta R = 0.4$ for muons in the control regions using a PF mini-isolation requirement of
-$I_{\text{PF}}^{\text{mini}} < 0.2$ with a maximum cone size of $\Delta R = 0.4$. The muons are pileup-corrected
+with a cone size of $\Delta R = 0.4$ for muons in the control regions and by using a PF mini-isolation requirement of
+$I_{\text{PF}}^{\text{mini}} < 0.2$ with a maximum cone size of $\Delta R = 0.4$ to veto events in the signal region. The muons are pileup-corrected
 using an EA correction. An efficiency for muon selection of $\sim98\%$ is achieved.
 
 The kinematic requirements for muons used for veto are $\pt > 10\GeV$ and $\etaabs < 2.4$, while muons 
@@ -718,11 +722,11 @@ kinematic requirements is presented in Table~\ref{tab:kine-sel}.
     Jet  		&Central jets& $\pt > 40 \GeV,\ \etaabs < 2.4$		    \\
 			&Leading central jets&	$\pt > 100 \GeV,\ \etaabs < 2.4$	\\	    	    
 			&Forward jet (veto) &$\pt > 40 \GeV,\ \etaabs > 2.4$	\\	    
-    Photon  		&\gj control region& $\pt > 200 \GeV,\ \etaabs < 1.45$	\\	    
-			&Veto& $\pt > 25 \GeV,\ \etaabs < 2.5$		    \\
-    Muon  		&\mj and \mmj control regions& $\pt > 30 \GeV,\ \etaabs < 2.1$	\\	    
-			&Veto& $\pt > 10 \GeV,\ \etaabs < 2.5$		    \\
-    Electron  		&Veto& $\pt > 10 \GeV,\ \etaabs < 2.5$		    \\
+    Photon  		&\gj control region (relative isolation)& $\pt > 200 \GeV,\ \etaabs < 1.45$	\\	    
+			&Veto (relative isolation)& $\pt > 25 \GeV,\ \etaabs < 2.5$		    \\
+    Muon  		&\mj and \mmj control regions (mini isolation)& $\pt > 30 \GeV,\ \etaabs < 2.1$	\\	    
+			&Veto (relative isolation)& $\pt > 10 \GeV,\ \etaabs < 2.5$		    \\
+    Electron  		&Veto (mini isolation)& $\pt > 10 \GeV,\ \etaabs < 2.5$		    \\
     Isolated track  	&Veto& $\pt > 10 \GeV,\ \etaabs < 2.5$		    \\
 		
     
@@ -730,3 +734,4 @@ kinematic requirements is presented in Table~\ref{tab:kine-sel}.
     \hline
   \end{tabular}
   \end{table}
+
