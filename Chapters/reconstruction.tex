@@ -24,30 +24,31 @@ measured quantities over a wide range of particle energies and momenta.
 
 \subsection{Track reconstruction}
 
+% The basic operation of the 
+% track reconstruction can be decomposed into four logical steps, outlined below.
+
+% \begin{itemize}
+% \item Seeds are generated using either triplets of tracker hits or pairs of hits with an additional constraint 
+% from the beamspot or a pixel vertex. This gives an initial estimate of the trajectory with uncertainty~\cite{tracker_early}.
+% \item Each seed is propagated outward through the tracker layers while considering the current uncertainty in the trajectory.
+% In propagating, a uniform magnetic field is assumed, as well as no energy loss or multiple Coulomb scattering effects.
+% The track parameters are updated with the best matching hit on each layer (if any) according to the Kalman filter formalism~\cite{tracker_vertex}.
+% The search continues until either the boundary of the tracker is reached or no further compatible hits are found. If a minimum number
+% of valid hits are observed, an inwards search is initiated for additional hits~\cite{tracker_early}.
+% \item It is possible for a single charged particle track to be reconstructed more than once. If the fraction of shared hits 
+% between two track candidates is greater than an empirically determined threshold the track with fewer hits is discarded. 
+% If the number of hits is equivalent the track with the largest $\chi^2$ is discarded~\cite{tracker_vertex}.
+% \item After the track candidates are built and cleaned the hits in each candidate are refitted using a Kalman filter and smoother. This 
+% avoids possible bias from the seeding stage~\cite{tracker_vertex}.
+% \end{itemize}
+%
 Charged particle tracks are reconstructed from the hits, considering the efficiency and resolution, 
-using the iterative Combinatorial Track Finder (CTF) algorithm. The basic operation of the 
-track reconstruction can be decomposed into four logical steps, outlined below.
-
-\begin{itemize}
-\item Seeds are generated using either triplets of tracker hits or pairs of hits with an additional constraint 
-from the beamspot or a pixel vertex. This gives an initial estimate of the trajectory with uncertainty~\cite{tracker_early}.
-\item Each seed is propagated outward through the tracker layers while considering the current uncertainty in the trajectory.
-In propagating, a uniform magnetic field is assumed, as well as no energy loss or multiple Coulomb scattering effects.
-The track parameters are updated with the best matching hit on each layer (if any) according to the Kalman filter formalism~\cite{tracker_vertex}.
-The search continues until either the boundary of the tracker is reached or no further compatible hits are found. If a minimum number
-of valid hits are observed, an inwards search is initiated for additional hits~\cite{tracker_early}.
-\item It is possible for a single charged particle track to be reconstructed more than once. If the fraction of shared hits 
-between two track candidates is greater than an emprically determined threshold the track with fewer hits is discarded. 
-If the number of hits is equivalent the track with the largest $\chi^2$ is discarded~\cite{tracker_vertex}.
-\item After the track candidates are built and cleaned the hits in each candidate are refitted using a Kalman filter and smoother. This 
-avoids possible bias from the seeding stage~\cite{tracker_vertex}.
-\end{itemize}
-
-The CTF performs six iterations to determine the tracks. Between each iteration any hits that are assigned to tracks in the
+using the iterative combinatorial track finder (CTF) algorithm~\cite{tracker_early}. The CTF performs 
+six iterations to determine the tracks. Between each iteration any hits that are assigned to tracks in the
 previous iteration are removed from the collection. The final track collection is then filtered to remove fake tracks using 
-information on the number of hits, the $\chi^2$ and the compatibility of the track originating from a pixel vertex. The momentum 
+information on the number of hits, the $\chi^2$ of the track given the hits, and the compatibility of the track originating from a pixel vertex. The momentum 
 resolution achieved is 0.7 (5)\% at 1 (1000) \GeV~in the central region~\cite{tracker_early}. Using a dataset of pions and muons from an early run 
-at the LHC the tracking efficiency was measured as 98\% for tracks with $\pt > 500\MeV$ and $>99\%$ for tracks with $\pt > 2\GeV$~\cite{tracker_eff}.
+at the LHC the tracking efficiency was measured as 98\% for tracks with $\pt > 500\,\MeV$ and $>99\%$ for tracks with $\pt > 2\,\GeV$~\cite{tracker_eff}.
 
 \subsection{Vertex reconstruction}
 
@@ -84,13 +85,13 @@ measured in early LHC data and compared with simulation as shown in Fig~\ref{fig
 The vertices are ordered according to the sum of the $p_T^2$ of the tracks associated with each vertex and
 the vertex with the highest $p_T^2$ taken as the primary vertex (PV). The position of the primary vertex can
 be used for object identification and rejection of pile-up. Many CMS analyses, including the one in this 
-thesis, requie that a good vertex is reconstructed from the tracks satisfying:
+thesis, require that a good vertex is reconstructed from the tracks satisfying:
 
 \begin{itemize}
 \item a minimum number of degrees of freedom: $n_{dof} > 4$
-\item the collision to occur with $|z| < 24cm$ such that the primary vertex is near the 
+\item the collision to occur with $|z| < 24\,\cm$ such that the primary vertex is near the 
 interaction point in the longitudinal direction
-\item the collision to occur within a radial distance of $|d_{xy}| < 24cm$ from the beamline
+\item the collision to occur within a radial distance of $|d_{xy}| < 24\,\cm$ from the beamline
 \end{itemize}
 
 \subsection{Calorimeter reconstruction}
@@ -167,12 +168,12 @@ deposits are fairly localised in $\eta$ and $\phi$. Electrons radiate
 bremsstrahlung along their trajectories due to the presence of the magnetic field and 
 lose on average $33\%$ of their energy in the central region 
 and up to $86\%$ at $|\eta| = 1.4$. Their energy deposits are widely spread in $\phi$ but narrow in $\eta$. 
-The hybrid (multi)clustering algorithm exploits this characteristic to
-reconstruct high energy electrons and photons in the barrel (endcap). The hybrid algorithm
+The hybrid clustering algorithm exploits this characteristic to
+reconstruct high energy electrons and photons in the barrel and endcap. The hybrid algorithm
 uses a seed crystal and clusters up to ten dominoes of $1\times3$ or $1\times5$ crystals ($\phi\times\eta$) within 
-$\Delta\phi < 0.3$ from the seed. Any domino with an energy under $100\MeV$ is discarded. The dominoes
+$\Delta\phi < 0.3$ from the seed. Any domino with an energy under $100\,\MeV$ is discarded. The dominoes
 are themselves clustered in $\phi$, provided each disconnected subcluster has a seed 
-domino of energy $>350\MeV$. The combination of these subclusters is referred 
+domino of energy $>350\,\MeV$. The combination of these subclusters is referred 
 to as a supercluster. The reconstruction in the endcap follows a similar procedure 
 using $5\times5$ grids of crystals. 
 
@@ -200,7 +201,7 @@ processes to be rejected as its value is larger on average for neutral meson dec
 \label{sec:muon_reco}
 
 As muons are MIPs they leave minimal energy deposits in the calorimetry
-subsystems and travel through the entire detector. The muons are therefore reconstructed using a 
+subsystems and travel through the entire detector. The muons are reconstructed using a 
 combination of the inner tracker and muon systems. Two algorithms are used to 
 give complementary efficiency across the momentum spectrum, the 'the outside-in' 
 global muon algorithm and 'the inside-out' tracker muon algorithm~\cite{muon_reco}.
@@ -217,14 +218,14 @@ extrapolated to the muon system, taking into account effects from the magnetic f
 in the detector material and the average expected energy loses. If at least one muon segment matches 
 the extrapolated track, the track qualifies as a tracker muon. Tracker muon reconstruction is more efficient
 than global muon reconstruction for low momenta of $\sim p< 5\GeV$. This is due
-to only requiring a hit in one segment of the muon system while global muon reconstruction is 
+to requiring a hit in only a single segment of the muon system. Global muon reconstruction is 
 more efficient for higher energy muons which are likely to pass through several muon stations~\cite{muon_reco}.
 
 In order to ensure the muons are prompt (produced in by the hard process such as vector boson decay) rather
 than non-prompt (produced from the in-flight decays of hadrons, taus or heavy quarks) and to reject fakes
 caused by the punch through of hadronic particles, additional selections are made. These include quality
 selection on the $\chi^2$ of the muon track, a minimum number of valid hits as well as requirements
-on the impact parameters $d_{xy} < 0.05 cm$ and $d_{z} < 0.1 cm$ aimed at ensuring prompt muons.
+on the impact parameters $d_{xy} < 0.05\,\cm$ and $d_{z} < 0.1\,\cm$ aimed at ensuring prompt muons.
 
 Muons must be reconstructed through either the global or tracker muon algorithm. In combination, and
 including additional selections, these provide an efficiency of $>95\%$ for reconstructing a muon 
@@ -235,20 +236,20 @@ muon system and a fake rate from hadrons of $<1\%$~\cite{muon_reco}.
 \label{sec:particle_flow}
 The particle flow (PF) algorithm combines the inputs from dedicated track reconstruction and calorimeter clustering
 algorithms using all detector subsystems to identify and reconstruct all stable particles in the event.
-Despite hundreds of different particle species being produced by collisions at the LHC only a small fraction
+Despite hundreds of different particle species being produced by collisions at the LHC, only a small fraction
 have sufficient lifetimes and interactions with the detector to be directly measured. The predominant species
 measured by the CMS detector are: $\gamma$, $e^{\pm}$, $\mu^{\pm}$, $\pi^{\pm}$, $K^{\pm}$, $p^{\pm}$, $K^{0}$
 and $n$, classified by the PF algorithm into five categories of photons, electrons, muons, charged hadrons and neutral hadrons. 
 The identification and measurement of the properties of these particles is optimised by taking advantage of the complementarity of 
 different subsystems in various kinematic regimes and geometries. The output list of the individual particles is similar to that provided
-when generating Monte Carlo events. This can then be used as an input for further reconstruction processes
+when generating simulated events and can be used as an input for further reconstruction processes
 such as building jets, determining \met~, determining jets originating from bottom quarks (b tag) and quantifying
 charged lepton isolation. The algorithm is described fully in~\cite{pf_proc,pf_pas}.
 
 Effective track reconstruction forms the core of the PF algorithm. The CMS detector, with a strong magnetic field
 and large silicon tracker, is highly capable of the efficient track
 reconstruction required. In addition, the high granularity ECAL allows effective separation of photons from 
-charged particles, even inside jets of several hundred \GeV, and the entire calorimetry system 
+charged particles, even inside jets of several hundred $\GeV$, and the entire calorimetry system 
 is included within the solenoid, allowing the uninterrupted measurement 
 of the particle energy flow.
 
@@ -366,9 +367,9 @@ Unreconstructed prompt leptons form a large background for hadronic searches.
 Such lost leptons can be caused by both acceptance effects and misreconstruction of 
 processes, including $e^{-}$, $\mu^{-}$ decays and hadronic decays of $\tau$ leptons. 
 Typically, even if not associated to the lepton, the lepton track will still be
-reconstructed. Prompt leptons also tend to be isolated and so the background
-from misreconstructed leptons can be mitigated by vetoing of high
-energy isolated charged tracks. Isolated tracks are defined from PF candidates associated with the PV and 
+reconstructed. Prompt leptons also tend to be isolated and, therefore, a veto of high energy isolated 
+charged tracks can reject events containing misreconstructed leptons.
+Isolated tracks are defined from PF candidates associated with the PV and 
 which pass track quality selection but are not identified as leptons.
 
 \section{Jet reconstruction} 
@@ -378,7 +379,7 @@ Chapter~\ref{cha:theory}, these strongly interacting particles hadronise into co
 in the following section, the properties of the parton which originated the
 jet can be reconstructed by combining all of the particles forming the jet. In order for the properties of the jet to be theoretically tractable the
 reconstruction algorithm has to satisfy the requirements of infrared safety, insensitive to the addition of 
-soft particles, and collinear safety, insensitive to collinear splitting of particles.
+soft particles, and collinear safety, insensitive to collinear splitting of particles~\cite{salam}.
 
 \subsection{Jet clustering}
 
@@ -469,12 +470,12 @@ information is obtained using the Inclusive Vertex Finder (IVF) algorithm~\cite{
 
 The dominant backgrounds for tagging b quarks are jets originating from c quarks and to a lesser extent
 jets from lighter quarks and gluons. The distribution of the CSVv2 discriminator is shown for PF jets
-in Figure~\ref{fig:csv_fig} using $13\TeV$~data and simulation. The value of the discriminator
+in Figure~\ref{fig:csv_fig} using $13\,\TeV$~data and simulation. The value of the discriminator
 used in the $\alphat$ analysis is 0.89, corresponding to an efficiency of $\sim67\%$ and 
 a mistag rate of $\sim 1\%$ for light quarks ($u$, $d$ and $s$ quarks) and gluons and of $\sim 10\%$ for
 charm quarks. The difference in efficiency and mistag rates in data and simulation is measured 
 for a range of jet energies to provide scale factors to correct the simulation. In the
-Run 2 dataset, these scale factors were around $0.94$ and $1.1$ to $1.3$ (depending on \pt) for the b-tag and mistag SFs 
+Run 2 dataset, these scale factors were around $0.94$ and $1.1$ to $1.3$ (depending on \pt) for the b tag and mistag SFs 
 respectively~\cite{csv_fig}.
 
 \begin{figure}
@@ -507,7 +508,7 @@ energies of all reconstructed PF candidates in the event and the total hadronic
 transverse energy, \scalht, which is computed as the scalar sum of the transverse energies of all calibrated reconstructed jets:
 
 \begin{equation}
-E_\text{T} = \sum |\vec{p}_T^{\text{\,PF}}| && \scalht = \sum |\vec{p}_\text{T}^{\,j}|.
+E_\text{T} = \sum |\vec{p}_T^{\,\text{PF}}| && \scalht = \sum |\vec{p}_\text{T}^{\,j}|.
 \end{equation}
 
 The momentum of particles which do not interact with the CMS detector is reconstructed indirectly
@@ -520,10 +521,10 @@ of all PF candidates and has magnitude~\met, as well as the hadronic missing tra
 transverse momenta of all calibrated reconstructed jets and has magnitude~\mht:
 
 \begin{equation}
-\metvec = -\sum \vec{p}_T^{PF} && H_T = -\sum \vec{p}_T^{j}.
+\metvec = -\sum \vec{p}_T^{\,\text{PF}} && \mhtvec = -\sum \vec{p}_\text{T}^{\,j}.
 \end{equation}
 
-In addition, calorimeter \metvec, defined as the negative transverse vector sum of the calorimeter deposits, is used 
+In addition, \metveccalo, defined as the negative transverse vector sum of the calorimeter deposits, is used 
 for the HLT as the PF candidates cannot be reconstructed within latency constraints. The \metvec~is used offline as 
 performance is substantially improved by including tracker information~\cite{pf_pas}. 
 
@@ -533,14 +534,14 @@ in calorimeter response. This bias is reduced by correcting the \pt~of CHS-corre
 using the JECs and propagating the correction to the \metvec~as
 
 \begin{equation}
-\text{corrected}\,\metvec = \metvec - \sum_{j}(\vec{p}^{\,\text{corr},j}_\text{T} -
+\text{corrected}\,\metvec = \metvec - \sum_{j}(\vec{p}^{\;\text{corr},j}_\text{T} -
 \vec{p}_\text{T}^{\,j}).
 \end{equation}
 
-This `type-1' correction~\cite{met_fig}~uses all corrected jets with $\pt > 15\GeV$ with less than 0.9 of their energy deposited in the ECAL.
+This `type-1' correction~\cite{met_fig}~uses all corrected jets with $\pt > 15\,\GeV$ with less than 0.9 of their energy deposited in the ECAL.
 The 4-momenta of any muons found in jets are subtracted when performing the correction and added back to the corrected object.
 Figure~\ref{fig:met_fig} shows excellent agreement between simulation and data
-in reconstructing the \met~with 13\TeV~Run 2 data.
+in reconstructing the \met~with 13 \TeV~Run 2 data.
 
 \begin{figure}
 \centering
@@ -563,16 +564,16 @@ physics objects used for the \alphat~analysis.
 \label{sec:phys-obj}
 \subsection{Jets}
 
-The jet collection is defined by PF jets (clustered from PF candidates using the anti-$k_\text{T}$ algorithm) as defined in Section~\ref{sec:jet_reco}, with
-$R = 0.4$. The jets are corrected for pileup contributions using CHS and jet area corrections. Additional cleaning cuts are then applied
+The jets are reconstructed using PF objects, as described in Section~\ref{sec:jet_reco},
+and are corrected for pileup contributions using CHS and jet area corrections. Additional cleaning cuts are then applied
 on the jet constituents as summarised in Table~\ref{tab:loose-jet-id}. These requirements are necessary to reject fake jets and jets reconstructed
-from pileup. The charged hadron
-fraction cut of $> 0.1$ additionally rejects jets reconstructed from beam halo interactions.
+from pileup. The charged hadron fraction cut of $> 0.1$ additionally rejects jets reconstructed from beam halo interactions
+(see Section~\ref{sec:qcd-background-intro}).
 
-A threshold of jet $\pt > 40 \GeV$ is required for jets used in the analysis which further rejects
+A threshold of jet $\pt > 40\,\GeV$ is required for jets used in the analysis which further rejects
 fake jets. Jets in the signal region must satisfy the pseudorapidity requirement $\etaabs < 2.4$. The presence of any forward jets with $\etaabs > 2.4$
 is used to improve the \mht~resolution and reject the QCD multijet background (as described in Section~\ref{sec:fwd_jet_veto}). Additionally, the leading jet in the 
-event must satisfy $\pt > 100\GeV$. 
+event must satisfy $\pt > 100\,\GeV$. 
 \begin{table}[ht!]
   \caption{Jet identification requirements. \label{tab:loose-jet-id}}
   \centering
@@ -596,9 +597,9 @@ event must satisfy $\pt > 100\GeV$.
   \end{tabular}
 \end{table}
 
-\subsubsection{B-tagged jets}
+\subsubsection{B tagged jets}
 
-Jets originating from bottom quarks are identified using the CSVv2 algorithm defined in Section~\ref{sec:btag}. 
+Jets originating from b quarks are identified using the CSVv2 algorithm defined in Section~\ref{sec:btag}. 
 
 \subsection{Photons}
 
@@ -609,7 +610,7 @@ are mitigated using EA correction. Additional selections are summarised
 in Table~\ref{tab:photon-id-gamma}; an efficiency for photon identification of $\sim71\%$
 is achieved. The number of fake and non-prompt photons passing selection is measured as $2-10\%$ depending on $\scalht$.
 
-The kinematic selection for photons used to veto events in the signal region is $\pt > 25\GeV$
+The kinematic selection for photons used to veto events in the signal region is $\pt > 25\,\GeV$
 and $\etaabs < 2.5$. The photons used to define the control region must satisfy the tighter 
 requirements $\pt > 25\GeV$ and $\etaabs < 1.4$ to ensure efficient trigger selection and
 to be sure that the photon is contained within the barrel where it can be better reconstructed.
@@ -653,7 +654,7 @@ Sections~\ref{sec:ele_pho_reco}~and~\ref{sec:particle_flow}. The isolation uses 
 with a variable cone size of maximum radius $\Delta R = 0.2$. The requirements are summarised in 
 Table~\ref{tab:ele-id}. An overall efficiency for electron selection of $\sim90\%$ is achieved.
 
-The kinematic requirements for electrons used to vetoing are $\pt > 10\GeV$ and $\etaabs < 2.5$.
+The kinematic requirements for electrons used to vetoing are $\pt > 10\,\GeV$ and $\etaabs < 2.5$.
 \begin{table}[h!]
   \caption{Electron identification requirements.\label{tab:ele-id}}
   \centering
@@ -685,24 +686,25 @@ with a cone size of $\Delta R = 0.4$ for muons in the control regions and by usi
 $I_{\text{PF}}^{\text{mini}} < 0.2$ with a maximum cone size of $\Delta R = 0.4$ to veto events in the signal region. The muons are pileup-corrected
 using an EA correction. An efficiency for muon selection of $\sim98\%$ is achieved.
 
-The kinematic requirements for muons used for veto are $\pt > 10\GeV$ and $\etaabs < 2.4$, while muons 
-selected in the control regions must satisfy $\pt > 30\GeV$ and $\etaabs < 2.1$. This ensures efficiency
+The kinematic requirements for muons used for veto are $\pt > 10\,\GeV$ and $\etaabs < 2.4$, while muons 
+selected in the control regions must satisfy $\pt > 30\,\GeV$ and $\etaabs < 2.1$. This ensures efficiency
 for passing trigger requirements and that the muon is well reconstructed.
 
 
 \subsection{Isolated tracks}
 
-Isolated tracks are used to identify W boson decays and single prong decays of the $\tau$ lepton. 
-They are selected from the charged PF candidates satisfying $\pt > 10\GeV$, $\Delta z(\text{track},\text{PV})$ and 
+Isolated tracks are used to identify single prong decays of the $\tau$ lepton
+and misreconstructed leptons. They are selected from the charged PF candidates 
+satisfying $\pt > 10\,\GeV$, $\Delta z(\text{track},\text{PV})$ and 
 $I_{\text{PF}}^{\text{rel}} < 0.1$ with a cone of $\Delta R = 0.3$.
 
 \subsection{Energy sums}
 
 The $\met$ is computed from the magnitude of the vector sum of the transverse momentum of all PF candidates in
 the event. This is type-1-corrected, as described in Section~\ref{sec:energy_sums_reco}, 
-using PF jets with $\pt > 15\GeV$. In the control regions the object(s) used to define
+using PF jets with $\pt > 15\,\GeV$. In the control regions the object(s) used to define
 the control region are not included the $\met$ calculation. The \mht~and \scalht~are defined
-using the vector and scalar sum, respectively, of all PF jets satisfying $\pt > 40 \GeV$ and $\etaabs < 2.4$.
+using the vector and scalar sum, respectively, of all PF jets satisfying $\pt > 40\,\GeV$ and $\etaabs < 2.4$.
 
 \subsection{Summary}
 
@@ -719,15 +721,15 @@ kinematic requirements is presented in Table~\ref{tab:kine-sel}.
     Object 	& 	&Kinematic selection \\
     \hline
     \hline
-    Jet  		&Central jets& $\pt > 40 \GeV,\ \etaabs < 2.4$		    \\
-			&Leading central jets&	$\pt > 100 \GeV,\ \etaabs < 2.4$	\\	    	    
-			&Forward jet (veto) &$\pt > 40 \GeV,\ \etaabs > 2.4$	\\	    
-    Photon  		&\gj control region (relative isolation)& $\pt > 200 \GeV,\ \etaabs < 1.45$	\\	    
-			&Veto (relative isolation)& $\pt > 25 \GeV,\ \etaabs < 2.5$		    \\
-    Muon  		&\mj and \mmj control regions (mini isolation)& $\pt > 30 \GeV,\ \etaabs < 2.1$	\\	    
-			&Veto (relative isolation)& $\pt > 10 \GeV,\ \etaabs < 2.5$		    \\
-    Electron  		&Veto (mini isolation)& $\pt > 10 \GeV,\ \etaabs < 2.5$		    \\
-    Isolated track  	&Veto& $\pt > 10 \GeV,\ \etaabs < 2.5$		    \\
+    Jet  		&Central jets& $\pt > 40 \,\GeV,\ \etaabs < 2.4$		    \\
+			&Leading central jets&	$\pt > 100 \,\GeV,\ \etaabs < 2.4$	\\	    	    
+			&Forward jet (veto) &$\pt > 40 \,\GeV,\ \etaabs > 2.4$	\\	    
+    Photon  		&\gj control region (relative isolation)& $\pt > 200 \,\GeV,\ \etaabs < 1.45$	\\	    
+			&Veto (relative isolation)& $\pt > 25 \,\GeV,\ \etaabs < 2.5$		    \\
+    Muon  		&\mj and \mmj control regions (mini isolation)& $\pt > 30 \,\GeV,\ \etaabs < 2.1$	\\	    
+			&Veto (relative isolation)& $\pt > 10 \,\GeV,\ \etaabs < 2.5$		    \\
+    Electron  		&Veto (mini isolation)& $\pt > 10 \,\GeV,\ \etaabs < 2.5$		    \\
+    Isolated track  	&Veto& $\pt > 10 \,\GeV,\ \etaabs < 2.5$		    \\
 		
     
     \hline

@@ -8,8 +8,8 @@
 The LHC is a 27km circular circumference storage ring, accelerator and collider for 
 both protons and Pb ions. It is situated in a stable environment in a tunnel 
 100 metres underneath the Franco-Swiss border near Geneva, Switzerland.
-A double-ring synchotron, it is designed to collide proton-proton (pp)
-pairs with a centre of mass energy of up to $\sqrt{s}=14\TeV$ and a 
+A double-ring synchotron, it is designed to collide proton-proton
+pairs with a centre of mass energy of up to $\sqrt{s}=14\,\TeV$ and a 
 luminosity of up to $10^{34}\cm^{-2}s^{-1}$. This makes the LHC the only collider
 in operation able to directly probe $\TeV$ scale physics. 
 
@@ -22,21 +22,19 @@ A Toroidal LHC Apparatus (ATLAS)~\cite{ATLAS}, the Compact Muon Solenoid (CMS)~\
 and Large Hadron Collider Beauty (LHCb)~\cite{LHCb} which record the collisions. Figure~\ref{fig:LHC-diagram} shows the layout of the LHC ring including
 the positions of the four main detectors. The proton beams are made up of many `bunches' of approximately $1.1\times10^{11}$
 protons localised into less than 1 ns (or 30$\cm$) in the direction of motion.
-The beams are formed inside the Proton Synchrotron (PS) from bunches of protons 25 ns apart with an energy of 26 \GeV. 
+The beams are formed inside the Proton Synchrotron (PS) from bunches of protons 25 ns apart with an energy of $26\,\GeV$. 
 The protons are then accelerated in the Super Proton Synchrotron (SPS) to 450 \GeV~before being injected into the LHC at
 the points shown in Figure~\ref{fig:LHC-diagram}. Once injected into the LHC, radio frequency (RF) cavities 
 provide around 275kW of RF power independently to each beam to accelerate the protons
 to half the operating centre of mass energy for collisions.
 The LHC operates as a storage ring for the accelerated beams using 1232 
-superconducting dipole magnets in the eight arc segments. These provide magnetic fields of up to $8T$ to steer the beams. 
+superconducting dipole magnets in the eight arc segments. These provide magnetic fields of up to 8 T to steer the beams. 
 High precision quadropole and higher order magnets at the interaction points are used to position and focus the beams to 
 maximise the occurrence of high momentum collisions and therefore the luminosity. The average number of simultaneous collisions
 per bunch crossing, in time pileup (PU), for the work in this thesis was $\approx25$.
 The luminosity in the LHC is not constant over a physics run, but decays due to the degradation 
 of intensities and emittance of the circulating beams (mainly due to loss from collisions). Eventually,
-the beam is dumped and the acceleration process is started again. An efficient turn around between
-dumping the beam and the start of a new physics run of 
-around 6 hours allows the luminosity collected by CMS to be maximised. 
+the beam is dumped and the acceleration process is restarted. 
 
 \begin{figure}
 \centering
@@ -48,7 +46,7 @@ around 6 hours allows the luminosity collected by CMS to be maximised.
 
 \subsection{LHC run conditions}
 
-The first physics runs of the LHC from 2010 to 2013 (Run 1) reached energies of 3.5 and 4\TeV~per beam and 
+The first physics runs of the LHC from 2010 to 2013 (Run 1) reached energies of 3.5 and 4 \TeV~per beam and 
 provided record-breaking integrated luminosities. The data collected allowed the 
 discovery of the Higgs boson~\cite{cmsHiggs,atlasHiggs} as well as enabling many new regions of parameter space
 to be probed. From 2013 to mid-2015 (Long Shutdown 1) the LHC was shut down for upgrade to allow design
@@ -56,19 +54,19 @@ energies to be reached. All magnet interconnectors were inspected and replaced, 
 and the dipole magnets underwent a quench training programme. 
 
 From 2015 to 2016 (Run 2, which will continue up to 2018) the LHC has been running with record beam energies 
-of $6.5 \TeV$ per beam with bunch spacings of 25 and 50 ns. 
+of $6.5\,\TeV$ per beam and bunch spacings of 25 and 50 ns. 
 As shown in Figure~\ref{fig:LHC-integrated-lumi}, by July 2016, $16.0 \ifb$ of integrated luminosity was
 delivered to the CMS and ATLAS detectors, with $13.8 \ifb$ recorded by CMS. The dataset is validated 
 to ensure the exclusion of runs in which the data quality may be affected by detector subsystem. 
 The luminosity of this `certified' dataset is $12.9 \ifb$ and it is this dataset, 
-at a centre of mass energy of $\sqrt{s} = 13 \TeV$, which forms the basis for the work in this thesis.
+at a centre of mass energy of $\sqrt{s} = 13\,\TeV$, which forms the basis for the work in this thesis.
 
 %%%FIGURE - LHC lumi plot
 \begin{figure}
 \centering
     \includegraphics[width=0.6\textwidth]{./Figures/detector/int_lumi_per_day_cumulative_pp_2016_Golden_ICHEP}
   \caption{Integrated luminosity measured online versus day delivered to CMS (blue)
-  and recorded by CMS (orange) during stable beams for p-p collisions at $\sqrt{s} = 13 \TeV$~\cite{cmslumi}.}
+  and recorded by CMS (orange) during stable beams for p-p collisions at $\sqrt{s} = 13\,\TeV$~\cite{cmslumi}.}
   \label{fig:LHC-integrated-lumi}
 \end{figure}
 
@@ -88,13 +86,13 @@ precisely measured. A more detailed description may be found in~\cite{CMS}.
 The coordinate system used by CMS takes the origin at 
 the collision point. The z-axis points along the beam direction while the x-axis points radially inward
 towards the centre of the LHC and the y-axis points vertically upward.
-The polar angle, $\theta$, is measured from the z-axis and defines the pseudorapidity, $\eta=-ln(tan(\theta/2))$. 
+The polar angle, $\theta$, is measured from the z-axis and defines the pseudorapidity, $\eta=-\text{ln}(\tan(\theta/2))$. 
 This is used in preference to $\theta$ as the difference between the pseudorapidity of two 
 particles is invariant under boosts along the z-axis~\cite{cms_iop}. 
 The $\eta$ coverage of CMS is $|\eta|<5$. The azimuthal angle, $\phi$, is defined from the x-axis in the x-y plane.
-This allows the definition of $\Delta R = \sqrt{(\Delta\phi^2+\Delta\eta^2)}$, commonly used to measure the 
+This allows the definition of $\Delta R = \sqrt{\Delta\phi^2+\Delta\eta^2}$, commonly used to measure the 
 angular difference between objects. Transverse energies and momenta, $E_T $ and $p_T$ respectively, are defined 
-as $E_T = E\sin(\theta)$ and $p_T = \sqrt{(p_{x}^2+p_{y}^2)}$. Momentum imbalances are measured as the negative 
+as $E_T = E\sin(\theta)$ and $p_T = \sqrt{p_{x}^2+p_{y}^2}$. Momentum imbalances are measured as the negative 
 vector sums of the momenta of the relevant objects in the x-y plane. 
 
 \begin{figure}
@@ -108,12 +106,12 @@ vector sums of the momenta of the relevant objects in the x-y plane.
 Figure \ref{CMS_SLICE} shows a cross section of CMS in the x-y plane as well as introducing the major detector components that will be described 
 in detail in this section. The tracker lies closest to the beam and, as for the calorimetry subsystems, is situated within a magnetic field of 3.8T provided
 by the superconducting solenoid. It measures the curved trajectory of charged particles through this magnetic field to determine their momenta 
-as well as the location of primary and secondary vertices. The tracker is followed by the Electromagnetic Calorimeter (ECAL),
+as well as the location of primary and secondary vertices. The tracker is followed by the electromagnetic calorimeter (ECAL),
 which measures energy deposited in electromagnetic showers from particles such as electrons and photons and is separated in barrel and endcap 
-components for the central and forward regions respectively. The Hadronic Calorimeter (HCAL) lies outside the 
+components for the central and forward regions respectively. The hadronic calorimeter (HCAL) lies outside the 
 ECAL and measures energy from nuclear interactions of hadronic particles. It is a sampling calorimeter
 made up of several layers of absorber and scintillator to allow hadron showers to be measured over a maximum of around 11 radiation lengths. 
-The coverage of the hadron calorimeter is extended into the forward regions with the Hadronic Forward calorimeter (HF). Enclosing the calorimetry and tracking subsystems 
+The coverage of the hadron calorimeter is extended into the forward regions with the hadronic forward calorimeter (HF). Enclosing the calorimetry and tracking subsystems 
 is the superconducting solenoid which generates the magnetic field. Outside the solenoid, the iron return yoke lies interspersed with muon chambers, forming the outermost components of the detector. 
 Muons are minimally ionising particles (MIPs), depositing little energy within the detector, and typically reach the cavern containing the detector. 
 The barrel muon system is composed of drift-tubes (DT) and resistive plate chambers (RPC). These provide
@@ -142,7 +140,7 @@ have sensors of thickness $500\mum$~\cite{tracker_tdr}.
 \end{figure}
 
 To measure the trajectories the tracker must effectively detect hits from charged particles. The efficiency for the 
-hit reconstruction, defined as the fraction of particles with $p_T > 1 GeV$ passing through the fiducial regions of the sensors
+hit reconstruction, defined as the fraction of particles with $p_T > 1\,\GeV$ passing through the fiducial regions of the sensors
 in a layer for which hits are recorded, ranges from 99\% in the strip detector to 99.5\% for the pixel detector.
 The position resolution for the hits also determines the track finding performance; for
 the pixel detector the resolution in the $r$-$\phi$ plane is $\sim10\mum$ and $\sim20-40\mum$ along
@@ -151,21 +149,21 @@ the $z$ direction while the $r$-$\phi$ resolution for the strip detector ranges 
 \section{Electromagnetic calorimeter}
 
 The high precision measurement of the energy and position of electrons and photons resulting from 
-processes such as Higgs decay is an important design goal of the CMS experiment. Additionally,
+processes such as Higgs boson decay is an important design goal of the CMS experiment. Additionally,
 a substantial energy fraction of jets, which are central to the analysis outlined in this
 thesis, is formed of photons whose properties cannot be measured in any other subsystem.
 
-The CMS ECAL is formed of high density lead tungstate ($PbWO_4$) crystals incorporating an ECAL barrel section (EB) 
+The CMS ECAL is formed of high density lead tungstate (PbW$\text{O}_4$) crystals incorporating an ECAL barrel section (EB) 
 and two ECAL endcaps (EE) outside the tracker~\cite{ecal_tdr}. The high density (8.28$g/\cm^3$), short radiation length (0.89$\cm$) 
 and small Moliere radius (2.2$\cm$) of the crystal are optimal for a compact calorimeter with high granularity. In addition the 
-crystals are radiation hard (up to 10 Mrad) and have a fast scintillation decay time (80\% of the light is emitted within $25ns$)
+crystals are radiation hard (up to 10 Mrad) and have a fast scintillation decay time (80\% of the light is emitted within 25 ns)
 comparable to the smallest bunch spacing provided by the LHC. 
 
 The EB has an inner radius of 129$\cm$ and covers the range $|\eta| < 1.479$. The crystals are arranged into 36 
 identical `supermodules' which surround the beam line in a quasi-projective geometry (the gaps between
 crystal modules are offset by $3^\circ$ with respect to the line from the nominal vertex position)
 and cover $0.0174$ radians in $\Delta\phi$ and $\Delta\eta$~\cite{CMS}. The crystals have a front face cross section 
-of $\sim 22\times22mm^2$ and a length of $230mm$. This allows electrons and photons to deposit most of their  
+of $\sim 22\times22\,\mm^2$ and a length of $230\,\mm$. This allows electrons and photons to deposit most of their  
 energy within a single crystal as the crystals have a depth equivalent to 25.8 radiation lengths and 
 a breadth comparable to the Moliere radius. 
 
@@ -173,7 +171,7 @@ The endcaps lie at a distance of $314 \cm$ from the vertex and cover the range $
 are structured into 2 `Dees' which consist of semi-circular aluminium plates upon which structural units of 
 $5\times5$ `superclusters' of crystals are cantilevered. These are arranged off-axis from
 the nominal vertex position. The identical crystals have a front face cross section of 
-$\sim 28.6\times28.6 \mm^2$ and a length of $220$ \mm (24.7 radiation lengths)~\cite{CMS}.
+$\sim 28.6\times28.6\,\mm^2$ and a length of $220\,\mm$ (24.7 radiation lengths)~\cite{CMS}.
 
 The energy of the incoming electromagnetic particles is measured through the scintillation light produced
 in the crystals. The light yield of the crystals is reasonably low ($30\gamma/\MeV$)
@@ -194,7 +192,7 @@ The energy resolution of the ECAL can be parameterised as the summation of three
 in Equation~\ref{equ:energy-resolution}~\cite{ecal_performance2},
 
 \begin{equation}
-\frac{\sigma_E}{E} = \frac{a}{\sqrt{E(\GeV)}} \oplus \frac{b}{E(GeV)} \oplus c^2,
+\frac{\sigma_E}{E} = \frac{a}{\sqrt{E(\GeV)}} \oplus \frac{b}{E(\GeV)} \oplus c^2,
 \label{equ:energy-resolution}
 \end{equation}
 
@@ -212,7 +210,7 @@ The HCAL is a sampling calorimeter which is designed to measure the hadronic pro
 containment and hermeticity to ensure momentum imbalance from neutrinos or new physics particles can be 
 effectively measured~\cite{hcal_tdr}.
 These quantities are critical for the analysis described in this thesis.
-The design of the HCAL is largely determined by the space limitations due to the ECAL at $r = 1.77 m$ and the solenoid at $r = 2.95 m$.
+The design of the HCAL is largely determined by the space limitations due to the ECAL at $r = 1.77\,\text{m}$ and the solenoid at $r = 2.95\,\text{m}$.
 % As the main body of the HCAL is within the magnet, energy deposits may be effectively matched with tracker deposits, 
 % necessary for the particle flow (PF) algorithm (see Section~\ref{sec:particle_flow}).
 
@@ -230,9 +228,9 @@ It increases the effective thickness of the HCAL to over 10 interaction lengths,
 as well as improving the \met resolution. It is composed of iron absorbers and scintillator layers (with the same tile geometry as in the HB), divided into 
 12 $30^\circ$ sections~\cite{hcal_tdr}. 
 
-Finally, coverage for $3.0 < |\eta| < 5.0$ is provided by the Hadronic Forward (HF) installed $11.2 m$ from the interaction point. This provides
+Finally, coverage for $3.0 < |\eta| < 5.0$ is provided by the HF installed $11.2 m$ from the interaction point. This provides
 excellent measurement of forward hadronic activity as well as hermeticity for \met measurements~\cite{hcal_tdr}. The HF is composed of a 1.65m thick steel absorber 
-embedded with a grid of $0.6 \mm$ quartz fibres, each separated by $5\mm$, running parallel to the beam. The energy is measured using the Cherenkov
+embedded with a grid of $0.6\,\mm$ quartz fibres, each separated by $5\,\mm$, running parallel to the beam. The energy is measured using the Cherenkov
 light produced by particles, formed in the hadronic shower, travelling within the fibres. The HF is segmented into 13 towers in $\eta$ with a
 size of $\Delta\eta \approx 0.175$, except for the lowest $\eta$ tower with $\Delta\eta \approx 0.1$. The azimuthal segmentation of all towers is 
 $\Delta\phi = 0.175$, except for the highest $\eta$ tower with $\Delta\phi = 0.349$.
@@ -248,9 +246,9 @@ Similarly to the ECAL, the HCAL resolution was measured using a test beam of sin
 \section{Solenoid magnet}
 
 The design specifications of the solenoid magnet are driven by the desire to unambiguously determine
-the sign of muons with momentum $\sim 1\TeV$. This requires a resolution of $~10\%$ at $p=1\TeV$.
+the sign of muons with momentum $\sim 1\,\TeV$. This requires a resolution of $~10\%$ at $p=1\,\TeV$.
 To achieve this, the CMS experiment uses a niobium-titanium superconducting magnet with a length of
-12.5m and a diameter of 6m which can operate in fields of up to 4T. A field of 3.8T provides
+12.5 m and a diameter of 6 m which can operate in fields of up to 4 T. A field of 3.8 T provides
 sufficient bending power to achieve the design goal and so, to maximise its lifetime, the magnet is
 typically run at this field strength~\cite{CMS}.
 
@@ -262,7 +260,7 @@ in the inner tracker, after the coil and in the return flux. Three types of dete
 used to identify and measure muons -- drift tubes (DTs), cathode strip chambers (CSCs) and resistive
 plate chambers (RPCs)~\cite{CMS}. DTs are used in the central barrel region of $|\eta| < 1.2$ where 
 the neutron induced background is small, the muon rate is relatively low, 
-and the magnetic field is low (~0.4T) and uniform. In the endcap region of $ 1.2 < |\eta| < 2.4$ these conditions are 
+and the magnetic field is low ($\sim$0.4 T) and uniform. In the endcap region of $ 1.2 < |\eta| < 2.4$ these conditions are 
 reversed and CSCs are used. RPCs are used in both the barrel and endcap region (covering the range $|\eta| < 1.6$) as they provide a fast response with a good time 
 resolution, allowing the bunch crossing to be unambiguously resolved, but much coarser position resolution than the DTs or CSCs~\cite{muon_tdr}. 
 The configuration of the muon systems is shown in Figure~\ref{fig:MUON_SLICE}.
@@ -280,7 +278,7 @@ The efficiency of muon reconstruction is typically 96 -- 99\%. The muon system r
 absorption of charged particles other than muons in the layers of the detectors.
 `Punch through' of such particles is reduced to $\sim 5\%$ for the first muon station and to
 $\sim 0.2\%$ for further stations. The momentum resolution 
-was measured as $\sim 1.8\%$ ($10\%$) for muons of $\pt=20\GeV$ ($\pt=1000\GeV$) 
+was measured as $\sim 1.8\%$ ($10\%$) for muons of $\pt=20\,\GeV$ ($\pt=1000\,\GeV$) 
 using 7 \TeV~beam and cosmic muon data. 
 
 \section{Data acquisition system}
@@ -289,12 +287,12 @@ Data acquisition (DAQ) is a major challenge for the CMS experiment as the collis
 and storage capabilities that would be required if all data were to be fully reconstructed. It is critical
 for the CMS physics programme that 
 possible signal events are selected swiftly and efficiently while keeping to constraints placed on data bandwidth, storage and 
-latency. The LHC produces bunch crossings at a rate of up to 40MHz but can only
-store $\sim1$kHz for offline analysis~\cite{daq_tdr}. The required rejection power of $10^4$ is too large to be achieved
+latency. The LHC produces bunch crossings at a rate of up to 40 MHz but can only
+store $\sim1$ kHz for offline analysis~\cite{daq_tdr}. The required rejection power of $10^4$ is too large to be achieved
 in a single processing step while maintaining a high efficiency and so the task is split into two stages.
 The first step, Level-1 trigger (L1 trigger), is a hardware system that uses a small subset of the event information
 to accept or reject events. The L1 trigger reduces the rate of events which must be completely 
-read from the detector buffers to a maximum of 100kHz. Even with this reduction, 100 Gbytes/s must be transferred to the surface
+read from the detector buffers to a maximum of 100 kHz. Even with this reduction, 100 Gbytes/s must be transferred to the surface
 to be processed by the second step, the High Level Trigger (HLT), which reduces the rate to a peak of $\sim1$ kHz which is 
 read to tape to be fully reconstructed. A schematic diagram of the DAQ process is show in Fig~\ref{fig:DAQ_SLICE}. 
 The selections at both the L1 trigger and HLT steps are designed to optimise efficiency given the constraints 

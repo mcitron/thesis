@@ -1,9 +1,9 @@
 \chapter{Facilitating re-interpretation} % 
 \label{cha:simplifiedLikelihood}
-The results of the \alphat search have been presented using limits on simplified model
+The results of the \alphat search have been interpreted using limits on simplified model
 spectra which allow the sensitivity of the search to different topologies 
 to be benchmarked. The search will be sensitive to a wide range of BSM models
-and the results must therefore be re-interpreted by those outside the 
+and can be re-interpreted by those outside the 
 CMS collaboration to provide constraints on such models.
 
 The \alphat search, like many searches for BSM physics with the CMS detector, uses a 
@@ -15,7 +15,7 @@ level quantities (both methods are used in~\cite{Drees:2013wra,Fastlim,mastercod
 The background contributions to the search regions and the associated systematic uncertainties often rely
 on simplifying assumptions which can lead to inaccuracies in the re-interpretation. 
 
-In this section an alternative procedure for re-interpreting BSM physics searches by approximating
+In this section, a procedure for re-interpreting BSM physics searches by approximating
 the full background model and the associated systematic uncertainties is presented. 
 The procedure involves techniques both to simplify the categorisation of the search (`aggregation')
 and to use a reduced set of information to describe the background model 
@@ -27,10 +27,10 @@ searches and a general treatment may be found in~\cite{simp-lik}.
 \section{Aggregation}%
 \label{sec:agg-reg}
 The \alphat analysis uses a fine categorisation in \njet, \nb, \scalht,and \mht to provide
-sensitivity to a wide range of new physics models. This categorisation makes re-interpreting
-the results of the search too computationally intensive to be feasible. Previously, 
-only the categories most sensitive to the relevant model have been used; however,
-this will break the correlation model for the search and can significantly reduce
+sensitivity to a wide range of BSM physics models. This categorisation makes re-interpreting
+the results of the search too computationally intensive to be feasible. The simplest method to
+reduce the complexity of the search is to take only the most sensitive categories for 
+the BSM physics model; however, this breaks the correlation model for the search and can significantly reduce
 the sensitivity due to the loss of indirect constraints from
 the neglected bins. 
 
@@ -42,7 +42,7 @@ simplified without breaking the background model.
 
 Consider the hadronic component of the likelihood defined in Equation~\ref{eq:hadronicLikelihood}.
 The aggregate likelihood is defined by summing the contributions within the Poisson for
-each \mht, \scalht, \nb and \njet category to be aggregated as:
+each \mht, \scalht, \nb and \njet category which is to be aggregated as:
 
 \begin{multline}
 \label{eq:aggregatedLikelihood}
@@ -52,16 +52,16 @@ b^{j,i}_{\ttW,\mathrm{had}}\times\phi^{j}(\mu\rightarrow\ttW)\times a^{j}\times\
 \end{multline}
 
 The control region component of the likelihood is unchanged such that the prediction model
-is maintained from the full likelihood. This allows, for example, the scale anchoring 
-scheme to maintain validity while enabling events at different scales to be included 
-within the same aggregate region.
+is maintained from the full likelihood. This allows, for example, events 
+at different scales to be included within the same aggregate region without introducing
+bias from mixing events at different scales.
 
 \subsection{Definition of aggregated regions}
 \label{sec:ssr-alphat}
 The categorisation used for the full likelihood is summarised in Section~\ref{sec:cat}. 
 The large number of categories provides generic sensitivity but is not optimal for re-interpretation. 
 The thirty-one jet categories are therefore reduced to eight aggregate jet categories while
-the (up to) eight \scalht bins are merged into one bin ($\scalht \geq 200 GeV$).
+the (up to) eight \scalht bins are merged into one bin ($\scalht \geq 200\,\GeV$).
 The final categories are shown in Table~\ref{tab:agg-binning}.
 These are defined to be disjoint, contiguous and to cover the full
 signal region such that in combination the regions reflect the sensitivity of
@@ -69,7 +69,7 @@ full signal region phase space.
 
 \begin{table}[htb!]
   \caption{To define the aggregate regions for the \alphat search the \scalht dimension is
-  merged to $\geq200\GeV$ and $\nb$ to two categories of \nb~$<2$ and $\geq2$. 
+  merged to $\geq200\,\GeV$ and $\nb$ to two categories of \nb~$<2$ and $\geq2$. 
   The merged \nj~ categories are summarised in this table. Each category is
   further binned using eight \mht bins with lower bounds from $100$ to $800\,\GeV$.}
   \label{tab:agg-binning}
@@ -88,13 +88,13 @@ full signal region phase space.
   \end{tabular}
 \end{table}
 
-The jet categories are merged to four separate categories motivated by their sensitivity to 
-different new physics topologies. For example, the monojet-like topology is targeted towards
+The jet categories are merged into four separate categories motivated by their sensitivity to 
+different BSM physics topologies. For example, the monojet-like topology is targeted towards
 compressed spectra while the high \nj topology targets 
 uncompressed gluino and squark models. The \nb categories are combined 
-as $\nb=0,1$ and $\nb\geq2$, targeted at light and heavy flavour new physics respectively. 
+as $\nb=0,1$ and $\nb\geq2$, targeted at light and heavy flavour BSM physics respectively. 
 Finally, the \scalht dimension is entirely merged as the \mht dimension generally provides better sensitivity
-for new physics models. The use of the aggregated regions ensures that the backgrounds are 
+for BSM physics models. The use of the aggregated regions ensures that the backgrounds are 
 still predicted by the nominal, finely binned regions (with appropriate systematics).
 
 \subsection{Results using aggregated regions for the \alphat analysis}
@@ -122,7 +122,7 @@ the expected and observed 95\% upper limit on the signal strength for the full s
 is compared to the limits derived using the aggregated regions. The limits are shown side by side
 in Fig~\ref{fig:limit-planes-agg} for the simplified models of direct and 
 gluino mediated bottom squark production. Where the mass
-splittings are small the expected limits typically reduce by $\sim100\GeV$ 
+splittings are small the expected limits typically reduce by $\sim100\,\GeV$ 
 compared to the full signal region.
 
 \clearpage
@@ -153,15 +153,15 @@ is typical of searches for BSM physics. Neglecting uncertainties on the signal c
 the likelihood may be written as 
 
 \begin{equation}
-\mathcal{P}(\mathrm{data}|\mu\cdot s(\boldsymbol{\theta}) + b(\boldsymbol{\theta})) = \prod_{i=1}^{N} P(n_{i}|\mu \cdot s_{i}+b_{i}+\theta_{i}).
+\mathcal{L}(r,\boldsymbol{\theta}) = p(\tilde{\boldsymbol{\theta}}|\boldsymbol{\theta}) \times \prod_{i=1}^{N} Pois(n_{i}|r \cdot s_{i}+b_{i}+\theta_{i}).
 \label{eq:poisson-prob}
 \end{equation}
 
-where the product is over all categories (with total N) and all nuisance parameters
-have been included in the absolute variation in the total background, $\theta_i$. The simplified likelihood 
-is the approximation of the full probability density function $p(\tilde{\boldsymbol{\theta}}|\boldsymbol{\theta})$
-as a multivariate Gaussian using the covariance between the categories. This approximation relies 
-on the following (as detailed in~\cite{simp-lik}):
+where the product is over all categories (with total N), all nuisance parameters
+have been included in the absolute variation in the total background in each category, $\theta_i$, and
+$p(\tilde{\boldsymbol{\theta}}|\boldsymbol{\theta})$ is the probability density function for the observed values of the nuisances ($\tilde{\boldsymbol{\theta}}$). 
+The simplified likelihood is the approximation of the full probability density function as a multivariate Gaussian using the covariance between the categories.
+This approximation relies on the following (as detailed in~\cite{simp-lik}):
 %Remove and cite????
 \begin{itemize}
 \item{The constraints on the background contributions are Gaussian such that the distribution of 
@@ -187,7 +187,7 @@ Gaussian distribution with the mean vector identified with external measurements
 $\tilde{\boldsymbol{\theta}}=0$. The simplified likelihood can now be expressed as
 
 \begin{equation}
-\mathcal{L}_{S}(\mu, \boldsymbol{\theta}) =  \prod_{i=1}^{N} \dfrac{(\mu \cdot s_{i}+b_{i}+\theta_{i})^{n_{i}} e^{-(\mu \cdot s_{i}+b_{i}+\theta_{i})} }{n_{i}!} \cdot  
+\mathcal{L}_{S}(r, \boldsymbol{\theta}) =  \prod_{i=1}^{N} \dfrac{(r \cdot s_{i}+b_{i}+\theta_{i})^{n_{i}} e^{-(r \cdot s_{i}+b_{i}+\theta_{i})} }{n_{i}!} \cdot  
 \mathrm{exp}\left(-\dfrac{1}{2} \boldsymbol{\theta}^{T}\mathrm{\mathbf{V}}^{-1}\boldsymbol{\theta} \right),
 \label{eq:full-likelihood}
 \end{equation}
@@ -215,10 +215,10 @@ the simplified likelihood.
 The covariance and predictions in the aggregated regions discussed
 in Section~\ref{sec:agg-reg} are used to define and validate the simplified likelihood. 
 Figure~\ref{fig:likelihoodscanAT} (a) shows the value of $q(r)$ as a function of r for 
-a simplified model with direct bottom squark production and $m_\text{SUSY} = 800 \gev$ 
-and $m_{\chiz} = 200 \gev$. The values of $q(r)$ are compared to those derived using the full likelihood and 
+a simplified model with direct bottom squark production and $m_\text{SUSY} = 800\, \GeV$ 
+and $m_{\chiz} = 200\, \GeV$. The values of $q(r)$ are compared to those derived using the full likelihood and 
 using the simplified likelihood, ignoring correlations between the background expectations. 
-The results using an Asimov dataset, assuming a signal strength of $r=1$, are also 
+The results using an Asimov dataset, assuming a signal strength of $r=0$, are also 
 shown as these are used to calculate limits using the asymptotic approximations 
 detailed in Ref.~\cite{asymp}. The simplified likelihood,
 considering correlations, is shown to be in good agreement with the full likelihood while
@@ -255,6 +255,6 @@ robustly simplified through the use of aggregated search regions while the simpl
 likelihood method uses a multivariate Gaussian to approximate the systematic uncertainties.
 The simplified likelihood is shown to give comparable upper limits at 95\% confidence 
 level for a representative signal model. These methods may be applied to a 
-wide range of searches for new physics; a general treatment 
+wide range of searches for BSM physics; a general treatment 
 is presented in~\cite{simp-lik}.
 

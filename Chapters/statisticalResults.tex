@@ -13,7 +13,7 @@ the \ttj~plus \wj~background is labelled as \ttW.
 \section{Likelihood model}
 \label{sec:likelihood}
 
-The \alphat~analysis relies on control regions to predict the normalisation of category of \njet, \nb~and \scalht 
+The \alphat~analysis relies on control regions to predict the normalisation of each category of \njet, \nb~and \scalht 
 (which are in the following identified with \htcat) and on simulation to predict the shape 
 of \mht~within each category. The likelihood model is split into hadronic and control components
 linked by floating parameters for the prediction. In one \htcat~category, j, 
@@ -27,16 +27,16 @@ for the observation in each \mht bin
 b^{j,i}_{\ttW,\mathrm{had}}\times\phi^{j}(\mu\rightarrow\ttW)\times a^{j}\times\rho^{j,i}_{\ttW,\mathrm{had}}\, + b^{j,i}_{\text{QCD},\mathrm{had}}\times\omega^{j,i}_{\text{QCD},\mathrm{had}} + \,r\times s^{j,i}_{\mathrm{had}}\times\rho^{j,i}_{s,\mathrm{had}}) 
 \end{multline}
 
-where the product is over each \mht bin, i, for the \htcat~category, $b^{j,i}_{\zInv/\ttW,had}$ are the predicted number 
+where the product is over each \mht bin, i, in the \htcat~category; $b^{j,i}_{\zInv~/\ttW,had}$ are the predicted number 
 of events from simulation for the electroweak backgrounds; 
-$b^{j,i}_{\text{QCD},\mathrm{had}}$ is the predicted 
-numbers for the QCD multijet component (from the method described in Section~\ref{sec:qcd-pred});
+$b^{j,i}_{\text{QCD},\mathrm{had}}$ are the predicted 
+number of events for the QCD multijet component (from the method described in Section~\ref{sec:qcd-pred});
 the $a^{j}$ parameter is unconstrained and connects the prediction of the signal region
-to the control regions (see below); $\phi^{j,i}$ contains the systematic uncertainties on the 
-transfer factors from the data-driven tests; $\rho^{j}$ contains the systematics from 
+to the control regions (see below); $\phi^{j}$ contains the systematic uncertainties on the 
+transfer factors from the data-driven tests; $\rho^{j,i}$ contains the systematics from 
 variations in simulation, the systematics derived from the control regions on the~\mht shape 
 and the uncertainty from the limited number of simulated events; 
-$r$ is the unconstrained `signal strength' parameter and $\omega_{\text{QCD},\mathrm{had}}$ 
+$r$ is the unconstrained `signal strength' parameter and $\omega_{\text{QCD},\mathrm{had}}^{j,i}$ 
 contains the uncertainties on the QCD multijet component. 
 
 The component of the likelihood for the \mj~control region, 
@@ -47,9 +47,11 @@ which is not categorised in \mht, can be written as:
 \mathcal{L}^{j}_{\mathrm{\mu}} = \mathrm{Pois}(n^{j}_{\mathrm{\mu}} |\, b^{j}_{\mu}\times a^{j}\times\rho^{j}_{\mu} +\, b^{j}_{\text{QCD},\,\mu} + \,r \times s^{j}_{\mathrm{\mu}}\times\rho^{j}_{s,\mu})
 \end{equation}
 
-similarly to Equation~\ref{eq:hadronicLikelihood}, $\rho^{j}_{\mu}$ contains the uncertainty in the \htcat from variations in simulation. The $s^{j}_{\mathrm{\mu}}$
-encodes the signal contamination in the control region, which is small by design. The connection between the control and signal region
-is encoded by the unconstrained $a^{j}$ parameter and the subdominant QCD component, $b^{j}_{\text{QCD},\,\mu}$, is taken from simulation. 
+similarly to Equation~\ref{eq:hadronicLikelihood}, $\rho^{j}_{\mu}$ contains the uncertainty in the \htcat from variations in simulation. 
+The signal contamination in the control region is encoded by $s^{j}_{\mathrm{\mu}}$, which is small by design. 
+The connection between the control and signal region
+is included by the unconstrained $a^{j}$ parameter and the 
+subdominant QCD component, $b^{j}_{\text{QCD},\,\mu}$, is taken from simulation. 
 
 The \zInv~component in the signal region is also predicted using the \gj~and \mmj~regions. 
 By rewriting $\phi^{j}(\mu\rightarrow\zInv~)\times a^{j}$ and $\phi^{j}(\mu\rightarrow\ttW)\times a^{j}$
@@ -65,11 +67,12 @@ may be written as:
 \end{align}
 
 where parameters are defined as in Equations~\ref{eq:hadronicLikelihood} and~\ref{eq:muLikelihood}. 
-In these equations the $\phi^{j}$ appear on the denominator because the connection between the control and signal region is 
-inverted.
+In these equations the connection between the control and signal region is inverted
+and so $\phi^{j}$ appears on the denominator. 
 
 The modifier and constraint terms of the parameters representing the systematic uncertainties and 
-connections between control and signal regions, `nuisance parameters' , can be summarised as:
+connections between control and signal regions are summarised below:
+
 \begin{itemize}
 \item The transfer factor systematics and uncertainties on the QCD multijet contribution 
 are taken to be `log normal' uncertainties such that the logarithm of the variable has 
@@ -82,15 +85,16 @@ uncertainty and extrapolated linearly beyond this range. The constraint term is 
 with mean 0 and width 1. The uncertainties from simulation and those derived from the control regions
 are fully correlated and uncorrelated across all categories respectively.
 \item The Poisson uncertainty due to the limited number of simulated events is approximated using
-two parameters per bin that multiply the total background and signal contributions and that
+two parameters per bin that multiply the total background and signal contributions and 
 are Gaussian constrained. These uncertainties are fully uncorrelated across all categories.
 \end{itemize}
 
-The total likelihood can be written as a product over all \htcat~bins:
+The total likelihood (including the constraint terms in $\mathcal{L}_\mathrm{constraint}$) 
+can be written as a product over all \htcat~bins:
 
 \begin{equation}
 \label{eq:totalLikelihood}
-\mathcal{L} = \prod_{j\in\htcat} \mathcal{L}^{j}_{\mathrm{had}} \times \mathcal{L}^{j}_{\mathrm{\mu\mu}} 
+\mathcal{L} =  \mathcal{L}_\mathrm{constraint} \times \prod_{j\in\htcat} \mathcal{L}^{j}_{\mathrm{had}} \times \mathcal{L}^{j}_{\mathrm{\mu\mu}} 
 \times \mathcal{L}^{j}_{\mathrm{\gamma}} \times \mathcal{L}^{j}_{\mathrm{\mu}}
 \end{equation}
 
@@ -106,7 +110,7 @@ In Figures~\ref{fig:mono},~\ref{fig:asym} and~\ref{fig:sym} the results of the C
 and \nb~categories under a SM-only hypothesis (r = 0) for the monojet, asymmetric 
 and symmetric categories respectively. No significant tension is observed between the predictions
 and data. Additionally, in Figure~\ref{fig:mht-templates}, the distribution in \mht for representative 
-categories of \scalht, \njet and \nb, sensitive to hadronic SUSY models with \TeV ~scale squarks and gluinos, 
+categories of \scalht, \njet and \nb, sensitive to hadronic SUSY models with \TeV~scale squarks and gluinos, 
 shows good agreement between prediction and data.
 
 The fine binned categorisation can complicate the comprehension of the global agreement between data and 
@@ -229,7 +233,7 @@ The test statistic used to derive the upper limit on $r$ can then be defined as
 \begin{equation}
 t_r = 
 \begin{cases}
--2\,\text{ln}\,\tilde{q(r)}\quad &\hat{r} \le r, \\ 
+-2\,\text{ln}\,\tilde{q}(r)\quad &\hat{r} \le r, \\ 
 0 \quad &\hat{r} > r. \\ 
 \end{cases}
 \end{equation}
@@ -261,8 +265,8 @@ confidence level.
 
 The expected limit on a given signal strength, $r_{95}^{exp}$, is defined by the median value of the distribution
 of $r_{95}$ built from pseudo-datasets generated with no signal contribution (r = 0). The variation in the 
-expected limit may also be estimated by the relevant quantiles from this distribution.
-For the \alphat~analysis, the value and variations of $r_{95}^{exp}$ are approximated using 
+expected limit may be extracted from the relevant quantiles of this distribution.
+For the \alphat~analysis, the value and $\pm 1\sigma$ variations of $r_{95}^{exp}$ are approximated using 
 the asymptotic formulae detailed in~\cite{asymp}.
 
 \subsection{Signal model contribution and systematic uncertainties}
@@ -274,7 +278,7 @@ background processes, the simulated events for the signal contribution are corre
 jet energy corrections, b tag scale factors, lepton scale factors, pile-up modelling and trigger efficiencies.
 In addition, a correction is made to account for differences observed in the initial 
 state radiation modelling between data and simulation. Systematic uncertainties are included 
-on each of these corrections, analogously to the systematic uncertanties on the background processes dervied from
+on each of these corrections, analogously to the systematic uncertainties on the background processes derived from
 variations in simulation. The signal contribution cannot be predicted using data and therefore the overall normalisation contains an uncertainty
 from the luminosity measurement of 6.2\%. All systematics are summarised
 in Table~\ref{tab:signal_systs}, including typical magnitudes for direct bottom squark production.
@@ -282,7 +286,7 @@ in Table~\ref{tab:signal_systs}, including typical magnitudes for direct bottom 
 \begin{table}[h!]
   \caption{
     Representative magnitudes of systematic uncertainties in the
-    experimental acceptance for simplified models that assume the 
+    experimental acceptance for a simplified model that assumes the 
     pair production of bottom squarks and their decay to a b
     quark and a \chiz.}  
   \label{tab:signal_systs}
@@ -310,9 +314,10 @@ in Table~\ref{tab:signal_systs}, including typical magnitudes for direct bottom 
 \label{sec:limits-sms}
 In Figure~\ref{fig:limits-sms} the upper limits at 95\% CL set on the production cross section are shown
 in the ($m_{\text{SUSY}}$, $m_{\tilde{\chi}^{0}}$) plane for the models considered.
-Also shown are the expected and observed contours of $r_{95} = 1$ (models `excluded'
-at 95\% CL), the $\pm$ 1 and 2 $\sigma$ variations in the expected limit, and the observed limit under $\pm$ 1 $\sigma$ 
-variations in the theoretical cross section uncertainty.
+Also shown are the expected and observed contours of $r_{95} = 1$, 
+the $\pm$ 1 and 2 $\sigma$ variations in the expected limit, and the observed limit under $\pm$ 1 $\sigma$ 
+variations in the theoretical cross section uncertainty. Models with $r_{95} < 1$ are
+`excluded' at 95\% CL.
 
 \begin{figure}[thp!]
   \begin{center}
@@ -350,11 +355,11 @@ centre of mass energy and by improvements in the analysis strategy. Such improve
 include the addition of the \mht~dimension and the use of the \mj~control region
 to predict~\zInv.
 
-In Figure~\ref{fig:limits-sms-competition},
-the reach of the \alphat search for the gluino-mediated and direct bottom
-squark production is compared to two other hadronic searches for new physics on the 
-same 12.9 \ifb dataset. The~\alphat search has comparable reach across the mass
-plane and is particularly sensitive for high \chiz~masses.
+% In Figure~\ref{fig:limits-sms-competition},
+% the reach of the \alphat search for the gluino-mediated and direct bottom
+% squark production is compared to two other hadronic searches for new physics on the 
+% same 12.9 \ifb dataset. The~\alphat search has comparable reach across the mass
+% plane and is particularly sensitive for high \chiz~masses.
 
 The results presented in this section may be used to derive limits on BSM physics models 
 not considered for this thesis. Such `re-interpretations' of the \alphat search 
@@ -385,16 +390,16 @@ are discussed in Chapter~\ref{cha:simplifiedLikelihood}.
  \end{tabular}
 \end{table}
 
-\begin{figure}[thp!]
-  \begin{center}
-    \subfloat[]{\includegraphics[width=0.45\textwidth]{./Figures/statisticalResults/T1bbbb_limits_summary_cms_ICHEP16}} ~
-    \subfloat[]{\includegraphics[width=0.45\textwidth]{./Figures/statisticalResults/T2bb_limits_summary_cms_ICHEP16}}
-    \caption{Observed and expected exclusion contours at 95\% confidence
-      level (indicated by the colour scale) for simplified models that
-      assume the (a) gluino-mediated or (b) direct production
-      bottom, as a function of the gluino or squark mass and the $\chiz_{1}$ 
-      mass. The results from the \alphat~analysis are compared to 
-      the \mtt and \htmiss analyses~\cite{mt2,ra2}. \label{fig:limits-sms-competition} }
-  \end{center}
-\end{figure}
+% \begin{figure}[thp!]
+%   \begin{center}
+%     \subfloat[]{\includegraphics[width=0.45\textwidth]{./Figures/statisticalResults/T1bbbb_limits_summary_cms_ICHEP16}} ~
+%     \subfloat[]{\includegraphics[width=0.45\textwidth]{./Figures/statisticalResults/T2bb_limits_summary_cms_ICHEP16}}
+%     \caption{Observed and expected exclusion contours at 95\% confidence
+%       level (indicated by the colour scale) for simplified models that
+%       assume the (a) gluino-mediated or (b) direct production
+%       bottom, as a function of the gluino or squark mass and the $\chiz_{1}$ 
+%       mass. The results from the \alphat~analysis are compared to 
+%       the \mtt and \htmiss analyses~\cite{mt2,ra2}. \label{fig:limits-sms-competition} }
+%   \end{center}
+% \end{figure}
 

@@ -2,13 +2,13 @@
 \label{cha:triggerUpgrade}
 
 During Run 2, the LHC has provided collisions at an energy of 13 \TeV~and at  
-a peak luminosity of $14\times10^{33}\cm^{-2}s^{-1}$, marking a signifcant increase
-in peak energy and luminosity over that provided during Run 1 (8 \TeV~and $7\times10^{33}\cm^{-2}s^{-1}$).
+a peak luminosity of $14\times10^{33}\cm^{-2}s^{-1}$, marking a significant increase
+in energy and luminosity over those provided in Run 1 (8 \TeV~and $7\times10^{33}\cm^{-2}s^{-1}$ respectively).
 With a spacing between bunches of 25ns, an average of 25 simlutaneous interactions are 
 produced per bunch crossing. This high luminosity and pileup provides a challenging
-environment for the L1 trigger system during Run 2, which must continue to provide 
-an input rate to the HLT of 100kHz, in conditions that exceed design specifications. 
-Simply increasing thresholds on the L1 trigger seeds would cause
+environment for the L1 trigger system, which must continue to provide 
+an input rate to the HLT of 100 kHz, in conditions that exceed design specifications. 
+Simply increasing thresholds on the L1 trigger seeds causes
 unacceptable inefficiencies for electroweak physics and \TeV~scale searches
 and, therefore, the L1 trigger system, and associated algorithms, must be upgraded. 
 
@@ -20,50 +20,51 @@ the L1 trigger are detailed in~\cite{ele_algo,tau_algo,muon_algo}.
 
 \section{Legacy system and upgrade}
 
-The Global Calorimeter Trigger (GCT) was used during Run 1 to find jets, electrons and photons and to 
+The global calorimeter trigger (GCT) was used during Run 1 to find jets, electrons and photons and to 
 compute global energy sums \cite{gct}. The trigger system takes input from trigger towers (TTs) 
 corresponding to $5\times5$ ECAL crystals and an identical area in the HCAL. 
 These are grouped into $4\times4$ `calorimeter regions' that form the input for physics object and
-reconstruction algorithms for the GCT. Trigger Primitive Generators (TPGs) provide the interface
+reconstruction algorithms for the GCT. Trigger primitive generators (TPGs) provide the interface
 with the detector to compute trigger inputs. Due to hardware limitations the detector is split into 16 
-sections, each processed by a Regional Calorimetric Trigger (RCT) to form candidates and sum 
+sections, each processed by a regional calorimetric trigger (RCT) to form candidates and sum 
 energies. The RCTs must share information to account for features that occur at boundaries between 
 the 16 sections. The information from the RCTs is combined in the GCT which computes global quantities and sorts 
-the jets before passing these quantities to the Global Trigger (GT). The GT also receives information 
-from the Global Muon Trigger (GMT) and makes the final trigger decision. 
+the jets before passing these quantities to the global trigger (GT). The GT also receives information 
+from the global muon trigger (GMT) and makes the final trigger decision. 
 
 The upgrade of the GCT was carried out in two stages. The first stage,
-Upgrade Calorimetric Trigger (UCT), was used for data taking during 2015
+upgrade calorimetric trigger (UCT), was used for data taking during 2015
 and used updated firmware and algorithms to allow improved jet and object 
 identification, including pileup subtraction \cite{uct}. In the second stage the 
-architecture was entirely replaced by the Time Multiplexed Trigger (TMT) 
+architecture was entirely replaced by the time multiplexed trigger (TMT) 
 to allow `time multiplexing', whereby each
 event is processed entirely within one card using the full trigger tower granularity
 ~\cite{tmt}. 
 
-\section{The Time Multiplexed Trigger architecture}
+\section{The time multiplexed trigger architecture}
 
-The TMT uses two processing layers. The first, `layer one', performs
+The TMT uses two processing layers. The first layer performs
 preprocessing and data formatting using 18 CTP7 cards \cite{mp7}. Each card requires
 only a regional view of the detector and performs local operations such as summing 
 ECAL and HCAL transverse energies. The data for each event is combined and transmitted to 
 a single node in the second processing layer, an Imperial Master Processor Virtex-7 (MP7) card \cite{mp7}. 
 The MP7 is a high-performance 0.92Tb/s + 0.92Tb/s (input + output rate) all-optical processor 
 with sufficient data rate for the entire calorimeter to be processed in a single card. The data 
-from the 9 nodes on layer two is passed to a demultiplexer board (also an MP7) before
+from the 9 nodes on the second layer is passed to a demultiplexer board (also an MP7) before
 being sent to the GT. The GT makes the final trigger decision using both the calorimeter
 and muon trigger systems.
 
 The difference between the GCT/UCT and TMT architectures is shown schematically in Figure~\ref{tmux}. 
-In the TMT architecture, data is buffered and retransmitted to the first node (on layer two)
+In the TMT architecture, data is buffered and retransmitted to the first node (on the second layer)
 over 9 bunch crossings to allow the entire event to be processed on one card. This
-removes the need for a large number of links between cards and allows the full TT granularity to be used. The increase in granularity compared to the GCT is
+removes the need for a large number of links between cards and allows the full TT 
+granularity to be used. The increase in granularity compared to the GCT is
 illustrated in Figure~\ref{fig:inputres}. 
 
 \begin{figure}
 
 \centering
-    \includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/tmux}
+    \includegraphics[width=0.9\textwidth]{./Figures/triggerUpgrade/tmux}
   \caption{Comparison of the GCT (left) and TMT architectures (right) showing the flow of information
   to the final global decision. The colours indicate the data from each bunch crossing~\cite{tmt}}.
   \label{tmux}
@@ -90,7 +91,7 @@ This performance must be maintained for high pileup scenarios.
 The TMT architecture provides several advantages over the GCT system which can be 
 exploited in designing the jet algorithm. These include significantly increased processing power
 and granularity (enhanced by factor 16). More flexible algorithms, which 
-exploit smaller features than previously accessible, can be defined. This is exploited in the 
+make use of smaller features than previously accessible, can be defined. This is exploited in the 
 use of an improved jet clustering algorithm, described in Section~\ref{sec:jet_algo}, as well as 
 online pileup subtraction, described in Section~\ref{sec:pileup_algo}, for jet 
 identification and reconstruction with the TMT.
@@ -100,7 +101,7 @@ identification and reconstruction with the TMT.
 The GCT algorithm uses a $3\times3$ calorimeter region sliding jet window with a central seed 
 to reconstruction jets in the range $|\eta| < 5$. The algorithm scans the calorimeter in increments
 of calorimeter regions and clusters a jet if the energy in the central seed region is greater than 
-both $5 \GeV$ and each of the eight bordering regions. The threshold of $5 \GeV$ was added during 
+both $5\,\GeV$ and each of the eight bordering regions. The threshold of $5\,\GeV$ was added during 
 the 2012 8 \TeV~run, when the number of pileup interactions increased, to remove soft pileup jets.
 The $12\times12$ TT jet size ($\Delta\eta\times\Delta\phi = 1.04\times1.04$) corresponds 
 approximately to $R=0.5$ for the anti-$k_T$ jet algorithm used in offline reconstruction.
@@ -126,7 +127,7 @@ Note that the L1 jets are massless such that $\pt = \Et$.
 
 \begin{figure}
 \centering
-    \includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/mask.png}
+    \includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/mask.png}
   \caption{The $9\times9$ veto conditions used to define jets. The inequalities ensure
   jet energies are not double counted}
   \label{mask}
@@ -140,21 +141,22 @@ most CMS analyses during Run 2, anti-$k_T$ with a distance
 parameter of 0.4, described in Section~\ref{sec:jet_reco}. 
 
 The trigger tower deposits were generated using a simulated sample of 
-top pair-production (\ttj). In this section all simulated samples used have conditions 
-of $\sqrt{s} = 13TeV$, bunch spacing $50ns$ and pileup Gaussian distributed around $40$ simultaneous interactions.
-due to the plentiful sample of jets produced in this process. The anti-$k_T$ algorithm is run over the same inputs as
+top pair-production (\ttj) due to the plentiful sample of jets produced in this process. 
+In this section all simulated samples used have conditions 
+of $\sqrt{s} = 13\,\TeV$, bunch spacing $ = 50ns$ and Gaussian distributed pileup around $40$ simultaneous interactions. 
+The anti-$k_T$ algorithm is run over the same inputs as
 used for the L1 algorithm with the \FASTJET package~\cite{fastjet}.
 
 A comparison between the predictions of both algorithms for several important jet variables is shown in 
 Figure~\ref{fig:jet_l1s2_compak4} for the leading and fourth jet. In general, excellent agreement is observed. 
 Small differences can be seen at high $|\eta|$ and low~\pt. This is due to the ability 
-of the anti$k_T$ algorithm to reconstruct smaller jets with smaller radii while the L1 jet
+of the anti-$k_T$ algorithm to reconstruct smaller jets with smaller radii while the L1 jet
 algorithm size is fixed.
 
 
 \begin{figure}
 \centering
-    \includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/jet_l1s2_compak4}
+    \includegraphics[width=0.9\textwidth]{./Figures/triggerUpgrade/jet_l1s2_compak4}
   \caption{Comparison of the L1 jet finding algorithm with the anti-$k_T$ algorithm using TT inputs. Distributions of \pt~and $\eta$ are shown for the leading and fourth
   jet.}
   \label{fig:jet_l1s2_compak4}
@@ -172,7 +174,7 @@ the offline quantities. The baseline quantities that are constructed are
 \item L1 \mht~: the inverse vector sum of all L1 jet~\pt.
 \end{itemize}
 
-The quantities made using L1 jets require a minimum \pt of 20 \GeV. As will be discussed in 
+The quantities made using L1 jets require a minimum \pt of 20 $\GeV$. As will be discussed in 
 Section~\ref{sec:trig_perf}, this requirement provides additional robustness against soft
 jets reconstructed from detector noise or pileup. Additional quantities based 
 on jets and/or energy sums may also be used to define trigger seeds. 
@@ -181,7 +183,7 @@ A study of the performance of one such variable is detailed in Section~\ref{sec:
 \section{Pileup subtraction}
 \label{sec:pileup_algo}
 Simultaneous soft interactions cause additional energy to be deposited throughout
-the detector. This will be approximately isotropically distributed ($\sim1 \GeV$ per unit area); however, variations
+the detector. This will be approximately isotropically distributed ($\sim1\,\GeV$ per unit area); however, variations
 in detector response as well as the profile of pileup events can cause $\eta$ and,
 to a lesser extent, $\phi$ dependence. In addition, event-by-event fluctuations in the distribution 
 and magnitude of the pileup deposits can greatly affect calorimeter objects. 
@@ -223,14 +225,14 @@ minimum bias events. The non-zero intercept is caused by contamination of jets f
 
 To account for $\eta$ dependence in the pileup, the \rhoG~subtraction may be amended by
 dividing the calorimeter into strips of phi and calculating the median $\rho$ for jets in each 
-strip. However, this local $\rho$ significantly adds to the latency in the pileup subtraction and may 
-be less robust as fewer jets can be sampled in each $\eta$ slice. This `local $\rho$' 
+strip. However, this significantly adds to the latency in the pileup subtraction and may 
+be less robust as fewer jets can be sampled in each $\eta$ slice and 
 is therefore not considered in this section.
 
 \begin{figure}
 \centering
     \includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/median}
-  \caption{Dependence of \rhoG (arbitrary units) on the number of interactions}
+  \caption{Dependence of \rhoG on the number of interactions}
   \label{fig:medianNint}
 \end{figure}  
 
@@ -263,9 +265,8 @@ with the energy density for the chunky doughnut pileup estimation (\rhoC) is sho
 
 \begin{figure}
 \hfill
-\subfloat[Doughnut rings\label{fig:donut}]{\includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/donut}}
-\hfill
-\subfloat[Chunky doughnut rings\label{fig:chunkyDonut}]{\includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/chunkyDonut}}
+\subfloat[Doughnut rings\label{fig:donut}]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/donut}}~~
+\subfloat[Chunky doughnut rings\label{fig:chunkyDonut}]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/chunkyDonut}}
 \hfill
 \caption{The rings used to sample the local pileup energy density for the doughnut (a) and chunky doughnut (b)
 pileup subtraction. The median two strips (in energy density) are used in each case.}
@@ -274,7 +275,7 @@ pileup subtraction. The median two strips (in energy density) are used in each c
 \begin{figure}
 \centering
     \includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/threestrips}
-  \caption{Dependence of \rhoC~(arbitrary units) on the number of interactions}
+  \caption{Dependence of \rhoC~on the number of interactions}
   \label{fig:threestripNint}
 \end{figure}  
 
@@ -299,7 +300,7 @@ with other pileup correction techniques.
 
 The thresholds used for the seed and zero suppression may be $\eta$ (or even $\phi$) dependent; however,
 such variable thresholds are not considered in the studies presented below. The smallest energy quanta
-available at L1 is 0.5 \GeV and defines a `L1 unit'. The thresholds considered in this section are 5 L1 units
+available at L1 is 0.5 \GeV~and defines a `L1 unit'. The thresholds considered in this section are 5 L1 units
 for the central seed (seed 5) and 1 or 2 L1 units for the zero suppression (labelled as TSup1 or TSup2).
 
 \subsection{Calibration}
@@ -333,7 +334,7 @@ the $0 < \eta < 0.75$ range. The fitted calibration function defines the correct
 factors and is shown to agree well with the data.
 
 In Figure~\ref{fig:closure_response} the response for the same QCD dijet sample is shown as a function of the \Lonept. The calibration
-is effective for $\Lonept > \sim 20 \GeV$ where the response is flat at unity. Below this \pt,
+is effective for $\Lonept > \sim 20\,\GeV$ where the response is flat at unity. Below this \pt,
 the matching procedure degrades (the majority of matched jets come from pileup or detector noise) 
 such that the average response is an unreliable estimate of the jet algorithm response to real jets.
 
@@ -349,7 +350,7 @@ such that the average response is an unreliable estimate of the jet algorithm re
 \centering
     \includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/calib_s5_chunky}
   \caption{Calibrated response in the QCD dijet sample used to derive the calibration factors. The calibration is seen to be 
-  effective for the range $\Lonept > \sim 20 \GeV$.}
+  effective for the range $\Lonept > \sim 20\,\GeV$.}
   \label{fig:closure_response}
 \end{figure}
 
@@ -367,7 +368,7 @@ The efficiency with which the L1 jets may be matched to generator jets provides 
 to reconstruct real jets from the hard scatter. The matching procedure is the same as that used for the calibration. 
 The matching efficiency for all generator jets and the fourth leading jet is shown 
 in Figure~\ref{fig:match} as a function of $\Genpt$ for several benchmark pileup suppression algorithms. 
-The efficiency plateaus at unity around $\Genpt=50 \GeV$. The pileup subtraction and seed threshold is shown to reduce
+The efficiency plateaus at unity around $\Genpt=50\,\GeV$. The pileup subtraction and seed threshold is shown to reduce
 the matching efficiency at low $p_T$; however, for this low $p_T$ region the L1 jets matched to generator jets are typically
 reconstructed from pileup calorimeter deposits and their energy does not therefore
 reflect that of the matched generator jet. A substantial improvement in efficiency over the GCT is observed in 
@@ -434,8 +435,8 @@ The efficiencies shown in Figure~\ref{fig:turnon}, however, do not fully describ
 of the trigger as the total rate of selected events must be considered because this places 
 stringent restrictions on the possible L1 thresholds. Figure~\ref{fig:rate_eff_jets} shows the rate of 
 minimum bias events passing selection (per second) against the efficiencies for selecting 
-a leading jet, second leading jet and fourth leading jet with $\Genpt$ thresholds of $150 \GeV$,
-$110 \GeV$ and $50 \GeV$ respectively. As the jet multiplicity increases and threshold decreases,
+a leading jet, second leading jet and fourth leading jet with $\Genpt$ thresholds of $150\,\GeV$,
+$110\,\GeV$ and $50\,\GeV$ respectively. As the jet multiplicity increases and threshold decreases,
 the performance of the upgrade L1 jets compared to the legacy system is substantially improved.
 For the upgrade L1 jets, the global $\rho$~subtraction exhibits the best performance; however, the differences 
 between the pileup subtraction algorithms are small.
@@ -445,26 +446,26 @@ between the pileup subtraction algorithms are small.
     \subfloat[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/singleJet_150.png}}~
     \subfloat[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/doubleJet_110.png}}\\
     \subfloat[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/quadJet_50.png}}
-  \caption{\label{fig:rate_eff_jets} Rate against efficiency for (a) L1 leading jet with a threshold of 150 \GeV, 
-  (b) L1 second leading jet with a threshold of 110 \GeV and (c) L1 fourth leading jet with a threshold of 50 \GeV.}
+  \caption{\label{fig:rate_eff_jets} Rate (Hz) against efficiency for (a) L1 leading jet with a threshold of 150 $\GeV$, 
+  (b) L1 second leading jet with a threshold of 110 \GeV~and (c) L1 fourth leading jet with a threshold of 50 $\GeV$.}
 \end{figure}
 
 During Run 2 the pileup is not constant but varies with changes in instantaneous luminosity. 
 Stability in the rate for different pileup scenarios is import to ensure that L1 trigger thresholds 
 do not need to be increased during running. Figure~\ref{fig:rate_nvtx} shows the rate against the number of 
-simultaneous interactions for a lead jet threshold of $30 \GeV$. The dependence on pileup is 
+simultaneous interactions for a lead jet threshold of $30\,\GeV$. The dependence on pileup is 
 seen to be significantly mitigated by chunky doughnut pileup subtraction compared to no pileup subtraction and global $\rho$
 subtraction. 
 
 \begin{figure}
 \centering
     \includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/neutrinonvtx_jet1}
-  \caption{The dependence of the rate for a threshold of $\Lonept=30GeV$ on the number of simultaneous interactions}
+  \caption{The dependence of the rate for a threshold of $\Lonept=30\,GeV$ on the number of simultaneous interactions}
   \label{fig:rate_nvtx}
 \end{figure}
 
 To benchmark the energy sums performance, the rate against efficiency for L1 \scalht~and L1 \mht~is shown in Figure~\ref{fig:rate_eff_sum}.
-All jets above $20 \GeV$ are used to calculate L1 \scalht, making this quantity particularly susceptible to pileup. The chunky doughnut 
+All jets above $20\,\GeV$ are used to calculate L1 \scalht, making this quantity particularly susceptible to pileup. The chunky doughnut 
 pileup subtraction with a seed of 5 is shown to significantly improve performance compared to the other pileup subtraction
 methods and the legacy system (except global $\rho$ with a seed of 5, not viable in the L1 trigger). The performance of the UCT is not 
 directly comparable as L1 \scalht~and \mht are calculated using calorimeter regions above a threshold rather than jets. Similarly, the performance for 
@@ -477,8 +478,8 @@ therefore cancel in the vector sum of the towers.
 \centering
 	\subfloat[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/ht_200}\label{fig:ht_rateEff}}~
 	\subfloat[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/mht_200}\label{fig:mht_rateEff}}
-	\caption{Rate against efficiency for (a) L1 \scalht and (b) L1 \mht, both with a
-	threshold of 200 \GeV.}
+	\caption{Rate (Hz) against efficiency for (a) L1 \scalht and (b) L1 \mht, both with a
+	threshold of 200 $\GeV$.}
 	    \label{fig:rate_eff_sum}
 \end{figure}
 
@@ -530,7 +531,7 @@ around 5.5 to 7.5 kHz. This range defines a band in the plane of $\Delta\phi_{1,
 and \scalht~in which the efficiency can be inspected. To avoid signal model dependence, the 
 efficiency is measured using a \ttbar sample for the multijet case ($\nj \ge 4$) and a sample  
 of Z boson production in association with jets, where the Z decays to neutrinos, for the 
-dijet case ($\nj == 2$). An offline hadronic selection of $200 < \scalht < 300$ 
+dijet case ($\nj = 2$). An offline hadronic selection of $200 < \scalht < 300\,\GeV$ 
 and $\alphat > 0.65$ is made in defining the efficiency. This approximates to the selection
 of the lowest \scalht~regions used in the \alphat~search, for which achieving high efficiencies is most challenging.
 The results are shown for both the TMT and UCT trigger in Figures~\ref{fig:dijet_cross} and~\ref{fig:multijet_cross} 
@@ -540,7 +541,7 @@ for the dijet and multijet trigger respectively. For the TMT, chunky-doughnut-co
 \centering
 	\subfloat[Upgrade trigger]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/noHardBin12JetdphiFullS2}}~
 	\subfloat[UCT]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/noHardBin12JetdphiFullUCT}}
-	\caption{Efficiency of the dijet selection for hadronic offline requirement $200 < \scalht < 300$ and $\alphat > 0.65$
+	\caption{Efficiency of the dijet selection for hadronic offline requirement $200 < \scalht < 300\,\GeV$ and $\alphat > 0.65$
 	in a band of rate of 5.5 to 7.5 kHz}
 	    \label{fig:dijet_cross}
 \end{figure}
