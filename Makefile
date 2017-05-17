@@ -2,7 +2,7 @@
 
 EXTRASTYS = abhepexpt.sty abhep.sty  abmath.sty lineno.sty SIunits.sty varwidth.sty
 
-thesis.pdf: *.cls *.sty thesis.bib thesis.tex Chapters/*.tex Appendices/*.tex
+thesis.pdf: *.cls *.sty thesis.bib thesis.tex *.tex Chapters/*.tex Appendices/*.tex Figures/*/*
 	@rm -f thesis.{aux,toc,lof,lot}
 	(pdflatex thesis && bibtex thesis && pdflatex thesis && pdflatex thesis)
 	@rm -f thesis.{aux,toc,lof,lot}

@@ -12,9 +12,9 @@
 %% For short draft builds (breaks citations by necessity)
 %\LoadClass[noroman,hyperpdf,nobind,draft,hidefrontback]{hepthesis}
 %% For Cambridge soft-bound version 
-%\LoadClass[noroman,hyperpdf,twoside,bindnopdf]{hepthesis}
+\LoadClass[noroman,hyperpdf,twoside,bindnopdf]{hepthesis}
 %% For Cambridge hard-bound version (must be one-sided)
-\LoadClass[noroman,hyperpdf,oneside]{hepthesis}
+%\LoadClass[noroman,hyperpdf,oneside]{hepthesis}
 
 %% ------------------------------------- %% Standard packages %% ------------------------------------- 
 \RequirePackage{cite} 
