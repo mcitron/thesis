@@ -713,7 +713,7 @@ control regions is described and the results summarised.
 The systematic uncertainties derived from the control regions
 are included in addition to systematics from variations in simulation.
 The variation in simulation follows the same procedure as described in
-\ref{sec:syst-uncs-var}; a comparison of the different sources of systematic uncertainty
+Section~\ref{sec:syst-uncs-var}; a comparison of the different sources of systematic uncertainty
 is presented in Section~\ref{sec:mcSystStudiesShape}.
 
 \subsection{Validation using control regions in data}
@@ -912,21 +912,34 @@ described in \ref{sec:valid13} are compared. In the likelihood, the \mht~shape a
 are varied simultaneously for each source of uncertainty, as discussed in Section~\ref{sec:likelihood}.
 
 To study the effect of the systematic variations on the \mht~shape, 
-Figures~\ref{fig:mcCompLow} and \ref{fig:mcCompHigh} show the \mht~variations in two representative \scalht~bins 
+figure~\ref{fig:mcCompHighLow} shows the \mht~variations in two representative \scalht~bins 
 and jet categories. The templates for each $\pm 1 \sigma$ variation are normalised to the
 nominal template such that only the shape is varied.
 
+% \begin{figure}[h!]
+%   \centering
+%   \includegraphics[width=0.6\textwidth]{Figures/backgroundPrediction/mcComparison6fb/totalSMS-T1tttt_mGluino-1000_mLSP-100_25ns_mht_ge5j_ge3b_800.pdf}
+%   \caption{\label{fig:mcCompLow} Simulation derived systematic variations compared to the linear OP
+%   data-driven systematic for an example bin \scalht $800-\infty$, \njet $\geq 5$, \nb $\geq 2$.}
+% \end{figure}
+% \begin{figure}[h!]
+%   \centering
+%   \includegraphics[width=0.6\textwidth]{Figures/backgroundPrediction/mcComparison6fb/totalSMS-T1tttt_mGluino-1000_mLSP-100_25ns_mht_eq2j_eq0b_400.pdf}
+%   \caption{\label{fig:mcCompHigh} 
+%   Simulation derived systematic variations compared to the 
+% linear OP data-driven systematic for an example bin \scalht 400-500, \njet $= 2$, \nb $= 0$.}
+% \end{figure}
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.6\textwidth]{Figures/backgroundPrediction/mcComparison6fb/totalSMS-T1tttt_mGluino-1000_mLSP-100_25ns_mht_ge5j_ge3b_800.pdf}
-  \caption{\label{fig:mcCompLow} Simulation derived systematic variations compared to the linear OP
-  data-driven systematic for an example bin \scalht $800-\infty$, \njet $\geq 5$, \nb $\geq 2$.}
-\end{figure}
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=0.6\textwidth]{Figures/backgroundPrediction/mcComparison6fb/totalSMS-T1tttt_mGluino-1000_mLSP-100_25ns_mht_eq2j_eq0b_400.pdf}
-  \caption{\label{fig:mcCompHigh} Simulation derived systematic variations compared to the 
-linear OP data-driven systematic for an example bin \scalht 400-500, \njet $= 2$, \nb $= 0$.}
+  \subfloat[\label{fig:mcCompLow} \scalht $800-\infty$, \njet $\geq 5$, \nb $\geq 2$]{
+    \includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/mcComparison6fb/totalSMS-T1tttt_mGluino-1000_mLSP-100_25ns_mht_ge5j_ge3b_800.pdf}
+  }~~
+  \subfloat[\label{fig:mcCompHigh}  \scalht 400-500, \njet $= 2$, \nb $= 0$]{
+    \includegraphics[width=0.45\textwidth]{Figures/backgroundPrediction/mcComparison6fb/totalSMS-T1tttt_mGluino-1000_mLSP-100_25ns_mht_eq2j_eq0b_400.pdf}
+  }\\
+  \caption{\label{fig:mcCompHighLow}
+  Simulation derived systematic variations on the \mht distribution compared to the 
+linear OP data-driven systematic for two representative categories.}
 \end{figure}
 
 \section{Summary}

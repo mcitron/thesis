@@ -80,7 +80,7 @@ illustrated in Figure~\ref{fig:inputres}.
 \end{figure}
 
 \section{L1 jet algorithm}
-\label{algo}
+\label{sec:jet_algo}
 
 The increase in pileup and luminosity in Run 2 makes triggering with jets
 significantly more challenging than during Run 1. To maintain sensitivity to
@@ -96,8 +96,7 @@ use of an improved jet clustering algorithm, described in Section~\ref{sec:jet_a
 online pileup subtraction, described in Section~\ref{sec:pileup_algo}, for jet 
 identification and reconstruction with the TMT.
 
-\subsection{L1 jet clustering}
-\label{sec:jet_algo}
+\subsection{GCT jet clustering}
 The GCT algorithm uses a $3\times3$ calorimeter region sliding jet window with a central seed 
 to reconstruction jets in the range $|\eta| < 5$. The algorithm scans the calorimeter in increments
 of calorimeter regions and clusters a jet if the energy in the central seed region is greater than 
@@ -106,6 +105,7 @@ the 2012 8 \TeV~run, when the number of pileup interactions increased, to remove
 The $12\times12$ TT jet size ($\Delta\eta\times\Delta\phi = 1.04\times1.04$) corresponds 
 approximately to $R=0.5$ for the anti-$k_T$ jet algorithm used in offline reconstruction.
 
+\subsection{TMT jet clustering}
 The jet algorithm used for the TMT similarly uses a sliding window algorithm. This
 is composed of $9\times9$ TTs ($\Delta\eta\times\Delta\phi = 0.78\times0.78$), corresponding 
 to the $R=0.4$ used in Run 2. The use of an odd number of trigger towers ensures that a central 
@@ -133,9 +133,9 @@ Note that the L1 jets are massless such that $\pt = \Et$.
   \label{mask}
 \end{figure}
 
-\subsection{Comparison with offline jet reconstruction}
+\subsubsection{Comparison with offline jet reconstruction}
 
-An evaluation of the performance of the L1 jet algorithm can be made by comparing
+An evaluation of the performance of the TMT jet algorithm can be made by comparing
 the results of jet finding with the offline reconstruction algorithm used by 
 most CMS analyses during Run 2, anti-$k_T$ with a distance
 parameter of 0.4, described in Section~\ref{sec:jet_reco}. 
@@ -432,7 +432,7 @@ than the GCT quantities and plateaus at higher values than the legacy system.
 \end{figure}
 
 The efficiencies shown in Figure~\ref{fig:turnon}, however, do not fully describe the performance 
-of the trigger as the total rate of selected events must be considered because this places 
+of the trigger as the total rate of selected events places 
 stringent restrictions on the possible L1 thresholds. Figure~\ref{fig:rate_eff_jets} shows the rate of 
 minimum bias events passing selection (per second) against the efficiencies for selecting 
 a leading jet, second leading jet and fourth leading jet with $\Genpt$ thresholds of $150\,\GeV$,
@@ -460,7 +460,7 @@ subtraction.
 \begin{figure}
 \centering
     \includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/neutrinonvtx_jet1}
-  \caption{The dependence of the rate for a threshold of $\Lonept=30\,GeV$ on the number of simultaneous interactions}
+  \caption{The dependence of the rate for a threshold of $\Lonept=30\,\GeV$ on the number of simultaneous interactions}
   \label{fig:rate_nvtx}
 \end{figure}
 
