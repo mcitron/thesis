@@ -329,16 +329,18 @@ arguments. However, cosmological measurements of $\Lambda$ imply
 $\Lambda/M_{\text{planck}}^4 \sim 10^{-120}$~\cite{cosConst}. This discrepancy
 is related to the failure to include gravity in a quantum field theory.
 
-Astrophysical observations~\cite{WIMP} imply the existence 
-of a weakly-interacting particle (WIMP) that forms the majority of the matter 
-within the universe. The SM has no viable candidates for 
-this particle. In addition, the matter-antimatter asymmetry observed in the universe requires 
+Astronomical observation imply the existance of a DM particle
+that forms the majority of the matter within the universe
+and that does not interact through the strong or electromagnetic forces~\cite{WIMP}.
+The SM has no viable candidate for this particle. In addition, the matter-antimatter 
+asymmetry observed in the universe requires 
 charge-parity violating processes far in excess of those occurring in the SM.
 
-The discovery of the Higgs boson at $m_{h}\sim125\,\GeV$ raises the `hierarchy problem'. In QFT, 
-the corrections to $m_h$ are related to the heaviest particle in the theory and therefore
-one may expect $m_h \sim M_{\text{planck}}$. In addition, quantum corrections from SM particles
-require fine-tuning in the SM to stabilise $m_h$ (the `technical hierarchy problem', see Section~\ref{sec:natSUSY}).
+The discovery of the Higgs boson at $m_{h}\sim125\,\GeV$ raises the `hierarchy problem'. 
+In QFT, the corrections to $m_h$ are related to the highest energy scale in the theory.
+Assuming that quantum effects of gravity are non-negligible at the planck scale 
+one may expect $m_h \sim M_{\text{planck}}$ (see Section~\ref{sec:natSUSY}), differing
+from the observed mass by many orders of magnitude.
 
 These problems form the motivation for the existence of a BSM physics model that
 can resolve some or all of the outstanding issues in the SM. SUSY is a particularly
@@ -349,7 +351,7 @@ and include a quantum theory of gravity.
 
 There are many possibilities for extending the SM, 
 including new particles/interactions, new (internal) gauge symmetries, 
-extra spacial dimensions and/or new space-time (external) symmetries. SUSY is 
+extra spatial dimensions and/or new space-time (external) symmetries. SUSY is 
 an external symmetry that relates fermions and bosons by extending the Poincar\'{e} algebra~\cite{SUSYC}. 
 The Coleman-Mandula theorem shows that any such extension through new bosonic generators (such as those responsible for Lorentz 
 transformations and translations) forbids non-zero scattering amplitudes~\cite{Coleman}. 
@@ -414,7 +416,7 @@ of these supermultiplets.
     \hline
     gluino, gluon & $\tilde{g}$ & g \\
     winos, W bosons & $\tilde{W}^{\pm}\,\tilde{W}^0$ & $W^{\pm}\,W^{0}$ \\
-    bino, B boson & $\tilde{B}^0$ & g \\
+    bino, B boson & $\tilde{B}^0$ & B \\
   \end{tabular}
 \end{table}
 
@@ -433,24 +435,24 @@ at the \TeV~scale.
 
 \subsection{Natural supersymmetry}
 \label{sec:natSUSY}
-In the SM, the Higgs mechanism requires couplings to each fermion, f, of the form $-\lambda_{f}\bar{f}\phi f$. If BSM physics
+In the SM, the Higgs mechanism requires couplings to each fermion, $f$, of the form $-\lambda_{f}\bar{f}\phi f$. If BSM physics
 is expected to alter the high energy behaviour of the theory at a scale $\LUV$, the quantum corrections 
 to the Higgs boson mass, $\delta m^2_{H}$, will be 
 
 \begin{equation}
-\Delta m^2_H =  \frac{|\lambda_f|^2}{8\pi^2}\left[-\Lambda^2_{\text{UV}}\right] + \mathcal{O}\log(\LUV)
+\Delta m^2_H =  \frac{|\lambda_f|^2}{8\pi^2}\left[-\Lambda^2_{\text{UV}}\right] + \mathcal{O}\left(\log(\LUV)\right)
 \end{equation}
 
-which is quadratically divergent~\cite{HMSSM}. The correction is proportional to the size of the coupling of the Higgs to the fermion 
+\noindent which is quadratically divergent~\cite{HMSSM}. The correction is proportional to the size of the coupling of the Higgs to the fermion 
 and is therefore largest for the top quark in the SM. Assuming the cut-off scale is at $M_{\text{planck}}$, the quantum 
 corrections must be fine-tuned to $\sim 30$ orders of magnitude to predict the observed Higgs mass. 
 
-In a BSM theory containing complex scalars, s, the Lagrangian will gain a term $-\lambda_{s}|\phi|^2|s|^2$.
+In a BSM theory containing complex scalars, $s$, the Lagrangian will gain a term $-\lambda_{s}|\phi|^2|s|^2$.
 Assuming, for simplicity, each component of the complex scalar has mass $m_s$, the correction to the Higgs mass will be
 
 \begin{equation}
 \label{equ:corrHiggsSusy}
-\Delta m^2_H =  \frac{\lambda_s}{8\pi^2}\left[-\Lambda^2_{\text{UV}}\right] + \mathcal{O}\log(\LUV),
+\Delta m^2_H =  \frac{\lambda_s}{8\pi^2}\left[-\Lambda^2_{\text{UV}}\right] + \mathcal{O}\log(\LUV).
 \end{equation}
 
 If SUSY is a symmetry of nature, each fermion can be related to a complex scalar such that $|\lambda_f|^2 = -\lambda_s$ 
@@ -465,7 +467,7 @@ masses around the $\TeV$ scale. The LHC provides the first experimental probe of
 
 The general MSSM `super potential' contains terms which violate baryon number, B, and lepton number, 
 L. Such terms lead to predictions of proton decay in the order of seconds. 
-The proton lifetime is constrained experimentally to $> 10^{34}$ years~\cite{protonDecay},
+The proton lifetime is constrained experimentally to $> 10^{34}$ years~\cite{protonDecay};
 therefore, to forbid such a process, an extra symmetry called `R-parity' is defined as,
 \begin{equation}
 R \equiv (-1)^{3(B-L)+2S} = 
@@ -476,11 +478,13 @@ R \equiv (-1)^{3(B-L)+2S} =
 \end{equation}
 where S is the spin~\cite{SUSYP}. R-parity has several physical implications including a stable lightest supersymmetric 
 particle (LSP). This particle must be electrically and colour-neutral from cosmological constraints.
-Typically, it is taken to be the lightest neutralino in the MSSM and is an ideal WIMP candidate for DM. 
-In addition, R parity requires that superpartners be
+Typically, it is taken to be the lightest neutralino in the MSSM.
+This LSP is a weakly interacting massive particle (WIMP) and is candidate for DM. 
+In addition, R-parity requires that superpartners be
 formed in pairs in collisions and that each superpartner decays to another superpartner
-in a chain that must end with the LSP. The LSP does not interact with any detector and therefore
-such collisions will produce signatures containing significant momentum imbalance.
+in a chain that must end with the LSP. The interactions of the LSP with detectors at the LHC
+are too weak to be observed and therefore such collisions will produce signatures 
+containing significant momentum imbalance.
 
 \subsection{Experimental SUSY signatures at the LHC}
 
@@ -503,7 +507,7 @@ the final state and the momentum carried by the LSP are dependent on the masses
 of the sparticles.
 
 The top makes the largest contribution to the Higgs boson mass divergence. In natural SUSY, 
-the lightest sparticle is expected, therefore, to be the partner of the top. This leads to a signature
+the lightest coloured sparticle is expected, therefore, to be the partner of the top. This leads to a signature
 of multiple top quarks in the final state. As discussed in Section~\ref{sec:ewk-background-intro}, top quarks
 decay primarily to a b quark and W boson. The sparticles produced at the LHC 
 may therefore be expected to lead to a final state containing multiple b quarks.
@@ -512,7 +516,7 @@ The SM contains processes which produces events with similar signatures to
 those of hadronic SUSY described above. These are described fully in Section~\ref{sec:ewk-background-intro},
 and, in order to be sensitive to SUSY signals, such background processes must be mitigated 
 and any residual background contributions measured. The search described in this thesis relies on several
-techniques to mitigate and measure background processes as described in Chapters~\ref{cha:alphat} and~\ref{cha:backgroundPrediction}
+techniques to mitigate and measure background processes as described in Chapters~\ref{cha:alphat} and~\ref{cha:backgroundPrediction},
 respectively.
 
 \subsection{Simplified models}
@@ -526,7 +530,7 @@ in the CMSSM are complicated, making such interpretations model-dependent.
 To evaluate model-independent reach in terms of gluino and squark masses, searches are interpreted using 
 simplified models that are defined by a fixed set of production and decay modes.
 Simplified models are effective models where the majority of the particle content in the theory 
-are decoupled at high masses. Each of the simplified models considered in this thesis involves
+is decoupled at high masses. Each of the simplified models considered in this thesis involves
 the direct pair production of only one sparticle type, which then decays directly to the LSP~\cite{SMS}.
 
 The T2 simplified models are simplified versions of squark-antisquark production. Each squark undergoes
