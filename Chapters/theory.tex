@@ -1,7 +1,7 @@
 \chapter{Theoretical overview}
 \label{cha:theory}
 
-In this chapter the current best theory of particle physics, the standard model,
+In this chapter the current best theory of particle physics, the Standard Model,
 is outlined. Outstanding problems are detailed and used to motivate BSM 
 physics and, in particular, SUSY. The features of supersymmetric theories are 
 outlined and the possible experimental signatures which would enable such a theory to be 
@@ -11,7 +11,7 @@ Natural units, Einstein summation convention
 and Feynman slash notation are used throughout. Electric charges 
 are in units of the charge of the electron.
 
-\section{The standard model}
+\section{The Standard Model}
 
 \label{sec:sm}
 
@@ -22,7 +22,7 @@ all known forces~\cite{ftsm}.
 The known matter in the universe is composed of spin-1/2 fermions, summarised 
 in Table~\ref{tab:fermions}. These are split into quarks which carry colour charge 
 (see Section~\ref{sec:sm-gs}) and leptons which do not. In terms of their
-quantum nmbers, each of the three 
+quantum numbers, each of the three 
 generations of quarks and leptons vary only in mass from the other generations. 
 The SM contains spinor fields which give rise to these fermions.
 
@@ -47,9 +47,18 @@ The mechanism by which the gauge symmetries give rise to the properties and inte
 of the particles in the SM is detailed in the remainder of this section. 
 
 \begin{table}
+  % \caption[The fundamental spin-1/2 fermions observed in nature separated into their three generations. 
+  % Each particle shown also has an antiparticle with opposite charge and identical mass]
+  % {The fundamental fermions observed in nature separated into their three generations. 
+  % Each particle shown also has an antiparticle with opposite charge and identical mass~\cite{pdg}.}
   \caption[The fundamental spin-1/2 fermions observed in nature separated into their three generations. 
-  Each particle shown also has an antiparticle with opposite charge and identical mass]{The fundamental fermions observed in nature separated into their three generations. 
-  Each particle shown also has an antiparticle with opposite charge and identical mass~\cite{pdg}.}
+  The u, d and s quark masses are estimates of the `current' quark masses in the $\overline{\text{MS}}$-Scheme at $\mu \sim 2~\GeV$,
+  the c and b quark masses are the running masses in the $\overline{\text{MS}}$-Scheme at $\mu \sim2~\GeV$ 
+  and all other masses are from direct measurement. Each particle shown also has an antiparticle with opposite charge and identical mass]
+  {The fundamental fermions observed in nature separated into their three generations. 
+  The u, d and s quark masses are estimates of the `current' quark masses in the $\overline{\text{MS}}$-Scheme at $\mu \sim 2~\GeV$,
+  the c and b quark masses are the running masses in the $\overline{\text{MS}}$-Scheme at $\mu \sim2~\GeV$ 
+  and all other masses are from direct measurement. Each particle shown also has an antiparticle with opposite charge and identical mass~\cite{pdg}.}
   \label{tab:fermions}
   \begin{tabular}{ccccccc}
   \hline\hline
@@ -69,8 +78,9 @@ of the particles in the SM is detailed in the remainder of this section.
 \end{table}
 
 \begin{table}
-  \caption[The fundamental spin-1 vector bosons observed in nature and the force which they mediate.]{The fundamental spin-1 vector 
-bosons observed in nature and the force which they mediate~\cite{pdg}.}
+  \caption[The fundamental spin-1 vector bosons observed in nature and the force which they mediate.
+  Masses are from direct measurement.]{The fundamental spin-1 vector 
+bosons observed in nature and the force which they mediate. Masses are from direct measurement~\cite{pdg}.}
   \label{tab:bosons}
   \begin{tabular}{lccc}
     \hline\hline
@@ -88,21 +98,21 @@ bosons observed in nature and the force which they mediate~\cite{pdg}.}
 
 \subsection{Gauge symmetries}
 
-The derivation in this section follows that in~\cite{ewk-int}. Consider a Lagrangian containing a fermionic field, $\psi$,
+The derivation in this section follows that in Reference~\cite{ewk-int}. Consider a Lagrangian containing a fermionic field, $\psi$,
 
 \begin{equation}
-\mathcal{L} = \psi(x)^{\dagger} (i\gamma^{\mu}D_{\mu} - m)\psi(x) = \psi(x)^{\dagger} (i\cancel{D} - m)\psi(x),
+\mathcal{L} = \bar{\psi}(x) (i\gamma^{\mu}D_{\mu} - m)\psi(x) = \bar{\psi}(x) (i\cancel{D} - m)\psi(x),
 \end{equation}
 
-where $\psi(x)^{\dagger}$ is the hermitian conjugate of $\psi(x)$, $D_{\mu}$ is the `covariant derivative' and
+\noindent where $\bar{\psi}(x)$ is the Dirac conjugate of $\psi(x)$, $D_{\mu}$ is the `covariant derivative' and
 $\gamma^{\mu}$ are the Dirac matrices. Consider a local gauge symmetry defined by symmetry operator $U(x)$ such that
 
 \begin{align}
 \psi(x) &\rightarrow U(x)\psi(x), \\
-\psi^{\dagger}(x) &\rightarrow \psi^{\dagger} (x) U^{\dagger} (x).
+\bar{\psi}(x) &\rightarrow \bar{\psi} (x) U^{\dagger} (x),
 \end{align}
 
-In the remainder of this section the dependence on x is implicit. In order to ensure gauge invariance, the 
+\noindent where $U^{\dagger}(x)$ is the hermitian conjugate of $U(x)$. In the remainder of this section the dependence on $x$ is implicit. In order to ensure gauge invariance, the 
 covariant derivative must transform as 
 
 \begin{equation}
@@ -110,7 +120,7 @@ covariant derivative must transform as
 D_{\mu}\psi \rightarrow U D_{\mu}U^{\dagger} U \psi \rightarrow U \psi.
 \end{equation}
 
-This may be achieved by introducing a vector gauge field, $A_\mu$, such that 
+\noindent This may be achieved by introducing a vector gauge field, $A_\mu$, such that 
 $D_{\mu} = \partial_{\mu} + igA_{\mu}$. To satisfy Equation~\ref{equ:cov_deriv},
 such that the Lagrangian is gauge invariant, $A_{\mu}$ must transform
 under the `adjoint action',
@@ -119,19 +129,19 @@ under the `adjoint action',
 A_{\mu} \rightarrow U A_{\mu} U^{\dagger} + \frac{i}{g}(\partial_{\mu}U)U^{\dagger}.
 \end{equation}
 
-Having introduced this vector field, a new gauge invariant term may be added to the Lagrangian,
+\noindent Having introduced this vector field, a new gauge invariant term may be added to the Lagrangian,
 
 \begin{equation}
-\mathcal{L} = \psi^{\dagger} (i\cancel{D} - m)\psi - \frac{1}{4}F^{\mu,\nu}F_{\mu\nu},
+\mathcal{L} = \bar{\psi} (i\cancel{D} - m)\psi - \frac{1}{4}F^{\mu,\nu}F_{\mu\nu},
 \end{equation}
 
-where $F^{\mu\nu}$ is the field strength tensor of the vector field,
+\noindent where $F^{\mu\nu}$ is the field strength tensor of the vector field,
 
 \begin{equation}
 F_{\mu\nu} = - \frac{1}{g}\left[D_{\mu},D_{\nu}\right] = \partial_{\mu}A_{\nu} - \partial_{\nu} A_{\mu} - g\left[A_{\mu},A_{\nu}\right].
 \end{equation}
 
-By writing the fields and covariant derivatives in terms of the generators of the group, $t_{a}$, such
+\noindent By writing the fields and covariant derivatives in terms of the generators of the group, $t_{a}$, such
 that $A_{\mu} = A^{a}_{\mu} t_{a}$, the field strength tensor can be written as 
 \begin{equation}
 F^{a}_{\mu\nu}t_{a} = \left(\partial_{\mu}A^{a}_{\nu} - \partial_{\nu} A^{a}_{\mu} - g f_{bc}^{a}A^b_{\mu}A^c_{\nu}\right)t_a,
@@ -148,7 +158,7 @@ the forces depend on the details of the gauge symmetry.
 In the next section, the gauge symmetries
 of the SM are discussed. 
 
-\subsection{Gauge symmetries of the standard model}
+\subsection{Gauge symmetries of the Standard Model}
 \label{sec:sm-gs}
 The gauge symmetry group of the SM is given by~\cite{ewk-int}:
 \begin{equation}
@@ -173,22 +183,22 @@ liberation of quarks~\cite{salam}.
 
 The gauge symmetry of the electroweak sector of the SM is $SU(2)_L\otimes U(1)_Y$. These symmetries lead
 to the electromagnetic and weak forces mediated by the $\gamma$ and W/Z and bosons respectively.
-
 The Lagrangian for this sector may be written as
+
 \begin{equation}
 \mathcal{L}_{Ewk} = \mathcal{L}_{gauge} + \mathcal{L}_{fermion} + \mathcal{L}_{Higgs} + \mathcal{L}_{Yuk},
 \end{equation}
 
-the terms of which are discussed in this section. The weak force distinguishes
+\noindent the terms of which are discussed in this section. The weak force distinguishes
 between left and right-handed chiralities and therefore the fermionic fields are split into
 $\psi_{L/R} = (1\pm\gamma^5)\psi$. The fermion term may then be written for each of the 
 three generations of quarks and leptons as:
 
 \begin{equation}
-\mathcal{L}_{fermion} = i \psiL^{\dagger}\cancel{D}\psiL + i \psiR^{\dagger}\cancel{D}\psiR.
+\mathcal{L}_{fermion} = i \psiLb\cancel{D}\psiL + i \psiRb\cancel{D}\psiR.
 \end{equation}
 
-The left-handed fields transform as doublets under the $SU(2)_L$ symmetry
+\noindent The left-handed fields transform as doublets under the $SU(2)_L$ symmetry
 while the right-handed fields are singlets.
 For the first generations of quarks and leptons $\psi$ may therefore be written as
 
@@ -197,59 +207,58 @@ For the first generations of quarks and leptons $\psi$ may therefore be written 
 \qquad\qquad\qquad\psiR = \,&\,u_R,d_R,\, &\,e_R.\qquad\qquad\qquad
 \end{align}
 
-The generators of $SU(2)_L$ are $T^i = \tau^i/2$, where $\tau^i$ are the three Pauli matrices. 
+\noindent The generators of $SU(2)_L$ are $T^i = \tau^i/2$, where $\tau^i$ are the three Pauli matrices. 
 The covariant derivative therefore acts on the left and right-handed components of $\psi$ as
 
 \begin{equation}
 D_{\mu} \psiL = (\partial_\mu + igW^i_{\mu}T^i + ig'YB_\mu)\psiL \quad D_{\mu} \psiR = (\partial_\mu + ig'YB_\mu)\psiR
 \end{equation}
 
-where g and g' are the coupling constants of the $SU(2)_L$ and $U(1)_Y$ groups respectively, 
-$W^i$ are the three gauge bosons that couple to the weak isospin, T, and B is the gauge boson
-coupling to hypercharge, Y. The hypercharge values are chosen such that the sum of the hypercharge and 
+\noindent where $g$ and $g'$ are the coupling constants of the $SU(2)_L$ and $U(1)_Y$ groups respectively, 
+$W^i$ are the three gauge bosons that couple to the weak isospin, $T$, and $B$ is the gauge boson
+coupling to hypercharge, $Y$. The hypercharge values are chosen such that the sum of the hypercharge and 
 the third component of weak isospin corresponds to the electric charge,
 \begin{equation}
 \label{equ:charge}
 Q = T^{3} + Y.
 \end{equation}
 
-For the gauge section of the Lagrangian, the $SU(2)_L$ and U(1) symmetries give rise to two field strength tensors,
+\noindent For the gauge section of the Lagrangian, the $SU(2)_L$ and U(1) symmetries give rise to two field strength tensors,
 \begin{align}
-G^i_\mu\nu &= \partial_\mu W^i_\nu - \partial_\nu W^i_\mu - g \epsilon^{ijk}W^j_\mu W^k_\nu,\\
-F_\mu\nu &= \partial_\mu B_\nu - \partial_\nu B_\mu.
+G^i_{\mu\nu} &= \partial_\mu W^i_\nu - \partial_\nu W^i_\mu - g \epsilon^{ijk}W^j_\mu W^k_\nu,\\
+F_{\mu\nu} &= \partial_\mu B_\nu - \partial_\nu B_\mu.
 \end{align}
 
-This leads to
+\noindent This leads to
 
 \begin{equation}
 \mathcal{L}_{gauge} = -\frac{1}{4}F^{\mu\nu}F_{\mu\nu} - \frac{1}{4}G^{i\mu\nu}G^{i}_{\mu\nu}.
 \end{equation}
 
-The Lagrangian invariant under these gauge symmetries, however, does not correspond to the observed universe. No mass terms
+\noindent The Lagrangian invariant under these gauge symmetries, however, does not correspond to the observed universe. No mass terms
 can be included for either the gauge bosons or the fermions while maintaining gauge invaraince.
 As shown in the remainder of this section, such masses must be introduced via the breaking
-of the electroweak gauge symmetry in the Higgs sector of the Lagrangian. 
-
-The Higgs sector of the Lagrangian is given by,
+of the electroweak gauge symmetry in the Higgs sector of the Lagrangian. This 
+sector of the Lagrangian is given by
 
 \begin{equation}
 \label{equ:higgs-lagrangian}
-\mathcal{L}_{Higgs} = (D^{mu}\phi)^{\dagger}(D_{\mu}\phi) - V(\phi)
+\mathcal{L}_{Higgs} = (D^{\mu}\phi)^{\dagger}(D_{\mu}\phi) - V(\phi),
 \end{equation}
 
-where the complex scalar field, $\phi$, is in the spinor representation of $SU(2)_L$. The covariant derivative of $\phi$ is
+\noindent where the complex scalar field, $\phi$, is an $SU(2)_L$ doublet. The covariant derivative of $\phi$ is
 
 \begin{equation}
 D_{\mu} \phi = (\partial_\mu + igW^i_{\mu}T^i + ig'\frac{1}{2}B_\mu)\phi 
 \end{equation}
 
-and the potential, V, is given by
+\noindent and the potential, V, is given by
 
 \begin{equation}
-V(\phi) =  - \mu^2\phi^{\dagger}\phi + \lambda \left(\phi^{\dagger}\phi\right)^2
+V(\phi) =  - \mu^2\phi^{\dagger}\phi + \lambda \left(\phi^{\dagger}\phi\right)^2,
 \end{equation}
 
-where $\mu^2$ and $\lambda$ are positive constants. The potential is minimised for any $\phi$ satisfying
+\noindent where $\mu^2$ and $\lambda$ are positive constants. The potential is minimised for any $\phi$ satisfying
 $\phi^{\dagger}\phi = \frac{\mu^2}{2\lambda} \equiv v^2/2$. While the potential satisfies the 
 electroweak gauge symmetry, the minimum will not and may be chosen as
 
@@ -257,38 +266,38 @@ electroweak gauge symmetry, the minimum will not and may be chosen as
 \braket{\phi} =  - \frac{1}{\sqrt{2}}\begin{pmatrix} 0 \\ v\end{pmatrix}.
 \end{equation}
 
-From Equation~\ref{equ:charge}, the scalar field has zero electric charge and electromagnetism
+\noindent From Equation~\ref{equ:charge}, the scalar field has zero electric charge and electromagnetism
 is an unbroken symmetry. The symmetry group has therefore been broken 
 from $SU(2)_L\otimes U(1)_Y \rightarrow U(1)_Q$. Taking the unitary gauge to remove unphysical `Goldstone 
-bosons'~\cite{unitGauge}, the scalar field may be expanded around this minima as
+bosons'~\cite{unitGauge}, the scalar field may be expanded around this minimum as
 
 \begin{equation}
 \label{equ:phiExp}
 \phi =  - \frac{1}{\sqrt{2}}\begin{pmatrix} 0 \\ v + H\end{pmatrix}.
 \end{equation}
 
-The physical W, Z and $\gamma$ (labelled A) gauge bosons are combinations of the 
+\noindent The physical W, Z and $\gamma$ (labelled A) gauge bosons are combinations of the 
 bosons defined above,
 
 \begin{equation}
 W^{\pm} = \frac{1}{\sqrt{2}} (W^1_\mu \mp i W^2_\mu), \begin{pmatrix} Z_\mu \\ A_\mu\end{pmatrix} = \begin{pmatrix} \cos(\theta_W) & -\sin(\theta_W) \\ \sin(\theta_W) & \cos(\theta_W)\end{pmatrix} \begin{pmatrix} W^3_\mu \\ B_\mu\end{pmatrix}
 \end{equation}
 
-where $\theta_W \equiv \text{atan}(g'/g)$ is the weak mixing angle. From Equation~\ref{equ:phiExp} and
+\noindent where $\theta_W \equiv \text{atan}(g'/g)$ is the weak mixing angle. From Equation~\ref{equ:phiExp} and
 the first term of Equation~\ref{equ:higgs-lagrangian}, the masses may be identified as
 
 \begin{equation}
-M_W^\pm = \frac{1}{2}gv, M_Z = \frac{gv}{2cos\theta_W}, M_A = 0
+M_W^\pm = \frac{1}{2}gv, M_Z = \frac{gv}{2\cos\theta_W}, M_A = 0
 \end{equation}
 
-The masses of the fermions are derived from the Yukawa term in the Lagrangian, 
+\noindent The masses of the fermions are derived from the Yukawa term in the Lagrangian, 
 \begin{equation}
-\mathcal{L}_{Yuk} = - \frac{1}{\sqrt(2)}(v + H)(f_{mn} e_L^{\dagger}e_R + h_{mn} d_{Lm}^{\dagger}d'_{Rn} + k_{mn} u_{Lm}^{\dagger}u_{Rn}) + \text{hermitian conjugate}
+\mathcal{L}_{Yuk} = - \frac{1}{\sqrt(2)}(v + H)(f_{mn} \bar{e}_{Lm}e_{Rn} + h_{mn} \bar{d}_{Lm}d_{Rn} + k_{mn} \bar{u}_{Lm}u_{Rn}) + \text{hermitian conjugate}
 \end{equation}
 
-where $f_{mn}$, $h_{mn}$ and $k_{mn}$ are the Yukawa coupling matrices between the different generations. These may be diagonalised via unitary transformations
+\noindent where $f_{mn}$, $h_{mn}$ and $k_{mn}$ are the Yukawa coupling matrices between the different generations. These may be diagonalised via unitary transformations
 to generate mass terms for the quarks and leptons. The neutrino is massless in the SM as there is no right-handed component.
-This contradicts the observation of oscillations between neutrino flavours~\cite{neutOsc},
+This contradicts the observation of oscillations between neutrino flavours~\cite{neutOsc};
 however, extensions which predict non-zero neutrino masses are possible~\cite{neutM}. 
 
 The same unitary transformations also introduce mixing between quark generations from the 
@@ -299,12 +308,12 @@ interactions between quarks are mediated by the $W^{\pm}$ boson while interactio
 the Z and $\gamma$ bosons are flavour preserving. There are no flavour changing interactions
 predicted for the leptons.
 
-\section{Physics beyond the standard model}
+\section{Physics beyond the Standard Model}
 
 The SM describes the properties and interactions between all known particles. These properties 
 have been measured and the predictions of the SM verified in a multitude
 of experiments. However, the theory cannot be complete 
-as there remain fundamental problems which the standard model does not resolve.
+as there remain fundamental problems which the SM does not resolve.
 Several of the largest such problems are described below.
 
 On a theoretical level, a renormalisable theory of gravity cannot be included within 
@@ -424,7 +433,7 @@ at the \TeV~scale.
 
 \subsection{Natural supersymmetry}
 \label{sec:natSUSY}
-In the SM, the Higgs mechanism requires couplings to each fermion, f, of the form $-\lambda_{f}f^{\dagger}f\phi$. If BSM physics
+In the SM, the Higgs mechanism requires couplings to each fermion, f, of the form $-\lambda_{f}\bar{f}\phi f$. If BSM physics
 is expected to alter the high energy behaviour of the theory at a scale $\LUV$, the quantum corrections 
 to the Higgs boson mass, $\delta m^2_{H}$, will be 
 
