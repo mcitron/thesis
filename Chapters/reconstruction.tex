@@ -169,15 +169,27 @@ spread in $\eta$ and $\phi$~\cite{Argiro:2010zz}.  For unconverted photons, the
 deposits are fairly localised in $\eta$ and $\phi$. Electrons radiate
 bremsstrahlung along their trajectories due to the presence of the magnetic field and 
 lose on average $33\%$ of their energy in the central region 
-and up to $86\%$ at $|\eta| = 1.4$. Their energy deposits are widely spread in $\phi$ but narrow in $\eta$. 
+and up to $86\%$ at $|\eta| = 1.4$. As shown in Figure **, 
+their energy deposits can be widely spread in $\phi$ but narrow in $\eta$. 
 The hybrid clustering algorithm exploits this characteristic to
-reconstruct high energy electrons and photons in the barrel and endcap. The hybrid algorithm
-uses a seed crystal and clusters up to ten dominoes of $1\times3$ or $1\times5$ crystals ($\phi\times\eta$) within 
-$\Delta\phi < 0.3$ from the seed. Any domino with an energy under $100\,\MeV$ is discarded. The dominoes
-are themselves clustered in $\phi$, provided each disconnected subcluster has a seed 
-domino of energy $>350\,\MeV$. The combination of these subclusters is referred 
-to as a supercluster. The reconstruction in the endcap follows a similar procedure 
+reconstruct high energy electrons and photons in the barrel. A seed crystal of 
+energy above a minimum threshold is required. Arrays of $1\times5$ crystals ($\phi\times\eta$)
+crystals (labelled dominoes) are added to the seed in a range of 17 steps in each direction of \phi
+if each domino has an energy greater than 0.1 \GeV. The dominoes are then clustered such that each
+disconnected cluster includes a domino of at least 0.35 \GeV. These clusters are then finally themselves
+clustered into a 'supercluster`. The energy of the supercluster is the sum of the energies in its clusters
+and its position is calculated as the energy weighted mean of the cluster positions.
+The reconstruction in the endcap follows a similar procedure 
 using $5\times5$ grids of crystals. 
+
+\begin{figure}
+\centering
+    \includegraphics[width=0.6\textwidth]{./Figures/reconstruction/electron_ecal.png}
+  \caption{\label{fig:ele_ecal} Electrons may radiate photons due to brehmstrahllung as they
+  move through the magnetic field. The energy clustering algorithm accounts for this by clustering (potentially 
+  disconnected) energy deposits in a wide range in phi~\cite{Argiro:2010zz}.
+  }
+\end{figure}
 
 Superclusters that can be associated to tracks originating from the primary vertex are reconstructed as electrons.
 As electrons lose energy through the non-Gaussian bremsstrahlung process, the Kalman filter is inappropriate and

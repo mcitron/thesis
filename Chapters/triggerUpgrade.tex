@@ -75,7 +75,8 @@ illustrated in Figure~\ref{fig:inputres}.
 \subfloat[Input resolution: GCT]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/L1inputreslegacy.png}\label{subfig:inputlegacy}} \quad
 \subfloat[Input resolution: TMT]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/L1inputresupgrade.png}\label{subfig:inputupgrade}} 
 \caption{A representation of the CMS collaboration logo digitised with the input resolution of the L1 calorimeter trigger up to 
-\etaabs~$< 3$ using (a) the legacy system ($18 \times 14$ pixels) and (b) the TMT ($72 \times 56$ pixels).}
+\etaabs~$< 3$ using (a) the legacy architecture ($18 \times 14$ pixels) and (b) the TMT architecture ($72 \times 56$ pixels). The black squares indicate
+the size of the jet for the legacy and TMT architectures.}
 \label{fig:inputres}
 \end{figure}
 
@@ -232,7 +233,9 @@ is therefore not considered in this section.
 \begin{figure}
 \centering
     \includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/median}
-  \caption{Dependence of \rhoG on the number of interactions}
+  \caption{Dependence of \rhoG on the number of interactions. The minimal energy threshold 
+  required to reconstruct a jet causes $\rhoG \sim 0$ for
+  a non zero number of interactions.}
   \label{fig:medianNint}
 \end{figure}  
 
@@ -315,6 +318,7 @@ to account for changes in detector response. In each region the procedure is as 
 $\Delta R > 0.3$ from any generator jet are ignored.
 \item Define the `response' for each L1 jet as the ratio of the (pileup-corrected) \Lonept~to the matched generator jet $pt$ (\Genpt).
 \item For each bin in \Genpt, fit the response with a Gaussian to obtain the mean response for that \Genpt. 
+The Gaussian fit is used to account for the truncation of the response due to threshold effecs on \Lonept.
 The average \Lonept~in the bin is calculated to obtain the distribution of the mean response against \Lonept.
 \item Perform a $\chi^2$ fit of the distribution of mean response against \Lonept~using the calibration
  function~\cite{l1jet_calibration}~defined in Equation~\ref{equ:jecfit}.
@@ -391,18 +395,18 @@ a comparison with the GCT is shown.}
 \end{center}
 \end{figure}
 
-\subsection{Resolution}
+\subsection{Jet energy scale}
 
-The resolution, defined as $(\Lonept-\Genpt)/\Genpt$, measures the level of agreement between the energies of the 
+The jet energy scale, defined as $(\Lonept-\Genpt)/\Genpt$, measures the level of agreement between the energies of the 
 L1 and matched generator jets. The matching procedure is the same as that described in \Section~\ref{sec:calib}.
-The resolution provides an important measure of the ability of the algorithm to reject jets from pileup
+The jet energy scale provides an important measure of the ability of the algorithm to reject jets from pileup
 energy deposits as well as to remove the contribution of pileup from real jets from the hard scatter.
-In Figure~\ref{fig:resolution1}, the resolution as a function of the number of simultaneous interactions is shown for
-a simulated \ttbar sample. The resolution is flat near unity when pileup subtraction is applied,
+In Figure~\ref{fig:resolution1}, the jet energy scale as a function of the number of simultaneous interactions is shown for
+a simulated \ttbar sample. The jet energy scale is flat near unity when pileup subtraction is applied,
 but exhibits a strong dependence on pileup if uncorrected. To illustrate the pileup contamination for different
-\Genpt~jets, a linear fit to the resolution as a function of pileup is made in \Genpt~bins; the resultant gradients
+\Genpt~jets, a linear fit to the jet energy scale as a function of pileup is made in \Genpt~bins; the resultant gradients
 are shown in Figure~\ref{fig:resolution2}. Pileup subtraction is shown to significantly reduce the 
-pileup dependence of the resolution across $\Genpt$. If no pileup subtraction is applied, 
+pileup dependence of the jet energy scale across $\Genpt$. If no pileup subtraction is applied, 
 the magnitude of the gradient is particularly enhanced for low \Genpt~where pileup contamination dominates. 
 
 \begin{figure}
@@ -410,7 +414,7 @@ the magnitude of the gradient is particularly enhanced for low \Genpt~where pile
 	\subfloat[\label{fig:resolution1}]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/resolution}}~
 	\subfloat[\label{fig:resolution2}]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/p1eta_14to28_calib_fits}}
 	\caption{(a) Resolution as a function of the number of interactions. (b) Gradients of linear fits to 
-	    resolution as a function of number of interactions in bins of $p^{gen}_{T}$.}
+	    jet energy scale as a function of number of interactions in bins of $p^{gen}_{T}$.}
 	    \label{fig:label:resolution}
     \end{center} 
 \end{figure}
@@ -423,8 +427,8 @@ than the GCT quantities and plateaus at higher values than the legacy system.
 
 \begin{figure}
     \begin{center} 
-	\subfloat[\label{fig:resolution1}]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/leadJet150_noUct}}~
-	\subfloat[\label{fig:resolution2}]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/fourthJet100_noUct}}
+	\subfloat[\label{fig:turnon1}]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/leadJet150_noUct}}~
+	\subfloat[\label{fig:turnon2}]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/fourthJet100_noUct}}
 	\caption{Efficiency as a function of $\Genpt$ for (a) a L1 threshold of 150 \GeV~on the leading jet and (b) 
 	a L1 threshold of 100 \GeV~on the fourth leading jet.}
 	    \label{fig:turnon}
@@ -460,7 +464,9 @@ subtraction.
 \begin{figure}
 \centering
     \includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/neutrinonvtx_jet1}
-  \caption{The dependence of the rate for a threshold of $\Lonept=30\,\GeV$ on the number of simultaneous interactions}
+  \caption{The dependence of the rate for a threshold of $\Lonept=30\,\GeV$ on the number of simultaneous interactions. Note
+  that only the shape difference (and not the overall rate) between the algorithms should be compared 
+  as this \Lonept threshold would lead to an unreasonable rate.}
   \label{fig:rate_nvtx}
 \end{figure}
 
@@ -521,13 +527,13 @@ analysis is used to highlight the utility of such a cross-trigger at L1.
 The \alphat analysis is detailed in Chapter~\ref{cha:alphat}. In order to maximise acceptance
 to supersymmetric models at lower energy scales, a low \scalht~threshold is required. 
 However, without an additional requirement, the rate
-would be unacceptably high. A cross-trigger using a selection on both the difference 
-in $\phi$ between the two leading jets ($\Delta\phi_{1,2}$) and \scalht can control this rate while 
-maintaining efficiency. The $\Delta\phi_{1,2}$ requirement takes advantage of the high relative 
+would be unacceptably high. A cross-trigger using a selection on both ($\pi$ minus) the difference 
+in $\phi$ between the two leading jets ($\Delta\phi_{1,2}$), and \scalht can control this rate while 
+maintaining efficiency. The $\pi - |\Delta\phi_{1,2}|$ requirement takes advantage of the high relative 
 \mht to \scalht for the signal models.
 
 An acceptable rate for such a cross-trigger, given the overall budget of 100kHz, is 
-around 5.5 to 7.5 kHz. This range defines a band in the plane of $\Delta\phi_{1,2}$
+around 5.5 to 7.5 kHz. This range defines a band in the plane of $\pi - |\Delta\phi_{1,2}|$
 and \scalht~in which the efficiency can be inspected. To avoid signal model dependence, the 
 efficiency is measured using a \ttbar sample for the multijet case ($\nj \ge 4$) and a sample  
 of Z boson production in association with jets, where the Z decays to neutrinos, for the 
@@ -542,7 +548,8 @@ for the dijet and multijet trigger respectively. For the TMT, chunky-doughnut-co
 	\subfloat[Upgrade trigger]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/noHardBin12JetdphiFullS2}}~
 	\subfloat[UCT]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/noHardBin12JetdphiFullUCT}}
 	\caption{Efficiency of the dijet selection for hadronic offline requirement $200 < \scalht < 300\,\GeV$ and $\alphat > 0.65$
-	in a band of rate of 5.5 to 7.5 kHz}
+	in a band of rate of 5.5 to 7.5 kHz. The colour scale shows the cumulative efficiency for a given value of the 
+	L1 requirement on both $\pi - |\Delta\phi_{1,2}|$ and \scalht (shown on the y axis and x axis respectively).}
 	    \label{fig:dijet_cross}
 \end{figure}
 
@@ -551,16 +558,17 @@ for the dijet and multijet trigger respectively. For the TMT, chunky-doughnut-co
 	\subfloat[Upgrade trigger]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/noHardBin1ge4JetdphiFullS2}}~
 	\subfloat[UCT]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/noHardBin1ge4JetdphiFullUCT}}
 	\caption{Efficiency of the multijet selection for hadronic offline requirement $200 < \scalht < 300$ and $\alphat > 0.65$
-	in a band of rate of 5.5 to 7.5 kHz}	
+	in a band of rate of 5.5 to 7.5 kHz. The colour scale shows the cumulative efficiency for a given value of the 
+	L1 requirement on both $\pi - |\Delta\phi_{1,2}|$ and \scalht (shown on the y axis and x axis respectively).}
 	    \label{fig:multijet_cross}
 \end{figure}
 
 In both cases the greatly superior resolution afforded by the TMT allows a significantly
 more granular operating range than the UCT. Higher efficiencies, especially for the multijet topology, 
-are achievable with the upgraded system. The maximal efficiency gain in using $\Delta\phi_{1,2}$ to 
+are achievable with the upgraded system. The maximal efficiency gain in using $\pi - |\Delta\phi_{1,2}|$ to 
 to that using a \scalht~trigger alone may also be considered for the TMT. For the dijet case there is a 
 significant efficiency gain from $\sim 30\%$ to $\sim 70\%$, while for the multijet the gain is 
-$\sim 50\%$ to $\sim 80\%$ when $\Delta\phi_{1,2}$ is used in conjunction with \scalht.
+$\sim 50\%$ to $\sim 80\%$ when $\pi - |\Delta\phi_{1,2}|$ is used in conjunction with \scalht.
 This highlights the importance of cross triggers in controlling rates while 
 keeping low offline thresholds.
 
