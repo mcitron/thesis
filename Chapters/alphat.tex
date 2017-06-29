@@ -127,7 +127,7 @@ $\tau$~($\tau^{\pm}\rightarrow\pi^{\pm}+n\pi^{0}\nu$) which comprise $\sim70\%$ 
 
 \subsubsection{\ttj and single top background}
 The \ttj~and single top background comprise around $5\%$ and 0.5\% of the overall
-background respectively. On production, the top quark will predominantly decay via the 
+background, respectively. On production, the top quark will predominantly decay via the 
 weak force as \twb. The W boson may then decay hadronically, producing a final state
 with multiple jets, or leptonically, producing a final state including a lepton and a neutrino. 
 
@@ -136,7 +136,8 @@ jets and/or significant \met, depending on the decay. If both W bosons decay had
 up to six jets may be produced from the hadronisation of the quarks. In this case the $\met$
 may be introduced via jet mismeasurement or from bottom quark decay via neutrinos. If one of the 
 W bosons decays leptonically ($\sim45.8\%$ of \ttbar~decays), up to four jets may be expected
-as well as~\met from the neutrino. Such events may enter hadronic selection if the lepton is lost.
+as well as~\met from the neutrino. Such events may enter hadronic selection if the lepton is lost or is
+a hadronically deacying $\tau$.
 Finally, if both W bosons decay leptonically ($\sim10.5\%$ of \ttbar~decays), the final state contains two 
 leptons and significant \met. This mode is subdominant due to the low probability of losing both leptons
 and the lack of jets in the final state. For all decay modes, the number of jets reconstructed in the event
@@ -178,7 +179,7 @@ known detector problems and beam halo effects are discussed in Section~\ref{sec:
 The \alphat variable is designed to reject balanced events which gain significant~\met through
 jet mismeasurement. The $\alpha$ variable was initially proposed in~\cite{Randall} and
 converted into the transverse variable, $\alphat$, to allow use with hadronic collisions. The absolute
-value of the $\met$ is sensitive to the detector and reconstruction effects discussed in Section~\ref{sec:qcd-background-intro} 
+value of the $\met$ is sensitive to the detector and reconstruction effects discussed in Section~\ref{sec:qcd-background-intro}. 
 The \alphat variable is designed to be dimensionless such that the topology of the event is used to reject 
 QCD processes, regardless of the total value of the~\met.
 
@@ -189,7 +190,7 @@ For a dijet event, \alphat is defined as
 \alphat\, =\, \frac{\Et^{{\rm j}_2}}{M_\text{T}} \, ,
 \end{equation}
 
-where $\Et^{\rm j_2}$ is the transverse energy of the 
+\noindent where $\Et^{\rm j_2}$ is the transverse energy of the 
 less energetic jet and $M_\text{T}$ is the transverse
 mass of the dijet system, 
 
@@ -200,7 +201,7 @@ mass of the dijet system,
       \sum_{i=1}^2 p_y^{{\rm j}_i} \right)^2} \, .
 \end{equation}
 
-where $\Et^{{\rm j}_i}$ is the transverse energy of jet ${\rm j}_i$ 
+\noindent where $\Et^{{\rm j}_i}$ is the transverse energy of jet ${\rm j}_i$ 
 ($\Et^{{\rm j}_i} = E^{{\rm j}_i}\sin\theta^{{\rm j}_i}$), and
 $p_x^{{\rm j}_i}$ and $p_y^{{\rm j}_i}$ are the $x$ and $y$ components
 of the transverse momentum of the jet. 
@@ -214,11 +215,11 @@ the event is insensitive to the clustering and is given by
 
 \begin{equation}
   \label{eq:mt_njet}
-  M_\text{T}\, = \,\sqrt{ \left( \sum_{i=1}^2 \Et^{{\rm{j}}_i}
-    \right) - \mht^2}.
+  M_\text{T}\, = \,\sqrt{ \left( \sum_{i=1} \Et^{{\rm{j}}_i}
+    \right)^2 - \mht^2}.
 \end{equation}
 
-where the sum is over all jets in the event. The sub-leading pseudo-jet energy, 
+\noindent where the sum is over all jets in the event. The sub-leading pseudo-jet energy, 
 $E_{\textrm{T}}^{j'_2}$, is given by
 
 \begin{equation}
@@ -247,7 +248,7 @@ definition can be approximated in this case by
   a mismeasured jet (middle) and well measured jets recoiling against true~\met (right). The solid cones signify the reconstructed jet momentum while the 
   dashed cones represent the true momentum. The calculation of \alphat~is described in the text.} 
 \end{figure}
-where $\Delta H_{\textrm{T}}$ is the difference in \pt~of the pseudo-jets.
+\noindent where $\Delta H_{\textrm{T}}$ is the difference in \pt~of the pseudo-jets.
 
 To illustrate the mechanism by which the \alphat~variable rejects $\met$ from mismeasured or lost jets,
 consider a dijet event as shown in Figure~\ref{fig:alphat_cartoon}. Three possible event topologies are shown: 
@@ -258,7 +259,7 @@ event, $\Delta H_{\textrm{T}} = \mht$ and Equation~\ref{eq:alphat3} can be writt
 
 \begin{equation}
   \label{eq:alphat4}
-   \alphat \approx \sqrt{\left(\frac{\scalht^2 - \mht^2}{2\scalht^2 + \mht^2}\right)} < 0.5.
+   \alphat \approx \frac{1}{2}\sqrt{\frac{\scalht - \mht}{\scalht + \mht}} < 0.5.
 \end{equation}
 
 Conversely, if an event contains true $\met$ and the jets are recoiling against significant~\met 
@@ -394,7 +395,7 @@ dedicated filters are used to remove such events from the dataset. These `\met f
 are:
 
 \begin{itemize}
-\item The HBHE noise and isolation filters that rejects energy spikes in The HCAL caused by noise from sources 
+\item The HBHE noise and isolation filters that rejects energy spikes in the HCAL caused by noise from sources 
 including direct particle interactions with HCAL instrumentation.
 \item The EE bad supercluster filter that removes events containing \TeV~scale energy spikes from anomalous
 pulses in the EE.
@@ -403,7 +404,7 @@ significant contamination from the beam halo.
 \item The ECAL trigger primitive filter that rejects events where significant energy is deposited in dead cell regions.
 \item The PV filter that requires at least one well reconstructed vertex, which ensures collisions have occurred (rather than an event triggered and reconstructed from detector noise).
 \item The bad muon and bad charged hadron filters that reject events containing poorly reconstructed muons reconstructed as 
-a muon or PF charged hadron respectively.
+a muon or PF charged hadron, respectively.
 \end{itemize}
 
 \begin{figure}
@@ -448,7 +449,7 @@ the \alphat, \bdphi~and \mhtmet~variables and event filters.
 An \scalht~dependent threshold is used to account for the broadening \alphat~distribution
 for lower \scalht values. These thresholds are also chosen to be efficient given
 the trigger requirements (see Section~\ref{sec:ana-trigger}) and are shown in Table~\ref{tab:alphat-thresholds}. 
-The highest threshold of 0.65 is used for $200 < \scalht < 300\,\GeV$ while there is no \alphat~
+The highest threshold of 0.65 is used for $200\,\GeV < \scalht < 300\,\GeV$ while there is no \alphat
 requirement for $\scalht > 800\,\GeV$, for which region a pure \scalht~trigger is used.
 At least two jets are required to define~\alphat and therefore no threshold is used
 in events containing only one jet (monojet).
@@ -494,7 +495,7 @@ confirmation of a potential discovery.
 \subsection{Control regions}
 \label{sec:cr-sel}
 The control regions are used to predict both the residual QCD multijet
-and electroweak backgrounds. The predictions are make using the 
+and electroweak backgrounds. The predictions are made using the 
 `transfer factor' (TF) method, as described in Section~\ref{sec:tf-pred}.
 Each of the control regions is enriched 
 in the background sample(s) predicted by that control region or a related 
@@ -559,7 +560,7 @@ The signal region is further categorised according to~\mht. The categorisations 
 
 \subsection{Categorisation in \njet}
 
-The \alphat~analysis categorises events into three topologies, `monojet',`asymmetric' 
+The \alphat~analysis categorises events into three topologies, `monojet', `asymmetric' 
 and `symmetric', using selections on the second jet~\pt. For all topologies, the leading
 jet must satisfy $\pt^{j_1} > 100 \,\GeV$.  
 
@@ -567,8 +568,8 @@ The monojet topology vetoes events containing a second
 jet with $\pt^{j_2} > 40 \,\GeV$ and is designed to target compressed SUSY models. For such models the 
 LSP carries the majority of the energy from the heavy sparticle decay, meaning any jets produced 
 in the decay are soft (small values of \pt). These events may fall into the monojet category if
-one of the incoming/outgoing partons radiate a jet. The monojet topology rejects backgrounds from 
-\ttbar which tends to have high \njet multiplicities. 
+one of the incoming/outgoing partons radiates a jet. The monojet topology rejects backgrounds from 
+\ttbar which tend to have high \njet multiplicities. 
 
 The asymmetric topology selects events containing a second jet with $40 \,\GeV < \pt^{j_2} < 100 \,\GeV$.
 This category targets compressed SUSY models whose decay products are soft but can be reconstructed.
@@ -601,7 +602,7 @@ jets from light-flavoured quarks as b jets increases the background rate for a h
 The \scalht~produced in an event provides a measure of the mass scale of 
 new physics models as the energy provided to the visible decay products is
 dependent on the mass splitting between the heavy sparticle and LSP. 
-The finest control and signal region binning in \scalht~is shown in~\ref{tab:alphat-thresholds}. 
+The finest control and signal region binning in \scalht~is shown in Table~\ref{tab:alphat-thresholds}. 
 These are merged from above depending on the requirement of at least one control region
 event observed in data per \scalht~region to allow a meaningful prediction.
 
@@ -687,7 +688,7 @@ according to the metric defined in Section~\ref{sec:cat-mht}.
 The trigger strategy is designed to maximise acceptance for an inclusive set of new physics 
 models which may be produced at a low energy scale. A suite of dedicated cross triggers 
 is used at the HLT to achieve efficiencies near 100\% for selections on
-\scalht~and \mht~as low as 200 and 130 \GeV~respectively. 
+\scalht~and \mht~as low as 200 and 130 \GeV,~respectively. 
 
 The HLT triggers used for the signal region are summarised in Table~\ref{tab:trigger} as well as the L1 triggers
 used to seed these paths. In order to reduce the rate sufficiently to allow PF reconstruction at the HLT,
@@ -695,18 +696,18 @@ a prefilter is required on calorimeter quantities. An event in any category may 
 paths; however, each is designed to maximise the efficiency for a particular set of categories.
 
 For the monojet topology, the highest efficiency is achieved with the HLT
-\mht-\met cross trigger using thresholds of 100 \GeV~on both quantities. For the symmetric and asymmetric
+$\mht-\met$ cross trigger using thresholds of 90 \GeV~on both quantities. For the symmetric and asymmetric
 categories, dedicated seeds are used that select events based on the \alphat, \scalht and the 
 average \pt of the leading two jets ($p^{(j_1,\,j_2)}_{\text{T}}$). A selection of
 $p^{(j_1,\,j_2)}_{\text{T}} > 90\,\GeV$ was found to optimise the efficiency across topologies given the rate requirements. The resultant reduction in efficiency for 
-asymmetric categories is recovered by the use of the \mht-\met cross trigger in addition to the dedicated cross triggers.
+asymmetric categories is recovered by the use of the $\mht-\met$ cross trigger in addition to the dedicated cross triggers.
 Finally, for bins with $\scalht > 800 \,\GeV$, where there is no \alphat threshold, 
 an HLT seed with a threshold of only $\scalht > 800\,\GeV$ provides efficiency.
 
 
 \begin{table}[h!]
 \caption{Trigger thresholds of the Level-1 and final PF-trigger decision for
- the HLT paths for the hadronic signal region. Except for those on~\alphat, all thresholds are in \GeV}
+ the HLT paths for the hadronic signal region. Except for those on~\alphat, all thresholds are in \GeV.}
 \footnotesize
 \centering
 \begin{tabular}{c|cccc} 

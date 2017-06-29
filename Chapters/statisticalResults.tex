@@ -6,7 +6,7 @@ In Section~\ref{sec:likelihood} the likelihood model used to interpret the resul
 detailed and in Section~\ref{sec:results} the results of a maximum likelihood fit to the observed data presented. 
 As no significant excess is seen the results are interpreted by setting upper limits at 95\% confidence 
 level (CL) on the cross section of supersymmetric simplified models. The procedure for setting the limits and 
-the results are detailed in Sections~\ref{sec:limits} and~\ref{sec:limits-sms} respectively.
+the results are detailed in Sections~\ref{sec:limits} and~\ref{sec:limits-sms}, respectively.
 In this section the \znunu background is labelled as \zInv~ while 
 the \ttj~plus \wj~background is labelled as \ttW.
 
@@ -16,7 +16,7 @@ the \ttj~plus \wj~background is labelled as \ttW.
 The \alphat~analysis relies on control regions to predict the normalisation of each category of \njet, \nb~and \scalht 
 (which are in the following identified with \htcat) and on simulation to predict the shape 
 of \mht~within each category. The likelihood model is split into hadronic and control components
-linked by floating parameters for the prediction. In one \htcat~category, j, 
+linked by floating parameters for the prediction. In one \htcat~category, $j$, 
 the hadronic component may be written as a multiple of Poisson likelihoods
 for the observation in each \mht bin 
 ($\mathrm{Pois}(n|\lambda) \equiv e^{-n}\frac{\lambda^{n}}{n!}$):
@@ -27,7 +27,7 @@ for the observation in each \mht bin
 b^{j,i}_{\ttW,\mathrm{had}}\times\phi^{j}(\mu\rightarrow\ttW)\times a^{j}\times\rho^{j,i}_{\ttW,\mathrm{had}}\, + b^{j,i}_{\text{QCD},\mathrm{had}}\times\omega^{j,i}_{\text{QCD},\mathrm{had}} + \,r\times s^{j,i}_{\mathrm{had}}\times\rho^{j,i}_{s,\mathrm{had}}) 
 \end{multline}
 
-where the product is over each \mht bin, i, in the \htcat~category; $b^{j,i}_{\zInv~/\ttW,had}$ are the predicted number 
+\noindent where the product is over each \mht bin, $i$, in the \htcat~category; $b^{j,i}_{\zInv~/\ttW,had}$ are the predicted number 
 of events from simulation for the electroweak backgrounds; 
 $b^{j,i}_{\text{QCD},\mathrm{had}}$ are the predicted 
 number of events for the QCD multijet component (from the method described in Section~\ref{sec:qcd-pred});
@@ -44,10 +44,10 @@ which is not categorised in \mht, can be written as:
 
 \begin{equation}
 \label{eq:muLikelihood}
-\mathcal{L}^{j}_{\mathrm{\mu}} = \mathrm{Pois}(n^{j}_{\mathrm{\mu}} |\, b^{j}_{\mu}\times a^{j}\times\rho^{j}_{\mu} +\, b^{j}_{\text{QCD},\,\mu} + \,r \times s^{j}_{\mathrm{\mu}}\times\rho^{j}_{s,\mu})
+\mathcal{L}^{j}_{\mathrm{\mu}} = \mathrm{Pois}(n^{j}_{\mathrm{\mu}} |\, b^{j}_{\mu}\times a^{j}\times\rho^{j}_{\mu} +\, b^{j}_{\text{QCD},\,\mu} + \,r \times s^{j}_{\mathrm{\mu}}\times\rho^{j}_{s,\mu}).
 \end{equation}
 
-similarly to Equation~\ref{eq:hadronicLikelihood}, $\rho^{j}_{\mu}$ contains the uncertainty in the \htcat from variations in simulation. 
+\noindent Similarly to Equation~\ref{eq:hadronicLikelihood}, $\rho^{j}_{\mu}$ contains the uncertainty in the \htcat from variations in simulation. 
 The signal contamination in the control region is encoded by $s^{j}_{\mathrm{\mu}}$, which is small by design. 
 The connection between the control and signal region
 is included by the unconstrained $a^{j}$ parameter and the 
@@ -55,20 +55,20 @@ subdominant QCD component, $b^{j}_{\text{QCD},\,\mu}$, is taken from simulation.
 
 The \zInv~component in the signal region is also predicted using the \gj~and \mmj~regions. 
 By rewriting $\phi^{j}(\mu\rightarrow\zInv~)\times a^{j}$ and $\phi^{j}(\mu\rightarrow\ttW)\times a^{j}$
-as ${a'}(\mu\rightarrow\zInv~)$ and $a'(\mu\rightarrow\ttW~)$ respectively, the connections to the \gj~and \mmj~regions
+as ${a'}(\mu\rightarrow\zInv~)$ and $a'(\mu\rightarrow\ttW~)$, respectively, the connections to the \gj~and \mmj~regions
 may be written as:
 
 \begin{align}
 \label{eq:mumuGammaLikelihood}
 \mathcal{L}^{j}_{\mathrm{\mu\mu}} &= \mathrm{Pois}(n^{j}_{\mathrm{\mu\mu}} |\, b^{j}_{\mu\mu}\times 
-\left({a'}^{j}/\phi^{j}(\mu\mu\rightarrow\zInv~)\right)\times\rho^{j}_{\mu\mu} +\,b^{j}_{\text{QCD},\,\mu\mu} + \,r\times s^{j}_{\mathrm{\mu\mu}}\times\rho^{j}_{s,\mu\mu}) \\
+\left({a'}^{j}/\phi^{j}(\mu\mu\rightarrow\zInv~)\right)\times\rho^{j}_{\mu\mu} +\,b^{j}_{\text{QCD},\,\mu\mu} + \,r\times s^{j}_{\mathrm{\mu\mu}}\times\rho^{j}_{s,\mu\mu}), \\
 \mathcal{L}^{j}_{\mathrm{\gamma}} &= \mathrm{Pois}(n^{j}_{\mathrm{\gamma}} |\, b^{j}_{\gamma}\times 
-\left({a'}^{j}/\phi^{j}(\gamma\rightarrow\zInv~)\right)\times\rho^{j}_{\gamma} + \,b^{j}_{\text{QCD},\,\gamma} + \,r\times s^{j}_{\mathrm{\gamma}}\times\rho^{j}_{s,\gamma})
+\left({a'}^{j}/\phi^{j}(\gamma\rightarrow\zInv~)\right)\times\rho^{j}_{\gamma} + \,b^{j}_{\text{QCD},\,\gamma} + \,r\times s^{j}_{\mathrm{\gamma}}\times\rho^{j}_{s,\gamma}),
 \end{align}
 
-where parameters are defined as in Equations~\ref{eq:hadronicLikelihood} and~\ref{eq:muLikelihood}. 
+\noindent where parameters are defined as in Equations~\ref{eq:hadronicLikelihood} and~\ref{eq:muLikelihood}. 
 In these equations the connection between the control and signal region is inverted
-and so $\phi^{j}$ appears on the denominator. 
+and so $\phi^{j}$ appears in the denominator. 
 
 The modifier and constraint terms of the parameters representing the systematic uncertainties and 
 connections between control and signal regions are summarised below:
@@ -77,7 +77,7 @@ connections between control and signal regions are summarised below:
 \item The transfer factor systematics and uncertainties on the QCD multijet contribution 
 are taken to be `log normal' uncertainties such that the logarithm of the variable has 
 a Gaussian (normal) constraint~\cite{templateMorphing}. These uncertainties are correlated per topology and \scalht bin 
-(pair of \scalht bins for uncertainties derived using \mmj)
+(pair of \scalht bins for uncertainties derived using \mmj).
 \item The systematic uncertainties from variations in simulation and those derived on the \mht~shape from the control regions 
 are included using `vertical template morphing'~\cite{templateMorphing}. For vertical template morphing, the yield
 in each bin is interpolated quadratically between the $\pm 1\sigma$ variations for each source of
@@ -103,12 +103,12 @@ can be written as a product over all \htcat~bins:
 \label{sec:results}
 The expected number of events from the SM backgrounds are determined from 
 a simultaneous fit over all parameters using data from the control regions only, `CR-only fit' 
-as well as using data from all regions, `full fit'  The CR-only fit provides the 
+as well as using data from all regions, the `full fit'  The CR-only fit provides the 
 best representation of the background predictions of the \alphat~search from the control regions.
 
 In Figures~\ref{fig:mono},~\ref{fig:asym} and~\ref{fig:sym} the results of the CR-only fit and the full fit are presented in all \scalht, \njet 
 and \nb~categories under a SM-only hypothesis (r = 0) for the monojet, asymmetric 
-and symmetric categories respectively. No significant tension is observed between the predictions
+and symmetric categories, respectively. No significant tension is observed between the predictions
 and data. Additionally, in Figure~\ref{fig:mht-templates}, the distribution in \mht for representative 
 categories of \scalht, \njet and \nb, sensitive to hadronic SUSY models with \TeV~scale squarks and gluinos, 
 shows good agreement between prediction and data.
@@ -177,7 +177,7 @@ prediction across the signal region. In Section~\ref{sec:agg-reg} the result is 
     expectations from the CR-only fit with their associated
     uncertainties (green histogram with shaded band) as a function of
     \mht for events in the signal region that satisfy $\njet \geq
-    5$, $\scalht > 800\GeV$, and (a) $\nb = 0$ or (b) $\nb \geq
+    5$, $\scalht > 800\,\GeV$, and (a) $\nb = 0$ or (b) $\nb \geq
     3$. The final bin is the overflow bin. The bottom panels indicate
     the significance of the deviations (pulls) observed in data with respect
     to the SM expectations, expressed in terms of the total
@@ -214,8 +214,8 @@ the likelihood defined in Equation~\ref{eq:totalLikelihood}, the profile likelih
 q(r) = \frac{\mathcal{L}(r,\hat{\boldsymbol{\theta}}(r))}{\mathcal{L}(\hat{r},\hat{\boldsymbol{\theta}})},
 \end{equation}
 
-where $\hat{\boldsymbol{\theta}}$ and $\hat{r}$ are the values of $\boldsymbol{\theta}$ and $r$ that maximise $\mathcal{L}$
-, maximum-likelihood (ML) estimators, while $\hat{\boldsymbol{\theta}}(r)$ is the value
+\noindent where $\hat{\boldsymbol{\theta}}$ and $\hat{r}$ are the values of $\boldsymbol{\theta}$ and $r$ that maximise $\mathcal{L}$
+,the maximum-likelihood (ML) estimators, while $\hat{\boldsymbol{\theta}}(r)$ is the value
 of $\boldsymbol{\theta}$ that maximises $\mathcal{L}$ for the specified value of $r$. 
 
 Given that $r < 0$ is unphysical the profile likelihood is modified to
@@ -252,11 +252,17 @@ approximation for $f(t_r|r)$. The \textit{p}-value, $p_r$, is defined as
 p_r = \int_{t_{r,obs}}^{\infty}\, f(t_r|r)\, dt_r,
 \end{equation}
 
-where ${t_{r,obs}}$ is the observed value of the test statistic. Finally,
+\noindent where ${t_{r,obs}}$ is the observed value of the test statistic. Finally,
 the $\text{CLs}$ is defined as
 
 \begin{equation}
-\text{CLs}(r) = \frac{p_r}{1-p_0}.
+\text{CLs}(r) = \frac{p_r}{1-p_b},
+\end{equation}
+
+\noindent where,
+
+\begin{equation}
+1-p_b = \int_{t_{0,obs}}^{\infty}\, f(t_r|0)\, dt_r.
 \end{equation}
 
 The upper limit on $r$ is defined as the value of $r$ which corresponds to 
