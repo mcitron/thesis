@@ -386,8 +386,10 @@ matching the fourth leading jet.
 
 \begin{figure}
 \begin{center}
-\subfloat[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/alljet}}
-\subfloat[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/jet4}}
+\makebox[0pt]{
+\subfloat[]{\includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/alljet}}
+\subfloat[]{\includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/jet4}}
+}
 \caption{Matching efficiencies for jets showing effect of seed and pileup subtraction at low energies for all jets (a) and for the fourth jet (b). In (b)
 a comparison with the GCT is shown.}
 \label{fig:match}
@@ -410,8 +412,10 @@ the magnitude of the gradient is particularly enhanced for low \Genpt~where pile
 
 \begin{figure}
     \begin{center} 
-	\subfloat[\label{fig:resolution1}]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/resolution}}~
-	\subfloat[\label{fig:resolution2}]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/p1eta_14to28_calib_fits}}
+\makebox[0pt]{
+	\subfloat[\label{fig:resolution1}]{\includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/resolution}}~
+	\subfloat[\label{fig:resolution2}]{\includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/p1eta_14to28_calib_fits}}
+}
 	\caption{(a) Resolution as a function of the number of interactions. (b) Gradients of linear fits to 
 	    jet energy scale as a function of number of interactions in bins of $p^{gen}_{T}$.}
 	    \label{fig:label:resolution}
@@ -426,8 +430,10 @@ than the GCT quantities and plateaus at higher values than the legacy system.
 
 \begin{figure}
     \begin{center} 
-	\subfloat[\label{fig:turnon1}]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/leadJet150_noUct}}~
-	\subfloat[\label{fig:turnon2}]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/fourthJet100_noUct}}
+\makebox[0pt]{
+	\subfloat[\label{fig:turnon1}]{\includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/leadJet150_noUct}}~
+	\subfloat[\label{fig:turnon2}]{\includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/fourthJet100_noUct}}
+}
 	\caption{Turn-on of efficiency as a function of $\Genpt$ for (a) a L1 threshold of 150 \GeV~on the leading jet and (b) 
 	a L1 threshold of 100 \GeV~on the fourth leading jet. The turn-on is defined as the efficiency for selecting events containing
 	a generator jet of a given \pt that is matched to the L1 jet on which the threshold is applied.}
@@ -447,9 +453,11 @@ between the pileup subtraction algorithms are small.
 
 \begin{figure}[h!]
   \centering
-    \subfloat[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/singleJet_150.png}}~
-    \subfloat[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/doubleJet_110.png}}\\
-    \subfloat[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/quadJet_50.png}}
+\makebox[0pt]{
+    \subfloat[]{\includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/singleJet_150.png}}~
+    \subfloat[]{\includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/doubleJet_110.png}}
+}\\
+    \subfloat[]{\includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/quadJet_50.png}}
   \caption{\label{fig:rate_eff_jets} Rate (Hz) against efficiency for (a) L1 leading jet with a threshold of 150 $\GeV$, 
   (b) L1 second leading jet with a threshold of 110 \GeV~and (c) L1 fourth leading jet with a threshold of 50 $\GeV$.}
 \end{figure}
@@ -482,8 +490,10 @@ therefore cancel in the vector sum of the towers.
 
 \begin{figure}
 \centering
-	\subfloat[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/ht_200}\label{fig:ht_rateEff}}~
-	\subfloat[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/mht_200}\label{fig:mht_rateEff}}
+\makebox[0pt]{
+	\subfloat[]{\includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/ht_200}\label{fig:ht_rateEff}}~
+	\subfloat[]{\includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/mht_200}\label{fig:mht_rateEff}}
+}
 	\caption{Rate (Hz) against efficiency for (a) L1 \scalht and (b) L1 \mht, both with a
 	threshold of 200 $\GeV$.}
 	    \label{fig:rate_eff_sum}
@@ -507,8 +517,10 @@ and shows little pileup dependence.
 
 \begin{figure}
 \centering
-	\subfloat[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/xy_SingleMu_jetEt_vs_l1JetEt_barrel-endcap}}~
-	\subfloat[]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/res_SingleMu_jetEt_over_l1JetEt_barrel-endcap_puBins}}
+\makebox[0pt]{
+	\subfloat[]{\includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/xy_SingleMu_jetEt_vs_l1JetEt_barrel-endcap}}~
+	\subfloat[]{\includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/res_SingleMu_jetEt_over_l1JetEt_barrel-endcap_puBins}}
+}
 	\caption{(a) The L1 jet energy compared to offline in early 2016 data for a wide
 range of jet energies. (b) Resolution for the L1 jet energy compared to offline in early 2016 data for several different 
 pileup scenarios \cite{l1sums_perf}.}
@@ -545,8 +557,10 @@ for the dijet and multijet trigger respectively. For the TMT, chunky-doughnut-co
 
 \begin{figure}
 \centering
-	\subfloat[Upgrade trigger]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/noHardBin12JetdphiFullS2}}~
-	\subfloat[UCT]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/noHardBin12JetdphiFullUCT}}
+\makebox[0pt]{
+	\subfloat[Upgrade trigger]{\includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/noHardBin12JetdphiFullS2}}~
+	\subfloat[UCT]{\includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/noHardBin12JetdphiFullUCT}}
+}
 	\caption{Efficiency of the dijet selection for hadronic offline requirement $200 < \scalht < 300\,\GeV$ and $\alphat > 0.65$
 	in a band of rate of 5.5 to 7.5 kHz. The colour scale shows the cumulative efficiency for a given value of the 
 	L1 requirement on both $\pi - |\Delta\phi_{1,2}|$ and \scalht (shown on the y axis and x axis respectively).}
@@ -555,8 +569,10 @@ for the dijet and multijet trigger respectively. For the TMT, chunky-doughnut-co
 
 \begin{figure}
 \centering
-	\subfloat[Upgrade trigger]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/noHardBin1ge4JetdphiFullS2}}~
-	\subfloat[UCT]{\includegraphics[width=0.45\textwidth]{./Figures/triggerUpgrade/noHardBin1ge4JetdphiFullUCT}}
+\makebox[0pt]{
+	\subfloat[Upgrade trigger]{\includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/noHardBin1ge4JetdphiFullS2}}~
+	\subfloat[UCT]{\includegraphics[width=0.6\textwidth]{./Figures/triggerUpgrade/noHardBin1ge4JetdphiFullUCT}}
+}
 	\caption{Efficiency of the multijet selection for hadronic offline requirement $200 < \scalht < 300$ and $\alphat > 0.65$
 	in a band of rate of 5.5 to 7.5 kHz. The colour scale shows the cumulative efficiency for a given value of the 
 	L1 requirement on both $\pi - |\Delta\phi_{1,2}|$ and \scalht (shown on the y axis and x axis respectively).}

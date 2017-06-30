@@ -102,17 +102,17 @@ can be written as a product over all \htcat~bins:
 \section{Results of the fit to data}
 \label{sec:results}
 The expected number of events from the SM backgrounds are determined from 
-a simultaneous fit over all parameters using data from the control regions only, `CR-only fit' 
+a simultaneous fit over all parameters under a SM-only hypothesis (r = 0) using data from the control regions only, `CR-only fit' 
 as well as using data from all regions, the `full fit'  The CR-only fit provides the 
 best representation of the background predictions of the \alphat~search from the control regions.
 
 In Figures~\ref{fig:mono},~\ref{fig:asym} and~\ref{fig:sym} the results of the CR-only fit and the full fit are presented in all \scalht, \njet 
-and \nb~categories under a SM-only hypothesis (r = 0) for the monojet, asymmetric 
+and \nb~categories under a SM-only hypothesis for the monojet, asymmetric 
 and symmetric categories, respectively. As described in the caption, the pulls of the CR-only fit represent the level of tension 
 between the predictions and observation in the signal region. As shown in Figure~\ref{pullsCR}, an overall positive shift in the
 total normalisation of the signal region is observed. The nuisance parameter
 included to reflect the systematic uncertainty in the lepton veto efficiency can explain
-this overall shift. As shown in Figure~\ref{pullsCRLV}, after setting this parameter to its best fit value 
+this overall shift. As shown in Figure~\ref{pullsCRLV}, after setting this parameter to its maximum likelihood (ML) value 
 (at 2.25 times its 1 $\sigma$ value) no significant tension is observed between the predictions and data. 
 The pull in this parameter may be expected as this analysis is carried out using an early dataset with preliminary 
 lepton scale factors.
@@ -178,8 +178,10 @@ prediction across the signal region. In Section~\ref{sec:agg-reg} the result is 
 
 \begin{figure}[!tbhp]
   \begin{center}
-    \subfloat[\label{pullsCR}]{\includegraphics[width=0.45\textwidth]{Figures/statisticalResults/pulls_all_CR}}~
-    \subfloat[\label{pullsCRLV}]{\includegraphics[width=0.45\textwidth]{Figures/statisticalResults/pulls_all_CR_freezeLV}}
+  \makebox[0pt]{
+    \subfloat[\label{pullsCR}]{\includegraphics[width=0.6\textwidth]{Figures/statisticalResults/pulls_all_CR}}~
+    \subfloat[\label{pullsCRLV}]{\includegraphics[width=0.6\textwidth]{Figures/statisticalResults/pulls_all_CR_freezeLV}}
+}
   \end{center}
   \caption{
   Distribution of the significance of the deviations (pulls) observed in data with respect
@@ -236,7 +238,7 @@ q(r) = \frac{\mathcal{L}(r,\hat{\boldsymbol{\theta}}(r))}{\mathcal{L}(\hat{r},\h
 \end{equation}
 
 \noindent where $\hat{\boldsymbol{\theta}}$ and $\hat{r}$ are the values of $\boldsymbol{\theta}$ and $r$ that maximise $\mathcal{L}$
-,the maximum-likelihood (ML) estimators, while $\hat{\boldsymbol{\theta}}(r)$ is the value
+,the maximum likelihood estimators, while $\hat{\boldsymbol{\theta}}(r)$ is the value
 of $\boldsymbol{\theta}$ that maximises $\mathcal{L}$ for the specified value of $r$. 
 
 Given that $r < 0$ is unphysical the profile likelihood is modified to
