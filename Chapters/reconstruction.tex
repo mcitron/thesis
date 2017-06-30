@@ -92,7 +92,7 @@ thesis, require that a good vertex is reconstructed from the tracks satisfying:
 \item a minimum number of degrees of freedom: $n_{dof} > 4$
 \item the collision to occur with $|z| < 24\,\cm$ such that the primary vertex is near the 
 interaction point in the longitudinal direction
-\item the collision to occur within a radial distance of $|d_{xy}| < 24\,\cm$ from the beamline
+\item the collision to occur within a radial distance of $|d_{xy}| < 2\,\cm$ from the beamline
 \end{itemize}
 
 \subsection{Calorimeter reconstruction}
@@ -118,7 +118,7 @@ The HCAL components undergo a similar calibration to the ECAL crystals. A subset
 components are calibrated using particle beams at a range of energies and
 this is then extended to the remainder of the 
 subsystem using a Cobalt 60 source~\cite{hcal_performance}. Additional corrections
-for the HCAL component are derived during LHC running~\cite{hcal_calib}.
+for the HCAL components are derived during LHC running~\cite{hcal_calib}.
 
 % The reconstruction of the energy at the HCAL and ECAL relies on recording the amplified 
 % light pulses from the photodiodes over a 25 ns time sample. When operating with 25ns bunch 
@@ -418,7 +418,7 @@ are then recalculated.
 \end{itemize}
 
 These steps are repeated until no clusters remain. The algorithm used for the analysis in this thesis (and for most CMS analyses) is 
-the anti-$k_T$ algorithm, for which $r=2$. The size of the jets is $R=0.4$ which is optimal for capturing particles
+the anti-$k_T$ algorithm, for which $r=-2$. The size of the jets is $R=0.4$ which is optimal for capturing particles
 associated with a jet while being resilient against pileup. CMS uses jets with inputs from PF candidates (PF jets) and calorimeter deposits (calo jets)
 clustered using the \FASTJET~package~\cite{fastjet}. PF jets allow improved resolution with respect to calo jets due to the significant position and energy resolution 
 enhancement possible with use of the tracker. PF jets are therefore used in offline analysis while calo jets are used only in HLT reconstruction
@@ -470,7 +470,9 @@ overall uncertainty is shown in Fig~\ref{fig:jec_unc}.
 \centering
     \includegraphics[width=0.6\textwidth]{./Figures/reconstruction/jec_unc.png}
   \caption{\label{fig:jec_unc} The overall uncertainty in the corrections applied to MC from Equation~\ref{equ:jec} is 
-  shown in the orange solid curve. The pileup uncertainty dominates for $\pt < 50\,\GeV$ while for higher values of \pt~the absolute and relative scale dominate~\cite{jec_fig}.}
+  shown in the orange solid curve. The pileup uncertainty dominates for $\pt < 50\,\GeV$ while for higher values of \pt~the absolute and relative scale dominate~\cite{jec_fig}.
+  The peak in the pileup component of the uncertainty between 100 and 200 \GeV is caused by taking the absolute value of 
+  the log-linear parameterisation of this component.}
 \end{figure}
 
 \subsection{B tagging}

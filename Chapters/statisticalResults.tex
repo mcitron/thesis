@@ -108,8 +108,16 @@ best representation of the background predictions of the \alphat~search from the
 
 In Figures~\ref{fig:mono},~\ref{fig:asym} and~\ref{fig:sym} the results of the CR-only fit and the full fit are presented in all \scalht, \njet 
 and \nb~categories under a SM-only hypothesis (r = 0) for the monojet, asymmetric 
-and symmetric categories, respectively. No significant tension is observed between the predictions
-and data. Additionally, in Figure~\ref{fig:mht-templates}, the distribution in \mht for representative 
+and symmetric categories, respectively. As described in the caption, the pulls of the CR-only fit represent the level of tension 
+between the predictions and observation in the signal region. As shown in Figure~\ref{pullsCR}, an overall positive shift in the
+total normalisation of the signal region is observed. The nuisance parameter
+included to reflect the systematic uncertainty in the lepton veto efficiency can explain
+this overall shift. As shown in Figure~\ref{pullsCRLV}, after setting this parameter to its best fit value 
+(at 2.25 times its 1 $\sigma$ value) no significant tension is observed between the predictions and data. 
+The pull in this parameter may be expected as this analysis is carried out using an early dataset with preliminary 
+lepton scale factors.
+
+In Figure~\ref{fig:mht-templates}, the distribution in \mht for representative 
 categories of \scalht, \njet and \nb, sensitive to hadronic SUSY models with \TeV~scale squarks and gluinos, 
 shows good agreement between prediction and data.
 
@@ -166,6 +174,19 @@ prediction across the signal region. In Section~\ref{sec:agg-reg} the result is 
       independently.}
     \label{fig:sym}
   \end{center}
+\end{figure}
+
+\begin{figure}[!tbhp]
+  \begin{center}
+    \subfloat[\label{pullsCR}]{\includegraphics[width=0.45\textwidth]{Figures/statisticalResults/pulls_all_CR}}~
+    \subfloat[\label{pullsCRLV}]{\includegraphics[width=0.45\textwidth]{Figures/statisticalResults/pulls_all_CR_freezeLV}}
+  \end{center}
+  \caption{
+  Distribution of the significance of the deviations (pulls) observed in data with respect
+  to the SM expectations across all \njet, \nb~ and \scalht categories 
+  for (a) the CR-only fit and for (b) the CR-only fit after setting 
+  the lepton veto nuisance parameter to its ML value from the full fit. 
+  In (b), the overall bias in the pulls is shown to be mitigated.}
 \end{figure}
 
 \begin{figure}[!tbhp]
