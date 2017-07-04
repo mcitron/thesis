@@ -236,7 +236,7 @@ F_{\mu\nu} &= \partial_\mu B_\nu - \partial_\nu B_\mu.
 \end{equation}
 
 \noindent The Lagrangian invariant under these gauge symmetries, however, does not correspond to the observed universe. No mass terms
-can be included for either the gauge bosons or the fermions while maintaining gauge invaraince.
+can be included for either the gauge bosons or the fermions while maintaining gauge invariance.
 As shown in the remainder of this section, such masses must be introduced via the breaking
 of the electroweak gauge symmetry in the Higgs sector of the Lagrangian. This 
 sector of the Lagrangian is given by
@@ -329,7 +329,7 @@ arguments. However, cosmological measurements of $\Lambda$ imply
 $\Lambda/M_{\text{planck}}^4 \sim 10^{-120}$~\cite{cosConst}. This discrepancy
 is related to the failure to include gravity in a quantum field theory.
 
-Astronomical observation imply the existance of a DM particle
+Astronomical observation imply the existence of a DM particle
 that forms the majority of the matter within the universe
 and that does not interact through the strong or electromagnetic forces~\cite{WIMP}.
 The SM has no viable candidate for this particle. In addition, the matter-antimatter 
@@ -463,6 +463,10 @@ such that $\lambda_f^2 = -\lambda_s$ still holds to cancel the quadratic diverge
 To avoid fine tuning of the logarithmic divergence, the lightest sparticles should have 
 masses around the $\TeV$ scale. The LHC provides the first experimental probe of this energy scale.
 
+While such arguments provide a strong motivation for $\TeV$ scale gluinos and squarks, it
+should also be noted that models such as 'split SUSY`~\cite{sSusy} or the 'AMSB`~\cite{AMSB} provide alternative
+solutions to the naturalness problem with significantly different signatures at the LHC (see below).
+
 \subsection{R-parity}
 
 The general MSSM `super potential' contains terms which violate baryon number, B, and lepton number, 
@@ -527,11 +531,16 @@ In previous searches for SUSY, the constrained MSSM (the CMSSM), which leaves fi
 used to interpret the results~\cite{CMSSM}. However, while parametrically simple, the decay chains of sparticles 
 in the CMSSM are complicated, making such interpretations model-dependent. 
 
-To evaluate model-independent reach in terms of gluino and squark masses, searches are interpreted using 
+To evaluate model-independent reach, searches are interpreted using 
 simplified models that are defined by a fixed set of production and decay modes.
 Simplified models are effective models where the majority of the particle content in the theory 
 is decoupled at high masses. Each of the simplified models considered in this thesis involves
 the direct pair production of only one sparticle type, which then decays directly to the LSP~\cite{SMS}.
+
+The simplified models may be used to approximate the impact of searches on a complete theory 
+by determining the relevant simplified topologies contained in the full theory. The impact
+of searches for many different types of signatures may be combined using programs 
+such as FastLim~\cite{Fastlim}.
 
 The T2 simplified models are simplified versions of squark-antisquark production. Each squark undergoes
 a two-body decay to a quark and the LSP. In this thesis, direct bottom squark production followed
@@ -577,19 +586,37 @@ momentum imbalance and hadronic energy. If the mass splitting is small, (`compre
 the momentum imbalance and hadronic energy are suppressed. Additional phenomena, such as initial/final state radiation (ISR/FSR), 
 where one or more incoming/outgoing partons radiates a jet, may be required for sensitivity to such models.
 
-The simplified models may be used to approximate the impact of searches on a complete theory 
-by determining the relevant simplified topologies contained in the full theory. The impact
-of searches for many different types of signatures may be combined using programs 
-such as FastLim~\cite{Fastlim}.
+The furthest mass points excluded (see Section~\ref{sec:limits}) by searches at CMS for a 
+range of simplified supersymmetric models at the end of the 7 and 8~\TeV~centre of mass 
+energy runs of the LHC are shown in Figure~\ref{fig:CMS2014}. The searches carried out target a range 
+of natural SUSY scenarios. The hadronic searches require a final state containing 
+no leptons or photons and are sensitive to SUSY models containing light squarks and gluinos. Searches for electroweak
+gauginos use a wide variety of final states containing vector bosons (or their decay products) 
+to achieve sensitivity to SUSY models with light charginos and neutralinos~\cite{gaugino}. 
+The discovery of the Higgs boson has motivated additional searches for 
+neutralino decay to the Higgs boson and LSP, sensitive to models
+with higgsino neutralinos and charginos~\cite{gmsb}. The search for the SUSY partner of the lepton is sensitive 
+to models which can provide the muon anomalous magnetic moment from SM expectation~\cite{gm2}. Finally,
+there are searches for SUSY models in which R-parity is not conserved (RPV SUSY) that 
+typically require a large number of jets and low~\met~\cite{rpv}. In addition to such 'prompt` analyses, 
+searches for long lived particles (not shown in Figure~\ref{fig:CMS2014}), 
+can be sensitive to SUSY models with very small mass splittings~\cite{llpSUSY}. A full review of 
+all signatures and searches at both CMS and ATLAS may be found in Reference~\cite{pdg}.
 
-At the end of the 7 and 8~\TeV~centre of mass energy runs of the LHC, the furthest
-gluino mass excluded (see Section~\ref{sec:limits}) for the gluino mediated top and bottom 
-squark production simplified models was $\sim 1300\,\GeV$ while for direct top and 
-bottom squark production, the highest squark mass excluded was $\sim 700\,\GeV$~\cite{limits8}. 
-As the centre of mass energy increases to $13\,\TeV$, the production cross section for coloured sparticles
-at the~\TeV~scale jumps by more than an order of magnitude~\cite{snowmass}, presenting
-an ideal opportunity for the discovery of $\TeV$ scale natural SUSY.
+\begin{figure}
+\centering
+    \includegraphics[width=0.9\textwidth]{./Figures/theory/barplot_ICHEP2014}
+  \caption{
+  Best exclusion limits for the masses of the parent particles for
+  $m_{\text{LSP}} = 0 \,\GeV$ (dark shades) and $m_{\text{parent}} - m_{\text{LSP}} = 200\,\GeV$ 
+  (light shades); for each topology, for all results~\cite{susyCMS2014}.
+  }
+  \label{fig:CMS2014}
+\end{figure}
 
-
-
-
+As the centre of mass energy increases to $13\,\TeV$, searches for a wide
+range of signatures, including those detailed above, are necessary to 
+explore potential SUSY models. Hadronic searches, such as the \alphat analysis, 
+present a particularly exciting opportunity as the production 
+cross-section for for coloured sparticles at the~\TeV~scale 
+jumps by more than an order of magnitude~\cite{snowmass}.
